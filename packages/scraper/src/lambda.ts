@@ -17,6 +17,8 @@ export interface RefreshSummary {
   events: number;
   programs: number;
   programEvents: number;
+  offerings: number;
+  offeringEvents: number;
   failures: string[];
   learnedClassifications: number;
   invalidated: boolean;
@@ -47,7 +49,7 @@ export async function handler(event: Partial<ScheduledEvent> & RefreshEvent = {}
     log,
     previousProgramFeed: (id) => store.readProgramFeed(id),
   });
-  await persistResult(store, result.feeds, result.index, classifier.table, result.programFeeds);
+  await persistResult(store, result.feeds, result.index, classifier.table, result.programFeeds, result.offeringFeeds);
 
   let invalidated = false;
   if (distributionId) {
@@ -67,9 +69,12 @@ export async function handler(event: Partial<ScheduledEvent> & RefreshEvent = {}
     events: result.feeds.reduce((sum, f) => sum + f.events.length, 0),
     programs: result.programFeeds.length,
     programEvents: result.programFeeds.reduce((sum, f) => sum + f.events.length, 0),
+    offerings: result.offeringFeeds.length,
+    offeringEvents: result.offeringFeeds.reduce((sum, f) => sum + f.offerings.length, 0),
     failures: [
       ...result.index.rinks.filter((r) => !r.ok).map((r) => `${r.rink.id}: ${r.errors.join("; ")}`),
       ...(result.index.programs ?? []).filter((p) => !p.ok).map((p) => `${p.program.id}: ${p.errors.join("; ")}`),
+      ...Object.entries(result.index.offerings ?? {}).filter(([, e]) => !e.ok).map(([id, e]) => `${id}: ${e.errors.join("; ")}`),
     ],
     learnedClassifications: classifier.added.length,
     invalidated,

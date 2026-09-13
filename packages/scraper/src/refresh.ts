@@ -5,6 +5,7 @@ import {
   localDateKey,
   localToUtcMillis,
   type IceEvent,
+  type OfferingsFeed,
   type Program,
   type ProgramFeed,
   type RawEvent,
@@ -16,6 +17,7 @@ import {
 import type OpenAI from "openai";
 import { fetchRinkEvents, type AdapterContext } from "./adapters/index.js";
 import type { Classifier, UnknownTitle } from "./classify.js";
+import { applyFmcClassOverlay, refreshOfferings, type OfferingsRefreshContext } from "./offerings/index.js";
 import { refreshPrograms, type RefreshProgramsOptions } from "./programs/index.js";
 
 export interface RefreshOptions {
@@ -36,11 +38,14 @@ export interface RefreshOptions {
   fetchProgramPage?: RefreshProgramsOptions["fetch"];
   /** Previous program feed lookup, used to carry over events for unreachable team pages. */
   previousProgramFeed?: RefreshProgramsOptions["previous"];
+  /** Override offerings scrapers (tests). When `fetchEvents` is set and this is omitted, offerings are skipped. */
+  fetchOfferings?: (ctx: OfferingsRefreshContext) => ReturnType<typeof refreshOfferings>;
 }
 
 export interface RefreshResult {
   feeds: RinkFeed[];
   programFeeds: ProgramFeed[];
+  offeringFeeds: OfferingsFeed[];
   index: RinkIndex;
 }
 
@@ -97,6 +102,25 @@ export async function refreshAll(options: RefreshOptions): Promise<RefreshResult
 
   const programResult = await refreshPrograms({ programs: options.programs ?? [], rangeStart, rangeEnd, now, log, fetch: options.fetchProgramPage, previous: options.previousProgramFeed });
 
+  const fetchedAt = now.toISOString();
+  const rinkEvents = new Map(partials.map((p) => [p.rink.id, p.raw]));
+  const shouldLoadOfferings = Boolean(options.fetchOfferings) || !options.fetchEvents;
+  const offeringResult = shouldLoadOfferings
+    ? await (options.fetchOfferings ?? refreshOfferings)({
+        rangeStart,
+        rangeEnd,
+        fetchedAt,
+        rinks: options.rinks,
+        rinkEvents,
+        log,
+      })
+    : { feeds: [] as OfferingsFeed[], fmcClasses: [] };
+  if (offeringResult.fmcClasses.length > 0) {
+    for (const part of partials) {
+      part.raw = dedupeAndSort(applyFmcClassOverlay(part.rink.id, part.raw, offeringResult.fmcClasses));
+    }
+  }
+
   // First pass: table + rules. Collect what needs the model.
   const unknowns: UnknownTitle[] = [];
   for (const part of partials) {
@@ -114,7 +138,6 @@ export async function refreshAll(options: RefreshOptions): Promise<RefreshResult
     await options.classifier.resolveWithModel(unknowns);
   }
 
-  const fetchedAt = now.toISOString();
   const feeds: RinkFeed[] = partials.map((part) => {
     const events: IceEvent[] = part.raw.map((raw) => {
       const result = options.classifier.classify(part.rink.id, raw.title) ?? options.classifier.fallback();
@@ -144,5 +167,16 @@ export async function refreshAll(options: RefreshOptions): Promise<RefreshResult
 
   const index: RinkIndex = { generatedAt: fetchedAt, rinks: entries };
   if (programResult.index.length > 0) index.programs = programResult.index;
-  return { feeds, programFeeds: programResult.feeds, index };
+  if (offeringResult.feeds.length > 0) {
+    index.offerings = {};
+    for (const feed of offeringResult.feeds) {
+      index.offerings[feed.id] = {
+        fetchedAt: feed.fetchedAt,
+        eventCount: feed.offerings.length,
+        ok: feed.errors.length === 0 || feed.offerings.length > 0,
+        errors: feed.errors,
+      };
+    }
+  }
+  return { feeds, programFeeds: programResult.feeds, offeringFeeds: offeringResult.feeds, index };
 }

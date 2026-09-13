@@ -336,6 +336,27 @@
       "category": "private_rental",
       "source": "seed",
       "note": "Named hockey business or league; explicitly treated as a private rental."
+    },
+    {
+      "rinkId": "*",
+      "title": "club ice",
+      "category": "freestyle",
+      "source": "seed",
+      "note": "FMC and Hayden Club Ice is figure skating practice ice."
+    },
+    {
+      "rinkId": "*",
+      "title": "fmc club ice",
+      "category": "freestyle",
+      "source": "seed",
+      "note": "FMC Club Ice is figure skating practice ice."
+    },
+    {
+      "rinkId": "warrior-brighton",
+      "title": "adult programming",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Warrior adult league / programming block, not a public drop-in."
     }
   ]
 }

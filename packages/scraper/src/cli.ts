@@ -57,7 +57,7 @@ async function main() {
       /* no existing index */
     }
   }
-  await persistResult(store, result.feeds, result.index, classifier.table, result.programFeeds);
+  await persistResult(store, result.feeds, result.index, classifier.table, result.programFeeds, result.offeringFeeds);
 
   if (updateSeed && classifier.added.length > 0) {
     const seedFile = path.join(repoRoot, "data", "classifications.seed.json");
@@ -74,6 +74,9 @@ async function main() {
   }
   for (const entry of result.index.programs ?? []) {
     process.stdout.write(`${entry.ok ? "ok " : "ERR"} program:${entry.program.id.padEnd(20)} ${String(entry.eventCount).padStart(4)} ev ${String(entry.homeEventCount).padStart(4)} at ${entry.program.rinkId} (${entry.teamCount} teams)${entry.errors.length ? `  [${entry.errors[0]}]` : ""}\n`);
+  }
+  for (const [id, entry] of Object.entries(result.index.offerings ?? {})) {
+    process.stdout.write(`${entry.ok ? "ok " : "ERR"} offerings:${id.padEnd(16)} ${String(entry.eventCount).padStart(4)} ev${entry.errors.length ? `  [${entry.errors[0]}]` : ""}\n`);
   }
   process.stdout.write(`\nWrote ${result.feeds.length} feeds to ${path.relative(repoRoot, outDir) || "."}\n`);
 }

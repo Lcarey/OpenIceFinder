@@ -1,4 +1,4 @@
-import { RINK_TIME_ZONE, localDateKey, type IceEvent } from "@openice/shared";
+import { RINK_TIME_ZONE, localDateKey } from "@openice/shared";
 
 const timeFmt = new Intl.DateTimeFormat("en-US", { timeZone: RINK_TIME_ZONE, hour: "numeric", minute: "2-digit" });
 const weekdayFmt = new Intl.DateTimeFormat("en-US", { timeZone: RINK_TIME_ZONE, weekday: "long" });
@@ -79,7 +79,7 @@ export function shiftMonth(dateKey: string, months: number): string {
   return `${shifted.getUTCFullYear()}-${String(shifted.getUTCMonth() + 1).padStart(2, "0")}-01`;
 }
 
-export function groupByDay<T extends IceEvent>(events: T[]): Array<{ dateKey: string; events: T[] }> {
+export function groupByDay<T extends { start: string }>(events: T[]): Array<{ dateKey: string; events: T[] }> {
   const map = new Map<string, T[]>();
   for (const e of events) {
     const key = dateKeyOf(e.start);

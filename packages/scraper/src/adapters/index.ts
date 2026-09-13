@@ -9,6 +9,7 @@ import { linkOnlyAdapter } from "./link-only.js";
 import { myrecCalendarAdapter } from "./myrec-calendar.js";
 import { myrecProgramAdapter } from "./myrec-program.js";
 import { recTimesAdapter } from "./rectimes.js";
+import { weeklyHoursAdapter } from "./weekly-hours.js";
 import type { AdapterContext } from "./types.js";
 
 export type { AdapterContext } from "./types.js";
@@ -36,6 +37,8 @@ export async function fetchRinkEvents(rink: Rink, ctx: AdapterContext): Promise<
       return documentVisionAdapter(rink, source, ctx);
     case "link-only":
       return linkOnlyAdapter(rink, source, ctx);
+    case "weekly-hours":
+      return weeklyHoursAdapter(rink, source, ctx);
     default: {
       const exhaustive: never = source;
       throw new Error(`Unknown source kind: ${JSON.stringify(exhaustive)}`);

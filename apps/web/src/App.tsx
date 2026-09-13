@@ -1,15 +1,24 @@
-import type { ProgramFeed, RinkFeed, RinkIndex } from "@openice/shared";
-import { CalendarDays, RefreshCw, Snowflake, Users } from "lucide-react";
+import type { OfferingsFeed, ProgramFeed, RinkFeed, RinkIndex } from "@openice/shared";
+import { CalendarDays, Dumbbell, RefreshCw, Shirt, Snowflake, Users } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { loadAllFeeds, loadAllProgramFeeds, loadIndex } from "./api";
+import { loadAllFeeds, loadAllProgramFeeds, loadIndex, loadOfferings } from "./api";
 import { formatRelativeFetched } from "./format";
+import { ClinicsView } from "./views/ClinicsView";
 import { IceUsageView } from "./views/IceUsageView";
 import { OpenIceView } from "./views/OpenIceView";
 import { RinkView } from "./views/RinkView";
+import { StinkySocksView } from "./views/StinkySocksView";
 
-type Route = { view: "open" } | { view: "rink"; rinkId: string } | { view: "ice"; rinkId: string };
+type Route =
+  | { view: "open" }
+  | { view: "rink"; rinkId: string }
+  | { view: "ice"; rinkId: string }
+  | { view: "stinkysocks" }
+  | { view: "clinics" };
 
 function parseRoute(hash: string): Route {
+  if (/^#\/stinkysocks/.test(hash)) return { view: "stinkysocks" };
+  if (/^#\/clinics/.test(hash)) return { view: "clinics" };
   const match = hash.match(/^#\/(rink|ice)\/([^/?]+)/);
   if (match) return { view: match[1] as "rink" | "ice", rinkId: decodeURIComponent(match[2]!) };
   return { view: "open" };
@@ -30,6 +39,8 @@ export function App() {
   const [index, setIndex] = useState<RinkIndex | null>(null);
   const [feeds, setFeeds] = useState<RinkFeed[] | null>(null);
   const [programFeeds, setProgramFeeds] = useState<ProgramFeed[] | null>(null);
+  const [stinkysocks, setStinkysocks] = useState<OfferingsFeed | null>(null);
+  const [clinics, setClinics] = useState<OfferingsFeed | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [reloadToken, setReloadToken] = useState(0);
 
@@ -40,10 +51,17 @@ export function App() {
       .then(async (idx) => {
         if (cancelled) return;
         setIndex(idx);
-        const [all, programs] = await Promise.all([loadAllFeeds(idx), loadAllProgramFeeds(idx)]);
+        const [all, programs, socks, skills] = await Promise.all([
+          loadAllFeeds(idx),
+          loadAllProgramFeeds(idx),
+          loadOfferings("stinkysocks"),
+          loadOfferings("clinics"),
+        ]);
         if (cancelled) return;
         setFeeds(all);
         setProgramFeeds(programs);
+        setStinkysocks(socks);
+        setClinics(skills);
       })
       .catch((err: unknown) => {
         if (!cancelled) setError(err instanceof Error ? err.message : String(err));
@@ -82,6 +100,12 @@ export function App() {
               <Users size={16} /> {usageRink.emoji ? `${usageRink.emoji} ` : ""}Who&rsquo;s on the ice
             </a>
           )}
+          <a className={route.view === "stinkysocks" ? "nav-link active" : "nav-link"} href="#/stinkysocks">
+            <Shirt size={16} /> StinkySocks
+          </a>
+          <a className={route.view === "clinics" ? "nav-link active" : "nav-link"} href="#/clinics">
+            <Dumbbell size={16} /> Clinics
+          </a>
         </nav>
       </header>
 
@@ -99,6 +123,8 @@ export function App() {
       {index && route.view === "open" && <OpenIceView index={index} feeds={feeds} />}
       {index && route.view === "rink" && <RinkView index={index} feeds={feeds} rinkId={route.rinkId} />}
       {index && route.view === "ice" && <IceUsageView index={index} feeds={feeds} programFeeds={programFeeds} rinkId={route.rinkId} />}
+      {index && route.view === "stinkysocks" && <StinkySocksView index={index} feed={stinkysocks} />}
+      {index && route.view === "clinics" && <ClinicsView index={index} feed={clinics} />}
 
       <footer className="footer">
         <span>

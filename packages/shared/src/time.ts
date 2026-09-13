@@ -96,6 +96,11 @@ export function parseDateOnly(text: string): { year: number; month: number; day:
   if (m) return { year: Number(m[1]), month: Number(m[2]), day: Number(m[3]) };
   m = t.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
   if (m) return { year: Number(m[3]), month: Number(m[1]), day: Number(m[2]) };
+  m = t.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2})$/);
+  if (m) {
+    const yy = Number(m[3]);
+    return { year: yy < 70 ? 2000 + yy : 1900 + yy, month: Number(m[1]), day: Number(m[2]) };
+  }
   m = t.match(/^([A-Za-z]{3,9})\.?\s+(\d{1,2}),?\s+(\d{4})/);
   if (m) {
     const month = MONTHS[m[1]!.slice(0, 3).toLowerCase()];

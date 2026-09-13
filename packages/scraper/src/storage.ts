@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { GetObjectCommand, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
-import type { ClassificationTable, ProgramFeed, RinkFeed, RinkIndex } from "@openice/shared";
+import type { ClassificationTable, OfferingsFeed, ProgramFeed, RinkFeed, RinkIndex } from "@openice/shared";
 
 export interface FeedStore {
   readClassifications(): Promise<ClassificationTable | undefined>;
@@ -10,6 +10,7 @@ export interface FeedStore {
   writeProgramFeed(feed: ProgramFeed): Promise<void>;
   readProgramFeed(programId: string): Promise<ProgramFeed | undefined>;
   writeIndex(index: RinkIndex): Promise<void>;
+  writeOfferings(feed: OfferingsFeed): Promise<void>;
 }
 
 const JSON_INDENT = 2;
@@ -53,6 +54,10 @@ export class LocalStore implements FeedStore {
 
   writeIndex(index: RinkIndex): Promise<void> {
     return this.write("index.json", index);
+  }
+
+  writeOfferings(feed: OfferingsFeed): Promise<void> {
+    return this.write(`offerings/${feed.id}.json`, feed);
   }
 }
 
@@ -116,11 +121,23 @@ export class S3Store implements FeedStore {
   writeIndex(index: RinkIndex): Promise<void> {
     return this.put("index.json", index, "public, max-age=60");
   }
+
+  writeOfferings(feed: OfferingsFeed): Promise<void> {
+    return this.put(`offerings/${feed.id}.json`, feed, "public, max-age=60");
+  }
 }
 
-export async function persistResult(store: FeedStore, feeds: RinkFeed[], index: RinkIndex, table: ClassificationTable, programFeeds: ProgramFeed[] = []): Promise<void> {
+export async function persistResult(
+  store: FeedStore,
+  feeds: RinkFeed[],
+  index: RinkIndex,
+  table: ClassificationTable,
+  programFeeds: ProgramFeed[] = [],
+  offeringFeeds: OfferingsFeed[] = [],
+): Promise<void> {
   for (const feed of feeds) await store.writeFeed(feed);
   for (const feed of programFeeds) await store.writeProgramFeed(feed);
+  for (const feed of offeringFeeds) await store.writeOfferings(feed);
   await store.writeIndex(index);
   await store.writeClassifications(table);
 }

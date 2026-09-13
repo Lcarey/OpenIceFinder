@@ -9,3 +9,4 @@ coverage/
 .DS_Store
 cdk.out/
 infra/cdk-outputs.json
+data/offerings/

@@ -19,6 +19,7 @@ describe("time helpers", () => {
   it("parses date-only strings", () => {
     expect(parseDateOnly("Sep 15 2026")).toEqual({ year: 2026, month: 9, day: 15 });
     expect(parseDateOnly("09/19/2026")).toEqual({ year: 2026, month: 9, day: 19 });
+    expect(parseDateOnly("9/13/26")).toEqual({ year: 2026, month: 9, day: 13 });
     expect(parseDateOnly("2026-09-15")).toEqual({ year: 2026, month: 9, day: 15 });
   });
 

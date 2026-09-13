@@ -1,4 +1,4 @@
-import type { ProgramFeed, RinkFeed, RinkIndex } from "@openice/shared";
+import type { OfferingsCatalogId, OfferingsFeed, ProgramFeed, RinkFeed, RinkIndex } from "@openice/shared";
 
 const DATA_BASE = "/data";
 
@@ -39,6 +39,16 @@ export async function loadAllProgramFeeds(index: RinkIndex): Promise<ProgramFeed
       }
     }),
   );
+}
+
+export async function loadOfferings(id: OfferingsCatalogId): Promise<OfferingsFeed | null> {
+  try {
+    const data = await getJson<OfferingsFeed>(`/offerings/${id}.json`);
+    if (!data || !Array.isArray(data.offerings)) return null;
+    return data;
+  } catch {
+    return null;
+  }
 }
 
 /** Load every rink feed listed in the index; failures become empty feeds with an error. */

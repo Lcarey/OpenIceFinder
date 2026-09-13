@@ -11,6 +11,8 @@ import { expandVEvent, parseIcal } from "./ical.js";
 import { parseMyRecCalendar } from "./myrec-calendar.js";
 import { parseMyRecProgram } from "./myrec-program.js";
 import { parseRecTimesBookings } from "./rectimes.js";
+import { expandWeeklyHours } from "./weekly-hours.js";
+import { overlayFmcClasses } from "./halix.js";
 
 const fixturesDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "fixtures");
 const fixture = (name: string) => readFileSync(path.join(fixturesDir, name), "utf8");
@@ -109,6 +111,51 @@ describe("rectimes", () => {
     );
     expect(events).toEqual([{ title: "Stick & Puck", start: "2026-10-03T14:00:00-04:00", end: "2026-10-03T15:20:00-04:00", surface: "JAR", url: "https://app.rectimes.com/ryanarena" }]);
     expect(parseRecTimesBookings({ error: "nope" })).toEqual([]);
+  });
+});
+
+describe("weekly hours", () => {
+  it("expands weekly hours inside the season and skips school-vacation stick time", () => {
+    const rangeStart = new Date("2026-11-27T05:00:00Z");
+    const rangeEnd = new Date("2026-12-05T05:00:00Z");
+    const events = expandWeeklyHours(
+      [
+        { title: "Public Skating", days: [0], start: "14:00", end: "15:50" },
+        { title: "Public Stick Time", days: [3], start: "12:00", end: "13:50", skipSchoolVacations: true },
+      ],
+      rangeStart,
+      rangeEnd,
+      { seasonStart: "2026-11-28", seasonEnd: "2027-04-11" },
+    );
+    expect(events.map((e) => `${e.title}@${e.start}`)).toEqual([
+      "Public Skating@2026-11-29T14:00:00-05:00",
+      "Public Stick Time@2026-12-02T12:00:00-05:00",
+    ]);
+  });
+
+  it("skips stick time during Thanksgiving week", () => {
+    const events = expandWeeklyHours(
+      [{ title: "Public Stick Time", days: [3], start: "12:00", end: "13:50", skipSchoolVacations: true }],
+      new Date("2026-11-23T05:00:00Z"),
+      new Date("2026-12-03T05:00:00Z"),
+    );
+    expect(events.map((e) => e.start)).toEqual(["2026-12-02T12:00:00-05:00"]);
+  });
+});
+
+describe("fmc class overlay", () => {
+  it("replaces generic FMC Programs titles when a class overlaps", () => {
+    const bookings = [
+      { title: "FMC Programs", start: "2026-09-15T16:00:00-04:00", end: "2026-09-15T16:50:00-04:00" },
+      { title: "Valley Hockey League", start: "2026-09-15T17:00:00-04:00", end: "2026-09-15T18:00:00-04:00" },
+    ];
+    const classes = [
+      { title: "Step 1: Learn to Skate", start: "2026-09-15T16:00:00-04:00", end: "2026-09-15T16:50:00-04:00", url: "https://fmc.myhalix.io/pages/allprograms" },
+      { title: "Club Ice", start: "2026-09-15T18:10:00-04:00", end: "2026-09-15T19:00:00-04:00", url: "https://fmc.myhalix.io/pages/allprograms" },
+    ];
+    const out = overlayFmcClasses(bookings, classes);
+    expect(out.map((e) => e.title)).toEqual(["Step 1: Learn to Skate", "Valley Hockey League", "Club Ice"]);
+    expect(out[0]!.url).toContain("allprograms");
   });
 });
 

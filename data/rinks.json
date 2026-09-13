@@ -55,12 +55,14 @@
     "driveMiles": 5.6,
     "website": "https://www.woburnyouthhockey.org/about/o-brien-ice-rink-information/2071",
     "operator": "City of Woburn",
+    "notes": "Sunday public skate from the last published Woburn Rec winter schedule. Confirm at woburnrec.com before you go.",
     "source": {
-      "kind": "document-vision",
-      "documentUrls": [
-        "https://www.woburnyouthhockey.org/about/o-brien-ice-rink-information/2071"
-      ],
-      "hints": "O'Brien Rink public skating is run with Woburn Recreation; the page embeds or links the current season public skating schedule (PDF or image). Extract dated public skating sessions and any stick & puck sessions."
+      "kind": "weekly-hours",
+      "seasonStart": "2026-10-04",
+      "seasonEnd": "2027-03-29",
+      "sessions": [
+        { "title": "Public Skating", "days": [0], "start": "9:20", "end": "10:20" }
+      ]
     }
   },
   {
@@ -216,12 +218,13 @@
     "website": "https://app.rectimes.com/ryanarena",
     "scheduleUrl": "https://app.rectimes.com/ryanarena",
     "operator": "Town of Watertown",
+    "notes": "Tue/Thu public skate from the last published 2025–26 Watertown Rec season. RecTimes does not label public sessions.",
     "source": {
-      "kind": "rectimes",
-      "apiBaseUrl": "https://api.rectimes.com",
-      "facility": "ryanarena",
-      "venueIds": [
-        1281
+      "kind": "weekly-hours",
+      "seasonStart": "2026-11-03",
+      "seasonEnd": "2027-04-08",
+      "sessions": [
+        { "title": "Public Skating", "days": [2, 4], "start": "11:00", "end": "13:00" }
       ]
     }
   },
@@ -261,9 +264,7 @@
     "source": {
       "kind": "finnly",
       "baseUrl": "https://warrior.finnlyconnect.com",
-      "scheduleIds": [
-        20
-      ]
+      "scheduleIds": [20, 19]
     }
   },
   {
@@ -304,12 +305,16 @@
     "website": "https://www.mass.gov/locations/emmons-horrigan-oneil-memorial-rink",
     "scheduleUrl": "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule",
     "operator": "DCR",
+    "notes": "Hours from the last published DCR 2025–26 schedule. Public skate typically starts the Friday after Thanksgiving; stick time is cancelled during school vacation weeks.",
     "source": {
-      "kind": "document-vision",
-      "documentUrls": [
-        "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule"
-      ],
-      "hints": "Only use the section headed 'EHO - Charlestown' (Emmons Horrigan O'Neil Memorial Rink). Ignore all other rinks on the page. 'Public stick time' is DCR public hockey / stick time. Respect the season dates and the public skating start date given in the page overview; if the page says closed for the season and no upcoming season dates are listed, return no events."
+      "kind": "weekly-hours",
+      "seasonStart": "2026-11-28",
+      "seasonEnd": "2027-04-11",
+      "sessions": [
+        { "title": "Public Skating", "days": [0], "start": "14:00", "end": "15:50" },
+        { "title": "Public Skating", "days": [2, 4, 5], "start": "12:00", "end": "14:20" },
+        { "title": "Public Stick Time", "days": [3], "start": "12:00", "end": "13:50", "skipSchoolVacations": true }
+      ]
     }
   },
   {
@@ -326,12 +331,20 @@
     "website": "https://www.mass.gov/locations/steriti-memorial-rink",
     "scheduleUrl": "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule",
     "operator": "DCR",
+    "notes": "Hours from the last published DCR 2025–26 schedule. Public skate typically starts the Friday after Thanksgiving; stick time is cancelled during school vacation weeks.",
     "source": {
-      "kind": "document-vision",
-      "documentUrls": [
-        "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule"
-      ],
-      "hints": "Only use the section headed 'Steriti - Boston'. Ignore all other rinks on the page. 'Public stick time' is DCR public hockey / stick time. Respect the season dates and the public skating start date given in the page overview; if the page says closed for the season and no upcoming season dates are listed, return no events."
+      "kind": "weekly-hours",
+      "seasonStart": "2026-11-28",
+      "seasonEnd": "2027-04-11",
+      "sessions": [
+        { "title": "Public Skating", "days": [0], "start": "15:00", "end": "18:50" },
+        { "title": "Public Skating", "days": [1, 2, 4], "start": "12:00", "end": "14:20" },
+        { "title": "Public Skating", "days": [3], "start": "12:00", "end": "14:50" },
+        { "title": "Public Skating", "days": [5], "start": "12:00", "end": "15:50" },
+        { "title": "Public Skating", "days": [5], "start": "19:00", "end": "21:50" },
+        { "title": "Public Skating", "days": [6], "start": "16:00", "end": "21:50" },
+        { "title": "Public Stick Time", "days": [3], "start": "10:00", "end": "11:50", "skipSchoolVacations": true }
+      ]
     }
   },
   {
@@ -396,12 +409,16 @@
     "website": "https://www.mass.gov/locations/reilly-memorial-rink",
     "scheduleUrl": "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule",
     "operator": "DCR",
+    "notes": "Hours from the last published DCR 2025–26 schedule. Public skate typically starts the Friday after Thanksgiving; stick time is cancelled during school vacation weeks.",
     "source": {
-      "kind": "document-vision",
-      "documentUrls": [
-        "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule"
-      ],
-      "hints": "Only use the section headed 'Reilly - Brighton'. Ignore all other rinks on the page. 'Public stick time' is DCR public hockey / stick time. Respect the season dates and the public skating start date given in the page overview; if the page says closed for the season and no upcoming season dates are listed, return no events."
+      "kind": "weekly-hours",
+      "seasonStart": "2026-11-28",
+      "seasonEnd": "2027-04-11",
+      "sessions": [
+        { "title": "Public Skating", "days": [0, 6], "start": "14:00", "end": "15:50" },
+        { "title": "Public Skating", "days": [2, 4, 5], "start": "12:00", "end": "13:50" },
+        { "title": "Public Stick Time", "days": [3], "start": "12:00", "end": "13:50", "skipSchoolVacations": true }
+      ]
     }
   },
   {
@@ -419,9 +436,9 @@
     "operator": "MPG Arena",
     "source": {
       "kind": "link-only",
-      "reason": "No public schedule is published online."
+      "reason": "No machine-readable public calendar. Check wilmingtonyouthhockey.org for LTS/LTP sessions."
     },
-    "notes": "Private facility; no public stick & puck sessions are published."
+    "notes": "Private facility; no drop-in public calendar is published. Wilmington Youth Hockey runs learn-to-skate / learn-to-play by session."
   },
   {
     "id": "burbank-reading",

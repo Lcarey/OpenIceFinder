@@ -66,7 +66,26 @@ export type RinkSource =
   | {
       kind: "link-only";
       reason?: string;
+    }
+  | {
+      kind: "weekly-hours";
+      /** Inclusive local date the pattern starts (YYYY-MM-DD). */
+      seasonStart?: string;
+      /** Inclusive local date the pattern ends (YYYY-MM-DD). */
+      seasonEnd?: string;
+      sessions: WeeklyHoursSession[];
     };
+
+export interface WeeklyHoursSession {
+  title: string;
+  /** 0 = Sunday … 6 = Saturday. */
+  days: number[];
+  /** 24h clock, e.g. "12:00" or "9:20". */
+  start: string;
+  end: string;
+  /** Skip Massachusetts school-vacation weeks (DCR stick time). */
+  skipSchoolVacations?: boolean;
+}
 
 export interface Rink {
   id: string;
@@ -129,10 +148,53 @@ export interface RinkIndexEntry {
   errors: string[];
 }
 
+export interface OfferingsIndexEntry {
+  fetchedAt: string;
+  eventCount: number;
+  ok: boolean;
+  errors: string[];
+}
+
 export interface RinkIndex {
   generatedAt: string;
   rinks: RinkIndexEntry[];
   programs?: ProgramIndexEntry[];
+  offerings?: {
+    stinkysocks?: OfferingsIndexEntry;
+    clinics?: OfferingsIndexEntry;
+  };
+}
+
+export type OfferingKind = "adult_pickup" | "clinic" | "skills" | "learn_to_play" | "fmc_class";
+export type OfferingStatus = "open" | "waitlist" | "sold_out" | "canceled";
+export type OfferingAudience = "adult" | "youth" | "both";
+export type OfferingsCatalogId = "stinkysocks" | "clinics";
+
+/** A bookable pickup game, clinic, or skills session from a third-party provider. */
+export interface BookableOffering {
+  id: string;
+  provider: string;
+  kind: OfferingKind;
+  title: string;
+  start: string;
+  end: string;
+  rinkId?: string;
+  location: string;
+  registerUrl: string;
+  price?: string;
+  level?: string;
+  status?: OfferingStatus;
+  audience?: OfferingAudience;
+  notes?: string;
+}
+
+export interface OfferingsFeed {
+  id: OfferingsCatalogId;
+  fetchedAt: string;
+  rangeStart: string;
+  rangeEnd: string;
+  offerings: BookableOffering[];
+  errors: string[];
 }
 
 /**

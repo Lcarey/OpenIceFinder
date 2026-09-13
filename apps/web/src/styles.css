@@ -97,10 +97,12 @@ h1 {
 
 .nav {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 6px;
   padding: 4px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 18px;
   background: var(--card);
 }
 
@@ -1153,4 +1155,56 @@ h1 {
 
 .chip.today:not(.on) {
   box-shadow: inset 0 0 0 1px var(--forest);
+}
+
+.offerings-intro h2 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+}
+
+.offerings-intro p {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+
+.kind-pill {
+  align-self: flex-start;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--forest);
+  background: rgba(47, 125, 79, 0.1);
+}
+
+.register-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--gold);
+  background: var(--forest);
+}
+
+.register-link:hover {
+  filter: brightness(1.08);
+}
+
+.register-link.status-waitlist {
+  color: #5a3d00;
+  background: #f3d48a;
+}
+
+.register-link.status-sold_out,
+.register-link.status-canceled {
+  color: var(--ink-soft);
+  background: #eceae4;
+}
+
+.offering.status-canceled .session-title {
+  text-decoration: line-through;
 }

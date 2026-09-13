@@ -90,6 +90,42 @@ describe("App", () => {
     expect(screen.getByText("Official schedule")).toBeInTheDocument();
   });
 
+  it("renders the StinkySocks page from a hash route", async () => {
+    window.location.hash = "#/stinkysocks";
+    const offerings = {
+      id: "stinkysocks" as const,
+      fetchedAt: new Date().toISOString(),
+      rangeStart: "",
+      rangeEnd: "",
+      errors: [],
+      offerings: [
+        {
+          id: "ss-1",
+          provider: "stinkysocks",
+          kind: "adult_pickup" as const,
+          title: "THU 9/17/26 - Medford - Mixed Mid",
+          start: s1,
+          end: e1,
+          rinkId: rink.id,
+          location: "Medford - LoConte Memorial Rink",
+          registerUrl: "https://secure.stinkysocks.net/register/medford",
+          status: "open" as const,
+        },
+      ],
+    };
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) => {
+        const body = url.endsWith("/index.json") ? index : url.includes("/offerings/stinkysocks") ? offerings : feed;
+        return new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } });
+      }),
+    );
+    render(<App />);
+    await waitFor(() => expect(screen.getByRole("heading", { level: 2, name: "StinkySocks pickup" })).toBeInTheDocument());
+    expect(screen.getByRole("link", { name: /Register/i })).toHaveAttribute("href", "https://secure.stinkysocks.net/register/medford");
+    expect(screen.getByText(/Medford - Mixed Mid/)).toBeInTheDocument();
+  });
+
   it("shows an error with retry when the index fails", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => new Response("nope", { status: 500 })));
     render(<App />);
