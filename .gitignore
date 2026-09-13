@@ -9,7 +9,3 @@ coverage/
 .DS_Store
 cdk.out/
 infra/cdk-outputs.json
-data/rinks/
-data/index.json
-data/classifications.json
-data/programs/

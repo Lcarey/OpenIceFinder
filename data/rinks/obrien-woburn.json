@@ -1,0 +1,28 @@
+{
+  "rink": {
+    "id": "obrien-woburn",
+    "name": "O'Brien Memorial Rink",
+    "town": "Woburn",
+    "address": "55 Locust St, Woburn, MA 01801",
+    "lat": 42.47691,
+    "lng": -71.1748,
+    "driveMinutes": 8,
+    "driveMiles": 5.6,
+    "website": "https://www.woburnyouthhockey.org/about/o-brien-ice-rink-information/2071",
+    "operator": "City of Woburn",
+    "source": {
+      "kind": "document-vision",
+      "documentUrls": [
+        "https://www.woburnyouthhockey.org/about/o-brien-ice-rink-information/2071"
+      ],
+      "hints": "O'Brien Rink public skating is run with Woburn Recreation; the page embeds or links the current season public skating schedule (PDF or image). Extract dated public skating sessions and any stick & puck sessions."
+    },
+    "emoji": "🍀",
+    "color": "#fef8f5"
+  },
+  "fetchedAt": "2026-09-13T15:40:48.903Z",
+  "rangeStart": "2026-09-13T04:00:00.000Z",
+  "rangeEnd": "2026-10-18T04:00:00.000Z",
+  "events": [],
+  "errors": []
+}

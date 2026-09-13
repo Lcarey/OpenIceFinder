@@ -1,0 +1,316 @@
+{
+  "rink": {
+    "id": "veterans-waltham",
+    "name": "Veterans Memorial Rink",
+    "town": "Waltham",
+    "address": "295 Totten Pond Rd, Waltham, MA 02451",
+    "lat": 42.39156,
+    "lng": -71.24271,
+    "driveMinutes": 12,
+    "driveMiles": 5.9,
+    "website": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+    "scheduleUrl": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+    "operator": "DCR",
+    "source": {
+      "kind": "document-vision",
+      "documentUrls": [
+        "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink"
+      ],
+      "hints": "City of Waltham municipal rink. Look for public skating, public hockey / stick time, and learn to skate hours, including any linked schedule PDFs or images."
+    },
+    "emoji": "⌚",
+    "color": "#fcfef7"
+  },
+  "fetchedAt": "2026-09-13T15:35:05.811Z",
+  "rangeStart": "2026-09-13T04:00:00.000Z",
+  "rangeEnd": "2026-10-18T04:00:00.000Z",
+  "events": [
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-09-15T12:00:00-04:00",
+      "end": "2026-09-15T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-g6q0gb",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-09-16T12:00:00-04:00",
+      "end": "2026-09-16T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-7naco7",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-09-17T12:00:00-04:00",
+      "end": "2026-09-17T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-1lg4pe7",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-09-18T12:00:00-04:00",
+      "end": "2026-09-18T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-19eiwln",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-09-22T12:00:00-04:00",
+      "end": "2026-09-22T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-1xt9d8r",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-09-23T12:00:00-04:00",
+      "end": "2026-09-23T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-1g2cslv",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-09-24T12:00:00-04:00",
+      "end": "2026-09-24T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-tle857",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-09-25T12:00:00-04:00",
+      "end": "2026-09-25T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-nvdiyb",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-09-29T12:00:00-04:00",
+      "end": "2026-09-29T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-1om2dff",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-09-30T12:00:00-04:00",
+      "end": "2026-09-30T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-1aaef2f",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-10-01T12:00:00-04:00",
+      "end": "2026-10-01T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-e860t7",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-10-02T12:00:00-04:00",
+      "end": "2026-10-02T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-vy6lv3",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Weekday Public Skating",
+      "start": "2026-10-06T10:00:00-04:00",
+      "end": "2026-10-06T11:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Hours are subject to change due to weather, no-school days, and holidays. Skate rentals have limited availability.",
+      "id": "veterans-waltham-1l6ywxs",
+      "rinkId": "veterans-waltham",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-10-06T12:00:00-04:00",
+      "end": "2026-10-06T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-jwdthb",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Weekday Public Skating",
+      "start": "2026-10-07T10:00:00-04:00",
+      "end": "2026-10-07T11:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Hours are subject to change due to weather, no-school days, and holidays. Skate rentals have limited availability.",
+      "id": "veterans-waltham-fzbj0",
+      "rinkId": "veterans-waltham",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-10-07T12:00:00-04:00",
+      "end": "2026-10-07T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-tbcqk7",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Weekday Public Skating",
+      "start": "2026-10-08T10:00:00-04:00",
+      "end": "2026-10-08T11:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Hours are subject to change due to weather, no-school days, and holidays. Skate rentals have limited availability.",
+      "id": "veterans-waltham-12nyr58",
+      "rinkId": "veterans-waltham",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-10-08T12:00:00-04:00",
+      "end": "2026-10-08T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-1hotz4r",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-10-09T12:00:00-04:00",
+      "end": "2026-10-09T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-omq86z",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Weekday Public Skating",
+      "start": "2026-10-13T10:00:00-04:00",
+      "end": "2026-10-13T11:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Hours are subject to change due to weather, no-school days, and holidays. Skate rentals have limited availability.",
+      "id": "veterans-waltham-10vyuzg",
+      "rinkId": "veterans-waltham",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-10-13T12:00:00-04:00",
+      "end": "2026-10-13T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-18tcrmf",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Weekday Public Skating",
+      "start": "2026-10-14T10:00:00-04:00",
+      "end": "2026-10-14T11:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Hours are subject to change due to weather, no-school days, and holidays. Skate rentals have limited availability.",
+      "id": "veterans-waltham-1ahdwrg",
+      "rinkId": "veterans-waltham",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-10-14T12:00:00-04:00",
+      "end": "2026-10-14T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-1nkl88z",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Weekday Public Skating",
+      "start": "2026-10-15T10:00:00-04:00",
+      "end": "2026-10-15T11:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Hours are subject to change due to weather, no-school days, and holidays. Skate rentals have limited availability.",
+      "id": "veterans-waltham-b5tws4",
+      "rinkId": "veterans-waltham",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-10-15T12:00:00-04:00",
+      "end": "2026-10-15T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-1gk6ov",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Adult Public Hockey",
+      "start": "2026-10-16T12:00:00-04:00",
+      "end": "2026-10-16T12:50:00-04:00",
+      "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+      "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+      "id": "veterans-waltham-p6do1f",
+      "rinkId": "veterans-waltham",
+      "category": "public_hockey",
+      "classifiedBy": "rule"
+    }
+  ],
+  "errors": []
+}

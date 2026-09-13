@@ -1,0 +1,247 @@
+{
+  "rink": {
+    "id": "daly-brighton",
+    "name": "Daly Memorial Rink",
+    "town": "Brighton",
+    "address": "1 Nonantum Rd, Brighton, MA 02135",
+    "lat": 42.35846,
+    "lng": -71.1607,
+    "driveMinutes": 14,
+    "driveMiles": 5.3,
+    "website": "https://www.dalyrink.org/",
+    "scheduleUrl": "https://www.dalyrink.org/calendar/",
+    "operator": "DCR",
+    "source": {
+      "kind": "ical",
+      "url": "https://www.dalyrink.org/?feed=my-calendar-ics"
+    },
+    "emoji": "🌞",
+    "color": "#f7fefc"
+  },
+  "fetchedAt": "2026-09-13T15:35:05.811Z",
+  "rangeStart": "2026-09-13T04:00:00.000Z",
+  "rangeEnd": "2026-10-18T04:00:00.000Z",
+  "events": [
+    {
+      "title": "Public Skating",
+      "start": "2026-09-14T10:00:00-04:00",
+      "end": "2026-09-14T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-12c6y3t",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-09-15T10:00:00-04:00",
+      "end": "2026-09-15T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-1r4ctj1",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-09-16T10:00:00-04:00",
+      "end": "2026-09-16T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-1f8fv25",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-09-17T10:00:00-04:00",
+      "end": "2026-09-17T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-176vkg1",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-09-21T10:00:00-04:00",
+      "end": "2026-09-21T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-1j3ffjh",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-09-22T10:00:00-04:00",
+      "end": "2026-09-22T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-1khcgzt",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-09-23T10:00:00-04:00",
+      "end": "2026-09-23T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-1si6twt",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-09-24T10:00:00-04:00",
+      "end": "2026-09-24T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-s7r1jt",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-09-28T10:00:00-04:00",
+      "end": "2026-09-28T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-5tnmv5",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-09-29T10:00:00-04:00",
+      "end": "2026-09-29T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-8ixjbh",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-09-30T10:00:00-04:00",
+      "end": "2026-09-30T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-d4isvh",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-10-01T10:00:00-04:00",
+      "end": "2026-10-01T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-i2bzqh",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-10-05T10:00:00-04:00",
+      "end": "2026-10-05T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-1m76zw9",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-10-06T10:00:00-04:00",
+      "end": "2026-10-06T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-tjtk21",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-10-07T10:00:00-04:00",
+      "end": "2026-10-07T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-1x91j1h",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-10-08T10:00:00-04:00",
+      "end": "2026-10-08T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-1depr2t",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-10-12T10:00:00-04:00",
+      "end": "2026-10-12T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-1h827a5",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-10-13T10:00:00-04:00",
+      "end": "2026-10-13T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-ef4nth",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-10-14T10:00:00-04:00",
+      "end": "2026-10-14T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-wxapwl",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Public Skating",
+      "start": "2026-10-15T10:00:00-04:00",
+      "end": "2026-10-15T12:00:00-04:00",
+      "allDay": false,
+      "url": "https://www.dalyrink.org/calendar",
+      "id": "daly-brighton-1lcwoil",
+      "rinkId": "daly-brighton",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    }
+  ],
+  "errors": []
+}

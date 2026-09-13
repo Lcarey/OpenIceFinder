@@ -1,0 +1,4351 @@
+{
+  "program": {
+    "id": "ahc",
+    "name": "Arlington Hockey Club",
+    "shortName": "AHC",
+    "rinkId": "ed-burns-arlington",
+    "website": "https://www.arlingtonice.com/",
+    "source": {
+      "kind": "crossbar",
+      "baseUrl": "https://www.arlingtonice.com",
+      "homeLocationPattern": "^(arlington( 1| rink)?|ed burns.*)$"
+    }
+  },
+  "fetchedAt": "2026-09-13T19:32:34.120Z",
+  "rangeStart": "2026-09-13T04:00:00.000Z",
+  "rangeEnd": "2026-10-18T04:00:00.000Z",
+  "teams": [
+    {
+      "id": "226137",
+      "name": "Mite AAA",
+      "url": "https://www.arlingtonice.com/team/226137/calendar"
+    },
+    {
+      "id": "226138",
+      "name": "Mite AA",
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "226139",
+      "name": "Mite A1",
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "226140",
+      "name": "Mite A2",
+      "url": "https://www.arlingtonice.com/team/226140/calendar"
+    },
+    {
+      "id": "285346",
+      "name": "Frozen Frenzy Group 1",
+      "url": "https://www.arlingtonice.com/team/285346/calendar"
+    },
+    {
+      "id": "226148",
+      "name": "U10 B",
+      "url": "https://www.arlingtonice.com/team/226148/calendar"
+    },
+    {
+      "id": "226149",
+      "name": "U10 A",
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "226133",
+      "name": "Squirt AAA (1)",
+      "url": "https://www.arlingtonice.com/team/226133/calendar"
+    },
+    {
+      "id": "226134",
+      "name": "Squirt AA (2)",
+      "url": "https://www.arlingtonice.com/team/226134/calendar"
+    },
+    {
+      "id": "226135",
+      "name": "Squirt A (3)",
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "226146",
+      "name": "U12 B",
+      "url": "https://www.arlingtonice.com/team/226146/calendar"
+    },
+    {
+      "id": "226147",
+      "name": "U12 A",
+      "url": "https://www.arlingtonice.com/team/226147/calendar"
+    },
+    {
+      "id": "226130",
+      "name": "PeeWee AAA (1)",
+      "url": "https://www.arlingtonice.com/team/226130/calendar"
+    },
+    {
+      "id": "226131",
+      "name": "PeeWee AA (2)",
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "285347",
+      "name": "Frozen Frenzy Group 2",
+      "url": "https://www.arlingtonice.com/team/285347/calendar"
+    },
+    {
+      "id": "226144",
+      "name": "U14A",
+      "url": "https://www.arlingtonice.com/team/226144/calendar"
+    },
+    {
+      "id": "226145",
+      "name": "U14B",
+      "url": "https://www.arlingtonice.com/team/226145/calendar"
+    },
+    {
+      "id": "226127",
+      "name": "Bantam AAA (1)",
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "226129",
+      "name": "Bantam A (2)",
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "228705",
+      "name": "U18 A",
+      "url": "https://www.arlingtonice.com/team/228705/calendar"
+    },
+    {
+      "id": "285972",
+      "name": "Coaches and Managers 2026-2027",
+      "url": "https://www.arlingtonice.com/team/285972/calendar"
+    },
+    {
+      "id": "285336",
+      "name": "Amanda Pelkey Practice",
+      "url": "https://www.arlingtonice.com/team/285336/calendar"
+    },
+    {
+      "id": "278904",
+      "name": "Try Goalie (Girls)",
+      "url": "https://www.arlingtonice.com/team/278904/calendar"
+    },
+    {
+      "id": "278899",
+      "name": "Try Goalie (IC)",
+      "url": "https://www.arlingtonice.com/team/278899/calendar"
+    },
+    {
+      "id": "285293",
+      "name": "Will O'Neill Skills",
+      "url": "https://www.arlingtonice.com/team/285293/calendar"
+    }
+  ],
+  "events": [
+    {
+      "id": "5347556e13d6",
+      "type": "game",
+      "start": "2026-09-13T11:40:00-04:00",
+      "end": "2026-09-13T12:40:00-04:00",
+      "location": "Arlington Rink",
+      "atHomeRink": true,
+      "teams": [
+        "U12 A"
+      ],
+      "teamIds": [
+        "226147"
+      ],
+      "opponent": "vs. Fore River Selects U12 A",
+      "url": "https://www.arlingtonice.com/team/226147/calendar"
+    },
+    {
+      "id": "15c5cd055d8a",
+      "type": "game",
+      "start": "2026-09-13T11:40:00-04:00",
+      "end": "2026-09-13T12:40:00-04:00",
+      "location": "West Roxbury",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam A (2)"
+      ],
+      "teamIds": [
+        "226129"
+      ],
+      "opponent": "vs. Parkway Bantam 2",
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "3d4fd0ee82c6",
+      "type": "game",
+      "start": "2026-09-13T12:50:00-04:00",
+      "end": "2026-09-13T13:50:00-04:00",
+      "location": "Woburn",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226133"
+      ],
+      "opponent": "vs. Lexington/Bedford Squirt 1",
+      "url": "https://www.arlingtonice.com/team/226133/calendar"
+    },
+    {
+      "id": "0a30edcf769e",
+      "type": "game",
+      "start": "2026-09-13T15:00:00-04:00",
+      "end": "2026-09-13T16:00:00-04:00",
+      "location": "Ryan Arena",
+      "atHomeRink": false,
+      "teams": [
+        "U10 B"
+      ],
+      "teamIds": [
+        "226148"
+      ],
+      "opponent": "vs. [CANCELED] Needham Rockets U10 A",
+      "url": "https://www.arlingtonice.com/team/226148/calendar"
+    },
+    {
+      "id": "56db25c6c8c4",
+      "type": "practice",
+      "start": "2026-09-13T16:10:00-04:00",
+      "end": "2026-09-13T17:10:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AA (2)",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226135",
+        "226134",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "8508eb449d6e",
+      "type": "game",
+      "start": "2026-09-13T16:20:00-04:00",
+      "end": "2026-09-13T17:20:00-04:00",
+      "location": "Waltham Rink",
+      "atHomeRink": false,
+      "teams": [
+        "U10 A"
+      ],
+      "teamIds": [
+        "226149"
+      ],
+      "opponent": "@ Waltham Lady Hawks U10",
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "51eab1b5e1f3",
+      "type": "practice",
+      "start": "2026-09-13T17:20:00-04:00",
+      "end": "2026-09-13T18:20:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "Squirt AAA (1)",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226131",
+        "226133",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "2b1ce4d803f6",
+      "type": "game",
+      "start": "2026-09-13T17:30:00-04:00",
+      "end": "2026-09-13T18:30:00-04:00",
+      "location": "Waltham Rink",
+      "atHomeRink": false,
+      "teams": [
+        "U12 B"
+      ],
+      "teamIds": [
+        "226146"
+      ],
+      "opponent": "@ Waltham Lady Hawks U12",
+      "url": "https://www.arlingtonice.com/team/226146/calendar"
+    },
+    {
+      "id": "54c4b777d883",
+      "type": "practice",
+      "start": "2026-09-13T18:30:00-04:00",
+      "end": "2026-09-13T19:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "Bantam AAA (1)",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226129",
+        "226127",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "95d1f76067ff",
+      "type": "game",
+      "start": "2026-09-13T18:40:00-04:00",
+      "end": "2026-09-13T19:40:00-04:00",
+      "location": "Malden",
+      "atHomeRink": false,
+      "teams": [
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226130"
+      ],
+      "opponent": "vs. Lynnfield-Saugus Peewee 1",
+      "url": "https://www.arlingtonice.com/team/226130/calendar"
+    },
+    {
+      "id": "d3044c321c70",
+      "type": "game",
+      "start": "2026-09-13T18:40:00-04:00",
+      "end": "2026-09-13T19:40:00-04:00",
+      "location": "Waltham Rink",
+      "atHomeRink": false,
+      "teams": [
+        "U14A"
+      ],
+      "teamIds": [
+        "226144"
+      ],
+      "opponent": "@ Waltham Lady Hawks U14",
+      "url": "https://www.arlingtonice.com/team/226144/calendar"
+    },
+    {
+      "id": "c2f444c1feaf",
+      "type": "practice",
+      "start": "2026-09-13T19:40:00-04:00",
+      "end": "2026-09-13T20:40:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "03ddb95d0dd9",
+      "type": "practice",
+      "start": "2026-09-14T17:10:00-04:00",
+      "end": "2026-09-14T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2",
+        "Mite AA",
+        "Mite AAA",
+        "Skills"
+      ],
+      "teamIds": [
+        "226139",
+        "226140",
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "fbc745e2ebda",
+      "type": "practice",
+      "start": "2026-09-14T18:10:00-04:00",
+      "end": "2026-09-14T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Skills",
+        "Squirt A (3)",
+        "Squirt AA (2)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226135",
+        "226134",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "1d12bd86ec54",
+      "type": "practice",
+      "start": "2026-09-14T18:10:00-04:00",
+      "end": "2026-09-14T19:00:00-04:00",
+      "location": "Ed Burns Arena & Ice Skating Rink",
+      "atHomeRink": true,
+      "teams": [
+        "Try Goalie (IC)"
+      ],
+      "teamIds": [
+        "278899"
+      ],
+      "note": "Squirt/Mites/U10 Goalie Training  with Dave Cunningham during Squirts Skills session",
+      "url": "https://www.arlingtonice.com/team/278899/calendar"
+    },
+    {
+      "id": "c678e799000a",
+      "type": "practice",
+      "start": "2026-09-14T19:10:00-04:00",
+      "end": "2026-09-14T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)",
+        "Skills"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "a8d666645aaf",
+      "type": "practice",
+      "start": "2026-09-14T20:10:00-04:00",
+      "end": "2026-09-14T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "Bantam AAA (1)",
+        "Skills"
+      ],
+      "teamIds": [
+        "226129",
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "9e583466233a",
+      "type": "practice",
+      "start": "2026-09-15T17:10:00-04:00",
+      "end": "2026-09-15T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226139",
+        "226140"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "102ee5afd6ec",
+      "type": "meeting",
+      "start": "2026-09-15T17:15:00-04:00",
+      "end": "2026-09-15T17:35:00-04:00",
+      "location": "Ed Burns Arena & Ice Skating Rink",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1"
+      ],
+      "teamIds": [
+        "226139"
+      ],
+      "note": "We’ll meet in the lobby",
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "d24a73ae137f",
+      "type": "practice",
+      "start": "2026-09-15T18:10:00-04:00",
+      "end": "2026-09-15T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt AA (2)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226134",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226134/calendar"
+    },
+    {
+      "id": "ff9478686f09",
+      "type": "practice",
+      "start": "2026-09-15T19:10:00-04:00",
+      "end": "2026-09-15T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "d82a2de1e519",
+      "type": "practice",
+      "start": "2026-09-15T20:10:00-04:00",
+      "end": "2026-09-15T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "U18 A"
+      ],
+      "teamIds": [
+        "226129",
+        "228705"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "ce62b246cb3a",
+      "type": "practice",
+      "start": "2026-09-15T21:10:00-04:00",
+      "end": "2026-09-15T22:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "122d892fb603",
+      "type": "practice",
+      "start": "2026-09-16T17:10:00-04:00",
+      "end": "2026-09-16T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite AA",
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "d9e9755243de",
+      "type": "practice",
+      "start": "2026-09-16T18:10:00-04:00",
+      "end": "2026-09-16T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Select Skills",
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "bea4266027bf",
+      "type": "practice",
+      "start": "2026-09-16T19:10:00-04:00",
+      "end": "2026-09-16T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "8601ba454f2f",
+      "type": "practice",
+      "start": "2026-09-16T20:10:00-04:00",
+      "end": "2026-09-16T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226129",
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "7642204343b5",
+      "type": "practice",
+      "start": "2026-09-16T21:10:00-04:00",
+      "end": "2026-09-16T22:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U18 A"
+      ],
+      "teamIds": [
+        "228705"
+      ],
+      "url": "https://www.arlingtonice.com/team/228705/calendar"
+    },
+    {
+      "id": "dd959cebfe08",
+      "type": "practice",
+      "start": "2026-09-17T17:10:00-04:00",
+      "end": "2026-09-17T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226139",
+        "226140"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "dfa6b70041b8",
+      "type": "practice",
+      "start": "2026-09-17T18:10:00-04:00",
+      "end": "2026-09-17T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226135",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "209c31410c0c",
+      "type": "practice",
+      "start": "2026-09-17T19:10:00-04:00",
+      "end": "2026-09-17T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "d8b083fe389f",
+      "type": "practice",
+      "start": "2026-09-17T20:10:00-04:00",
+      "end": "2026-09-17T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U12 A",
+        "U12 B"
+      ],
+      "teamIds": [
+        "226147",
+        "226146"
+      ],
+      "url": "https://www.arlingtonice.com/team/226147/calendar"
+    },
+    {
+      "id": "60f6bb34944a",
+      "type": "practice",
+      "start": "2026-09-18T16:00:00-04:00",
+      "end": "2026-09-18T16:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite AA",
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "38cfbf03e68c",
+      "type": "practice",
+      "start": "2026-09-18T17:00:00-04:00",
+      "end": "2026-09-18T17:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AA (2)"
+      ],
+      "teamIds": [
+        "226135",
+        "226134"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "f30884fc99b8",
+      "type": "practice",
+      "start": "2026-09-18T18:00:00-04:00",
+      "end": "2026-09-18T18:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226144/calendar"
+    },
+    {
+      "id": "f4c71cc9d580",
+      "type": "game",
+      "start": "2026-09-18T19:20:00-04:00",
+      "end": "2026-09-18T20:20:00-04:00",
+      "location": "Woburn",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam A (2)"
+      ],
+      "teamIds": [
+        "226129"
+      ],
+      "opponent": "@ Winchester Bantam 2",
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "6dcf6856ffe6",
+      "type": "game",
+      "start": "2026-09-19T07:00:00-04:00",
+      "end": "2026-09-19T08:00:00-04:00",
+      "location": "Stoneham Arena",
+      "atHomeRink": false,
+      "teams": [
+        "U10 B"
+      ],
+      "teamIds": [
+        "226148"
+      ],
+      "opponent": "@ Stoneham/North Reading U10",
+      "url": "https://www.arlingtonice.com/team/226148/calendar"
+    },
+    {
+      "id": "7b6caeb1b878",
+      "type": "practice",
+      "start": "2026-09-19T07:30:00-04:00",
+      "end": "2026-09-19T08:25:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226139",
+        "226140"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "b0231e722a5a",
+      "type": "game",
+      "start": "2026-09-19T08:00:00-04:00",
+      "end": "2026-09-19T09:00:00-04:00",
+      "location": "Waltham",
+      "atHomeRink": false,
+      "teams": [
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226137"
+      ],
+      "opponent": "vs. Westwood Mite 1",
+      "url": "https://www.arlingtonice.com/team/226137/calendar"
+    },
+    {
+      "id": "c6d71e35767d",
+      "type": "practice",
+      "start": "2026-09-19T08:35:00-04:00",
+      "end": "2026-09-19T09:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "3c36999d47e3",
+      "type": "game",
+      "start": "2026-09-19T09:20:00-04:00",
+      "end": "2026-09-19T10:20:00-04:00",
+      "location": "Hayden",
+      "atHomeRink": false,
+      "teams": [
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226130"
+      ],
+      "opponent": "vs. Lexington/Bedford Peewee 1",
+      "url": "https://www.arlingtonice.com/team/226130/calendar"
+    },
+    {
+      "id": "3796ed961c98",
+      "type": "game",
+      "start": "2026-09-19T10:40:00-04:00",
+      "end": "2026-09-19T11:40:00-04:00",
+      "location": "Hopedale",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt A (3)"
+      ],
+      "teamIds": [
+        "226135"
+      ],
+      "opponent": "vs. Medfield Squirt 2",
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "49da6f7b6218",
+      "type": "game",
+      "start": "2026-09-19T11:20:00-04:00",
+      "end": "2026-09-19T12:20:00-04:00",
+      "location": "Waltham",
+      "atHomeRink": false,
+      "teams": [
+        "Mite A1"
+      ],
+      "teamIds": [
+        "226139"
+      ],
+      "opponent": "vs. Needham Mite 3",
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "d331cb7997f9",
+      "type": "practice",
+      "start": "2026-09-19T11:40:00-04:00",
+      "end": "2026-09-19T12:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite AA",
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "8224085b1900",
+      "type": "game",
+      "start": "2026-09-19T13:00:00-04:00",
+      "end": "2026-09-19T14:00:00-04:00",
+      "location": "Emmons Horrigan O'Neil Memorial Rink",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "opponent": "@ Charlestown Bantam 1",
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "7f6d721b8b42",
+      "type": "practice",
+      "start": "2026-09-19T13:50:00-04:00",
+      "end": "2026-09-19T14:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Frozen Frenzy Group 1"
+      ],
+      "teamIds": [
+        "285346"
+      ],
+      "url": "https://www.arlingtonice.com/team/285346/calendar"
+    },
+    {
+      "id": "0c6eae67df98",
+      "type": "game",
+      "start": "2026-09-19T14:10:00-04:00",
+      "end": "2026-09-19T15:10:00-04:00",
+      "location": "Charlestown",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AA (2)"
+      ],
+      "teamIds": [
+        "226134"
+      ],
+      "opponent": "vs. Charlestown Squirt 2",
+      "url": "https://www.arlingtonice.com/team/226134/calendar"
+    },
+    {
+      "id": "5da8d4b366d7",
+      "type": "practice",
+      "start": "2026-09-19T15:00:00-04:00",
+      "end": "2026-09-19T16:05:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Frozen Frenzy Group 2"
+      ],
+      "teamIds": [
+        "285347"
+      ],
+      "url": "https://www.arlingtonice.com/team/285347/calendar"
+    },
+    {
+      "id": "bc23507970c4",
+      "type": "game",
+      "start": "2026-09-19T15:30:00-04:00",
+      "end": "2026-09-19T16:30:00-04:00",
+      "location": "Somerville",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226133"
+      ],
+      "opponent": "vs. Winchester Squirt 1",
+      "url": "https://www.arlingtonice.com/team/226133/calendar"
+    },
+    {
+      "id": "fd35c0483ea4",
+      "type": "game",
+      "start": "2026-09-19T16:20:00-04:00",
+      "end": "2026-09-19T17:20:00-04:00",
+      "location": "Shea Rink",
+      "atHomeRink": false,
+      "teams": [
+        "U14A"
+      ],
+      "teamIds": [
+        "226144"
+      ],
+      "opponent": "@ Milton U14 A",
+      "url": "https://www.arlingtonice.com/team/226144/calendar"
+    },
+    {
+      "id": "8fa012412054",
+      "type": "game",
+      "start": "2026-09-19T16:40:00-04:00",
+      "end": "2026-09-19T17:40:00-04:00",
+      "location": "North Star B",
+      "atHomeRink": false,
+      "teams": [
+        "PeeWee AA (2)"
+      ],
+      "teamIds": [
+        "226131"
+      ],
+      "opponent": "vs. Central Mass Revolution Peewee 1",
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "24f323451189",
+      "type": "game",
+      "start": "2026-09-19T18:30:00-04:00",
+      "end": "2026-09-19T19:30:00-04:00",
+      "location": "Talbot Rink",
+      "atHomeRink": false,
+      "teams": [
+        "U14B"
+      ],
+      "teamIds": [
+        "226145"
+      ],
+      "opponent": "@ Cape Ann U14",
+      "url": "https://www.arlingtonice.com/team/226145/calendar"
+    },
+    {
+      "id": "be8a045eb01b",
+      "type": "game",
+      "start": "2026-09-20T08:00:00-04:00",
+      "end": "2026-09-20T09:00:00-04:00",
+      "location": "Dorchester",
+      "atHomeRink": false,
+      "teams": [
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226140"
+      ],
+      "opponent": "vs. Dorchester Mite 4",
+      "url": "https://www.arlingtonice.com/team/226140/calendar"
+    },
+    {
+      "id": "b508f773060a",
+      "type": "game",
+      "start": "2026-09-20T08:10:00-04:00",
+      "end": "2026-09-20T09:10:00-04:00",
+      "location": "Metropolis Rink",
+      "atHomeRink": false,
+      "teams": [
+        "U10 A"
+      ],
+      "teamIds": [
+        "226149"
+      ],
+      "opponent": "@ Canton Bulldogs U10 A",
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "c1299cb76fce",
+      "type": "game",
+      "start": "2026-09-20T11:20:00-04:00",
+      "end": "2026-09-20T12:20:00-04:00",
+      "location": "Cambridge",
+      "atHomeRink": false,
+      "teams": [
+        "Mite AA"
+      ],
+      "teamIds": [
+        "226138"
+      ],
+      "opponent": "vs. Somerville Mite 1",
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "444d3ef5b2ba",
+      "type": "game",
+      "start": "2026-09-20T12:50:00-04:00",
+      "end": "2026-09-20T13:50:00-04:00",
+      "location": "Malden",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AA (2)"
+      ],
+      "teamIds": [
+        "226134"
+      ],
+      "opponent": "@ Lexington/Bedford Squirt 2",
+      "url": "https://www.arlingtonice.com/team/226134/calendar"
+    },
+    {
+      "id": "97b747d93658",
+      "type": "game",
+      "start": "2026-09-20T15:00:00-04:00",
+      "end": "2026-09-20T16:00:00-04:00",
+      "location": "Ryan Arena",
+      "atHomeRink": false,
+      "teams": [
+        "U12 A"
+      ],
+      "teamIds": [
+        "226147"
+      ],
+      "opponent": "vs. Clovers U12",
+      "url": "https://www.arlingtonice.com/team/226147/calendar"
+    },
+    {
+      "id": "dc1a96089815",
+      "type": "game",
+      "start": "2026-09-20T15:00:00-04:00",
+      "end": "2026-09-20T16:00:00-04:00",
+      "location": "St. Sebastians",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam A (2)"
+      ],
+      "teamIds": [
+        "226129"
+      ],
+      "opponent": "@ Needham Bantam 2",
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "8c39c66b033c",
+      "type": "game",
+      "start": "2026-09-20T15:10:00-04:00",
+      "end": "2026-09-20T16:10:00-04:00",
+      "location": "Hyde Park",
+      "atHomeRink": false,
+      "teams": [
+        "U18 A"
+      ],
+      "teamIds": [
+        "228705"
+      ],
+      "opponent": "@ Natick Midget - Fall 1",
+      "url": "https://www.arlingtonice.com/team/228705/calendar"
+    },
+    {
+      "id": "a786688f8669",
+      "type": "practice",
+      "start": "2026-09-20T16:10:00-04:00",
+      "end": "2026-09-20T17:10:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2",
+        "Mite AA",
+        "Mite AAA",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226139",
+        "226140",
+        "226138",
+        "226137",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "168dfae96b18",
+      "type": "practice",
+      "start": "2026-09-20T17:20:00-04:00",
+      "end": "2026-09-20T18:20:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226131",
+        "226130",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "6dee908987f4",
+      "type": "practice",
+      "start": "2026-09-20T18:30:00-04:00",
+      "end": "2026-09-20T19:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "Bantam AAA (1)",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226129",
+        "226127",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "3221b71b9d3a",
+      "type": "practice",
+      "start": "2026-09-20T19:40:00-04:00",
+      "end": "2026-09-20T20:40:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "a927942d7cb8",
+      "type": "practice",
+      "start": "2026-09-21T17:10:00-04:00",
+      "end": "2026-09-21T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2",
+        "Mite AA",
+        "Mite AAA",
+        "Skills"
+      ],
+      "teamIds": [
+        "226139",
+        "226140",
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "99b4e85b98a2",
+      "type": "practice",
+      "start": "2026-09-21T18:10:00-04:00",
+      "end": "2026-09-21T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Skills",
+        "Squirt A (3)",
+        "Squirt AA (2)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226135",
+        "226134",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "b32eba5bbeb1",
+      "type": "practice",
+      "start": "2026-09-21T18:10:00-04:00",
+      "end": "2026-09-21T19:00:00-04:00",
+      "location": "Ed Burns Arena & Ice Skating Rink",
+      "atHomeRink": true,
+      "teams": [
+        "Try Goalie (IC)"
+      ],
+      "teamIds": [
+        "278899"
+      ],
+      "note": "Squirt/Mites/U10 Goalie Training  with Dave Cunningham during Squirts Skills session",
+      "url": "https://www.arlingtonice.com/team/278899/calendar"
+    },
+    {
+      "id": "9dd163b9a539",
+      "type": "practice",
+      "start": "2026-09-21T19:10:00-04:00",
+      "end": "2026-09-21T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)",
+        "Skills"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "5fbcf92eb150",
+      "type": "practice",
+      "start": "2026-09-21T20:10:00-04:00",
+      "end": "2026-09-21T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "Bantam AAA (1)",
+        "Skills"
+      ],
+      "teamIds": [
+        "226129",
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "20630ae8805c",
+      "type": "practice",
+      "start": "2026-09-22T17:10:00-04:00",
+      "end": "2026-09-22T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226139",
+        "226140"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "96fa4e381991",
+      "type": "practice",
+      "start": "2026-09-22T18:10:00-04:00",
+      "end": "2026-09-22T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt AA (2)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226134",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226134/calendar"
+    },
+    {
+      "id": "ea6a0f782574",
+      "type": "practice",
+      "start": "2026-09-22T19:10:00-04:00",
+      "end": "2026-09-22T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "97fe10e3aa01",
+      "type": "practice",
+      "start": "2026-09-22T20:10:00-04:00",
+      "end": "2026-09-22T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "U18 A"
+      ],
+      "teamIds": [
+        "226129",
+        "228705"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "2ca3e879cc54",
+      "type": "practice",
+      "start": "2026-09-22T21:10:00-04:00",
+      "end": "2026-09-22T22:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "50522051bfc1",
+      "type": "practice",
+      "start": "2026-09-23T17:10:00-04:00",
+      "end": "2026-09-23T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite AA",
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "bb1583a1b230",
+      "type": "practice",
+      "start": "2026-09-23T18:10:00-04:00",
+      "end": "2026-09-23T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Select Skills",
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "b0ac38a6eff8",
+      "type": "practice",
+      "start": "2026-09-23T19:10:00-04:00",
+      "end": "2026-09-23T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "d8aa02304137",
+      "type": "practice",
+      "start": "2026-09-23T20:10:00-04:00",
+      "end": "2026-09-23T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "U18 A"
+      ],
+      "teamIds": [
+        "226129",
+        "228705"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "c93160c66387",
+      "type": "practice",
+      "start": "2026-09-23T21:10:00-04:00",
+      "end": "2026-09-23T22:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "a57d52c249b4",
+      "type": "practice",
+      "start": "2026-09-24T17:10:00-04:00",
+      "end": "2026-09-24T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226139",
+        "226140"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "a1bfe5e8cf4c",
+      "type": "practice",
+      "start": "2026-09-24T18:10:00-04:00",
+      "end": "2026-09-24T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226135",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "33bc53a3e36b",
+      "type": "practice",
+      "start": "2026-09-24T19:10:00-04:00",
+      "end": "2026-09-24T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "19203cc3d750",
+      "type": "practice",
+      "start": "2026-09-24T20:10:00-04:00",
+      "end": "2026-09-24T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U12 A",
+        "U12 B"
+      ],
+      "teamIds": [
+        "226147",
+        "226146"
+      ],
+      "url": "https://www.arlingtonice.com/team/226147/calendar"
+    },
+    {
+      "id": "9c7648471a57",
+      "type": "practice",
+      "start": "2026-09-25T16:00:00-04:00",
+      "end": "2026-09-25T16:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite AA",
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "c8565b61e8cf",
+      "type": "practice",
+      "start": "2026-09-25T17:00:00-04:00",
+      "end": "2026-09-25T17:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AA (2)"
+      ],
+      "teamIds": [
+        "226135",
+        "226134"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "80db7078c98e",
+      "type": "practice",
+      "start": "2026-09-25T18:00:00-04:00",
+      "end": "2026-09-25T18:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226144/calendar"
+    },
+    {
+      "id": "118e1783ec74",
+      "type": "game",
+      "start": "2026-09-26T07:00:00-04:00",
+      "end": "2026-09-26T08:00:00-04:00",
+      "location": "Waltham",
+      "atHomeRink": false,
+      "teams": [
+        "Mite AA"
+      ],
+      "teamIds": [
+        "226138"
+      ],
+      "opponent": "vs. Waltham Mite 4",
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "6a0137df3e8b",
+      "type": "practice",
+      "start": "2026-09-26T07:30:00-04:00",
+      "end": "2026-09-26T08:25:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AAA (1)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226130",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226130/calendar"
+    },
+    {
+      "id": "855156f853f1",
+      "type": "practice",
+      "start": "2026-09-26T08:35:00-04:00",
+      "end": "2026-09-26T09:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "317d6d05a99d",
+      "type": "game",
+      "start": "2026-09-26T09:20:00-04:00",
+      "end": "2026-09-26T10:20:00-04:00",
+      "location": "Tewksbury 1",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam A (2)"
+      ],
+      "teamIds": [
+        "226129"
+      ],
+      "opponent": "@ Crusaders Hockey Bantam 1",
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "cc6e45afb7ca",
+      "type": "game",
+      "start": "2026-09-26T10:10:00-04:00",
+      "end": "2026-09-26T11:10:00-04:00",
+      "location": "Waltham",
+      "atHomeRink": false,
+      "teams": [
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226137"
+      ],
+      "opponent": "@ Waltham Mite 2",
+      "url": "https://www.arlingtonice.com/team/226137/calendar"
+    },
+    {
+      "id": "f72a40e6b236",
+      "type": "practice",
+      "start": "2026-09-26T11:40:00-04:00",
+      "end": "2026-09-26T12:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AA (2)"
+      ],
+      "teamIds": [
+        "226135",
+        "226134"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "7232fc17bf59",
+      "type": "game",
+      "start": "2026-09-26T11:50:00-04:00",
+      "end": "2026-09-26T12:50:00-04:00",
+      "location": "Hopedale",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AA (2)"
+      ],
+      "teamIds": [
+        "226134"
+      ],
+      "opponent": "@ Medfield Squirt 1",
+      "url": "https://www.arlingtonice.com/team/226134/calendar"
+    },
+    {
+      "id": "e63ba0451c94",
+      "type": "game",
+      "start": "2026-09-26T12:50:00-04:00",
+      "end": "2026-09-26T13:50:00-04:00",
+      "location": "Waltham",
+      "atHomeRink": false,
+      "teams": [
+        "PeeWee AA (2)"
+      ],
+      "teamIds": [
+        "226131"
+      ],
+      "opponent": "vs. Waltham Peewee 3",
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "f554e7f10a95",
+      "type": "practice",
+      "start": "2026-09-26T13:50:00-04:00",
+      "end": "2026-09-26T14:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Try Goalie (Girls)",
+        "Try Goalie (IC)"
+      ],
+      "teamIds": [
+        "278904",
+        "278899"
+      ],
+      "url": "https://www.arlingtonice.com/team/278904/calendar"
+    },
+    {
+      "id": "2fdfc1283908",
+      "type": "practice",
+      "start": "2026-09-26T15:00:00-04:00",
+      "end": "2026-09-26T16:05:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Frozen Frenzy Group 2"
+      ],
+      "teamIds": [
+        "285347"
+      ],
+      "url": "https://www.arlingtonice.com/team/285347/calendar"
+    },
+    {
+      "id": "c4c9a1e74e24",
+      "type": "game",
+      "start": "2026-09-26T15:20:00-04:00",
+      "end": "2026-09-26T16:20:00-04:00",
+      "location": "Ryan Arena",
+      "atHomeRink": false,
+      "teams": [
+        "U12 A"
+      ],
+      "teamIds": [
+        "226147"
+      ],
+      "opponent": "vs. Allston Brighton Warriors U12",
+      "url": "https://www.arlingtonice.com/team/226147/calendar"
+    },
+    {
+      "id": "228d70152c78",
+      "type": "game",
+      "start": "2026-09-26T16:10:00-04:00",
+      "end": "2026-09-26T17:10:00-04:00",
+      "location": "LoConte Rink",
+      "atHomeRink": false,
+      "teams": [
+        "U10 B"
+      ],
+      "teamIds": [
+        "226148"
+      ],
+      "opponent": "@ Medford Mustangs U10 Blue",
+      "url": "https://www.arlingtonice.com/team/226148/calendar"
+    },
+    {
+      "id": "7a971b6182d7",
+      "type": "game",
+      "start": "2026-09-26T16:20:00-04:00",
+      "end": "2026-09-26T17:20:00-04:00",
+      "location": "Metropolis Rink",
+      "atHomeRink": false,
+      "teams": [
+        "U14B"
+      ],
+      "teamIds": [
+        "226145"
+      ],
+      "opponent": "@ Norwood Nuggets U14",
+      "url": "https://www.arlingtonice.com/team/226145/calendar"
+    },
+    {
+      "id": "434590656ba9",
+      "type": "game",
+      "start": "2026-09-26T16:20:00-04:00",
+      "end": "2026-09-26T17:20:00-04:00",
+      "location": "Natick",
+      "atHomeRink": false,
+      "teams": [
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226130"
+      ],
+      "opponent": "@ Natick Peewee 1",
+      "url": "https://www.arlingtonice.com/team/226130/calendar"
+    },
+    {
+      "id": "9036bc65faf2",
+      "type": "game",
+      "start": "2026-09-26T16:40:00-04:00",
+      "end": "2026-09-26T17:40:00-04:00",
+      "location": "Somerville",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt A (3)"
+      ],
+      "teamIds": [
+        "226135"
+      ],
+      "opponent": "vs. Allston-Brighton Squirt 2",
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "614d6948290e",
+      "type": "game",
+      "start": "2026-09-26T17:40:00-04:00",
+      "end": "2026-09-26T18:40:00-04:00",
+      "location": "Ryan Arena",
+      "atHomeRink": false,
+      "teams": [
+        "U14A"
+      ],
+      "teamIds": [
+        "226144"
+      ],
+      "opponent": "@ Allston Brighton Warriors U14",
+      "url": "https://www.arlingtonice.com/team/226144/calendar"
+    },
+    {
+      "id": "344359fdfabf",
+      "type": "game",
+      "start": "2026-09-27T08:00:00-04:00",
+      "end": "2026-09-27T09:00:00-04:00",
+      "location": "Cambridge",
+      "atHomeRink": false,
+      "teams": [
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226140"
+      ],
+      "opponent": "vs. Newton Mite 4",
+      "url": "https://www.arlingtonice.com/team/226140/calendar"
+    },
+    {
+      "id": "242f38f1a26b",
+      "type": "game",
+      "start": "2026-09-27T09:20:00-04:00",
+      "end": "2026-09-27T10:20:00-04:00",
+      "location": "Metropolis Rink",
+      "atHomeRink": false,
+      "teams": [
+        "U12 B"
+      ],
+      "teamIds": [
+        "226146"
+      ],
+      "opponent": "@ Canton Bulldogs U12 B",
+      "url": "https://www.arlingtonice.com/team/226146/calendar"
+    },
+    {
+      "id": "fac22a6dc9f9",
+      "type": "game",
+      "start": "2026-09-27T09:40:00-04:00",
+      "end": "2026-09-27T10:40:00-04:00",
+      "location": "Wellesley Rink 2",
+      "atHomeRink": false,
+      "teams": [
+        "Mite A1"
+      ],
+      "teamIds": [
+        "226139"
+      ],
+      "opponent": "vs. Wellesley U8",
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "e111624b7727",
+      "type": "game",
+      "start": "2026-09-27T09:50:00-04:00",
+      "end": "2026-09-27T10:40:00-04:00",
+      "location": "SC of Boston",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam A (2)"
+      ],
+      "teamIds": [
+        "226129"
+      ],
+      "opponent": "vs. Westwood Bantam 2",
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "3b88f19acb0e",
+      "type": "game",
+      "start": "2026-09-27T12:30:00-04:00",
+      "end": "2026-09-27T13:30:00-04:00",
+      "location": "Dorchester",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226133"
+      ],
+      "opponent": "@ Dorchester Squirt 1",
+      "url": "https://www.arlingtonice.com/team/226133/calendar"
+    },
+    {
+      "id": "33752214c702",
+      "type": "game",
+      "start": "2026-09-27T15:00:00-04:00",
+      "end": "2026-09-27T16:00:00-04:00",
+      "location": "St. Sebastian's School",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "opponent": "vs. Needham Bantam 1",
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "f0d534bfa47d",
+      "type": "game",
+      "start": "2026-09-27T15:30:00-04:00",
+      "end": "2026-09-27T16:30:00-04:00",
+      "location": "Flynn Rink",
+      "atHomeRink": false,
+      "teams": [
+        "U10 A"
+      ],
+      "teamIds": [
+        "226149"
+      ],
+      "opponent": "@ Winchester Sachems U10",
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "76fbe4e4c815",
+      "type": "practice",
+      "start": "2026-09-27T16:10:00-04:00",
+      "end": "2026-09-27T17:10:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2",
+        "Mite AA",
+        "Mite AAA",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226139",
+        "226140",
+        "226138",
+        "226137",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "ba56cd5fa2d0",
+      "type": "practice",
+      "start": "2026-09-27T17:20:00-04:00",
+      "end": "2026-09-27T18:20:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AA (2)",
+        "Squirt AAA (1)",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226135",
+        "226134",
+        "226133",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "65de49f6ba94",
+      "type": "practice",
+      "start": "2026-09-27T18:30:00-04:00",
+      "end": "2026-09-27T19:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "Bantam AAA (1)",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226129",
+        "226127",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "3b60ae6a7608",
+      "type": "game",
+      "start": "2026-09-27T19:10:00-04:00",
+      "end": "2026-09-27T20:10:00-04:00",
+      "location": "Burlington",
+      "atHomeRink": false,
+      "teams": [
+        "U18 A"
+      ],
+      "teamIds": [
+        "228705"
+      ],
+      "opponent": "vs. Dorchester Midget - Fall 2",
+      "url": "https://www.arlingtonice.com/team/228705/calendar"
+    },
+    {
+      "id": "924ce19974dd",
+      "type": "practice",
+      "start": "2026-09-27T19:40:00-04:00",
+      "end": "2026-09-27T20:40:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "1157d9c12297",
+      "type": "practice",
+      "start": "2026-09-28T17:10:00-04:00",
+      "end": "2026-09-28T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2",
+        "Mite AA",
+        "Mite AAA",
+        "Skills"
+      ],
+      "teamIds": [
+        "226139",
+        "226140",
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "907ee203c292",
+      "type": "practice",
+      "start": "2026-09-28T18:10:00-04:00",
+      "end": "2026-09-28T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Skills",
+        "Squirt A (3)",
+        "Squirt AA (2)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226135",
+        "226134",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "2600ad9584bc",
+      "type": "practice",
+      "start": "2026-09-28T18:10:00-04:00",
+      "end": "2026-09-28T19:00:00-04:00",
+      "location": "Ed Burns Arena & Ice Skating Rink",
+      "atHomeRink": true,
+      "teams": [
+        "Try Goalie (IC)"
+      ],
+      "teamIds": [
+        "278899"
+      ],
+      "note": "Squirt/Mites/U10 Goalie Training  with Dave Cunningham during Squirts Skills session",
+      "url": "https://www.arlingtonice.com/team/278899/calendar"
+    },
+    {
+      "id": "7eaee89daa70",
+      "type": "practice",
+      "start": "2026-09-28T19:10:00-04:00",
+      "end": "2026-09-28T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)",
+        "Skills"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "55b50ace779d",
+      "type": "practice",
+      "start": "2026-09-28T20:10:00-04:00",
+      "end": "2026-09-28T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "Bantam AAA (1)",
+        "Skills"
+      ],
+      "teamIds": [
+        "226129",
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "18d84412555a",
+      "type": "practice",
+      "start": "2026-09-29T17:10:00-04:00",
+      "end": "2026-09-29T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226139",
+        "226140"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "705c090e2a3e",
+      "type": "practice",
+      "start": "2026-09-29T18:10:00-04:00",
+      "end": "2026-09-29T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt AA (2)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226134",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226134/calendar"
+    },
+    {
+      "id": "0a8f1f910637",
+      "type": "practice",
+      "start": "2026-09-29T19:10:00-04:00",
+      "end": "2026-09-29T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "b14e49412675",
+      "type": "practice",
+      "start": "2026-09-29T20:10:00-04:00",
+      "end": "2026-09-29T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "U18 A"
+      ],
+      "teamIds": [
+        "226129",
+        "228705"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "4a7f12eaff4a",
+      "type": "practice",
+      "start": "2026-09-29T21:10:00-04:00",
+      "end": "2026-09-29T22:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "cc4e28f018e0",
+      "type": "practice",
+      "start": "2026-09-30T17:10:00-04:00",
+      "end": "2026-09-30T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite AA",
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "b34b8f916179",
+      "type": "practice",
+      "start": "2026-09-30T18:10:00-04:00",
+      "end": "2026-09-30T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Select Skills",
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "d46dcab4d36d",
+      "type": "practice",
+      "start": "2026-09-30T19:10:00-04:00",
+      "end": "2026-09-30T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "3cd16ff806fd",
+      "type": "practice",
+      "start": "2026-09-30T20:10:00-04:00",
+      "end": "2026-09-30T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "U18 A"
+      ],
+      "teamIds": [
+        "226129",
+        "228705"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "4a0e4894b6ac",
+      "type": "practice",
+      "start": "2026-09-30T21:10:00-04:00",
+      "end": "2026-09-30T22:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "bd6ad15be79d",
+      "type": "practice",
+      "start": "2026-10-01T17:10:00-04:00",
+      "end": "2026-10-01T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226139",
+        "226140"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "3e326cad6cbc",
+      "type": "practice",
+      "start": "2026-10-01T18:10:00-04:00",
+      "end": "2026-10-01T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226135",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "d4b96a12f1ac",
+      "type": "practice",
+      "start": "2026-10-01T19:10:00-04:00",
+      "end": "2026-10-01T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "11b2c42c8f63",
+      "type": "practice",
+      "start": "2026-10-01T20:10:00-04:00",
+      "end": "2026-10-01T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U12 A",
+        "U12 B"
+      ],
+      "teamIds": [
+        "226147",
+        "226146"
+      ],
+      "url": "https://www.arlingtonice.com/team/226147/calendar"
+    },
+    {
+      "id": "f3c60ddbfd32",
+      "type": "practice",
+      "start": "2026-10-02T17:00:00-04:00",
+      "end": "2026-10-02T17:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AA (2)"
+      ],
+      "teamIds": [
+        "226135",
+        "226134"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "ed461fde209f",
+      "type": "practice",
+      "start": "2026-10-02T18:00:00-04:00",
+      "end": "2026-10-02T18:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226144/calendar"
+    },
+    {
+      "id": "54c2754de0ea",
+      "type": "game",
+      "start": "2026-10-03T07:00:00-04:00",
+      "end": "2026-10-03T08:00:00-04:00",
+      "location": "Flynn Rink",
+      "atHomeRink": false,
+      "teams": [
+        "U12 B"
+      ],
+      "teamIds": [
+        "226146"
+      ],
+      "opponent": "@ Melrose U12",
+      "url": "https://www.arlingtonice.com/team/226146/calendar"
+    },
+    {
+      "id": "034ab5d93e31",
+      "type": "practice",
+      "start": "2026-10-03T07:30:00-04:00",
+      "end": "2026-10-03T08:25:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "44e901efa63a",
+      "type": "practice",
+      "start": "2026-10-03T08:35:00-04:00",
+      "end": "2026-10-03T09:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "2bcbd18eea0c",
+      "type": "game",
+      "start": "2026-10-03T09:20:00-04:00",
+      "end": "2026-10-03T10:20:00-04:00",
+      "location": "Stoneham Arena",
+      "atHomeRink": false,
+      "teams": [
+        "U14B"
+      ],
+      "teamIds": [
+        "226145"
+      ],
+      "opponent": "@ Tewksbury Red Rangers U14",
+      "url": "https://www.arlingtonice.com/team/226145/calendar"
+    },
+    {
+      "id": "930659957f9c",
+      "type": "game",
+      "start": "2026-10-03T10:10:00-04:00",
+      "end": "2026-10-03T11:10:00-04:00",
+      "location": "Waltham",
+      "atHomeRink": false,
+      "teams": [
+        "Mite AA"
+      ],
+      "teamIds": [
+        "226138"
+      ],
+      "opponent": "@ Waltham Mite 3",
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "614e38e5e5bc",
+      "type": "game",
+      "start": "2026-10-03T10:30:00-04:00",
+      "end": "2026-10-03T11:30:00-04:00",
+      "location": "Hockeytown 4",
+      "atHomeRink": false,
+      "teams": [
+        "PeeWee AA (2)"
+      ],
+      "teamIds": [
+        "226131"
+      ],
+      "opponent": "vs. Danvers Peewee 1",
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "584892242fc5",
+      "type": "practice",
+      "start": "2026-10-03T11:40:00-04:00",
+      "end": "2026-10-03T12:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite AA",
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "d075a7f0be53",
+      "type": "game",
+      "start": "2026-10-03T12:00:00-04:00",
+      "end": "2026-10-03T13:00:00-04:00",
+      "location": "Somerville",
+      "atHomeRink": false,
+      "teams": [
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226130"
+      ],
+      "opponent": "@ Wakefield Peewee 1",
+      "url": "https://www.arlingtonice.com/team/226130/calendar"
+    },
+    {
+      "id": "7180b25d28d1",
+      "type": "game",
+      "start": "2026-10-03T13:00:00-04:00",
+      "end": "2026-10-03T14:00:00-04:00",
+      "location": "Phillips Academy",
+      "atHomeRink": false,
+      "teams": [
+        "U14A"
+      ],
+      "teamIds": [
+        "226144"
+      ],
+      "opponent": "@ Andover Warriors U14",
+      "url": "https://www.arlingtonice.com/team/226144/calendar"
+    },
+    {
+      "id": "f15ab5b3e676",
+      "type": "practice",
+      "start": "2026-10-03T13:50:00-04:00",
+      "end": "2026-10-03T14:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Frozen Frenzy Group 1"
+      ],
+      "teamIds": [
+        "285346"
+      ],
+      "url": "https://www.arlingtonice.com/team/285346/calendar"
+    },
+    {
+      "id": "52fb34f97317",
+      "type": "game",
+      "start": "2026-10-03T14:20:00-04:00",
+      "end": "2026-10-03T15:20:00-04:00",
+      "location": "Somerville",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AA (2)"
+      ],
+      "teamIds": [
+        "226134"
+      ],
+      "opponent": "vs. Brookline Squirt 1",
+      "url": "https://www.arlingtonice.com/team/226134/calendar"
+    },
+    {
+      "id": "d3dbe5ac9d38",
+      "type": "practice",
+      "start": "2026-10-03T15:00:00-04:00",
+      "end": "2026-10-03T16:05:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Frozen Frenzy Group 2"
+      ],
+      "teamIds": [
+        "285347"
+      ],
+      "url": "https://www.arlingtonice.com/team/285347/calendar"
+    },
+    {
+      "id": "92fbed83c6a8",
+      "type": "game",
+      "start": "2026-10-03T16:30:00-04:00",
+      "end": "2026-10-03T17:30:00-04:00",
+      "location": "Ryan Arena",
+      "atHomeRink": false,
+      "teams": [
+        "U12 A"
+      ],
+      "teamIds": [
+        "226147"
+      ],
+      "opponent": "vs. Needham Rockets U12",
+      "url": "https://www.arlingtonice.com/team/226147/calendar"
+    },
+    {
+      "id": "63ccdea41d5e",
+      "type": "game",
+      "start": "2026-10-03T19:00:00-04:00",
+      "end": "2026-10-03T20:00:00-04:00",
+      "location": "Somerville",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam A (2)"
+      ],
+      "teamIds": [
+        "226129"
+      ],
+      "opponent": "vs. Cambridge Bantam 2",
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "9282921577b1",
+      "type": "game",
+      "start": "2026-10-03T20:10:00-04:00",
+      "end": "2026-10-03T21:10:00-04:00",
+      "location": "Burlington Ice Palace",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "opponent": "@ Acton-Boxboro Bantam 1",
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "e27ce082c09e",
+      "type": "game",
+      "start": "2026-10-04T08:00:00-04:00",
+      "end": "2026-10-04T09:00:00-04:00",
+      "location": "Cambridge",
+      "atHomeRink": false,
+      "teams": [
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226140"
+      ],
+      "opponent": "vs. Newton Mite 3",
+      "url": "https://www.arlingtonice.com/team/226140/calendar"
+    },
+    {
+      "id": "ce26ee188d38",
+      "type": "game",
+      "start": "2026-10-04T08:20:00-04:00",
+      "end": "2026-10-04T09:20:00-04:00",
+      "location": "South Boston",
+      "atHomeRink": false,
+      "teams": [
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226137"
+      ],
+      "opponent": "vs. South Boston Mite 1",
+      "url": "https://www.arlingtonice.com/team/226137/calendar"
+    },
+    {
+      "id": "da98dddee7dd",
+      "type": "game",
+      "start": "2026-10-04T08:40:00-04:00",
+      "end": "2026-10-04T09:40:00-04:00",
+      "location": "Stoneham Arena",
+      "atHomeRink": false,
+      "teams": [
+        "U10 A"
+      ],
+      "teamIds": [
+        "226149"
+      ],
+      "opponent": "@ North Andover Lady Knights U10",
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "12e6540d6794",
+      "type": "game",
+      "start": "2026-10-04T10:30:00-04:00",
+      "end": "2026-10-04T11:30:00-04:00",
+      "location": "Malden",
+      "atHomeRink": false,
+      "teams": [
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226130"
+      ],
+      "opponent": "@ Winthrop Peewee 1",
+      "url": "https://www.arlingtonice.com/team/226130/calendar"
+    },
+    {
+      "id": "51089a30b160",
+      "type": "game",
+      "start": "2026-10-04T11:30:00-04:00",
+      "end": "2026-10-04T12:30:00-04:00",
+      "location": "Ryan Arena",
+      "atHomeRink": false,
+      "teams": [
+        "U10 B"
+      ],
+      "teamIds": [
+        "226148"
+      ],
+      "opponent": "vs. Brookline Warriors U10",
+      "url": "https://www.arlingtonice.com/team/226148/calendar"
+    },
+    {
+      "id": "cfd4f548d4ef",
+      "type": "game",
+      "start": "2026-10-04T12:20:00-04:00",
+      "end": "2026-10-04T13:20:00-04:00",
+      "location": "Cambridge",
+      "atHomeRink": false,
+      "teams": [
+        "Mite A1"
+      ],
+      "teamIds": [
+        "226139"
+      ],
+      "opponent": "@ Cambridge Mite 2",
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "2ca842273cb5",
+      "type": "game",
+      "start": "2026-10-04T12:50:00-04:00",
+      "end": "2026-10-04T13:50:00-04:00",
+      "location": "Wellesley Rink 1",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam A (2)"
+      ],
+      "teamIds": [
+        "226129"
+      ],
+      "opponent": "vs. Wellesley Bantam 2",
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "2305da9e00cf",
+      "type": "game",
+      "start": "2026-10-04T14:00:00-04:00",
+      "end": "2026-10-04T15:00:00-04:00",
+      "location": "Hyde Park",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226133"
+      ],
+      "opponent": "@ Westwood Squirt 1",
+      "url": "https://www.arlingtonice.com/team/226133/calendar"
+    },
+    {
+      "id": "5d3b075a9903",
+      "type": "practice",
+      "start": "2026-10-04T16:10:00-04:00",
+      "end": "2026-10-04T17:10:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2",
+        "Mite AA",
+        "Mite AAA",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226139",
+        "226140",
+        "226138",
+        "226137",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "9e70cc923687",
+      "type": "game",
+      "start": "2026-10-04T17:00:00-04:00",
+      "end": "2026-10-04T18:00:00-04:00",
+      "location": "Charlestown",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt A (3)"
+      ],
+      "teamIds": [
+        "226135"
+      ],
+      "opponent": "@ South Boston Squirt 3",
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "da6bf93f4bc8",
+      "type": "practice",
+      "start": "2026-10-04T17:20:00-04:00",
+      "end": "2026-10-04T18:20:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AA (2)",
+        "Squirt AAA (1)",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226135",
+        "226134",
+        "226133",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "171074194287",
+      "type": "game",
+      "start": "2026-10-04T17:40:00-04:00",
+      "end": "2026-10-04T18:40:00-04:00",
+      "location": "Burlington",
+      "atHomeRink": false,
+      "teams": [
+        "U18 A"
+      ],
+      "teamIds": [
+        "228705"
+      ],
+      "opponent": "vs. Needham Midget - Fall 2",
+      "url": "https://www.arlingtonice.com/team/228705/calendar"
+    },
+    {
+      "id": "e834363de51e",
+      "type": "practice",
+      "start": "2026-10-04T18:30:00-04:00",
+      "end": "2026-10-04T19:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226131",
+        "226130",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "2fbd6e907769",
+      "type": "practice",
+      "start": "2026-10-04T19:40:00-04:00",
+      "end": "2026-10-04T20:40:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "9d1aa6801021",
+      "type": "practice",
+      "start": "2026-10-05T17:10:00-04:00",
+      "end": "2026-10-05T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2",
+        "Mite AA",
+        "Mite AAA",
+        "Skills"
+      ],
+      "teamIds": [
+        "226139",
+        "226140",
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "5e289fc7ce4c",
+      "type": "practice",
+      "start": "2026-10-05T18:10:00-04:00",
+      "end": "2026-10-05T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Skills",
+        "Squirt A (3)",
+        "Squirt AA (2)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226135",
+        "226134",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "e4fe85d88bab",
+      "type": "practice",
+      "start": "2026-10-05T18:10:00-04:00",
+      "end": "2026-10-05T19:00:00-04:00",
+      "location": "Ed Burns Arena & Ice Skating Rink",
+      "atHomeRink": true,
+      "teams": [
+        "Try Goalie (IC)"
+      ],
+      "teamIds": [
+        "278899"
+      ],
+      "note": "Squirt/Mites/U10 Goalie Training  with Dave Cunningham during Squirts Skills session",
+      "url": "https://www.arlingtonice.com/team/278899/calendar"
+    },
+    {
+      "id": "3799ee8ed482",
+      "type": "practice",
+      "start": "2026-10-05T19:10:00-04:00",
+      "end": "2026-10-05T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)",
+        "Skills"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "bce714bbe529",
+      "type": "practice",
+      "start": "2026-10-05T20:10:00-04:00",
+      "end": "2026-10-05T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "Bantam AAA (1)",
+        "Skills"
+      ],
+      "teamIds": [
+        "226129",
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "56c86df8c2bb",
+      "type": "practice",
+      "start": "2026-10-06T17:10:00-04:00",
+      "end": "2026-10-06T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226139",
+        "226140"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "1122ee0aba13",
+      "type": "practice",
+      "start": "2026-10-06T18:10:00-04:00",
+      "end": "2026-10-06T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt AA (2)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226134",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226134/calendar"
+    },
+    {
+      "id": "2aba872c76f9",
+      "type": "practice",
+      "start": "2026-10-06T19:10:00-04:00",
+      "end": "2026-10-06T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "baba996d02ce",
+      "type": "practice",
+      "start": "2026-10-06T20:10:00-04:00",
+      "end": "2026-10-06T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "U18 A"
+      ],
+      "teamIds": [
+        "226129",
+        "228705"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "052c3c7850c5",
+      "type": "practice",
+      "start": "2026-10-06T21:10:00-04:00",
+      "end": "2026-10-06T22:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "6623ea7889cb",
+      "type": "practice",
+      "start": "2026-10-07T17:10:00-04:00",
+      "end": "2026-10-07T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite AA",
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "18e5524c8893",
+      "type": "practice",
+      "start": "2026-10-07T18:10:00-04:00",
+      "end": "2026-10-07T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Select Skills",
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "250cfa2ee60b",
+      "type": "practice",
+      "start": "2026-10-07T19:10:00-04:00",
+      "end": "2026-10-07T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "f84c80904e9d",
+      "type": "practice",
+      "start": "2026-10-07T20:10:00-04:00",
+      "end": "2026-10-07T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "U18 A"
+      ],
+      "teamIds": [
+        "226129",
+        "228705"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "777af5eb0d43",
+      "type": "practice",
+      "start": "2026-10-07T21:10:00-04:00",
+      "end": "2026-10-07T22:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "ac5387534035",
+      "type": "practice",
+      "start": "2026-10-08T17:10:00-04:00",
+      "end": "2026-10-08T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226139",
+        "226140"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "a6f87c636a32",
+      "type": "practice",
+      "start": "2026-10-08T18:10:00-04:00",
+      "end": "2026-10-08T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226135",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "9a5087dc6006",
+      "type": "practice",
+      "start": "2026-10-08T19:10:00-04:00",
+      "end": "2026-10-08T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "02195d9e33c9",
+      "type": "practice",
+      "start": "2026-10-08T20:10:00-04:00",
+      "end": "2026-10-08T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U12 A",
+        "U12 B"
+      ],
+      "teamIds": [
+        "226147",
+        "226146"
+      ],
+      "url": "https://www.arlingtonice.com/team/226147/calendar"
+    },
+    {
+      "id": "e09cb3b5d116",
+      "type": "practice",
+      "start": "2026-10-09T17:00:00-04:00",
+      "end": "2026-10-09T17:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AA (2)"
+      ],
+      "teamIds": [
+        "226135",
+        "226134"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "7877b82e2718",
+      "type": "practice",
+      "start": "2026-10-09T18:00:00-04:00",
+      "end": "2026-10-09T18:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226144/calendar"
+    },
+    {
+      "id": "6fb4d97efcba",
+      "type": "practice",
+      "start": "2026-10-10T07:30:00-04:00",
+      "end": "2026-10-10T08:25:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226129",
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "a39f769dd165",
+      "type": "game",
+      "start": "2026-10-10T08:10:00-04:00",
+      "end": "2026-10-10T09:10:00-04:00",
+      "location": "Malden",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AA (2)"
+      ],
+      "teamIds": [
+        "226134"
+      ],
+      "opponent": "@ Dorchester Squirt 2",
+      "url": "https://www.arlingtonice.com/team/226134/calendar"
+    },
+    {
+      "id": "cd2eb22ac667",
+      "type": "practice",
+      "start": "2026-10-10T08:35:00-04:00",
+      "end": "2026-10-10T09:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "040c9e100a24",
+      "type": "practice",
+      "start": "2026-10-10T11:40:00-04:00",
+      "end": "2026-10-10T12:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite AA",
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "ef6a38963e3f",
+      "type": "game",
+      "start": "2026-10-10T13:00:00-04:00",
+      "end": "2026-10-10T14:00:00-04:00",
+      "location": "Belmont High",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt A (3)"
+      ],
+      "teamIds": [
+        "226135"
+      ],
+      "opponent": "vs. Belmont Squirt 3",
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "129946125b23",
+      "type": "practice",
+      "start": "2026-10-10T13:50:00-04:00",
+      "end": "2026-10-10T14:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Frozen Frenzy Group 1"
+      ],
+      "teamIds": [
+        "285346"
+      ],
+      "url": "https://www.arlingtonice.com/team/285346/calendar"
+    },
+    {
+      "id": "b4a118f06d41",
+      "type": "game",
+      "start": "2026-10-10T14:10:00-04:00",
+      "end": "2026-10-10T15:10:00-04:00",
+      "location": "Charlestown",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226133"
+      ],
+      "opponent": "vs. Charlestown Squirt 1",
+      "url": "https://www.arlingtonice.com/team/226133/calendar"
+    },
+    {
+      "id": "3bce8b150c7a",
+      "type": "practice",
+      "start": "2026-10-10T15:00:00-04:00",
+      "end": "2026-10-10T16:05:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Frozen Frenzy Group 2"
+      ],
+      "teamIds": [
+        "285347"
+      ],
+      "url": "https://www.arlingtonice.com/team/285347/calendar"
+    },
+    {
+      "id": "3feec1feeb69",
+      "type": "game",
+      "start": "2026-10-10T15:30:00-04:00",
+      "end": "2026-10-10T16:30:00-04:00",
+      "location": "Somerville",
+      "atHomeRink": false,
+      "teams": [
+        "PeeWee AA (2)"
+      ],
+      "teamIds": [
+        "226131"
+      ],
+      "opponent": "@ Natick Peewee 2",
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "8c857258744a",
+      "type": "game",
+      "start": "2026-10-10T16:20:00-04:00",
+      "end": "2026-10-10T17:20:00-04:00",
+      "location": "Malden Valley Forum",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "opponent": "@ Wakefield Bantam 1",
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "292995795c23",
+      "type": "game",
+      "start": "2026-10-10T20:10:00-04:00",
+      "end": "2026-10-10T21:10:00-04:00",
+      "location": "Burlington",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam A (2)"
+      ],
+      "teamIds": [
+        "226129"
+      ],
+      "opponent": "@ Tewksbury Bantam 2",
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "dc4edf03d7ef",
+      "type": "game",
+      "start": "2026-10-10T20:30:00-04:00",
+      "end": "2026-10-10T21:30:00-04:00",
+      "location": "Waltham",
+      "atHomeRink": false,
+      "teams": [
+        "U18 A"
+      ],
+      "teamIds": [
+        "228705"
+      ],
+      "opponent": "@ Waltham Midget - Fall 2",
+      "url": "https://www.arlingtonice.com/team/228705/calendar"
+    },
+    {
+      "id": "981165c56a3c",
+      "type": "game",
+      "start": "2026-10-11T08:00:00-04:00",
+      "end": "2026-10-11T09:00:00-04:00",
+      "location": "Cambridge",
+      "atHomeRink": false,
+      "teams": [
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226137"
+      ],
+      "opponent": "@ Norwood Mite 1",
+      "url": "https://www.arlingtonice.com/team/226137/calendar"
+    },
+    {
+      "id": "83dc7105548b",
+      "type": "game",
+      "start": "2026-10-11T09:10:00-04:00",
+      "end": "2026-10-11T10:10:00-04:00",
+      "location": "Cambridge",
+      "atHomeRink": false,
+      "teams": [
+        "Mite A1"
+      ],
+      "teamIds": [
+        "226139"
+      ],
+      "opponent": "@ Natick Mite 3",
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "2b0b425d4115",
+      "type": "game",
+      "start": "2026-10-11T09:20:00-04:00",
+      "end": "2026-10-11T10:20:00-04:00",
+      "location": "West Roxbury",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226133"
+      ],
+      "opponent": "vs. Parkway Squirt 1",
+      "url": "https://www.arlingtonice.com/team/226133/calendar"
+    },
+    {
+      "id": "d295d2e1ed3d",
+      "type": "game",
+      "start": "2026-10-11T10:10:00-04:00",
+      "end": "2026-10-11T11:10:00-04:00",
+      "location": "Cambridge",
+      "atHomeRink": false,
+      "teams": [
+        "Mite AA"
+      ],
+      "teamIds": [
+        "226138"
+      ],
+      "opponent": "@ Newton Mite 2",
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "a83a81563b16",
+      "type": "game",
+      "start": "2026-10-11T12:20:00-04:00",
+      "end": "2026-10-11T13:20:00-04:00",
+      "location": "Cambridge",
+      "atHomeRink": false,
+      "teams": [
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226140"
+      ],
+      "opponent": "@ Charlestown Mite 6",
+      "url": "https://www.arlingtonice.com/team/226140/calendar"
+    },
+    {
+      "id": "c58593240a2d",
+      "type": "game",
+      "start": "2026-10-11T13:00:00-04:00",
+      "end": "2026-10-11T14:00:00-04:00",
+      "location": "Emmons Horrigan O'Neil Memorial Rink",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "opponent": "vs. Charlestown Bantam 1",
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "eeaec749dcb4",
+      "type": "practice",
+      "start": "2026-10-11T16:10:00-04:00",
+      "end": "2026-10-11T17:10:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AA (2)",
+        "Squirt AAA (1)",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226135",
+        "226134",
+        "226133",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "57f3e305975e",
+      "type": "game",
+      "start": "2026-10-11T16:40:00-04:00",
+      "end": "2026-10-11T17:40:00-04:00",
+      "location": "North Star B",
+      "atHomeRink": false,
+      "teams": [
+        "PeeWee AA (2)"
+      ],
+      "teamIds": [
+        "226131"
+      ],
+      "opponent": "@ Junior Railers Peewee 1",
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "9248f0bb88c0",
+      "type": "practice",
+      "start": "2026-10-11T17:20:00-04:00",
+      "end": "2026-10-11T18:20:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226131",
+        "226130",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "8c67d90c5b86",
+      "type": "game",
+      "start": "2026-10-11T17:30:00-04:00",
+      "end": "2026-10-11T18:30:00-04:00",
+      "location": "Malden",
+      "atHomeRink": false,
+      "teams": [
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226130"
+      ],
+      "opponent": "vs. Winchester Peewee 1",
+      "url": "https://www.arlingtonice.com/team/226130/calendar"
+    },
+    {
+      "id": "ea396d4ddc66",
+      "type": "practice",
+      "start": "2026-10-11T18:30:00-04:00",
+      "end": "2026-10-11T19:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "Bantam AAA (1)",
+        "Will O'Neill Skills"
+      ],
+      "teamIds": [
+        "226129",
+        "226127",
+        "285293"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "94874f05bf96",
+      "type": "practice",
+      "start": "2026-10-11T19:40:00-04:00",
+      "end": "2026-10-11T20:40:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "b5be676cb823",
+      "type": "practice",
+      "start": "2026-10-12T17:10:00-04:00",
+      "end": "2026-10-12T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2",
+        "Mite AA",
+        "Mite AAA",
+        "Skills"
+      ],
+      "teamIds": [
+        "226139",
+        "226140",
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "d3b890e3b7d8",
+      "type": "practice",
+      "start": "2026-10-12T18:10:00-04:00",
+      "end": "2026-10-12T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Skills",
+        "Squirt A (3)",
+        "Squirt AA (2)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226135",
+        "226134",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "a3e33b207f95",
+      "type": "practice",
+      "start": "2026-10-12T18:10:00-04:00",
+      "end": "2026-10-12T19:00:00-04:00",
+      "location": "Ed Burns Arena & Ice Skating Rink",
+      "atHomeRink": true,
+      "teams": [
+        "Try Goalie (IC)"
+      ],
+      "teamIds": [
+        "278899"
+      ],
+      "note": "Squirt/Mites/U10 Goalie Training  with Dave Cunningham during Squirts Skills session",
+      "url": "https://www.arlingtonice.com/team/278899/calendar"
+    },
+    {
+      "id": "1d2e5b70a6ec",
+      "type": "practice",
+      "start": "2026-10-12T19:10:00-04:00",
+      "end": "2026-10-12T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)",
+        "Skills"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "87e057babd50",
+      "type": "game",
+      "start": "2026-10-12T19:10:00-04:00",
+      "end": "2026-10-12T20:10:00-04:00",
+      "location": "Malden",
+      "atHomeRink": false,
+      "teams": [
+        "PeeWee AA (2)"
+      ],
+      "teamIds": [
+        "226131"
+      ],
+      "opponent": "vs. Somerville Peewee 1",
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "a072d3e396c6",
+      "type": "practice",
+      "start": "2026-10-12T20:10:00-04:00",
+      "end": "2026-10-12T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "Bantam AAA (1)",
+        "Skills"
+      ],
+      "teamIds": [
+        "226129",
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "3d1bd397a9bb",
+      "type": "practice",
+      "start": "2026-10-13T17:10:00-04:00",
+      "end": "2026-10-13T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226139",
+        "226140"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "ae6e2e46f3cd",
+      "type": "practice",
+      "start": "2026-10-13T18:10:00-04:00",
+      "end": "2026-10-13T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt AA (2)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226134",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226134/calendar"
+    },
+    {
+      "id": "915c0a144c89",
+      "type": "practice",
+      "start": "2026-10-13T19:10:00-04:00",
+      "end": "2026-10-13T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "ca39abb77749",
+      "type": "practice",
+      "start": "2026-10-13T20:10:00-04:00",
+      "end": "2026-10-13T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "U18 A"
+      ],
+      "teamIds": [
+        "226129",
+        "228705"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "7d75142b3b8f",
+      "type": "practice",
+      "start": "2026-10-13T21:10:00-04:00",
+      "end": "2026-10-13T22:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "3ae34bf57027",
+      "type": "practice",
+      "start": "2026-10-14T17:10:00-04:00",
+      "end": "2026-10-14T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite AA",
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "1152f84817ee",
+      "type": "practice",
+      "start": "2026-10-14T18:10:00-04:00",
+      "end": "2026-10-14T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Select Skills",
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "9bdafce96e4e",
+      "type": "practice",
+      "start": "2026-10-14T19:10:00-04:00",
+      "end": "2026-10-14T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "PeeWee AA (2)",
+        "PeeWee AAA (1)"
+      ],
+      "teamIds": [
+        "226131",
+        "226130"
+      ],
+      "url": "https://www.arlingtonice.com/team/226131/calendar"
+    },
+    {
+      "id": "4e60026b1145",
+      "type": "practice",
+      "start": "2026-10-14T20:10:00-04:00",
+      "end": "2026-10-14T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam A (2)",
+        "U18 A"
+      ],
+      "teamIds": [
+        "226129",
+        "228705"
+      ],
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    },
+    {
+      "id": "9a8baa7ba408",
+      "type": "practice",
+      "start": "2026-10-14T21:10:00-04:00",
+      "end": "2026-10-14T22:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "4a559bb9710a",
+      "type": "practice",
+      "start": "2026-10-15T17:10:00-04:00",
+      "end": "2026-10-15T18:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226139",
+        "226140"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "5f675b961cfd",
+      "type": "practice",
+      "start": "2026-10-15T18:10:00-04:00",
+      "end": "2026-10-15T19:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226135",
+        "226133"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "cca862eb760a",
+      "type": "practice",
+      "start": "2026-10-15T19:10:00-04:00",
+      "end": "2026-10-15T20:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "e28244fbb507",
+      "type": "practice",
+      "start": "2026-10-15T20:10:00-04:00",
+      "end": "2026-10-15T21:00:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U12 A",
+        "U12 B"
+      ],
+      "teamIds": [
+        "226147",
+        "226146"
+      ],
+      "url": "https://www.arlingtonice.com/team/226147/calendar"
+    },
+    {
+      "id": "79cffe240eec",
+      "type": "practice",
+      "start": "2026-10-16T17:00:00-04:00",
+      "end": "2026-10-16T17:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Squirt A (3)",
+        "Squirt AA (2)"
+      ],
+      "teamIds": [
+        "226135",
+        "226134"
+      ],
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "cba0523359f8",
+      "type": "practice",
+      "start": "2026-10-16T18:00:00-04:00",
+      "end": "2026-10-16T18:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226144/calendar"
+    },
+    {
+      "id": "3dbf96f41fb0",
+      "type": "game",
+      "start": "2026-10-17T07:00:00-04:00",
+      "end": "2026-10-17T08:00:00-04:00",
+      "location": "Hayden",
+      "atHomeRink": false,
+      "teams": [
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226140"
+      ],
+      "opponent": "@ Framingham Mite 5",
+      "url": "https://www.arlingtonice.com/team/226140/calendar"
+    },
+    {
+      "id": "db685ab6800d",
+      "type": "practice",
+      "start": "2026-10-17T07:30:00-04:00",
+      "end": "2026-10-17T08:25:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite A1",
+        "Mite A2"
+      ],
+      "teamIds": [
+        "226139",
+        "226140"
+      ],
+      "url": "https://www.arlingtonice.com/team/226139/calendar"
+    },
+    {
+      "id": "8c74b7c82549",
+      "type": "game",
+      "start": "2026-10-17T08:00:00-04:00",
+      "end": "2026-10-17T09:00:00-04:00",
+      "location": "Hayden",
+      "atHomeRink": false,
+      "teams": [
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226137"
+      ],
+      "opponent": "vs. Lexington/Bedford Mite 1",
+      "url": "https://www.arlingtonice.com/team/226137/calendar"
+    },
+    {
+      "id": "c17700223eff",
+      "type": "practice",
+      "start": "2026-10-17T08:35:00-04:00",
+      "end": "2026-10-17T09:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "U10 A",
+        "U10 B",
+        "U12 A",
+        "U12 B",
+        "U14A",
+        "U14B"
+      ],
+      "teamIds": [
+        "226149",
+        "226148",
+        "226147",
+        "226146",
+        "226144",
+        "226145"
+      ],
+      "url": "https://www.arlingtonice.com/team/226149/calendar"
+    },
+    {
+      "id": "ac4873ba8ce3",
+      "type": "game",
+      "start": "2026-10-17T09:00:00-04:00",
+      "end": "2026-10-17T10:00:00-04:00",
+      "location": "Dorchester",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt A (3)"
+      ],
+      "teamIds": [
+        "226135"
+      ],
+      "opponent": "@ Dorchester Squirt 3",
+      "url": "https://www.arlingtonice.com/team/226135/calendar"
+    },
+    {
+      "id": "adaf2744e8ad",
+      "type": "practice",
+      "start": "2026-10-17T11:40:00-04:00",
+      "end": "2026-10-17T12:30:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Mite AA",
+        "Mite AAA"
+      ],
+      "teamIds": [
+        "226138",
+        "226137"
+      ],
+      "url": "https://www.arlingtonice.com/team/226138/calendar"
+    },
+    {
+      "id": "9831fb0a0dbf",
+      "type": "game",
+      "start": "2026-10-17T13:10:00-04:00",
+      "end": "2026-10-17T14:10:00-04:00",
+      "location": "Somerville",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AA (2)"
+      ],
+      "teamIds": [
+        "226134"
+      ],
+      "opponent": "@ Cambridge Squirt 1",
+      "url": "https://www.arlingtonice.com/team/226134/calendar"
+    },
+    {
+      "id": "3bec52b9b2de",
+      "type": "game",
+      "start": "2026-10-17T13:20:00-04:00",
+      "end": "2026-10-17T14:20:00-04:00",
+      "location": "Jim Roche Community Arena",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam AAA (1)"
+      ],
+      "teamIds": [
+        "226127"
+      ],
+      "opponent": "vs. Parkway Bantam 1",
+      "url": "https://www.arlingtonice.com/team/226127/calendar"
+    },
+    {
+      "id": "d41fae1493c2",
+      "type": "practice",
+      "start": "2026-10-17T13:50:00-04:00",
+      "end": "2026-10-17T14:50:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Frozen Frenzy Group 1"
+      ],
+      "teamIds": [
+        "285346"
+      ],
+      "url": "https://www.arlingtonice.com/team/285346/calendar"
+    },
+    {
+      "id": "f2a77a68f7d2",
+      "type": "game",
+      "start": "2026-10-17T14:20:00-04:00",
+      "end": "2026-10-17T15:20:00-04:00",
+      "location": "Somerville",
+      "atHomeRink": false,
+      "teams": [
+        "Squirt AAA (1)"
+      ],
+      "teamIds": [
+        "226133"
+      ],
+      "opponent": "@ South Boston Squirt 1",
+      "url": "https://www.arlingtonice.com/team/226133/calendar"
+    },
+    {
+      "id": "294dac4e046e",
+      "type": "practice",
+      "start": "2026-10-17T15:00:00-04:00",
+      "end": "2026-10-17T16:05:00-04:00",
+      "location": "Arlington 1",
+      "atHomeRink": true,
+      "teams": [
+        "Frozen Frenzy Group 2"
+      ],
+      "teamIds": [
+        "285347"
+      ],
+      "url": "https://www.arlingtonice.com/team/285347/calendar"
+    },
+    {
+      "id": "8391f82dafc2",
+      "type": "game",
+      "start": "2026-10-17T19:00:00-04:00",
+      "end": "2026-10-17T20:00:00-04:00",
+      "location": "Somerville",
+      "atHomeRink": false,
+      "teams": [
+        "Bantam A (2)"
+      ],
+      "teamIds": [
+        "226129"
+      ],
+      "opponent": "vs. Winchester Bantam 2",
+      "url": "https://www.arlingtonice.com/team/226129/calendar"
+    }
+  ],
+  "errors": []
+}

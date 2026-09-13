@@ -1,0 +1,29 @@
+{
+  "rink": {
+    "id": "steriti-boston",
+    "name": "Steriti Memorial Rink",
+    "town": "Boston (North End)",
+    "address": "561 Commercial St, Boston, MA 02109",
+    "lat": 42.3683,
+    "lng": -71.05719,
+    "driveMinutes": 16,
+    "driveMiles": 7.2,
+    "website": "https://www.mass.gov/locations/steriti-memorial-rink",
+    "scheduleUrl": "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule",
+    "operator": "DCR",
+    "source": {
+      "kind": "document-vision",
+      "documentUrls": [
+        "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule"
+      ],
+      "hints": "Only use the section headed 'Steriti - Boston'. Ignore all other rinks on the page. 'Public stick time' is DCR public hockey / stick time. Respect the season dates and the public skating start date given in the page overview; if the page says closed for the season and no upcoming season dates are listed, return no events."
+    },
+    "emoji": "🍝",
+    "color": "#fef7f8"
+  },
+  "fetchedAt": "2026-09-13T15:35:05.811Z",
+  "rangeStart": "2026-09-13T04:00:00.000Z",
+  "rangeEnd": "2026-10-18T04:00:00.000Z",
+  "events": [],
+  "errors": []
+}

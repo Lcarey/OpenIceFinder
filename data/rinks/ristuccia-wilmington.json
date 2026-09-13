@@ -1,0 +1,28 @@
+{
+  "rink": {
+    "id": "ristuccia-wilmington",
+    "name": "MPG Arena (formerly Ristuccia)",
+    "town": "Wilmington",
+    "address": "190 Main St, Wilmington, MA 01887",
+    "lat": 42.55822,
+    "lng": -71.17889,
+    "driveMinutes": 20,
+    "driveMiles": 12,
+    "website": "https://www.wilmingtonyouthhockey.org/rinks",
+    "operator": "MPG Arena",
+    "source": {
+      "kind": "link-only",
+      "reason": "No public schedule is published online."
+    },
+    "notes": "Private facility; no public stick & puck sessions are published.",
+    "emoji": "🐺",
+    "color": "#f5fefc"
+  },
+  "fetchedAt": "2026-09-13T15:35:05.811Z",
+  "rangeStart": "2026-09-13T04:00:00.000Z",
+  "rangeEnd": "2026-10-18T04:00:00.000Z",
+  "events": [],
+  "errors": [
+    "No public schedule is published online."
+  ]
+}

@@ -1,0 +1,373 @@
+{
+  "rink": {
+    "id": "flynn-medford",
+    "name": "Flynn Rink (LoConte Memorial)",
+    "town": "Medford",
+    "address": "300 Elm St, Medford, MA 02155",
+    "lat": 42.43841,
+    "lng": -71.09879,
+    "driveMinutes": 12,
+    "driveMiles": 4.5,
+    "website": "http://www.flynnrink.com/",
+    "scheduleUrl": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8",
+    "operator": "Flynn Rink (DCR)",
+    "source": {
+      "kind": "frontline",
+      "baseUrl": "https://flynn.frontline-connect.com",
+      "fac": "flynn",
+      "facId": 1,
+      "sessions": {
+        "8": "Hockey Lesson Walk-On"
+      }
+    },
+    "emoji": "🦊",
+    "color": "#faf5fe"
+  },
+  "fetchedAt": "2026-09-13T15:37:54.532Z",
+  "rangeStart": "2026-09-13T04:00:00.000Z",
+  "rangeEnd": "2026-10-18T04:00:00.000Z",
+  "events": [
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-13T07:00:00-04:00",
+      "end": "2026-09-13T08:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-iu8x8w",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-14T14:00:00-04:00",
+      "end": "2026-09-14T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-lbbsv2",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-15T14:00:00-04:00",
+      "end": "2026-09-15T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-11jaz8i",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-16T14:00:00-04:00",
+      "end": "2026-09-16T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-jwuhze",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-17T14:00:00-04:00",
+      "end": "2026-09-17T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-lk7bom",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-18T14:00:00-04:00",
+      "end": "2026-09-18T16:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-1tlxpbr",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-20T07:00:00-04:00",
+      "end": "2026-09-20T08:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-11mle10",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-21T14:00:00-04:00",
+      "end": "2026-09-21T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-159fnai",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-22T14:00:00-04:00",
+      "end": "2026-09-22T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-wh597q",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-23T14:00:00-04:00",
+      "end": "2026-09-23T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-xbfsnm",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-24T14:00:00-04:00",
+      "end": "2026-09-24T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-1klu1m6",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-25T14:00:00-04:00",
+      "end": "2026-09-25T16:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-13y0muj",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-27T07:00:00-04:00",
+      "end": "2026-09-27T08:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-1abpj0c",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-28T14:00:00-04:00",
+      "end": "2026-09-28T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-f5pi8u",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-29T14:00:00-04:00",
+      "end": "2026-09-29T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-11jwpje",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-09-30T14:00:00-04:00",
+      "end": "2026-09-30T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-1hi7x4q",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-01T14:00:00-04:00",
+      "end": "2026-10-01T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-jkbchq",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-02T14:00:00-04:00",
+      "end": "2026-10-02T16:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=9&year=2026",
+      "id": "flynn-medford-ejh0c7",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-04T07:00:00-04:00",
+      "end": "2026-10-04T08:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-cl8wu0",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-05T14:00:00-04:00",
+      "end": "2026-10-05T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-1wn746e",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-06T14:00:00-04:00",
+      "end": "2026-10-06T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-t14kli",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-07T14:00:00-04:00",
+      "end": "2026-10-07T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-k77f0q",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-08T14:00:00-04:00",
+      "end": "2026-10-08T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-1pljhka",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-09T14:00:00-04:00",
+      "end": "2026-10-09T16:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-loljiv",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-11T07:00:00-04:00",
+      "end": "2026-10-11T08:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-g41fo4",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-12T08:00:00-04:00",
+      "end": "2026-10-12T09:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-ea2ty2",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-12T14:00:00-04:00",
+      "end": "2026-10-12T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-1kfvd1e",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-13T14:00:00-04:00",
+      "end": "2026-10-13T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-1kkd722",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-14T14:00:00-04:00",
+      "end": "2026-10-14T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-1n7e7p6",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-15T14:00:00-04:00",
+      "end": "2026-10-15T15:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-n72ga",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    },
+    {
+      "title": "Hockey Lesson Walk-On",
+      "start": "2026-10-16T14:00:00-04:00",
+      "end": "2026-10-16T16:50:00-04:00",
+      "surface": "BIG RINK",
+      "url": "https://flynn.frontline-connect.com/monthlysched.cfm?fac=flynn&facid=1&session=8&month=10&year=2026",
+      "id": "flynn-medford-30jdib",
+      "rinkId": "flynn-medford",
+      "category": "stick_puck",
+      "classifiedBy": "lookup"
+    }
+  ],
+  "errors": []
+}

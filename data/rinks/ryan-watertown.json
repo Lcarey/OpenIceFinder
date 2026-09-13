@@ -1,0 +1,30 @@
+{
+  "rink": {
+    "id": "ryan-watertown",
+    "name": "John A. Ryan Skating Arena",
+    "town": "Watertown",
+    "address": "1 Paramount Pl, Watertown, MA 02472",
+    "lat": 42.36513,
+    "lng": -71.20912,
+    "driveMinutes": 13,
+    "driveMiles": 5.6,
+    "website": "https://app.rectimes.com/ryanarena",
+    "scheduleUrl": "https://app.rectimes.com/ryanarena",
+    "operator": "Town of Watertown",
+    "source": {
+      "kind": "rectimes",
+      "apiBaseUrl": "https://api.rectimes.com",
+      "facility": "ryanarena",
+      "venueIds": [
+        1281
+      ]
+    },
+    "emoji": "🌊",
+    "color": "#fef7fb"
+  },
+  "fetchedAt": "2026-09-13T15:35:05.811Z",
+  "rangeStart": "2026-09-13T04:00:00.000Z",
+  "rangeEnd": "2026-10-18T04:00:00.000Z",
+  "events": [],
+  "errors": []
+}

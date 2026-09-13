@@ -1,0 +1,303 @@
+{
+  "rink": {
+    "id": "stoneham-arena",
+    "name": "Stoneham Arena",
+    "town": "Stoneham",
+    "address": "101 Montvale Ave, Stoneham, MA 02180",
+    "lat": 42.48134,
+    "lng": -71.11331,
+    "driveMinutes": 12,
+    "driveMiles": 6.3,
+    "website": "https://www.stoneham-ma.gov/",
+    "scheduleUrl": "https://www.stoneham-ma.gov/calendar.aspx?view=list&CID=26",
+    "operator": "Town of Stoneham",
+    "source": {
+      "kind": "civicengage",
+      "baseUrl": "https://www.stoneham-ma.gov",
+      "calendarId": 26
+    },
+    "emoji": "🪨",
+    "color": "#f8f7fe"
+  },
+  "fetchedAt": "2026-09-13T15:37:54.532Z",
+  "rangeStart": "2026-09-13T04:00:00.000Z",
+  "rangeEnd": "2026-10-18T04:00:00.000Z",
+  "events": [
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-14T10:00:00-04:00",
+      "end": "2026-09-14T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8835&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-1cj62p8",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*",
+      "start": "2026-09-14T12:00:00-04:00",
+      "end": "2026-09-14T13:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8858&month=9&year=2026&day=13&calType=0",
+      "description": "*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS*** HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED",
+      "id": "stoneham-arena-19g46n6",
+      "rinkId": "stoneham-arena",
+      "category": "stick_puck_adult",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-15T10:00:00-04:00",
+      "end": "2026-09-15T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8836&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-13uakx4",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-16T10:00:00-04:00",
+      "end": "2026-09-16T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8837&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-dw9nl4",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*",
+      "start": "2026-09-16T12:00:00-04:00",
+      "end": "2026-09-16T13:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8859&month=9&year=2026&day=13&calType=0",
+      "description": "*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS*** HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED",
+      "id": "stoneham-arena-w5vpbi",
+      "rinkId": "stoneham-arena",
+      "category": "stick_puck_adult",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-17T10:00:00-04:00",
+      "end": "2026-09-17T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8838&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-1un18b8",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*",
+      "start": "2026-09-17T12:00:00-04:00",
+      "end": "2026-09-17T13:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8860&month=9&year=2026&day=13&calType=0",
+      "description": "*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS*** HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED",
+      "id": "stoneham-arena-by025i",
+      "rinkId": "stoneham-arena",
+      "category": "stick_puck_adult",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Freestyle 9:00 AM",
+      "start": "2026-09-18T09:00:00-04:00",
+      "end": "2026-09-18T09:50:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8882&month=9&year=2026&day=13&calType=0",
+      "description": "FREESTYLE SESSIONS ARE NOT PUBLIC SKATING FREESTYLE is designed for Any Skater (Hockey or Figure Skater) to work one on one with a Coach. Also for figure skaters to practice their routines and advanced skills. During these sessions, skaters will be doing difficult jumps and spins sometimes with a coach and sometimes alone.",
+      "id": "stoneham-arena-15wkl49",
+      "rinkId": "stoneham-arena",
+      "category": "freestyle",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-18T10:00:00-04:00",
+      "end": "2026-09-18T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8839&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-fgzwpw",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*",
+      "start": "2026-09-18T12:00:00-04:00",
+      "end": "2026-09-18T13:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8861&month=9&year=2026&day=13&calType=0",
+      "description": "*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS*** HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED",
+      "id": "stoneham-arena-1xx7cy",
+      "rinkId": "stoneham-arena",
+      "category": "stick_puck_adult",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-21T10:00:00-04:00",
+      "end": "2026-09-21T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8840&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-1gmul6o",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*",
+      "start": "2026-09-21T12:00:00-04:00",
+      "end": "2026-09-21T13:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8862&month=9&year=2026&day=13&calType=0",
+      "description": "*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS*** HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED",
+      "id": "stoneham-arena-1w73sc2",
+      "rinkId": "stoneham-arena",
+      "category": "stick_puck_adult",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-22T10:00:00-04:00",
+      "end": "2026-09-22T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8841&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-1l0laqc",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-23T10:00:00-04:00",
+      "end": "2026-09-23T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8842&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-1f0wv88",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*",
+      "start": "2026-09-23T12:00:00-04:00",
+      "end": "2026-09-23T13:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8863&month=9&year=2026&day=13&calType=0",
+      "description": "*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS*** HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED",
+      "id": "stoneham-arena-u047iy",
+      "rinkId": "stoneham-arena",
+      "category": "stick_puck_adult",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-24T10:00:00-04:00",
+      "end": "2026-09-24T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8843&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-13mhnwk",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*",
+      "start": "2026-09-24T12:00:00-04:00",
+      "end": "2026-09-24T13:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8864&month=9&year=2026&day=13&calType=0",
+      "description": "*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS*** HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED",
+      "id": "stoneham-arena-1ecrpbm",
+      "rinkId": "stoneham-arena",
+      "category": "stick_puck_adult",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Freestyle 9:00 AM",
+      "start": "2026-09-25T09:00:00-04:00",
+      "end": "2026-09-25T09:50:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8883&month=9&year=2026&day=13&calType=0",
+      "description": "FREESTYLE SESSIONS ARE NOT PUBLIC SKATING FREESTYLE is designed for Any Skater (Hockey or Figure Skater) to work one on one with a Coach. Also for figure skaters to practice their routines and advanced skills. During these sessions, skaters will be doing difficult jumps and spins sometimes with a coach and sometimes alone.",
+      "id": "stoneham-arena-dmilbd",
+      "rinkId": "stoneham-arena",
+      "category": "freestyle",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-25T10:00:00-04:00",
+      "end": "2026-09-25T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8844&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-13759vs",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*",
+      "start": "2026-09-25T12:00:00-04:00",
+      "end": "2026-09-25T13:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8865&month=9&year=2026&day=13&calType=0",
+      "description": "*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS*** HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED",
+      "id": "stoneham-arena-yp3oze",
+      "rinkId": "stoneham-arena",
+      "category": "stick_puck_adult",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-28T10:00:00-04:00",
+      "end": "2026-09-28T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8845&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-1s2qzpg",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*",
+      "start": "2026-09-28T12:00:00-04:00",
+      "end": "2026-09-28T13:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8866&month=9&year=2026&day=13&calType=0",
+      "description": "*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS*** HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED",
+      "id": "stoneham-arena-oyrwmy",
+      "rinkId": "stoneham-arena",
+      "category": "stick_puck_adult",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-29T10:00:00-04:00",
+      "end": "2026-09-29T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8846&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-1fle31s",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "PUBLIC SKATING",
+      "start": "2026-09-30T10:00:00-04:00",
+      "end": "2026-09-30T11:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8847&month=9&year=2026&day=13&calType=0",
+      "description": "*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN* *HELMETS ARE MANDATORY FOR CHILDREN UNDER 10* **CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** *** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING*** *** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***",
+      "id": "stoneham-arena-nw67vc",
+      "rinkId": "stoneham-arena",
+      "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*",
+      "start": "2026-09-30T12:00:00-04:00",
+      "end": "2026-09-30T13:45:00-04:00",
+      "url": "https://www.stoneham-ma.gov/Calendar.aspx?EID=8867&month=9&year=2026&day=13&calType=0",
+      "description": "*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS*** HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED",
+      "id": "stoneham-arena-amsc32",
+      "rinkId": "stoneham-arena",
+      "category": "stick_puck_adult",
+      "classifiedBy": "rule"
+    }
+  ],
+  "errors": []
+}
