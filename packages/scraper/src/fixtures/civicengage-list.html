@@ -1,0 +1,3825 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<!-- Google Tag Manager for GA4 -->
+				<script>(function(w,d,s,l,i){w.GAMeasurementID='G-W1LHZW4T0P';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');</script>
+				<!-- End Google Tag Manager for GA4 -->
+				<script type='text/javascript'>
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				</script>
+	<script>
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+		}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+			</script>
+			
+
+	<script type="text/javascript">
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= true;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script async src="https://docaccess.com/docbox.js"></script>
+	<!-- Favicon MetaTags -->
+<link rel='icon' type='image/png' sizes='192x192' href='/DocumentCenter/View/103'>
+
+<link rel='icon' type='image/png' sizes='512x512' href='/DocumentCenter/View/104'>
+<link rel='apple-touch-icon' sizes='120x120' href='/DocumentCenter/View/105'>
+<link rel='icon' type='image/png' sizes='16x16' href='/DocumentCenter/View/106'>
+<link rel='icon' type='image/png' sizes='32x32' href='/DocumentCenter/View/107'>
+<meta rel='msapplication-config' content='/DocumentCenter/View/108'>
+<link rel='icon' type='image/png' sizes='150x150' href='/DocumentCenter/View/108'>
+<link rel='shortcut icon' href='/DocumentCenter/View/110'>
+<link rel='manifest' href='/DocumentCenter/View/111'>
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- End Favicon MetaTags -->
+
+	
+	
+	<meta name="theme-color" content="rgb(42, 35, 147)">
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+		<title>Calendar • Stoneham, MA • CivicEngage</title>
+
+			<script src="/Assets/Scripts/jQuery/jquery-3.7.1.min.js"></script>
+	<script src="/Assets/Scripts/jQuery/jquery-migrate-3.6.0.min.js" type="text/javascript"></script>
+	
+
+	<!--[if IE 6]><script language="JavaScript" type="text/javascript"> var isie6 = true; </script><![endif]-->
+	<!--[if IE 7]><script language="JavaScript" type="text/javascript"> var isie7 = true; </script><![endif]-->
+	<!--[if IE 8]><script language="JavaScript" type="text/javascript"> var isie8 = true; </script><![endif]-->
+	<!--[if IE 9]><script language="JavaScript" type="text/javascript"> var isie8 = true; </script><![endif]-->
+	<script type="text/javascript"><!--
+	var intCountryCode = 840;
+	var order = '';
+//--></script>
+	
+<link href="/-681783051.css" rel="stylesheet" type="text/css" />	<link href="/-2140275272.css" rel="stylesheet" type="text/css" />	<link href="/-113097058.css" rel="stylesheet" type="text/css" />
+
+	<link rel="stylesheet" type="text/css" href="/Assets/Styles/Print.css" media="print">
+	<script type="text/javascript">
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	</script>
+	
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+	
+	<link rel="stylesheet" href="/App_Themes/CP/nmenu.css" type="text/css">
+
+    
+	<!-- Dynamic Header Scripts -->
+	
+	<!--Reference Stylesheet-->
+	
+    
+		<!--Dynamic Header Styles-->
+	<style type="text/css">
+	
+	</style>
+	
+	
+	
+
+<script src="/-1992112027.js" type="text/javascript"></script>
+
+	<script src="/739942322.js" type="text/javascript"></script>
+	
+	
+
+	<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/App_Themes/ie8.css"><![endif]-->
+	<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/App_Themes/ie7.css"><![endif]-->
+	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/App_Themes/ie6.css"><![endif]-->
+	<!--[if lt IE 9]><script type="text/javascript" src="/Scripts/html5.js"></script><![endif]-->
+
+	<script type="text/javascript">
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	</script>
+	<script src="/Assets/Scripts/AlpineJS/3.14.1/alpine.min.js" type="text/javascript" defer="defer"></script>
+</head>
+<body class="wide " >
+
+    <script>jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});</script>
+	<div id="popoverModal" class="cp-PopOver cp-PopOver--modal cp-AdminWrap" style="position: fixed; display: none;">
+	<div class="cp-PopOver-header">
+		<h3 class="cp-PopOver-title"></h3>
+		<button class="cp-Btn cp-PopOver-close" onclick="closePopOverModal(event)">
+			<svg class="cp-Icon--close" alt="close" title="close">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconClose"></use>
+			</svg>
+		</button>
+	</div>
+	<div id="cpPopOverBody" class="cp-PopOver-body">
+		<form id="cpPopOverForm" name="cpPopOverForm" novalidate></form>
+	</div>
+	<div id="cpPopOverFooter" class="cp-PopOver-footer">
+		<div class="cp-BtnGroup" id="actionButtons">
+			<!-- Action buttons will be dynamically added here -->
+		</div>
+	</div>
+</div>
+    <div id="fb-root"></div>
+<div id=skipToContentLinks>
+<a href="#contentarea" target="_self" class="skipToContentLink">Skip to Main Content</a>
+</div>
+    <form id="frmReferenceFormForTelerikEditorDialogs"></form>
+
+        <input type="hidden" id="GoogleMapsKey" value="AIzaSyDWUuE-ifkbhxblF920N8MjpBdTg1Wt784" />
+
+
+
+    <input type="hidden" id="cpcDomain" value="https://cp-civicplusuniversity2.civicplus.com">
+    <input type="hidden" id="hdnStructureID" value="9" />
+    <input type="hidden" id="hdnContentCollectionID" value="760c99d9-604f-4a5f-a462-0fb632138ffd" />
+    <input type="hidden" id="hdnWorkingCopyID" value="00000000-0000-0000-0000-000000000000" />
+    <input type="hidden" id="hdnThemeID" value="21" />
+    <input type="hidden" id="pageIsFrontEnd" value="true" />
+    <input type="hidden" id="pageModuleID" value="58" />
+    <input type="hidden" id="pagePageID" />
+
+        <input type="hidden" id="hdnModuleID" value="58" />
+            <img id="imgLogoPrintPreview" src="/ImageRepository/Document?documentID=10917" alt="Stoneham, MA" />
+<div id="stickyPlaceholder"></div>
+    <div id="outer-wrap" class="outer-wrap">
+        <div id="inner-wrap" class="inner-wrap">
+                <div id="divToolbars" class="cpToolbars newCP mui-fixed" style="">
+                    
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700); 
+.alertText .customAlert {
+    color: #EAEAEA;
+    display: inline-block;
+    font-family: 'Open Sans Condensed', sans-serif; 
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 27px;
+    left: 57px;
+    line-height: 27px;
+    overflow: hidden;
+    position: absolute;
+    top: 15px;
+    white-space: nowrap;
+    width: 268px;
+}
+</style>
+  <div id="1_divAlertBar" class="alertToolbar cpToolbar" style="background: #222222;">
+    <div id="1_divAlertToolbarInner" class="alertToolbarInner" style="font-size: 16px;">
+        <a href="/AlertCenter.aspx" id="1_lnkAlertText" class="alertText" style="border-right: 1px solid #000000;">
+            <img src="/Common/Images/AlertCenter/alertBarBlink.svg" id="1_imgDot" alt="Emergency Alert" class="redDot" />
+            <span id="1_customAlert" class="customAlert">Notice of Tax Taking</span>
+        </a>
+        <span id="1_spnAlertContainer" class="alertContainer"><a href="/DocumentCenter/View/12568/Notice-of-Tax-Taking" target="_blank" class="alert" style="border-left: 1px solid #635e65; border-right: 1px solid #000000;background: #030303 url(/Common/images/AlertCenter/alertBarBlackTextBckg.png) repeat-x; color: #FFFFFF;">
+	TOWN OF STONEHAM OFFICE OF THE COLLECTOR OF TAXES NOTICE OF TAX TAKING FOR 13 PROPERTIES FOR NON-PAYMENT OF TAXES
+	<span style="color: #FC4C2F;">Read On...</span>
+</a>
+</span>
+    </div>
+  </div>
+  <div id="1_divAlertBarEmpty" class="alertBarEmpty"></div>
+  
+
+
+
+<!-- Begin Signed Out Bar -->
+<div class="cpToolbar user public">
+    <div class="inner selfClear">
+        <p class="dropdown"><a href="/MyAccount/ProfileCreate" class="myConnections" id="signedOutToolbarCreateProfileButton">Create a Website Account</a> <span class="welcomeMessage">- Manage notification subscriptions, save form progress and more. &nbsp;&nbsp;</span></p>
+        <ul class="nav secondary">
+	        <li><a href="/MyAccount" class="button" id="loggedOutToolbarSignInButton">Website Sign In</a></li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+</script>
+<!-- End Signed Out Bar -->
+
+                </div>
+            <div id="bodyWrapper">
+                <div id="mainNavHolderMobile" class="mainNavHolderMobile"></div>
+                
+<div data-cpRole="structuralContainer" id="bodyContainerTS">
+<!-- Links --><div data-cpRole="structuralContainer" id="topContainerTS">
+<div class="siteWrap3"><div data-cpRole="contentContainer" id="topContentTS">	<div id="cc67a2278c-a08c-4d3b-9072-2839968df3f3" data-containerid="67a2278c-a08c-4d3b-9072-2839968df3f3" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="1">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="56193ea3-531b-46fe-a28a-ea582e96576b">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last id9a10aec6-097f-44e2-b7c9-f69596cb6190" style="" data-widgetcontainerid="9a10aec6-097f-44e2-b7c9-f69596cb6190">	
+	<div data-widget-id="6091e88c-5d3d-4461-9ef2-2f78aedca9b1" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+
+
+
+	<section id="widgetQuicklink6091e88c-5d3d-4461-9ef2-2f78aedca9b1" class="widget widgetQuickLinks skin71 widgetOptionSet40 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-label="Quick Links">
+			<header class="widgetHeader" id="quickLinksHeader6091e88c-5d3d-4461-9ef2-2f78aedca9b1">
+		<div class="">
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid6 ">
+        <div class="row autoWidths center narrow">
+				<div class="col col1 first ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/215" target="_self" >Police</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/152" target="_self" >Fire</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/156" target="_self" >Schools</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="https://stonehamma.myrec.com/info/default.aspx" target="_self" >Recreation</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/815" target="_self" >Library</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  last">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/163" target="_self" >Senior Center</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div><!-- Header Container --><header data-cpRole="structuralContainer" id="headerContainerTS" class="fixedTopTS" data-attach="topContainerTS">
+<div class="siteWrap" id="flexHeaderTS"><div data-cpRole="structuralContainer" id="bannerLogoWrapTS">
+<div data-cpRole="banner" id="bannerLogoTS" class="bannerLogoTS empty">
+
+
+
+
+				<span id="bannerLogoTS-58" style="			display: block; text-align: center;
+"><img alt="" class="bannerObject" height="180" src="/ImageRepository/Document?documentID=11121" width="616" /></span>
+</div>
+</div><nav data-cpRole="nav" id="mainNav" class="siteNav mainNav" role="navigation">
+<ol id="mainNavMenu" data-parent="1" class="rootNavMenu" role="menu"><!--
+--><li id="MainItem516" class="topMenuItem" role="none" data-pageid="516" data-displaymegamenu="False"><!--
+			--><!--
+			--> <a role="menuitem"  id="mainNavHome" class="navMainItem mainNavItem mainNavItem1" href="http://www.stoneham-ma.gov" target="_self">   Home </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem27" class="topMenuItem" role="none" data-pageid="27" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem"  aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu27" id = "mainNavGovernment" class="navMainItem mainNavItem mainNavItem2 " href="/27/Government" target = "_self" >   Government  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem31" class="topMenuItem" role="none" data-pageid="31" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem"  aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu31" id = "mainNavResidents" class="navMainItem mainNavItem mainNavItem3 " href="/31/Residents" target = "_self" >   Residents  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem35" class="topMenuItem" role="none" data-pageid="35" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem"  aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu35" id = "mainNavBusinesses" class="navMainItem mainNavItem mainNavItem4 " href="/35/Businesses" target = "_self" >   Businesses  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem551" class="topMenuItem" role="none" data-pageid="551" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem"  aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu551" id = "mainNavContactUs" class="navMainItem mainNavItem mainNavItem5 " href="/551/Contact-Us" target = "_self" >   Contact Us  </a>			<!--
+			--><!--
+			--></li><!----><li id="MainItem9" class="topMenuItem" role="none" data-pageid="9" data-displaymegamenu="True"><!--
+			--><!--
+			--> <a role = "menuitem"  aria-haspopup=true aria-expanded='false' aria-controls="mainNavMegaMenu9" id = "mainNavHowDoI" class="navMainItem mainNavItem mainNavItem6 " href="/9/How-Do-I" target = "_self" >   How Do I...  </a>			<!--
+			--><!--
+			--></li><!---->
+</ol>
+
+
+	<script type="text/javascript">
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=58&themeID=21&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	</script>
+
+
+<aside data-cpRole="megaMenu" id="megaMenu" class="megaMenu" style="display: none;"><input type="hidden" id="megaMenuPopupDirection" value="0"><input type="hidden" id="megaMenuWidthReference" value="0"><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu27" class="contentTop mainNavMegaMenu megaMenuContainer pageID_27 hidden" data-orientation="horizontal">	<div id="cc4c3d7ee8-8856-46ae-8a11-b1068715dd23" data-containerid="4c3d7ee8-8856-46ae-8a11-b1068715dd23" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu31" class="contentTop mainNavMegaMenu megaMenuContainer pageID_31 hidden" data-orientation="horizontal">	<div id="cce471d9a0-e70f-4eff-81ff-bd3005c3d069" data-containerid="e471d9a0-e70f-4eff-81ff-bd3005c3d069" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu35" class="contentTop mainNavMegaMenu megaMenuContainer pageID_35 hidden" data-orientation="horizontal">	<div id="cc696ec61b-0da3-4437-a3fc-e5892d737931" data-containerid="696ec61b-0da3-4437-a3fc-e5892d737931" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu551" class="contentTop mainNavMegaMenu megaMenuContainer pageID_551 hidden" data-orientation="horizontal">	<div id="cca997f1ac-f1eb-4ff0-80d1-18da02a3d1e7" data-containerid="a997f1ac-f1eb-4ff0-80d1-18da02a3d1e7" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside><aside role="menu" data-cpRole="contentContainer" id="mainNavMegaMenu9" class="contentTop mainNavMegaMenu megaMenuContainer pageID_9 hidden" data-orientation="horizontal">	<div id="cccf85180a-67ae-4fbf-8cd7-c77299fd472f" data-containerid="cf85180a-67ae-4fbf-8cd7-c77299fd472f" class="pageContent cpGrid cpGrid24 showInMobile">
+				                
+
+
+
+	</div>
+</aside></aside></nav></div>
+</header><!-- Banner --><div data-cpRole="structuralContainer" id="bannerContainerTS" class="noOverflowTS">
+<div data-cpRole="banner" id="banner1"><div data-cpRole="structuralContainer" id="bannerSizingTS">
+<div data-cpRole="structuralContainer" id="bannerSearchTS">
+<div class="siteWrap3"><div data-cpRole="contentContainer" id="searchTS">	<div id="ccc9e2d573-325c-4188-a8f9-b1796a632398" data-containerid="c9e2d573-325c-4188-a8f9-b1796a632398" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="b68aa9b2-e7bd-4c10-a83c-df042726eac5">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last idf561642f-a97e-4e8a-8caf-88c524b8829c" style="" data-widgetcontainerid="f561642f-a97e-4e8a-8caf-88c524b8829c">	
+<div data-widget-id="6de4f3a3-435a-4ab8-bc81-5318b5d6070e" data-widget-controller-path="/Layout/WidgetSearch">
+	
+	<script defer type="text/javascript" src="/Common/Controls/jquery-ui-1.14.2/jquery-ui.min.js"></script>
+	<script defer src="/Areas/Layout/Assets/Scripts/Search.js" type="text/javascript"></script>
+	<script defer type="text/javascript">
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + '6de4f3a3-435a-4ab8-bc81-5318b5d6070e';
+				var checkboxSelector = "#ysnSearchOnlyDept" + '6de4f3a3-435a-4ab8-bc81-5318b5d6070e';
+				var buttonSelector = ".widgetSearchButton" + '6de4f3a3-435a-4ab8-bc81-5318b5d6070e';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	</script>
+
+	<section id="widgetPreviewSearch" class="widget widgetSearch skin63 widgetOptionSet41" style="display: block;" aria-label="Search">
+				<!-- For the button right and inside -->
+		<div class="widgetBody buttonRightInside">
+			<input class="widgetSearchBox widgetSearchBox6de4f3a3-435a-4ab8-bc81-5318b5d6070e" cp5ph="true" id="searchField6de4f3a3-435a-4ab8-bc81-5318b5d6070e" name="searchField" onchange="searchBtnApplyQuery();" placeholder="Search..." type="text" value="" />
+						<a href="/Search/Results" id="btnSearchIcon" class="widgetSearchButton widgetSearchButton6de4f3a3-435a-4ab8-bc81-5318b5d6070e" role="button"><img alt="Go to Site Search" class="imageHover" data-hover="/ImageRepository/Document?documentID=10923" data-image="/ImageRepository/Document?documentID=10922" src="/ImageRepository/Document?documentID=10922" /></a>
+
+			<label class="searchLabel" aria-hidden="true" for="searchField6de4f3a3-435a-4ab8-bc81-5318b5d6070e">Search</label>
+		</div>
+
+	</section>
+
+
+<style scoped>
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: rgba(34, 34, 34, 1);
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: rgba(34, 34, 34, 1);
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: rgba(34, 34, 34, 1);
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: rgba(34, 34, 34, 1);
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox6de4f3a3-435a-4ab8-bc81-5318b5d6070e
+	{
+		color: rgba(34, 34, 34, 1);
+		border-radius: 10px;
+background: #FFF;
+border: 0;
+box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.20);
+height: 60px;
+font-family: Poppins;
+font-size: 1.1em;
+font-weight: 500;
+padding: 0 80px 0 20px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButton6de4f3a3-435a-4ab8-bc81-5318b5d6070e
+	{
+		margin: 6px 6px 0 0;
+	}
+	.widgetSearch .widgetSearch-onlyDept6de4f3a3-435a-4ab8-bc81-5318b5d6070e
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept6de4f3a3-435a-4ab8-bc81-5318b5d6070e
+	{
+		position: relative;
+		top: .125em;
+	}
+
+</style>
+
+<link rel="stylesheet" href="/Common/Controls/jquery-ui-1.14.2/jquery-ui.min.css">
+<link rel="stylesheet" href="/Common/Controls/jquery-ui-1.14.2/jquery-ui.theme.min.css">
+
+
+
+<script type="text/javascript">
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField6de4f3a3-435a-4ab8-bc81-5318b5d6070e").value;
+	}
+</script>
+
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div>
+</div>
+
+
+
+
+		<div id="bannerImagesJSON59" class="hidden"></div>
+		<div id="bannerSlideshowControls_banner1" class="bannerSlideshowControlsNew none " style="display:none">
+			<a id="arrowPrev_banner1" tabindex="0" class="arrowNew prev" aria-label="Banner Arrow Previous"><svg style=" " class=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconSlideshowArrowLeft"></use></svg></a>
+			<a id="arrowNext_banner1" tabindex="0" class="arrowNew next" aria-label="Banner Arrow Next"><svg style=" " class=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconSlideshowArrowRight"></use></svg></a>
+		</div>
+			<script type="text/javascript">
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":59,"ThemeID":21,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":false,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":144,"BannerOptionID":59,"FileName":"/ImageRepository/Document?documentID=10920","Height":550,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":145,"BannerOptionID":59,"FileName":"/ImageRepository/Document?documentID=10919","Height":550,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":146,"BannerOptionID":59,"FileName":"/ImageRepository/Document?documentID=10918","Height":550,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/Simple/Images/',
+								'Rotating');
+						});
+				});
+			</script>
+
+</div>
+</div><!-- Content container --><div data-cpRole="structuralContainer" id="mainContainerTS">
+<div class="siteWrap3"><div data-cpRole="structuralContainer" id="mainWrapTS" class="mainWrap" role="main">
+<div data-cpRole="structuralContainer" id="outerContentWrapTS" class="outerContentWrap">
+<div data-cpRole="structuralContainer" id="contentWrapTS" class="contentWrap">
+<div data-cpRole="breadCrumbs" id="breadCrumbs" class="breadCrumbContainer">		<ol class="semanticList breadCrumbs">
+			<li><a class="breadCrumb" href="/">Home</a></li><li><a href class="breadCrumb" aria-current="page">Calendar</a></li>
+		</ol>
+
+	   
+    
+</div>
+<div data-cpRole="mainContentContainer" id="moduleContent">
+
+<div id="ctl00_ctl00_MainContent_BodyWrapper">
+	
+	<script type="text/javascript"><!--
+	var isie6 = false, isie7 = false, isie6or7 = false;
+	var intCountryCode = 840;
+
+	function setUrlLength(editor) {
+		//Toggle Image Context Menu Items
+		setMenuItems(editor);
+		//setContentBackgroundColor(editor);
+		removeIEParagraphs(editor);
+	}
+	function setUrlLengthAndToolToggle(editor) {
+		var minToolsGroups = 2; // Number of MinimumSetOfTools tools groups.
+		
+		// Hide the MinimumSetOfTools on load.
+		var toolbar = editor.get_toolContainer(); // Get toolbar container.
+		var toolgroups = toolbar.getElementsByTagName("UL"); // Get all toolgroups containers.
+		
+		for (var i = toolgroups.length - 1; i >= minToolsGroups; i--)			toolgroups[i].style.display = "none";
+		
+		if (editor.isIE) {
+			var elem = editor.get_element();
+			elem.style.height = "430px";
+ 			elem.style.minHeight = "430px";
+		}
+		
+		// Toggle Image Context Menu Items.
+		setMenuItems(editor);
+		//setContentBackgroundColor(editor);
+		removeIEParagraphs(editor);
+	}
+//--></script><!--[if IE 6]><script type="text/javascript">isie6 = true; isie6or7 = true;</script><![endif]-->
+<!--[if IE 7]><script type="text/javascript">isie7 = true; isie6or7 = true;</script><![endif]-->
+
+	
+
+	<form name="aspnetForm" method="post" action="./calendar.aspx?view=list&amp;CID=26" id="aspnetForm" style="display:inline;" onsubmit="return headerValidationCallback();" enctype="multipart/form-data" autocomplete="off">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="1sWaFM/E10ERDKuO/F1Yv/dOQiAv1p6TPG2EmIpnwR6tyaSVsq3Cpgz7lUDNd6HhUWIPYje3mF4cyhmk7q5gmm1SpGWnjYPI65Yc34i347wU2s332hKaS4CwquPQnJNoc6hyHRb8ALKEmalrQOWHtjoD+it3ux6Efc/TfcD4yFVFr0UhB7td7WG4eignBs4S2W4RPtJChtYyOaTzWuu3PodPInuqJrPH8HY9OEhu1NO/QEfKIHX234yoQvywe5Oy2f7xoZWmgZv43JYogH/cwyZh/m/Lqrvk5b83kCANdGtOvHR6jeEUt2ab4RfeRSyqM99cchb8P2FrKfVdppeM0Z2tZ6+nwW10IFX7u3s4/xue/DO0O/fPVKUAFClrIXscZ4DIWsrKVFwCYBmyhMiUIWmJHJjcuGlHFmv5iCQZxPlu10FZCnpZEE7LWwl2jIKQfLAGbHeCd+jmZc/4BvTsgKVNJedeXwnnt6l3rJuXqx+LmR/fVGOeUVEsfnNl+AtQDwqTd/Fj0zCK15DFIiT9WG2mVsytZ0DHGDwyZIg+EWnYq/h7BeDZ+kHDoUimB1T0hWn4C4LrV/+tvs3NFaymYgRT7XCE5O6eW/4QlgfHa7a/ZJAU24kHMYOJhiZ1T+/acCPgOkcZH3Xq7X5xUYY9pSKquexBMzjeR61CmeApEAa2iCZ6OUQ8BQuBvStd0gksSf/HxQZGry0hxLsSxxP7uxRzpUYpIvsuf7kNB2+hivVjHOMGoAMZ87Y/iKr4YhB4tRHE6Q+WZfIZP9TiK4nKj7ZJe1i1YCieKLvj+cH3tDmI7usacK7uT6H5QssSQuUP6uP8eQsCoaokP6kTJ7YS3KGTStpZndrEOnQ7ZqL6U13yim1XT1fi49HBSmTBpaVb0T09evijObXtlkQ0zjfEpBZ55JcZp2aUXayFXVADllVY4Rs/zl5qIyI7+k7M6bHsKGMdvqyvVqqN945VlvjSfp39X7btpBNzqNSejd9YT9Hnp0mI+r+6zeWo30OoxbpySrYRItZlYNFPw8w1m6CJPWCgiOqRG1Ax1ZVL9+/EJqs10kxpceSPXLQIiinyQGDV2QtBqM0c9kAvc94uncMmnaCkTE8aTOWK+m1gIxW7AUY7vUu/DxLo0FJXwdWOxLSqJfpnJoeczOnyep6GFDdyW8wtvXlLfvdZEBg4/EwLuLwSLPiUuUJdhqddq7Z4iXDy6PpfAZInP3dBfuaGOOZBZPGsQ/EBE1rRVxcXsOqyigjaa9ZTHEPNqak6G7FW3gCQijM2W/VBNcllvBmNKrVUZVNoU79HOnYrv9/KbcKrrRJa5vuvSO9vjOZLnE36+G4iWu/mcBrdZq1IP026YJxRgLgMbv473ysoRxK8r61Mb0xEMkhXhvSxSA8nSE/2X8NrIbTVaBgrGjEUgqUTnshQHPlz1Cm7SV1knmrBagER1yjet0HQBTK0m2u/FFB9q9vs6HCArVsow0KZYEARxU/OqsTAt+CLiopLv3XBRV2RX+IK9oDCXOsqx8nJROvN89KarkV7emFqY0t9sT43+mSTC450oZk4LdAsY+maaRuP3sjhRRaqPXRo6cy0A83d0sujYzRbkS7CThyKoXSC5ha5S5z1YljgPhLC/Lm50xL1OTvZxHZYoO6dcpQ79ZWSfbusa9NN6as4ExrLZVhAfqATi+wFFGCy5NGpRBe65a8bqU6R6DZvtvTxR1DCcOAekzmYFOomf43+2Uwgw9bsIdOLGLLJfnyFHWA6JMQ9eg6+oOCQxiA8NMUQc2toQlbrqw+gYVQZ1uxwoKqLUQykPMFWUCJLqt2BWevZdo1NswrA00GQPTXNI6P+kMZc84Yk5qo2+mZt2ft+uMRGMzD2/LBrysA7n6S9sGuvfUdZCNf5KBd1arlOgqSysHPBDUXz3t/VFbCQUDalng+5Wdu6sYfv+lq7B39EfnGomRqPaVy0Xvok7hpZAE41NZ3aRvU96cAtPYM5EgyM8EigGKui495PUQReYkHAMJ0n/W2FaM9CXShbEwwUKCQqI/8QOhYjJSiTBFysCuHs/95HkUtjO/aPCtLf0sEkpUP81+lmaVy+JYI96IFxmvNakLcm8p4xfIK6uB9QeO4Mmx90bgjCSUUVReVOQ7Tb1a5T7sTSvtPs+BqByGns97wDCiw2AMOX3DtOpBHSLEjaav9O2log9pcUJoETVNj1kmmoSFZLYm6q23eLH795QMsdpDGfvYlyx7j2gh/xIgr1LA09NmUIaWjY6tEOkaDO9O9dZGWLoT0Xy+s9zFHbLZodhFDYXkANFPdTVmCYoK6SpuiGrW8u7oMFKYAdjC5zfJJoDUp0h/sgbMGSF0MKK0mg2Psow3aT47Aj8PYGrN5LYOqBNVvPwaKcXlEXgR0gEgPWKlgX/bW4bxkBfCovlNARcboUpOr48UYAqenox8Jth3jpYBt8u4bNJj9TLZtx4dlEoyC9uBnRo2M/hB2keEmPpeBi3TuD52EOSvuvn6Ay9OsqyhH1iWYXcoLBtp70KtAShmWlI2Hk4xzNtrGa+ofzrhjtAHtaqWPzTkpywNm4CqllexT3FN/bp6GxYZIi0kKTBp2Ezzl9TbEKGOX3iYVfuxd1TWhKTUlGZ/k7bq3TLiyfemmG5kNnZfr1aCQlChCe+vYetul5w+5bDwlNVRyXuK7UhZhsRjAgyfRkboQRSKhcWhjmtAlzJfwnVwmZfrn7ANX64OJgOUrY2phILbJ9l9ezmFoASAiWyibFoE1kaipQ0+R8u1IYbidCYWtZaTB0B5IKFr2uyFbuVciiTQ1Is0SwbXKd3ophGT0NMryuoZPwbx5kXdYyE7DFscsh0L71wfatQigFLvFkqVKEyx8IwVeMgcTezzhOZC3dQ9Z/SHyGapxvjFmLDZEgwQsm7beG/HfuXys6ipeGeJv61h5/DetmUAFhjaAwBGfj4WB/ButBUxFaL9vzmSIAWxqv91zcpEOqFJB+xK7IH4OiG+46E/q0tEem3qFL8ywj06mgGsxT87AiuXZyDmEF5pk+XZ/ddMwKxwTasgqoNGVkdh8cF9E0eiZfBrm9eeud5Jahwg+BVt00Us9MXWNhEuoVyQKnkIDGbPWp6Y8ytyP+/dcNBA80Jeu3DRDY5R4MkxKj/fKJoWHXK3pNGw==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZDLabodcikOjfaxGftwY9HZ4kdGjeaKe0dWaPQB1vgEd44eKAO0Ba1XMxE47-4twmw2&amp;t=639190664600000000" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=X4u1tTralNZ96ktoQfWieeVP79wvb_7TMH0UsJyEaCtNOvgolWXholhKSYjvgKNlCC6viXmn71Mg4AUDPeoctxH_wFnpk_RiX6sSsvnqsH8zxW5OhxsGTYpNTentZFf7s4cvSxzk7HRTWx8mxrdDQelrocz4ptHbYWQCCETd6dql_IKuc0k-m-FcTOfyd412lZ8Buz-K_f6NTUwm9UVnszqb0BZOrIO3gvR_UkqFkCsCV4mzha9YTdsLsAZ_srOfua7ndkRCgSawhq5bQz6647v2Cr0mUhBh-i-IO3Mp5GSuycd8o2MRnpr9u5qlSKQsPVcUYa5Zwulv_SREVs6vqxzTc726vZl0OXynRlC9eVWP1lcvbIDDzBFHbi1M15lOynKad-PmRGSy3TRFa8TYWv05NycYNARBLeDIaT4WeCyUBz3cTSmC85bvWrZjB3Pti_xrXJoNPanBz7EeVkz-3aXW8G577BXFrUvw5Xj9TtoSroA7_-WOQ5hZl1tbPzrd49LRqjUtz2E2An0yq5uGYhfPw8yMarYvY-zV-if2MceUBEJ2XTQ0mYBAgYJdE3hB6v5BOG3a1y2293Ierfjq3419n1c0dPGlx3EqjbejYqducGxOIK7glWG_ANYPMjGYzBSqctHZKR11Qg5XPcIsBArttO9z4nJ9Lpfc9jtcYjFogLsch01AoVMMsA5cxxHtiUm76IGaKL22ei3R6Jdmc3cHRI7nBpqZOv0WH6YMlH_gqiy5JtHCaLSJXNJVE7az2MaDUDsHcI-kppNhA6JAxr0DbGIMZRR8_UFcUWQvnnVN5Zi_tabYkrdCYThRkBkwjnSq7V86L8bcnJx8P4JLMQ2" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B66867E1" />
+</div>
+		<!--for archiving purpose-->
+		<input name="ysnNotifyMe" type="hidden">
+		<input name="strPage" type="hidden">
+		<input name="intArchMainCatID" type="hidden">
+		<input name="intArchMainItemID" type="hidden">
+		 <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$MainContent$scriptManager', 'aspnetForm', ['tctl00$ctl00$MainContent$ModuleContent$ctl00$featured','featured','tctl00$ctl00$MainContent$ModuleContent$ctl00$contentUpdatePanelListView','','tctl00$ctl00$MainContent$ModuleContent$ctl00$contentUpdatePanel',''], [], [], 90, 'ctl00$ctl00');
+//]]>
+</script>
+
+		<script type="text/javascript">
+			Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(beginRequest);
+			Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(pageLoaded);
+		</script>
+		
+		<div id="modulecontent" name="modulecontent.aspx" style="padding-top: 0px;">
+<div id="contentarea" ></div>
+
+<script src="/Assets/Scripts/RssBehavior.js"></script>
+<script src="/common/modules/Calendar/Calendar.js"></script>
+<script src="/Scripts/jquery.urlToLink.min.js"></script>
+
+<link href="/Common/Modules/Calendar/CalendarSite.css" rel="stylesheet" />
+
+
+<link href="/141947727.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/common/modules/Calendar/print.css" media="print">
+
+<div id="CalendarContent" class="newCP moduleContentNew">
+	<div class="printHeader">
+		
+	</div>
+	
+	
+	
+	<div id="featured">
+	
+			
+		
+</div>
+	
+	<div id="aboveContent" style="display: none;"></div>
+	<div id="contentDiv" class="contentMain listView selfClear" style="margin-right:0px;">
+		<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_contentUpdatePanelListView">
+	
+				<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_header" class="header" style="">
+					  <div class="text">
+	  <h1>
+Calendar	  </h1>
+<p style="padding-left:5px">View All Calendars is the default. Choose Select a Calendar to view a specific calendar. Subscribe to calendar notifications by clicking on the Notify Me&reg; button, and you will automatically be alerted about the latest events in our community.</p>  </div>
+
+					<div id="subheader" class="nav">
+						<nav aria-label="Calendar View">
+							<ul class="tabs">
+								<li id="ctl00_ctl00_MainContent_ModuleContent_ctl00_liListView" class="active">
+									<a id="ctl00_ctl00_MainContent_ModuleContent_ctl00_lnkListView" href="/calendar.aspx?view=list&amp;CID=26"><span>List</span></a>
+								</li>
+								<li id="ctl00_ctl00_MainContent_ModuleContent_ctl00_liWeekView" class="">
+									<a id="ctl00_ctl00_MainContent_ModuleContent_ctl00_lnkWeekView" href="/calendar.aspx?view=week&amp;CID=26"><span>Week</span></a>
+								</li>
+								<li id="ctl00_ctl00_MainContent_ModuleContent_ctl00_liMonthView" class="">
+									<a id="ctl00_ctl00_MainContent_ModuleContent_ctl00_lnkMonthView" href="/calendar.aspx?view=month&amp;CID=26"><span>Month</span></a>
+								</li>
+							</ul>
+						</nav>
+						<nav aria-label="Miscellaneous Links">
+							<ul class="misc">
+								
+								
+								<li>
+									<a class="reserveFacility" href="/Facilities" aria-label="Find a Facility">
+					  <svg aria-hidden="true"><use href="#iconFacility"></use></svg>
+										<span> Find a Facility</span>
+									</a>
+								</li>
+								<li id="ctl00_ctl00_MainContent_ModuleContent_ctl00_liNotifyMe">
+									<a aria-label="Notify Me" href="/list.aspx?Mode=Subscribe#calendar">
+					  <svg aria-hidden="true"><use href="#iconEmail"></use></svg>
+										<span id="ctl00_ctl00_MainContent_ModuleContent_ctl00_lnkNotifyMe"> Notify Me&#174;</span></a>
+								</li>
+								
+								<li>
+									<a id="ctl00_ctl00_MainContent_ModuleContent_ctl00_lnkPrint" aria-label="Print" onclick="printView(&#39;list&#39;); return false;" href="/">
+										<svg aria-hidden="true"><use href="#iconPrint"></use></svg>
+										<span> Print</span>
+									</a>
+								</li>
+								<li id="ctl00_ctl00_MainContent_ModuleContent_ctl00_liICal">
+									<a id="ctl00_ctl00_MainContent_ModuleContent_ctl00_lnkiCal" aria-label="Subscribe To ICalendar" href="/iCalendar.aspx">
+					  <svg aria-hidden="true"><use href="#iconSubscribeEvent"></use></svg>
+										<span> Subscribe to iCalendar</span>
+									</a>
+								</li>
+								<li id="ctl00_ctl00_MainContent_ModuleContent_ctl00_liRSS"><a href="/rss.aspx#calendar" title="View RSS Feeds" aria-label="View RSS Feeds for Calendar">
+									<svg aria-hidden="true"><use href="#iconRSS"></use></svg>
+								</a></li>
+							</ul>
+						</nav>
+						<section aria-label="Calendar Module Search">
+							<div class="search">
+								<h2>Search Calendars by:</h2>
+								<div class="inputs">
+										<div class="calendarDateInput">
+		<label class="calendarInputLabel" for="startDateFromAmsul">Start Date</label>		<span class="date">		<input  MaxLength="10" data-cp-datetimepicker='{"wrapInsideDiv": true}' Width="100%" title="Start Date" id="startDateFromAmsul" type="text" onkeydown="handleKeydown(event);"  placeholder="Start Date"  value="">
+		</span>	</div>	<div class="calendarDateInput">		<label class="calendarInputLabel" for="endDateFromAmsul">End Date</label>		<span class="date">		<input  MaxLength="10" data-cp-datetimepicker='{"wrapInsideDiv": true}' Width="100%" title="End Date" id="endDateFromAmsul" type="text" onkeydown="handleKeydown(event);"  placeholder="End Date"  value="">
+		</span>	</div>	<div class="calendarSearchInput">		<label class="calendarInputLabel" for="searchTerm">Enter Search Terms</label>		<input placeholder="Word or Phrase" onkeydown="handleKeydown(event);" title="Search Terms" id="searchTerm" type="text" ">
+	</div>	<span class="showPastEvents"><input id="showPastEvents" class="pastEvents" type="checkbox"  onclick="checkShowPastEvents(this.checked)"/>
+	<label id="showPastEventsLabel" for="showPastEvents" class="moduleContentNew pastEvents">Show Past Events</label></span>
+
+									<a href="#" id="a_calendar" data-cp-toggle="dropdown" class="button" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-controls="calendarSelectors"><span>Select a Calendar</span></a>
+									<div id="calendarSelectors" class="calendarList" style="display: none;" aria-labelledby="a_calendar" tabindex="-1">
+										<fieldset>
+											<legend class="visuallyhidden">Select Calendar/Calendars to filter</legend>
+											<ol>
+    <li>
+        <label for="allCalendars">
+            <input type="checkbox" onkeypress="return this.onclick();" onclick="checkAllCalendars(this.checked);" title="All Calendars" id="allCalendars" >
+            All Calendars
+        </label>
+    </li>
+	<li>
+  <label for="chkCalendarID_53">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_53" name="chkCalendarID" title="CalendarID" value="53">
+Addiction Coordinator
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.53" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_26">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_26" name="chkCalendarID" title="CalendarID" value="26" checked="checked">
+Arena
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.26" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_29">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_29" name="chkCalendarID" title="CalendarID" value="29">
+Assessors
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.29" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_38">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_38" name="chkCalendarID" title="CalendarID" value="38">
+Board of Appeals
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.38" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_39">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_39" name="chkCalendarID" title="CalendarID" value="39">
+Board of Registrars
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.39" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_40">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_40" name="chkCalendarID" title="CalendarID" value="40">
+Capital Improvement Advisory Committee
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.40" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_55">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_55" name="chkCalendarID" title="CalendarID" value="55">
+Community Event Calendars
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.55" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_41">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_41" name="chkCalendarID" title="CalendarID" value="41">
+Conservation Commission
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.41" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_25">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_25" name="chkCalendarID" title="CalendarID" value="25">
+Council on Aging
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.25" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_43">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_43" name="chkCalendarID" title="CalendarID" value="43">
+Cultural Council
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.43" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_27">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_27" name="chkCalendarID" title="CalendarID" value="27">
+Director of Planning & Community Development
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.27" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_44">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_44" name="chkCalendarID" title="CalendarID" value="44">
+Disability Commission
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.44" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_45">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_45" name="chkCalendarID" title="CalendarID" value="45">
+Farmers Market Committee
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.45" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_46">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_46" name="chkCalendarID" title="CalendarID" value="46">
+Finance & Advisory Board
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.46" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_22">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_22" name="chkCalendarID" title="CalendarID" value="22">
+Fire Department
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.22" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_23">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_23" name="chkCalendarID" title="CalendarID" value="23">
+Health Department
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.23" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_52">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_52" name="chkCalendarID" title="CalendarID" value="52">
+Historical Commission
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.52" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_28">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_28" name="chkCalendarID" title="CalendarID" value="28">
+Human Resources
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.28" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_56">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_56" name="chkCalendarID" title="CalendarID" value="56">
+Human Rights Commission
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.56" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_30">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_30" name="chkCalendarID" title="CalendarID" value="30">
+Library Trustees
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.30" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_14">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_14" name="chkCalendarID" title="CalendarID" value="14">
+Main Calendar
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.14" data-add-item-behavior="1" data-modify-item-behavior="1" />	<li>
+  <label for="chkCalendarID_51">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_51" name="chkCalendarID" title="CalendarID" value="51">
+Open Space & Recreation Committee
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.51" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_42">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_42" name="chkCalendarID" title="CalendarID" value="42">
+Planning Board
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.42" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_47">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_47" name="chkCalendarID" title="CalendarID" value="47">
+Retirement Board
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.47" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_58">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_58" name="chkCalendarID" title="CalendarID" value="58">
+School Building Committee
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.58" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_24">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_24" name="chkCalendarID" title="CalendarID" value="24">
+School Committee
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.24" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_37">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_37" name="chkCalendarID" title="CalendarID" value="37">
+Select Board
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.37" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_60">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_60" name="chkCalendarID" title="CalendarID" value="60">
+Stoneham Coalition
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.60" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_31">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_31" name="chkCalendarID" title="CalendarID" value="31">
+Stoneham Public Library
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.31" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_50">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_50" name="chkCalendarID" title="CalendarID" value="50">
+Stoneham Veterans Committee
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.50" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_32">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_32" name="chkCalendarID" title="CalendarID" value="32">
+Town Accountant
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.32" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_33">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_33" name="chkCalendarID" title="CalendarID" value="33">
+Town Administrator
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.33" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_35">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_35" name="chkCalendarID" title="CalendarID" value="35">
+Town Clerk
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.35" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_59">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_59" name="chkCalendarID" title="CalendarID" value="59">
+Tree Committee
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.59" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_34">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_34" name="chkCalendarID" title="CalendarID" value="34">
+Veterans Services
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.34" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_49">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_49" name="chkCalendarID" title="CalendarID" value="49">
+Water & Sewer Review Board
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.49" data-add-item-behavior="0" data-modify-item-behavior="0" />	<li>
+  <label for="chkCalendarID_48">
+		<input type="checkbox" onkeypress="return this.onclick();" onclick="boxChanged(this.checked);" id="chkCalendarID_48" name="chkCalendarID" title="CalendarID" value="48">
+Weiss Farm Standing Committee
+	  </label>
+	</li>
+<input type="hidden" name="RssBehavior.48" data-add-item-behavior="0" data-modify-item-behavior="0" /></ol>
+<script type="text/javascript">	numCheckable = 37;	numChecked = 1;	document.getElementById('allCalendars').checked = (numChecked == numCheckable);</script>
+										</fieldset>
+									</div>
+									<label for="searchButton" class="visuallyHidden">Search</label>
+									<input id="searchButton" type="image" onkeypress="this.onclick();" onclick="calendarSearch();" class="searchButton" alt="Search" title="Calendar Search" src="/Common/images/SearchButton.png">
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+				<div class="list calendarViewList">
+<div class="side">
+	<div class="calendar">
+	<button type="button" id="calendarSelectMonth" data-cp-toggle="dropdown" class="calendarDropdownTrigger" aria-expanded="false" aria-haspopup="true" aria-controls="monthPopout" title="Select month">September</button>
+	<div id="monthPopout" class="miniPopout monthPopout" style="display:none;">
+		<div class="miniPopoutTop">
+			<div class="miniPopoutBtm">
+				<ol>
+				<li><button type="button" onclick="changeDate(2026,1, 'list','26', 'calendarSelectMonth');">January</button></li>
+				<li><button type="button" onclick="changeDate(2026,2, 'list','26', 'calendarSelectMonth');">February</button></li>
+				<li><button type="button" onclick="changeDate(2026,3, 'list','26', 'calendarSelectMonth');">March</button></li>
+				<li><button type="button" onclick="changeDate(2026,4, 'list','26', 'calendarSelectMonth');">April</button></li>
+				<li><button type="button" onclick="changeDate(2026,5, 'list','26', 'calendarSelectMonth');">May</button></li>
+				<li><button type="button" onclick="changeDate(2026,6, 'list','26', 'calendarSelectMonth');">June</button></li>
+				<li><button type="button" onclick="changeDate(2026,7, 'list','26', 'calendarSelectMonth');">July</button></li>
+				<li><button type="button" onclick="changeDate(2026,8, 'list','26', 'calendarSelectMonth');">August</button></li>
+				<li><span class="selectedOption">September</span></li>
+				<li><button type="button" onclick="changeDate(2026,10, 'list','26', 'calendarSelectMonth');">October</button></li>
+				<li><button type="button" onclick="changeDate(2026,11, 'list','26', 'calendarSelectMonth');">November</button></li>
+				<li><button type="button" onclick="changeDate(2026,12, 'list','26', 'calendarSelectMonth');">December</button></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<button type="button" id="prevMonth" aria-label="Go to previous month" onclick="changeDate(2026,8,'list','26', 'prevMonth');" class="prevMonth"><img  src="/Common/images/Calendar/MiniCalendarPrev.png" alt=""></button>
+	<button type="button" id="nextMonth" aria-label="Go to next month" onclick="changeDate(2026,10,'list','26', 'nextMonth');" class="nextMonth"><img  src="/Common/images/Calendar/MiniCalendarNext.png" alt=""></button>
+	<button type="button" id="calendarSelectYear" data-cp-toggle="dropdown" class="selectYear calendarDropdownTrigger" aria-expanded="false" aria-haspopup="listbox" aria-controls="yearPopout" title="Select year">2026</button>
+	<div id="yearPopout" class="miniPopout yearPopout" style="display:none;">
+		<div class="miniPopoutTop">
+			<div class="miniPopoutBtm">
+				<ol>
+					<li><button type="button" onclick="changeDate(2021,9,'list','26', 'calendarSelectYear');">2021</button></li>
+					<li><button type="button" onclick="changeDate(2022,9,'list','26', 'calendarSelectYear');">2022</button></li>
+					<li><button type="button" onclick="changeDate(2023,9,'list','26', 'calendarSelectYear');">2023</button></li>
+					<li><button type="button" onclick="changeDate(2024,9,'list','26', 'calendarSelectYear');">2024</button></li>
+					<li><button type="button" onclick="changeDate(2025,9,'list','26', 'calendarSelectYear');">2025</button></li>
+					<li><span class="selectedOption">2026</span></li>
+					<li><button type="button" onclick="changeDate(2027,9,'list','26', 'calendarSelectYear');">2027</button></li>
+					<li><button type="button" onclick="changeDate(2028,9,'list','26', 'calendarSelectYear');">2028</button></li>
+					<li><button type="button" onclick="changeDate(2029,9,'list','26', 'calendarSelectYear');">2029</button></li>
+					<li><button type="button" onclick="changeDate(2030,9,'list','26', 'calendarSelectYear');">2030</button></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+<!-- BEGIN CALENDAR DISPLAY ***** -->	<table summary="Calendar Display" role="grid" aria-labelledby="calendarSelectMonth">
+		<thead role="rowgroup">
+			<tr role="row">
+				<th role="columnheader" scope="col"><abbr title="Sunday">Su</abbr></th>
+				<th role="columnheader" scope="col"><abbr title="Monday">M</abbr></th>
+				<th role="columnheader" scope="col"><abbr title="Tuesday">Tu</abbr></th>
+				<th role="columnheader" scope="col"><abbr title="Wednesday">W</abbr></th>
+				<th role="columnheader" scope="col"><abbr title="Thursday">Th</abbr></th>
+				<th role="columnheader" scope="col"><abbr title="Friday">F</abbr></th>
+				<th role="columnheader" scope="col"><abbr title="Saturday">Sa</abbr></th>
+			</tr>
+		</thead>
+		<tbody role="rowgroup">
+		<tr role="row">			<td role="gridcell" class="not" aria-colindex="1" aria-rowindex="1"><time datetime="2026-8-30">30</time></td>			<td role="gridcell" class="not" aria-colindex="2" aria-rowindex="1"><time datetime="2026-8-31">31</time></td>			<td role="gridcell" aria-colindex="3" aria-rowindex="1"><a tabindex="0" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=1'> <time datetime="2026-9-1">1</time></a></td>			<td role="gridcell" aria-colindex="4" aria-rowindex="1"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=2'> <time datetime="2026-9-2">2</time></a></td>			<td role="gridcell" aria-colindex="5" aria-rowindex="1"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=3'> <time datetime="2026-9-3">3</time></a></td>			<td role="gridcell" aria-colindex="6" aria-rowindex="1"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=4'> <time datetime="2026-9-4">4</time></a></td>			<td role="gridcell" aria-colindex="7" aria-rowindex="1"><time datetime="2026-9-5">5</time></td>		</tr>		<tr role="row">			<td role="gridcell" aria-colindex="1" aria-rowindex="2"><time datetime="2026-9-6">6</time></td>			<td role="gridcell" aria-colindex="2" aria-rowindex="2"><time datetime="2026-9-7">7</time></td>			<td role="gridcell" aria-colindex="3" aria-rowindex="2"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=8'> <time datetime="2026-9-8">8</time></a></td>			<td role="gridcell" aria-colindex="4" aria-rowindex="2"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=9'> <time datetime="2026-9-9">9</time></a></td>			<td role="gridcell" aria-colindex="5" aria-rowindex="2"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=10'> <time datetime="2026-9-10">10</time></a></td>			<td role="gridcell" aria-colindex="6" aria-rowindex="2"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=11'> <time datetime="2026-9-11">11</time></a></td>			<td role="gridcell" aria-colindex="7" aria-rowindex="2"><time datetime="2026-9-12">12</time></td>		</tr>		<tr role="row">			<td role="gridcell" aria-colindex="1" aria-rowindex="3" class="today"><span><time datetime="2026-9-13">13</time></span></td>			<td role="gridcell" aria-colindex="2" aria-rowindex="3"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=14'> <time datetime="2026-9-14">14</time></a></td>			<td role="gridcell" aria-colindex="3" aria-rowindex="3"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=15'> <time datetime="2026-9-15">15</time></a></td>			<td role="gridcell" aria-colindex="4" aria-rowindex="3"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=16'> <time datetime="2026-9-16">16</time></a></td>			<td role="gridcell" aria-colindex="5" aria-rowindex="3"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=17'> <time datetime="2026-9-17">17</time></a></td>			<td role="gridcell" aria-colindex="6" aria-rowindex="3"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=18'> <time datetime="2026-9-18">18</time></a></td>			<td role="gridcell" aria-colindex="7" aria-rowindex="3"><time datetime="2026-9-19">19</time></td>		</tr>		<tr role="row">			<td role="gridcell" aria-colindex="1" aria-rowindex="4"><time datetime="2026-9-20">20</time></td>			<td role="gridcell" aria-colindex="2" aria-rowindex="4"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=21'> <time datetime="2026-9-21">21</time></a></td>			<td role="gridcell" aria-colindex="3" aria-rowindex="4"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=22'> <time datetime="2026-9-22">22</time></a></td>			<td role="gridcell" aria-colindex="4" aria-rowindex="4"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=23'> <time datetime="2026-9-23">23</time></a></td>			<td role="gridcell" aria-colindex="5" aria-rowindex="4"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=24'> <time datetime="2026-9-24">24</time></a></td>			<td role="gridcell" aria-colindex="6" aria-rowindex="4"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=25'> <time datetime="2026-9-25">25</time></a></td>			<td role="gridcell" aria-colindex="7" aria-rowindex="4"><time datetime="2026-9-26">26</time></td>		</tr>		<tr role="row">			<td role="gridcell" aria-colindex="1" aria-rowindex="5"><time datetime="2026-9-27">27</time></td>			<td role="gridcell" aria-colindex="2" aria-rowindex="5"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=28'> <time datetime="2026-9-28">28</time></a></td>			<td role="gridcell" aria-colindex="3" aria-rowindex="5"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=29'> <time datetime="2026-9-29">29</time></a></td>			<td role="gridcell" aria-colindex="4" aria-rowindex="5"><a tabindex="-1" href='/calendar.aspx?view=list&amp;year=2026&amp;month=9&amp;day=30'> <time datetime="2026-9-30">30</time></a></td>			<td role="gridcell" class="not" aria-colindex="5" aria-rowindex="5"><time datetime="2026-10-1">1</time></td>			<td role="gridcell" class="not" aria-colindex="6" aria-rowindex="5"><time datetime="2026-10-2">2</time></td>			<td role="gridcell" class="not" aria-colindex="7" aria-rowindex="5"><time datetime="2026-10-3">3</time></td>		</tr>		</tbody>
+	</table>
+<!-- END CALENDAR DISPLAY ***** -->	</div>
+	<nav aria-labelledby="calendar-nav-header">		<h3 class="jump" id="calendar-nav-header">Jump To Category:</h3>
+		<ol id="jumpList">
+					<li><a href="?CID=26"><img src="/common/images/Calendar/calendarcoloroverlay.png" aria-hidden="true" alt="" style="background:#333333;"> <span>Arena (25)</span></a></li>
+		</ol>
+	</nav> <select id="jumpSelect" style="display:none;" title="Calendar">
+  <option selected="selected" value=""> - </option> <option value="?CID=26">Arena (25)</option>
+ </select>
+	</div>
+	<div class="calendars">
+		<div id="CID26" class="calendar">			<div>
+				<h2 class="title">Arena</h2>
+			</div>			<ol>
+				<li>
+					<h3>					 <a id="eventTitle_8835" href="/Calendar.aspx?EID=8835&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8835, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;14,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-14T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8835 calendarEvent8835"id="calendarEvent8835" href="/Calendar.aspx?EID=8835&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8835, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8858" href="/Calendar.aspx?EID=8858&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8858, 13, 9, 2026, 0); return false;"><span>ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;14,&nbsp;2026,&nbsp;12:00 PM&thinsp;-&thinsp;1:45 PM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span><span itemprop="startDate" class="hidden">2026-09-14T12:00:00</span><p itemprop="description">*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<a aria-labelledby="eventTitle_8858 calendarEvent8858"id="calendarEvent8858" href="/Calendar.aspx?EID=8858&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8858, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8836" href="/Calendar.aspx?EID=8836&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8836, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;15,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-15T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8836 calendarEvent8836"id="calendarEvent8836" href="/Calendar.aspx?EID=8836&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8836, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8837" href="/Calendar.aspx?EID=8837&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8837, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;16,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-16T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8837 calendarEvent8837"id="calendarEvent8837" href="/Calendar.aspx?EID=8837&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8837, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8859" href="/Calendar.aspx?EID=8859&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8859, 13, 9, 2026, 0); return false;"><span>ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;16,&nbsp;2026,&nbsp;12:00 PM&thinsp;-&thinsp;1:45 PM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span><span itemprop="startDate" class="hidden">2026-09-16T12:00:00</span><p itemprop="description">*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<a aria-labelledby="eventTitle_8859 calendarEvent8859"id="calendarEvent8859" href="/Calendar.aspx?EID=8859&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8859, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8838" href="/Calendar.aspx?EID=8838&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8838, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;17,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-17T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8838 calendarEvent8838"id="calendarEvent8838" href="/Calendar.aspx?EID=8838&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8838, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8860" href="/Calendar.aspx?EID=8860&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8860, 13, 9, 2026, 0); return false;"><span>ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;17,&nbsp;2026,&nbsp;12:00 PM&thinsp;-&thinsp;1:45 PM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span><span itemprop="startDate" class="hidden">2026-09-17T12:00:00</span><p itemprop="description">*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<a aria-labelledby="eventTitle_8860 calendarEvent8860"id="calendarEvent8860" href="/Calendar.aspx?EID=8860&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8860, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8882" href="/Calendar.aspx?EID=8882&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8882, 13, 9, 2026, 0); return false;"><span>Freestyle 9:00 AM </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;18,&nbsp;2026,&nbsp;9:00 AM&thinsp;-&thinsp;9:50 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">Freestyle 9:00 AM </span><span itemprop="startDate" class="hidden">2026-09-18T09:00:00</span><p itemprop="description">FREESTYLE SESSIONS ARE NOT PUBLIC SKATING 
+FREESTYLE is designed for Any Skater (Hockey or Figure Skater) to work one on one with a Coach. 
+Also for figure skaters to practice their routines and advanced skills. 
+During these sessions, skaters will be doing difficult jumps and spins sometimes with a coach and sometimes alone.
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>FREESTYLE SESSIONS ARE NOT PUBLIC SKATING 
+FREESTYLE is designed for Any Skater (Hockey or Figure Skater) to work one on one with a Coach. 
+Also for figure skaters to practice their routines and advanced skills. 
+During these sessions, skaters will be doing difficult jumps and spins sometimes with a coach and sometimes alone.
+</p>
+<a aria-labelledby="eventTitle_8882 calendarEvent8882"id="calendarEvent8882" href="/Calendar.aspx?EID=8882&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8882, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8839" href="/Calendar.aspx?EID=8839&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8839, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;18,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-18T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8839 calendarEvent8839"id="calendarEvent8839" href="/Calendar.aspx?EID=8839&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8839, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8861" href="/Calendar.aspx?EID=8861&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8861, 13, 9, 2026, 0); return false;"><span>ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;18,&nbsp;2026,&nbsp;12:00 PM&thinsp;-&thinsp;1:45 PM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span><span itemprop="startDate" class="hidden">2026-09-18T12:00:00</span><p itemprop="description">*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<a aria-labelledby="eventTitle_8861 calendarEvent8861"id="calendarEvent8861" href="/Calendar.aspx?EID=8861&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8861, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8840" href="/Calendar.aspx?EID=8840&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8840, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;21,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-21T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8840 calendarEvent8840"id="calendarEvent8840" href="/Calendar.aspx?EID=8840&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8840, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8862" href="/Calendar.aspx?EID=8862&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8862, 13, 9, 2026, 0); return false;"><span>ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;21,&nbsp;2026,&nbsp;12:00 PM&thinsp;-&thinsp;1:45 PM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span><span itemprop="startDate" class="hidden">2026-09-21T12:00:00</span><p itemprop="description">*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<a aria-labelledby="eventTitle_8862 calendarEvent8862"id="calendarEvent8862" href="/Calendar.aspx?EID=8862&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8862, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8841" href="/Calendar.aspx?EID=8841&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8841, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;22,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-22T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8841 calendarEvent8841"id="calendarEvent8841" href="/Calendar.aspx?EID=8841&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8841, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8842" href="/Calendar.aspx?EID=8842&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8842, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;23,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-23T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8842 calendarEvent8842"id="calendarEvent8842" href="/Calendar.aspx?EID=8842&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8842, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8863" href="/Calendar.aspx?EID=8863&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8863, 13, 9, 2026, 0); return false;"><span>ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;23,&nbsp;2026,&nbsp;12:00 PM&thinsp;-&thinsp;1:45 PM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span><span itemprop="startDate" class="hidden">2026-09-23T12:00:00</span><p itemprop="description">*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<a aria-labelledby="eventTitle_8863 calendarEvent8863"id="calendarEvent8863" href="/Calendar.aspx?EID=8863&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8863, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8843" href="/Calendar.aspx?EID=8843&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8843, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;24,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-24T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8843 calendarEvent8843"id="calendarEvent8843" href="/Calendar.aspx?EID=8843&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8843, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8864" href="/Calendar.aspx?EID=8864&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8864, 13, 9, 2026, 0); return false;"><span>ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;24,&nbsp;2026,&nbsp;12:00 PM&thinsp;-&thinsp;1:45 PM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span><span itemprop="startDate" class="hidden">2026-09-24T12:00:00</span><p itemprop="description">*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<a aria-labelledby="eventTitle_8864 calendarEvent8864"id="calendarEvent8864" href="/Calendar.aspx?EID=8864&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8864, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8883" href="/Calendar.aspx?EID=8883&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8883, 13, 9, 2026, 0); return false;"><span>Freestyle 9:00 AM </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;25,&nbsp;2026,&nbsp;9:00 AM&thinsp;-&thinsp;9:50 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">Freestyle 9:00 AM </span><span itemprop="startDate" class="hidden">2026-09-25T09:00:00</span><p itemprop="description">FREESTYLE SESSIONS ARE NOT PUBLIC SKATING 
+FREESTYLE is designed for Any Skater (Hockey or Figure Skater) to work one on one with a Coach. 
+Also for figure skaters to practice their routines and advanced skills. 
+During these sessions, skaters will be doing difficult jumps and spins sometimes with a coach and sometimes alone.
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>FREESTYLE SESSIONS ARE NOT PUBLIC SKATING 
+FREESTYLE is designed for Any Skater (Hockey or Figure Skater) to work one on one with a Coach. 
+Also for figure skaters to practice their routines and advanced skills. 
+During these sessions, skaters will be doing difficult jumps and spins sometimes with a coach and sometimes alone.
+</p>
+<a aria-labelledby="eventTitle_8883 calendarEvent8883"id="calendarEvent8883" href="/Calendar.aspx?EID=8883&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8883, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8844" href="/Calendar.aspx?EID=8844&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8844, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;25,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-25T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8844 calendarEvent8844"id="calendarEvent8844" href="/Calendar.aspx?EID=8844&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8844, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8865" href="/Calendar.aspx?EID=8865&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8865, 13, 9, 2026, 0); return false;"><span>ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;25,&nbsp;2026,&nbsp;12:00 PM&thinsp;-&thinsp;1:45 PM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span><span itemprop="startDate" class="hidden">2026-09-25T12:00:00</span><p itemprop="description">*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<a aria-labelledby="eventTitle_8865 calendarEvent8865"id="calendarEvent8865" href="/Calendar.aspx?EID=8865&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8865, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8845" href="/Calendar.aspx?EID=8845&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8845, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;28,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-28T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8845 calendarEvent8845"id="calendarEvent8845" href="/Calendar.aspx?EID=8845&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8845, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8866" href="/Calendar.aspx?EID=8866&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8866, 13, 9, 2026, 0); return false;"><span>ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;28,&nbsp;2026,&nbsp;12:00 PM&thinsp;-&thinsp;1:45 PM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span><span itemprop="startDate" class="hidden">2026-09-28T12:00:00</span><p itemprop="description">*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<a aria-labelledby="eventTitle_8866 calendarEvent8866"id="calendarEvent8866" href="/Calendar.aspx?EID=8866&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8866, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8846" href="/Calendar.aspx?EID=8846&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8846, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;29,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-29T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8846 calendarEvent8846"id="calendarEvent8846" href="/Calendar.aspx?EID=8846&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8846, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8847" href="/Calendar.aspx?EID=8847&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8847, 13, 9, 2026, 0); return false;"><span>PUBLIC SKATING </span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;30,&nbsp;2026,&nbsp;10:00 AM&thinsp;-&thinsp;11:45 AM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">PUBLIC SKATING </span><span itemprop="startDate" class="hidden">2026-09-30T10:00:00</span><p itemprop="description">*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*ARENA DOES NOT SUPPLY MILK CRATES, YOU ARE WELCOME TO SUPPLY YOUR OWN*
+*HELMETS ARE MANDATORY FOR CHILDREN UNDER 10*
+**CHILDREN UNDER 14 MUST HAVE ADULT SUPERVISION PRESENT** 
+*** ARENA DOES NOT HAVE SKATE RENTALS OR SKATE SHARPENING***
+*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+</p>
+<a aria-labelledby="eventTitle_8847 calendarEvent8847"id="calendarEvent8847" href="/Calendar.aspx?EID=8847&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8847, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+				<li>
+					<h3>					 <a id="eventTitle_8867" href="/Calendar.aspx?EID=8867&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8867, 13, 9, 2026, 0); return false;"><span>ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span></a></h3>
+</a></h3>
+<div class="subHeader"><div class="date">September&nbsp;30,&nbsp;2026,&nbsp;12:00 PM&thinsp;-&thinsp;1:45 PM</div></div>
+<div class="hidden" itemscope itemtype="http://schema.org/Event"><span itemprop="name">ADULT STICK PRACTICE *YOU MUST PRE-REGISTER SPACE LIMITED*</span><span itemprop="startDate" class="hidden">2026-09-30T12:00:00</span><p itemprop="description">*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+<span itemprop="name">Event Location</span><span class="hidden" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressLocality">Stoneham</span><span itemprop="addressRegion">MA</span><span itemprop="postalCode">02180</span></span></span></div><p>*** ARENA IS SKATE AT OWN RISK, NOT RESPONSIBLE FOR NEGLIGENT SKATERS OR PATRONS***
+HELMETS & GLOVES REQUIRED… FULL EQUIPMENT HIGHLY ADVISED 
+</p>
+<a aria-labelledby="eventTitle_8867 calendarEvent8867"id="calendarEvent8867" href="/Calendar.aspx?EID=8867&month=9&year=2026&day=13&calType=0" onkeypress="return this.onclick();" onclick="eventDetails(8867, 13, 9, 2026, 0); return false;">More Details</a>
+				</li>
+			</ol>
+		</div>
+	</div>
+</div>
+
+			
+</div>
+	</div>
+	<div id="ctl00_ctl00_MainContent_ModuleContent_ctl00_contentUpdatePanel">
+	
+			
+			
+		
+</div>
+
+  <!-- SVG Icon -->
+  <div style="display: none;">
+	  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+	  <symbol id="iconFacility" viewBox="0 0 24 24">
+		<title>Facility</title>
+		<path fill="currentColor" d="M5,3V21H11V17.5H13V21H19V3H5M7,5H9V7H7V5M11,5H13V7H11V5M15,5H17V7H15V5M7,9H9V11H7V9M11,9H13V11H11V9M15,9H17V11H15V9M7,13H9V15H7V13M11,13H13V15H11V13M15,13H17V15H15V13M7,17H9V19H7V17M15,17H17V19H15V17Z"></path>
+	  </symbol>
+	  <symbol id="iconSubmitEvent" viewBox="0 0 24 24">
+		<title>Submit Event</title>
+		<path fill="currentColor" d="M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M16.53,11.06L15.47,10L10.59,14.88L8.47,12.76L7.41,13.82L10.59,17L16.53,11.06Z"></path>
+	  </symbol>
+	  <symbol id="iconPrint" viewBox="0 0 24 24">
+		<title>Print</title>
+		<path fill="currentColor" d="M18,3H6V7H18M19,12A1,1 0 0,1 18,11A1,1 0 0,1 19,10A1,1 0 0,1 20,11A1,1 0 0,1 19,12M16,19H8V14H16M19,8H5A3,3 0 0,0 2,11V17H6V21H18V17H22V11A3,3 0 0,0 19,8Z"></path>
+	  </symbol>
+	  <symbol id="iconEmail" viewBox="0 0 24 24">
+		<title>Email</title>
+		<path fill="currentColor" d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"></path>
+	  </symbol>
+	  <symbol id="iconSubscribeEvent" viewBox="0 0 24 24">
+		<title>Event Subscription</title>
+		<path fill="currentColor" d="M19,20V9H5V20H19M16,2H18V4H19A2,2 0 0,1 21,6V20A2,2 0 0,1 19,22H5A2,2 0 0,1 3,20V6A2,2 0 0,1 5,4H6V2H8V4H16V2M12,18.17L11.42,17.64C9.36,15.77 8,14.54 8,13.03C8,11.8 8.97,10.83 10.2,10.83C10.9,10.83 11.56,11.15 12,11.66C12.44,11.15 13.1,10.83 13.8,10.83C15.03,10.83 16,11.8 16,13.03C16,14.54 14.64,15.77 12.58,17.64L12,18.17Z"></path>
+	  </symbol>
+	  <symbol id="iconRSS" viewBox="0 0 24 24">
+		<title>View RSS Feeds</title>
+		<path fill="currentColor" d="M6.18,15.64A2.18,2.18 0 0,1 8.36,17.82C8.36,19 7.38,20 6.18,20C5,20 4,19 4,17.82A2.18,2.18 0 0,1 6.18,15.64M4,4.44A15.56,15.56 0 0,1 19.56,20H16.73A12.73,12.73 0 0,0 4,7.27V4.44M4,10.1A9.9,9.9 0 0,1 13.9,20H11.07A7.07,7.07 0 0,0 4,12.93V10.1Z" ></path>
+	  </symbol>
+	  <symbol id="iconCalendar" viewBox="0 0 24 24">
+		<title>Select on Calendar</title>
+		<path fill="currentColor" d="M9,10H7V12H9V10M13,10H11V12H13V10M17,10H15V12H17V10M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V8H19V19Z"></path>
+	  </symbol>
+	  <symbol id="iconExpand" viewBox="0 0 24 24">
+		<title>Expand</title>
+		<path fill="currentColor" d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z"></path>
+	  </symbol>
+	  <symbol id="iconCollapse" viewBox="0 0 24 24">
+		<title>Collapse</title>
+		<path fill="currentColor" d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z" />
+	  </symbol>
+	  <symbol id="iconChevronPrev" viewBox="0 0 24 24">
+		<title>Previous</title>
+		<path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+	  </symbol>
+	  <symbol id="iconChevronNext" viewBox="0 0 24 24">
+		<title>Next</title>
+		<path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+	  </symbol>
+	  <symbol id="iconChevronDown" viewBox="0 0 24 24">
+		<title>Down</title>
+		<path fill="currentColor" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+	  </symbol>
+	  <symbol id="iconChevronUp" viewBox="0 0 24 24">
+		<title>Up</title>
+		<path fill="currentColor" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
+	  </symbol>
+	  <symbol id="iconMap" viewBox="0 0 24 24">
+		<title>Map</title>
+		<path fill="currentColor" d="M15.5,12C18,12 20,14 20,16.5C20,17.38 19.75,18.21 19.31,18.9L22.39,22L21,23.39L17.88,20.32C17.19,20.75 16.37,21 15.5,21C13,21 11,19 11,16.5C11,14 13,12 15.5,12M15.5,14A2.5,2.5 0 0,0 13,16.5A2.5,2.5 0 0,0 15.5,19A2.5,2.5 0 0,0 18,16.5A2.5,2.5 0 0,0 15.5,14M14,6.11L8,4V15.89L9,16.24V16.5C9,17.14 9.09,17.76 9.26,18.34L8,17.9L2.66,19.97L2.5,20A0.5,0.5 0 0,1 2,19.5V4.38C2,4.15 2.15,3.97 2.36,3.9L8,2L14,4.1L19.34,2H19.5A0.5,0.5 0 0,1 20,2.5V11.81C18.83,10.69 17.25,10 15.5,10C15,10 14.5,10.06 14,10.17V6.11Z"></path>
+	  </symbol>
+	  <symbol id="iconShare" viewBox="0 0 24 24">
+		<title>Share</title>
+		<path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M14 16V13C10.39 13 7.81 14.43 6 17C6.72 13.33 8.94 9.73 14 9V6L19 11L14 16Z" />
+	  </symbol>
+	  <symbol id="iconShowMore" viewBox="0 0 24 24">
+		<title>Show more</title>
+		 <path fill="currentColor" d="M15.5,12C18,12 20,14 20,16.5C20,17.38 19.75,18.21 19.31,18.9L22.39,22L21,23.39L17.88,20.32C17.19,20.75 16.37,21 15.5,21C13,21 11,19 11,16.5C11,14 13,12 15.5,12M15.5,14A2.5,2.5 0 0,0 13,16.5A2.5,2.5 0 0,0 15.5,19A2.5,2.5 0 0,0 18,16.5A2.5,2.5 0 0,0 15.5,14M19,8H5V19H9.5C9.81,19.75 10.26,20.42 10.81,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H6V1H8V3H16V1H18V3H19A2,2 0 0,1 21,5V13.03C20.5,12.22 19.8,11.54 19,11V8Z" />
+	  </symbol>
+
+	<svg>
+  </div>
+  <!-- SVG Icon -->
+
+<!-- SVG Icon Agenda -->
+  <div style="display: none;">
+	  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+	  <symbol id="iconAgenda" svg viewBox="0 0 24 24">
+			<title>Agenda</title>
+			<path fill="currentColor" d="M19,3H14.82C14.25,1.44 12.53,0.64 11,1.2C10.14,1.5 9.5,2.16 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M7,7H17V5H19V19H5V5H7V7M17,11H7V9H17V11M15,15H7V13H15V15Z" />	  </symbol>
+		</symbol>
+	<svg>
+  </div>
+  <!-- SVG Icon -->
+
+	
+	<div id="aboveFooter" style="display: none;"></div>
+	
+</div>
+<input type="hidden" name="ShowInRssFeed" value="false" />
+<input type="hidden" name="RssConfigurationEnabled" value="True" />
+<input name="calendarView" type="hidden" value="" />
+<input name="eventID" type="hidden" />
+<input name="showMoreExpandedDays" type="hidden" />
+
+<script type="text/javascript">
+	$(window).on("load", function () {
+		$('.icalDescription').urlToLink({ target: '_blank' });
+	});
+
+	var currentTextBox = null;
+	var currentDatePicker = null;
+
+	function hidePopup() {
+		return currentDatePicker && currentDatePicker.hidePopup();
+	}
+
+	//This method is called to handle the onclick and onfocus client side events for the texbox
+	function showPopup(sender, e) {
+		//this is a reference to the texbox which raised the event
+		//see the methods exposed through the $telerik static client library here - http://www.telerik.com/help/aspnet-ajax/telerik-static-client-library.html
+		var textBox = sender.tagName === "INPUT" ? sender : $telerik.getPreviousHtmlNode(sender);
+
+		// hide previous pop-up if open
+		textBox !== currentTextBox && hidePopup();
+
+		currentTextBox = textBox;
+	}
+
+	function dismissHook(e) {
+		return (e.keyCode === 27 || e.keyCode === 9) && hidePopup();
+	}
+
+	function handleKeydown(e) {
+		dismissHook(e) || searchTextHook(e);
+	}
+
+	//this handler is used to set the text of the TextBox to the value of selected from the popup
+	function dateSelected(sender, args) {
+		if (currentTextBox != null) {
+			//currentTextBox is the currently selected TextBox. Its value is set to the newly selected
+			//value of the picker
+			currentTextBox.value = args.get_newValue();
+		}
+	}
+
+	//this function is used to parse the date entered or selected by the user
+	function parseDate(sender, e) {
+		if (currentDatePicker != null) {
+			var date = currentDatePicker.get_dateInput().parseDate(sender.value);
+			var dateInput = currentDatePicker.get_dateInput();
+
+			if (date == null) {
+				date = currentDatePicker.get_selectedDate();
+			}
+
+			var formattedDate = dateInput.get_dateFormatInfo().FormatDate(date, dateInput.get_displayDateFormat());
+			sender.value = formattedDate;
+		}
+	}
+
+	function clearPostBack() {
+		Sys.WebForms.PageRequestManager.getInstance().remove_endRequest(clearPostBack);
+		$('.icalDescription').urlToLink({ target: '_blank' });
+	}
+
+	function redrawContentCalendar() {
+		Sys.WebForms.PageRequestManager.getInstance().add_endRequest(clearPostBack);
+		if (document.aspnetForm.calendarView.value == 'list' || document.aspnetForm.calendarView.value == '')
+			raiseAsyncPostbackCalendar('ctl00_ctl00_MainContent_ModuleContent_ctl00_contentUpdatePanelListView', 0, '');
+		else
+			raiseAsyncPostbackCalendar('ctl00_ctl00_MainContent_ModuleContent_ctl00_contentUpdatePanel', 0, '');
+
+		blockMenuSpawn = false;
+	}
+
+	function previousFeaturedItem(view) {
+		document.aspnetForm.calendarView.value = view;
+		raiseAsyncPostbackCalendar('featured', 0, 'drawFeaturedPrev');
+	}
+
+	function nextFeaturedItem(view) {
+		document.aspnetForm.calendarView.value = view;
+		raiseAsyncPostbackCalendar('featured', 0, 'drawFeaturedNext');
+	}
+</script>
+
+</div>
+<script type="text/javascript">order+='ModuleContent\n'</script>
+
+		<div id="ctl00_ctl00_MainContent_ctl00_liveEditPopupWindow" class="modalContainer modalContainerCP" style="display: none;">
+	<div id="ctl00_liveEditTitleBar" class="modalTitleLeft"><h3 id="ctl00_LiveEditModalTitle" class="modalTitle">Live Edit</h3><a id="ctl00_LiveEditCloseButton" class="modalClose" aria-label="Close this modal" href="/" title="Close this window"><svg viewBox='0 0 25 25' id='modalIconClose'><polygon style='fill:currentcolor' points='18.806,6.98 18.075,6.248 12.532,11.792 6.989,6.248 6.257,6.98 11.786,12.508 6.212,18.084 6.943,18.815 12.532,13.224 18.12,18.815 18.851,18.084 13.277,12.508'></polygon></svg></a></div><div id="ctl00_liveEditContentLeft" class="modalContentLeft"><div id="ctl00_liveEditContentRight" class="modalContentRight"><div id="ctl00_liveEditContent" class="modalContent"><iframe style="display: none; border: none;" src="about:blank" id="liveEditDialog" title="Live Edit Dialog" name="liveEditDialog"></iframe></div></div></div><div id="ctl00_liveEditFooter" class="modalBottomLeft"><div id="ctl00_liveEditfooterbar" class="modalBottomRight"><div id="ctl00_liveEditfooterbar1" class="modalBottom"></div></div></div>
+</div><input type="submit" name="ctl00$ctl00$MainContent$ctl00_liveEditSpawnWindow" value="" id="ctl00_ctl00_MainContent_ctl00_liveEditSpawnWindow" disabled="disabled" aria-hidden="true" style="display: none;" />
+	
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"ctl00_LiveEditCloseButton","PopupControlID":"ctl00_ctl00_MainContent_ctl00_liveEditPopupWindow","PopupDragHandleControlID":"ctl00_liveEditTitleBar","dynamicServicePath":"/calendar.aspx","id":"editItemBehavior"}, null, null, $get("ctl00_ctl00_MainContent_ctl00_liveEditSpawnWindow"));
+});
+//]]>
+</script>
+</form>
+	<form id="aspnetSearchForm" name="aspnetSearchForm" style="display:none;" action="/Search.aspx" method="get">
+		<input name="SearchString" type = "hidden" value ="" />
+	</form>
+	
+	
+	
+	</div>
+	 
+</div>	
+
+</div>
+</div>
+</div></div>
+</div><!-- GBs --><div data-cpRole="structuralContainer" id="gbsContainerTS">
+<div class="siteWrap3"><div data-cpRole="contentContainer" id="gbsTS">	<div id="ccf3d153b6-17ab-42ca-a6d0-04e763b0be0d" data-containerid="f3d153b6-17ab-42ca-a6d0-04e763b0be0d" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="48">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col8 first" style="" data-widgetcontainerid="8c4f7473-ff4e-43b1-a92e-753542cb63fa">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col8 first last id6d12dd3d-8862-4d8d-ab34-80fc16eecd8e" style="" data-widgetcontainerid="6d12dd3d-8862-4d8d-ab34-80fc16eecd8e">	
+<div data-widget-id="acd42258-96d7-42bd-bddb-21d33ca3f8cf" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidgetacd42258-96d7-42bd-bddb-21d33ca3f8cf" class="widget widgetGraphicLinks skin65 widgetOptionSet4 wide" data-elementqueryclasses='{"wide-narrow":"min-width:32em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid2 ">
+		<nav class="widgetGraphicLinksNav" aria-labelledby="GraphicLinkHeaderText">
+				<div class="row   wide">
+					<!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/1107/Pay-Bills-Online" target="_self" class="fancyButton fancyButton311 " >
+		<span>
+			<span><span class="text"><span class="textStyle1">Bill Pay</span><span class="textStyle2">Learn More</span></span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton311.fancyButton:link,.fancyButton311.fancyButton:visited, .fancyButton311div.fancyButton{
+	background-color: rgb(255, 255, 255);
+	width: 220px;
+	-webkit-border-top-left-radius: 110px;
+	-moz-border-top-left-radius: 110px;
+	-khtml-border-top-left-radius: 110px;
+	border-top-left-radius: 110px;
+	-webkit-border-top-right-radius: 110px;
+	-moz-border-top-right-radius: 110px;
+	-khtml-border-top-right-radius: 110px;
+	border-top-right-radius: 110px;
+	-webkit-border-bottom-left-radius: 110px;
+	-moz-border-bottom-left-radius: 110px;
+	-khtml-border-bottom-left-radius: 110px;
+	border-bottom-left-radius: 110px;
+	-webkit-border-bottom-right-radius: 110px;
+	-moz-border-bottom-right-radius: 110px;
+	-khtml-border-bottom-right-radius: 110px;
+	border-bottom-right-radius: 110px;
+	background-image: url('/ImageRepository/Document?documentID=10940');
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-top: 6px solid rgb(255, 255, 255);
+	border-left: 6px solid rgb(255, 255, 255);
+	border-right: 6px solid rgb(255, 255, 255);
+	border-bottom: 6px solid rgb(255, 255, 255);
+margin: 0 auto;
+background-size: cover;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+overflow: hidden;
+}
+
+.fancyButton1 > span > span,
+.fancyButton311 > span > span {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-end;
+height: 208px;}
+.fancyButton311.fancyButton:hover,.fancyButton311.fancyButton:focus,.fancyButton311.fancyButton:active,.fancyButton311.fancyButton.hover{
+}
+.fancyButton311.fancyButton:link > span,.fancyButton311.fancyButton:visited > span, .fancyButton311div.fancyButton > span{
+}
+.fancyButton311.fancyButton:hover > span,.fancyButton311.fancyButton:focus > span,.fancyButton311.fancyButton:active > span,.fancyButton311.fancyButton.hover > span{
+}
+.fancyButton311.fancyButton .text{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	text-decoration: none;
+	background-color: rgba(42, 35, 147, 0.8);
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+line-height: 1.2;
+min-height: 1px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100%;
+transition: all .3s ease-in-out;
+}
+.fancyButton311.fancyButton:hover .text,.fancyButton311.fancyButton:focus .text,.fancyButton311.fancyButton:active .text,.fancyButton311.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+min-height: 100%;
+}
+.fancyButton311.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.2em;
+	font-family: Poppins;
+	font-weight: 500;
+	text-decoration: none;
+text-transform: uppercase;
+line-height: 1.2;
+position: relative;
+display: block;
+width: 100%;
+padding-bottom: 12px;
+margin-bottom: 10px;
+}
+
+.fancyButton1 .textStyle1::after,
+.fancyButton311 .textStyle1::after {
+content: "";
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+width: 100%;
+max-width: 40px;
+height: 2px;
+border-radius: 2px;
+background: rgba(209, 199, 125, 1);
+transition: all .3s ease-in-out;}
+.fancyButton311.fancyButton:hover .textStyle1, .fancyButton311.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton1:is(:hover,:focus,:active) .textStyle1::after,
+.fancyButton311:is(:hover,:focus,:active) .textStyle1::after {
+max-width: 100px;}
+.fancyButton311.fancyButton .textStyle2{
+	color: rgb(255, 255, 255);
+	font-size: .9em;
+	font-family: Poppins;
+	font-style: normal;
+	text-decoration: none;
+opacity: 0;
+line-height: 0;
+transition: all .3s ease-in-out;}
+.fancyButton311.fancyButton:hover .textStyle2, .fancyButton311.fancyButton.hover .textStyle2{
+	text-decoration: none;
+opacity: 1;
+line-height: 1.2;
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/274/Recycling-Solid-Waste-Program" target="_self" class="fancyButton fancyButton312 " >
+		<span>
+			<span><span class="text"><span class="textStyle1">Trash &amp; REcycling</span><span class="textStyle2">Learn More</span></span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton312.fancyButton:link,.fancyButton312.fancyButton:visited, .fancyButton312div.fancyButton{
+	background-color: rgb(255, 255, 255);
+	width: 220px;
+	-webkit-border-top-left-radius: 110px;
+	-moz-border-top-left-radius: 110px;
+	-khtml-border-top-left-radius: 110px;
+	border-top-left-radius: 110px;
+	-webkit-border-top-right-radius: 110px;
+	-moz-border-top-right-radius: 110px;
+	-khtml-border-top-right-radius: 110px;
+	border-top-right-radius: 110px;
+	-webkit-border-bottom-left-radius: 110px;
+	-moz-border-bottom-left-radius: 110px;
+	-khtml-border-bottom-left-radius: 110px;
+	border-bottom-left-radius: 110px;
+	-webkit-border-bottom-right-radius: 110px;
+	-moz-border-bottom-right-radius: 110px;
+	-khtml-border-bottom-right-radius: 110px;
+	border-bottom-right-radius: 110px;
+	background-image: url('/ImageRepository/Document?documentID=10945');
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-top: 6px solid rgb(255, 255, 255);
+	border-left: 6px solid rgb(255, 255, 255);
+	border-right: 6px solid rgb(255, 255, 255);
+	border-bottom: 6px solid rgb(255, 255, 255);
+margin: 0 auto;
+background-size: cover;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+overflow: hidden;
+}
+
+.fancyButton1 > span > span,
+.fancyButton312 > span > span {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-end;
+height: 208px;}
+.fancyButton312.fancyButton:hover,.fancyButton312.fancyButton:focus,.fancyButton312.fancyButton:active,.fancyButton312.fancyButton.hover{
+}
+.fancyButton312.fancyButton:link > span,.fancyButton312.fancyButton:visited > span, .fancyButton312div.fancyButton > span{
+}
+.fancyButton312.fancyButton:hover > span,.fancyButton312.fancyButton:focus > span,.fancyButton312.fancyButton:active > span,.fancyButton312.fancyButton.hover > span{
+}
+.fancyButton312.fancyButton .text{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	text-decoration: none;
+	background-color: rgba(42, 35, 147, 0.8);
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+line-height: 1.2;
+min-height: 1px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100%;
+transition: all .3s ease-in-out;
+}
+.fancyButton312.fancyButton:hover .text,.fancyButton312.fancyButton:focus .text,.fancyButton312.fancyButton:active .text,.fancyButton312.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+min-height: 100%;
+}
+.fancyButton312.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.2em;
+	font-family: Poppins;
+	font-weight: 500;
+	text-decoration: none;
+text-transform: uppercase;
+line-height: 1.2;
+position: relative;
+display: block;
+width: 100%;
+padding-bottom: 12px;
+margin-bottom: 10px;
+}
+
+.fancyButton1 .textStyle1::after,
+.fancyButton312 .textStyle1::after {
+content: "";
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+width: 100%;
+max-width: 40px;
+height: 2px;
+border-radius: 2px;
+background: rgba(209, 199, 125, 1);
+transition: all .3s ease-in-out;}
+.fancyButton312.fancyButton:hover .textStyle1, .fancyButton312.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton1:is(:hover,:focus,:active) .textStyle1::after,
+.fancyButton312:is(:hover,:focus,:active) .textStyle1::after {
+max-width: 100px;}
+.fancyButton312.fancyButton .textStyle2{
+	color: rgb(255, 255, 255);
+	font-size: .9em;
+	font-family: Poppins;
+	font-style: normal;
+	text-decoration: none;
+opacity: 0;
+line-height: 0;
+transition: all .3s ease-in-out;}
+.fancyButton312.fancyButton:hover .textStyle2, .fancyButton312.fancyButton.hover .textStyle2{
+	text-decoration: none;
+opacity: 1;
+line-height: 1.2;
+}
+</style>
+
+ </li><!--
+--></ul></div><!--				-->
+				</div>
+			</nav>
+		</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col8" style="" data-widgetcontainerid="86d5f2e5-a9d9-4ea7-886c-aba68364ee20">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col8 first last id1c50e11d-6063-4e33-bf08-9a454e62cd8c" style="" data-widgetcontainerid="1c50e11d-6063-4e33-bf08-9a454e62cd8c">	
+<div data-widget-id="77a69450-7694-49fa-b328-a69db4444f31" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidget77a69450-7694-49fa-b328-a69db4444f31" class="widget widgetGraphicLinks skin65 widgetOptionSet4 wide" data-elementqueryclasses='{"wide-narrow":"min-width:32em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid2 ">
+		<nav class="widgetGraphicLinksNav" aria-labelledby="GraphicLinkHeaderText">
+				<div class="row   wide">
+					<!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/1060/Stoneham-Shuttle" target="_self" class="fancyButton fancyButton313 " >
+		<span>
+			<span><span class="text"><span class="textStyle1">SHUTTLE</span><span class="textStyle2">Learn More</span></span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton313.fancyButton:link,.fancyButton313.fancyButton:visited, .fancyButton313div.fancyButton{
+	background-color: rgb(255, 255, 255);
+	width: 220px;
+	-webkit-border-top-left-radius: 110px;
+	-moz-border-top-left-radius: 110px;
+	-khtml-border-top-left-radius: 110px;
+	border-top-left-radius: 110px;
+	-webkit-border-top-right-radius: 110px;
+	-moz-border-top-right-radius: 110px;
+	-khtml-border-top-right-radius: 110px;
+	border-top-right-radius: 110px;
+	-webkit-border-bottom-left-radius: 110px;
+	-moz-border-bottom-left-radius: 110px;
+	-khtml-border-bottom-left-radius: 110px;
+	border-bottom-left-radius: 110px;
+	-webkit-border-bottom-right-radius: 110px;
+	-moz-border-bottom-right-radius: 110px;
+	-khtml-border-bottom-right-radius: 110px;
+	border-bottom-right-radius: 110px;
+	background-image: url('/ImageRepository/Document?documentID=12349');
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-top: 6px solid rgb(255, 255, 255);
+	border-left: 6px solid rgb(255, 255, 255);
+	border-right: 6px solid rgb(255, 255, 255);
+	border-bottom: 6px solid rgb(255, 255, 255);
+margin: 0 auto;
+background-size: cover;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+overflow: hidden;
+}
+
+.fancyButton1 > span > span,
+.fancyButton313 > span > span {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-end;
+height: 208px;}
+.fancyButton313.fancyButton:hover,.fancyButton313.fancyButton:focus,.fancyButton313.fancyButton:active,.fancyButton313.fancyButton.hover{
+}
+.fancyButton313.fancyButton:link > span,.fancyButton313.fancyButton:visited > span, .fancyButton313div.fancyButton > span{
+}
+.fancyButton313.fancyButton:hover > span,.fancyButton313.fancyButton:focus > span,.fancyButton313.fancyButton:active > span,.fancyButton313.fancyButton.hover > span{
+}
+.fancyButton313.fancyButton .text{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	text-decoration: none;
+	background-color: rgba(42, 35, 147, 0.8);
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+line-height: 1.2;
+min-height: 1px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100%;
+transition: all .3s ease-in-out;
+}
+.fancyButton313.fancyButton:hover .text,.fancyButton313.fancyButton:focus .text,.fancyButton313.fancyButton:active .text,.fancyButton313.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+min-height: 100%;
+}
+.fancyButton313.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.2em;
+	font-family: Poppins;
+	font-weight: 500;
+	text-decoration: none;
+text-transform: uppercase;
+line-height: 1.2;
+position: relative;
+display: block;
+width: 100%;
+padding-bottom: 12px;
+margin-bottom: 10px;
+}
+
+.fancyButton1 .textStyle1::after,
+.fancyButton313 .textStyle1::after {
+content: "";
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+width: 100%;
+max-width: 40px;
+height: 2px;
+border-radius: 2px;
+background: rgba(209, 199, 125, 1);
+transition: all .3s ease-in-out;}
+.fancyButton313.fancyButton:hover .textStyle1, .fancyButton313.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton1:is(:hover,:focus,:active) .textStyle1::after,
+.fancyButton313:is(:hover,:focus,:active) .textStyle1::after {
+max-width: 100px;}
+.fancyButton313.fancyButton .textStyle2{
+	color: rgb(255, 255, 255);
+	font-size: .9em;
+	font-family: Poppins;
+	font-style: normal;
+	text-decoration: none;
+opacity: 0;
+line-height: 0;
+transition: all .3s ease-in-out;}
+.fancyButton313.fancyButton:hover .textStyle2, .fancyButton313.fancyButton.hover .textStyle2{
+	text-decoration: none;
+opacity: 1;
+line-height: 1.2;
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/1186/Stay-Connected" target="_self" class="fancyButton fancyButton314 " >
+		<span>
+			<span><span class="text"><span class="textStyle1">STAY CONNECTED</span><span class="textStyle2">Learn More</span></span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton314.fancyButton:link,.fancyButton314.fancyButton:visited, .fancyButton314div.fancyButton{
+	background-color: rgb(255, 255, 255);
+	width: 220px;
+	-webkit-border-top-left-radius: 110px;
+	-moz-border-top-left-radius: 110px;
+	-khtml-border-top-left-radius: 110px;
+	border-top-left-radius: 110px;
+	-webkit-border-top-right-radius: 110px;
+	-moz-border-top-right-radius: 110px;
+	-khtml-border-top-right-radius: 110px;
+	border-top-right-radius: 110px;
+	-webkit-border-bottom-left-radius: 110px;
+	-moz-border-bottom-left-radius: 110px;
+	-khtml-border-bottom-left-radius: 110px;
+	border-bottom-left-radius: 110px;
+	-webkit-border-bottom-right-radius: 110px;
+	-moz-border-bottom-right-radius: 110px;
+	-khtml-border-bottom-right-radius: 110px;
+	border-bottom-right-radius: 110px;
+	background-image: url('/ImageRepository/Document?documentID=10944');
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-top: 6px solid rgb(255, 255, 255);
+	border-left: 6px solid rgb(255, 255, 255);
+	border-right: 6px solid rgb(255, 255, 255);
+	border-bottom: 6px solid rgb(255, 255, 255);
+margin: 0 auto;
+background-size: cover;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+overflow: hidden;
+}
+
+.fancyButton1 > span > span,
+.fancyButton314 > span > span {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-end;
+height: 208px;}
+.fancyButton314.fancyButton:hover,.fancyButton314.fancyButton:focus,.fancyButton314.fancyButton:active,.fancyButton314.fancyButton.hover{
+}
+.fancyButton314.fancyButton:link > span,.fancyButton314.fancyButton:visited > span, .fancyButton314div.fancyButton > span{
+}
+.fancyButton314.fancyButton:hover > span,.fancyButton314.fancyButton:focus > span,.fancyButton314.fancyButton:active > span,.fancyButton314.fancyButton.hover > span{
+}
+.fancyButton314.fancyButton .text{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	text-decoration: none;
+	background-color: rgba(42, 35, 147, 0.8);
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+line-height: 1.2;
+min-height: 1px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100%;
+transition: all .3s ease-in-out;
+}
+.fancyButton314.fancyButton:hover .text,.fancyButton314.fancyButton:focus .text,.fancyButton314.fancyButton:active .text,.fancyButton314.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+min-height: 100%;
+}
+.fancyButton314.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.2em;
+	font-family: Poppins;
+	font-weight: 500;
+	text-decoration: none;
+text-transform: uppercase;
+line-height: 1.2;
+position: relative;
+display: block;
+width: 100%;
+padding-bottom: 12px;
+margin-bottom: 10px;
+}
+
+.fancyButton1 .textStyle1::after,
+.fancyButton314 .textStyle1::after {
+content: "";
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+width: 100%;
+max-width: 40px;
+height: 2px;
+border-radius: 2px;
+background: rgba(209, 199, 125, 1);
+transition: all .3s ease-in-out;}
+.fancyButton314.fancyButton:hover .textStyle1, .fancyButton314.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton1:is(:hover,:focus,:active) .textStyle1::after,
+.fancyButton314:is(:hover,:focus,:active) .textStyle1::after {
+max-width: 100px;}
+.fancyButton314.fancyButton .textStyle2{
+	color: rgb(255, 255, 255);
+	font-size: .9em;
+	font-family: Poppins;
+	font-style: normal;
+	text-decoration: none;
+opacity: 0;
+line-height: 0;
+transition: all .3s ease-in-out;}
+.fancyButton314.fancyButton:hover .textStyle2, .fancyButton314.fancyButton.hover .textStyle2{
+	text-decoration: none;
+opacity: 1;
+line-height: 1.2;
+}
+</style>
+
+ </li><!--
+--></ul></div><!--				-->
+				</div>
+			</nav>
+		</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col8 last" style="" data-widgetcontainerid="30892a30-c87d-48ed-b51d-dee07dce3717">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col8 first last idcee25e45-b3fb-4e93-a964-95b697fbf38d" style="" data-widgetcontainerid="cee25e45-b3fb-4e93-a964-95b697fbf38d">	
+<div data-widget-id="efb62b31-2089-4ba1-bca6-6276eb2639d4" data-widget-controller-path="/GraphicLinks/Widget">
+
+
+
+
+<div id="graphicLinkWidgetefb62b31-2089-4ba1-bca6-6276eb2639d4" class="widget widgetGraphicLinks skin65 widgetOptionSet4 wide" data-elementqueryclasses='{"wide-narrow":"min-width:32em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' data-modulewidgettype="graphicLinks">
+	<div class="widgetHeader">
+		<div class="">
+				</div>
+	</div>
+	<div class="widgetBody cpGrid cpGrid2 ">
+		<nav class="widgetGraphicLinksNav" aria-labelledby="GraphicLinkHeaderText">
+				<div class="row   wide">
+					<!--
+--><div class="col col1 first "><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="/199/Building-Department" target="_self" class="fancyButton fancyButton315 " >
+		<span>
+			<span><span class="text"><span class="textStyle1">Building<br>Permit</span><span class="textStyle2">Learn More</span></span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton315.fancyButton:link,.fancyButton315.fancyButton:visited, .fancyButton315div.fancyButton{
+	background-color: rgb(255, 255, 255);
+	width: 220px;
+	-webkit-border-top-left-radius: 110px;
+	-moz-border-top-left-radius: 110px;
+	-khtml-border-top-left-radius: 110px;
+	border-top-left-radius: 110px;
+	-webkit-border-top-right-radius: 110px;
+	-moz-border-top-right-radius: 110px;
+	-khtml-border-top-right-radius: 110px;
+	border-top-right-radius: 110px;
+	-webkit-border-bottom-left-radius: 110px;
+	-moz-border-bottom-left-radius: 110px;
+	-khtml-border-bottom-left-radius: 110px;
+	border-bottom-left-radius: 110px;
+	-webkit-border-bottom-right-radius: 110px;
+	-moz-border-bottom-right-radius: 110px;
+	-khtml-border-bottom-right-radius: 110px;
+	border-bottom-right-radius: 110px;
+	background-image: url('/ImageRepository/Document?documentID=10941');
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-top: 6px solid rgb(255, 255, 255);
+	border-left: 6px solid rgb(255, 255, 255);
+	border-right: 6px solid rgb(255, 255, 255);
+	border-bottom: 6px solid rgb(255, 255, 255);
+margin: 0 auto;
+background-size: cover;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+overflow: hidden;
+}
+
+.fancyButton1 > span > span,
+.fancyButton315 > span > span {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-end;
+height: 208px;}
+.fancyButton315.fancyButton:hover,.fancyButton315.fancyButton:focus,.fancyButton315.fancyButton:active,.fancyButton315.fancyButton.hover{
+}
+.fancyButton315.fancyButton:link > span,.fancyButton315.fancyButton:visited > span, .fancyButton315div.fancyButton > span{
+}
+.fancyButton315.fancyButton:hover > span,.fancyButton315.fancyButton:focus > span,.fancyButton315.fancyButton:active > span,.fancyButton315.fancyButton.hover > span{
+}
+.fancyButton315.fancyButton .text{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	text-decoration: none;
+	background-color: rgba(42, 35, 147, 0.8);
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+line-height: 1.2;
+min-height: 1px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100%;
+transition: all .3s ease-in-out;
+}
+.fancyButton315.fancyButton:hover .text,.fancyButton315.fancyButton:focus .text,.fancyButton315.fancyButton:active .text,.fancyButton315.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+min-height: 100%;
+}
+.fancyButton315.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.2em;
+	font-family: Poppins;
+	font-weight: 500;
+	text-decoration: none;
+text-transform: uppercase;
+line-height: 1.2;
+position: relative;
+display: block;
+width: 100%;
+padding-bottom: 12px;
+margin-bottom: 10px;
+}
+
+.fancyButton1 .textStyle1::after,
+.fancyButton315 .textStyle1::after {
+content: "";
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+width: 100%;
+max-width: 40px;
+height: 2px;
+border-radius: 2px;
+background: rgba(209, 199, 125, 1);
+transition: all .3s ease-in-out;}
+.fancyButton315.fancyButton:hover .textStyle1, .fancyButton315.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton1:is(:hover,:focus,:active) .textStyle1::after,
+.fancyButton315:is(:hover,:focus,:active) .textStyle1::after {
+max-width: 100px;}
+.fancyButton315.fancyButton .textStyle2{
+	color: rgb(255, 255, 255);
+	font-size: .9em;
+	font-family: Poppins;
+	font-style: normal;
+	text-decoration: none;
+opacity: 0;
+line-height: 0;
+transition: all .3s ease-in-out;}
+.fancyButton315.fancyButton:hover .textStyle2, .fancyButton315.fancyButton.hover .textStyle2{
+	text-decoration: none;
+opacity: 1;
+line-height: 1.2;
+}
+</style>
+
+ </li><!--
+--></ul></div><!----><div class="col col1  last"><ul class="semanticList"><!--
+
+	    --><li class="widgetItem GraphicLinks">
+
+<div>
+	<a href="https://stoneham.patriotproperties.com/default.asp" target="_self" class="fancyButton fancyButton316 " >
+		<span>
+			<span><span class="text"><span class="textStyle1">Property Records</span><span class="textStyle2">Learn More</span></span></span>
+		</span>
+	</a>
+</div>
+		<style scoped="scoped">.fancyButton316.fancyButton:link,.fancyButton316.fancyButton:visited, .fancyButton316div.fancyButton{
+	background-color: rgb(255, 255, 255);
+	width: 220px;
+	-webkit-border-top-left-radius: 110px;
+	-moz-border-top-left-radius: 110px;
+	-khtml-border-top-left-radius: 110px;
+	border-top-left-radius: 110px;
+	-webkit-border-top-right-radius: 110px;
+	-moz-border-top-right-radius: 110px;
+	-khtml-border-top-right-radius: 110px;
+	border-top-right-radius: 110px;
+	-webkit-border-bottom-left-radius: 110px;
+	-moz-border-bottom-left-radius: 110px;
+	-khtml-border-bottom-left-radius: 110px;
+	border-bottom-left-radius: 110px;
+	-webkit-border-bottom-right-radius: 110px;
+	-moz-border-bottom-right-radius: 110px;
+	-khtml-border-bottom-right-radius: 110px;
+	border-bottom-right-radius: 110px;
+	background-image: url('/ImageRepository/Document?documentID=10942');
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-top: 6px solid rgb(255, 255, 255);
+	border-left: 6px solid rgb(255, 255, 255);
+	border-right: 6px solid rgb(255, 255, 255);
+	border-bottom: 6px solid rgb(255, 255, 255);
+margin: 0 auto;
+background-size: cover;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+overflow: hidden;
+}
+
+.fancyButton316 > span > span,
+.fancyButton316 > span > span {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-end;
+height: 208px;}
+.fancyButton316.fancyButton:hover,.fancyButton316.fancyButton:focus,.fancyButton316.fancyButton:active,.fancyButton316.fancyButton.hover{
+}
+.fancyButton316.fancyButton:link > span,.fancyButton316.fancyButton:visited > span, .fancyButton316div.fancyButton > span{
+}
+.fancyButton316.fancyButton:hover > span,.fancyButton316.fancyButton:focus > span,.fancyButton316.fancyButton:active > span,.fancyButton316.fancyButton.hover > span{
+}
+.fancyButton316.fancyButton .text{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	text-decoration: none;
+	background-color: rgba(42, 35, 147, 0.8);
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+line-height: 1.2;
+min-height: 1px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100%;
+transition: all .3s ease-in-out;
+}
+.fancyButton316.fancyButton:hover .text,.fancyButton316.fancyButton:focus .text,.fancyButton316.fancyButton:active .text,.fancyButton316.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+min-height: 100%;
+}
+.fancyButton316.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.2em;
+	font-family: Poppins;
+	font-weight: 500;
+	text-decoration: none;
+text-transform: uppercase;
+line-height: 1.2;
+position: relative;
+display: block;
+width: 100%;
+padding-bottom: 12px;
+margin-bottom: 10px;
+}
+
+.fancyButton316 .textStyle1::after,
+.fancyButton316 .textStyle1::after {
+content: "";
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+width: 100%;
+max-width: 40px;
+height: 2px;
+border-radius: 2px;
+background: rgba(209, 199, 125, 1);
+transition: all .3s ease-in-out;}
+.fancyButton316.fancyButton:hover .textStyle1, .fancyButton316.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton316:is(:hover,:focus,:active) .textStyle1::after,
+.fancyButton316:is(:hover,:focus,:active) .textStyle1::after {
+max-width: 100px;}
+.fancyButton316.fancyButton .textStyle2{
+	color: rgb(255, 255, 255);
+	font-size: .9em;
+	font-family: Poppins;
+	font-style: normal;
+	text-decoration: none;
+opacity: 0;
+line-height: 0;
+transition: all .3s ease-in-out;}
+.fancyButton316.fancyButton:hover .textStyle2, .fancyButton316.fancyButton.hover .textStyle2{
+	text-decoration: none;
+opacity: 1;
+line-height: 1.2;
+}
+</style>
+
+ </li><!--
+--></ul></div><!--				-->
+				</div>
+			</nav>
+		</div>
+	<div class="widgetFooter">
+			</div>
+</div>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div><!-- Footer --><footer data-cpRole="structuralContainer" id="footerContainerTS">
+<div class="siteWrap2"><div data-cpRole="contentContainer" id="footerTS">	<div id="cc30aaf3a4-fb13-4414-a913-daf195c4d16f" data-containerid="30aaf3a4-fb13-4414-a913-daf195c4d16f" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="50">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col7 first" style="" data-widgetcontainerid="d98488ef-6773-4da8-8e28-b16ca8d86b7e">				
+	<div class="row nest first wide">
+	
+	<div class="inner col col7 first last id11978e50-e54f-4f99-a5cb-08c4d86b781b" style="" data-widgetcontainerid="11978e50-e54f-4f99-a5cb-08c4d86b781b">	
+    <div data-widget-id="2dc84885-aaa6-4f2d-addf-8d62c91e3ae1" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdv2dc84885-aaa6-4f2d-addf-8d62c91e3ae1" class="widget widgetInfoAdvanced skin63 widgetOptionSet5 wide" data-modulewidgettype="infoAdv" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-label="Info Advanced">
+			<header class="widgetHeader" id="header2dc84885-aaa6-4f2d-addf-8d62c91e3ae1">
+		<div class="">
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid1 ">
+		<div class="row  wide">
+					<div class="col col1 first last">
+						<ol class="pageStyles semanticList">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p><a href="/"><img src="/ImageRepository/Document?documentId=10924" class="fr-dib" alt="Stoneham Massachusetts Homepage"></a></p>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv2dc84885-aaa6-4f2d-addf-8d62c91e3ae1 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+	<div class="row nest last wide">
+	
+	<div class="inner col col7 first last id964c8785-5db8-4903-b039-39ac2cc52332" style="" data-widgetcontainerid="964c8785-5db8-4903-b039-39ac2cc52332">	
+<div data-widget-id="fbf237f9-8b00-44ae-9f8d-8aeb43e177fa" data-widget-controller-path="/GraphicLinks/Widget">
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col1" style="" data-widgetcontainerid="9a801e7a-9758-4888-90c6-d3884a024e5d">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col1 first last id416edbcb-5941-4aab-b9b7-a8bc9fb8a297" style="" data-widgetcontainerid="416edbcb-5941-4aab-b9b7-a8bc9fb8a297">	
+
+<div class="widget widgetSpacer" id="ca1a25a9-2954-4e5f-b857-3cc6bfdfd5f7"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col7" style="" data-widgetcontainerid="d170ad41-7c0a-47ca-85e1-76d893b88e69">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col7 first last id52fb26ae-5d3b-4671-986a-077b3f70e441" style="" data-widgetcontainerid="52fb26ae-5d3b-4671-986a-077b3f70e441">	
+    <div data-widget-id="cf4ae99e-0862-4364-bbae-5c3aa7fbc766" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdvcf4ae99e-0862-4364-bbae-5c3aa7fbc766" class="widget widgetInfoAdvanced skin66 widgetOptionSet5 wide" data-modulewidgettype="infoAdv" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="headercf4ae99e-0862-4364-bbae-5c3aa7fbc766">
+			<header class="widgetHeader" id="headercf4ae99e-0862-4364-bbae-5c3aa7fbc766">
+		<div class="">
+					<h3 >Contact Us</h3>
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid1 ">
+		<div class="row  wide">
+					<div class="col col1 first last">
+						<ol class="pageStyles semanticList">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p id="isPasted"><strong>Town of Stoneham</strong></p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<p id="isPasted">35 Central Street, Stoneham, MA 02180</p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<p id="isPasted">Phone: <a href="tel:781-279-2600">781-279-2600</a></p>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvcf4ae99e-0862-4364-bbae-5c3aa7fbc766 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col1" style="" data-widgetcontainerid="517e7485-2381-4f9e-9d57-ff7f5a4c8a83">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col1 first last idd194c395-fb65-4bcf-be57-836c4a5a9930" style="" data-widgetcontainerid="d194c395-fb65-4bcf-be57-836c4a5a9930">	
+
+<div class="widget widgetSpacer" id="11605628-98dd-4eb7-ac0f-80acffb16daf"></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!----><div class="outer col col8 last" style="" data-widgetcontainerid="425422a8-1f30-407f-8749-e55c36710b15">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col8 first last id0b583017-ba5a-4dfd-a326-05a8a3fb5644" style="" data-widgetcontainerid="0b583017-ba5a-4dfd-a326-05a8a3fb5644">	
+    <div data-widget-id="91728c80-c73d-46a4-b5be-551d9627a16b" data-widget-controller-path="/InfoAdvanced/Widget">
+
+
+
+
+
+	<section id="divInfoAdv91728c80-c73d-46a4-b5be-551d9627a16b" class="widget widgetInfoAdvanced skin66 widgetOptionSet5 wide" data-modulewidgettype="infoAdv" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-labelledby="header91728c80-c73d-46a4-b5be-551d9627a16b">
+			<header class="widgetHeader" id="header91728c80-c73d-46a4-b5be-551d9627a16b">
+		<div class="">
+					<h3 >Town Hall Hours</h3>
+								</div>
+	</header>
+	<div class="widgetBody  cpGrid cpGrid1 ">
+		<div class="row  wide">
+					<div class="col col1 first last">
+						<ol class="pageStyles semanticList">
+
+<li class="InfoAdvanced widgetItem fr-view">
+	<p id="isPasted">Monday, Wednesday and Thursday: 8 am to 4 pm</p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<p id="isPasted">Tuesday: 8 am to 7 pm</p>
+</li>
+<li class="InfoAdvanced widgetItem fr-view">
+	<p id="isPasted">Friday: 8 am to 12 pm</p>
+</li>						</ol>
+					</div>
+		</div>
+	</div>
+	<div class="widgetFooter">
+
+	</div>
+
+	</section>
+
+
+
+<script type="text/javascript">
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv91728c80-c73d-46a4-b5be-551d9627a16b .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+</script></div>	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</footer><!-- Powered By --><div data-cpRole="structuralContainer" id="poweredByContainerTS">
+<div class="siteWrap2"><div data-cpRole="contentContainer" id="linksTS">	<div id="ccc0a66ef5-1588-430d-9577-154ab8ec745f" data-containerid="c0a66ef5-1588-430d-9577-154ab8ec745f" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile" data-contentcontainerbreakpoint="1">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="63043f1b-c7a1-45bf-8e0f-8a167a78bf38">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last id588e9de3-3a96-4a43-b3c0-55e90bf63b71" style="" data-widgetcontainerid="588e9de3-3a96-4a43-b3c0-55e90bf63b71">	
+	<div data-widget-id="ecc4890a-a999-451e-b219-d71d32165032" data-widget-controller-path="/QuickLinks/Widget">
+
+
+
+
+
+
+
+
+	<section id="widgetQuicklinkecc4890a-a999-451e-b219-d71d32165032" class="widget widgetQuickLinks skin67 widgetOptionSet40 narrow" data-modulewidgettype="quickLinks" data-elementqueryclasses='{"wide-narrow":"min-width:25em"}' data-elementquerymatch='matchMultiColumn' data-elementqueryunmatch='unmatchMultiColumn' aria-label="Quick Links">
+			<header class="widgetHeader" id="quickLinksHeaderecc4890a-a999-451e-b219-d71d32165032">
+		<div class="">
+						</div>
+	</header>
+	<div class="widgetBody cpGrid cpGrid5 ">
+        <div class="row autoWidths center narrow">
+				<div class="col col1 first ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/" target="_self" >Home</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/sitemap" target="_self" >Site Map</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/accessibility" target="_self" >Accessibility</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  ">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/site/copyright" target="_self" >Copyright Notices</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+				<div class="col col1  last">
+					<ol class="semanticList">
+
+    <li style="position:relative" class="widgetItem QuickLinks">
+        <a class="widgetDesc widgetQuickLinksLink" href="/DocumentCenter/View/12416/Privacy-Policy-language" target="_self" >Privacy Policy</a>
+        <div class="widgetMeta"></div>
+    </li>
+					</ol>
+				</div>
+		</div>
+        
+	</div>
+	<div class="widgetFooter">
+	</div>
+	<div class="addItemModal hidden">
+		<div class="url hidden">/QuickLinks.aspx</div>
+	</div>
+
+	</section>
+</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div><div data-cpRole="contentContainer" id="poweredByTS">	<div id="cca3e24725-36ba-4dfa-80fe-bca3ab5ec593" data-containerid="a3e24725-36ba-4dfa-80fe-bca3ab5ec593" class="pageContent cpGrid cpGrid24 isLockedContainer showInMobile">
+				                
+
+		<div class="row outer wide"><!--
+--><div class="outer col col24 first last" style="" data-widgetcontainerid="12c7bd48-8b23-4e01-a314-eae11fdbb00a">				
+	<div class="row nest first last wide">
+	
+	<div class="inner col col24 first last id1ff642ac-26bf-43dd-9b63-4f1460cf983d" style="" data-widgetcontainerid="1ff642ac-26bf-43dd-9b63-4f1460cf983d">	
+ 
+	<div data-widget-id='b520290c-32ba-42d8-a4a6-b231ed24333d' data-moduleName="customHtml" id='widgetCustomHtmlb520290c-32ba-42d8-a4a6-b231ed24333d' class="widget widgetCustomHtml skin68 narrow" >
+	<div class="widgetBody pageStyles" id="widgetBodyb520290c-32ba-42d8-a4a6-b231ed24333d">
+		<div id="customHtmlb520290c-32ba-42d8-a4a6-b231ed24333d"><div><style>
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+</style>
+
+<div class="widgetItem cpBylineTS">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100" class="cpBylineIconTS">
+    <path class="c" d="M73.4,23.2h-19v16.7h19c2.8,0,5,2.2,5,5c0,2.8-2.2,5-5,5h-19v28.4h5.5l11.3-11.7h2.2c11.9,0,21.6-9.7,21.6-21.6C95,33,85.3,23.2,73.4,23.2"></path>
+    <path class="p" d="M45.8,66.5H26.6C14.7,66.5,5,56.8,5,44.9C5,33,14.7,23.2,26.6,23.2h19.1v16.7H26.6c-2.8,0-5,2.2-5,5c0,2.8,2.2,5,5,5h19.1V66.5z"></path>
+  </svg>
+  <span class="cpBylineTextTS">Government Websites by <a href="https://connect.civicplus.com/referral">CivicPlus&reg;</a></span>
+</div>
+</div></div>
+	</div>
+	</div>
+	</div> <!-- inner column -->
+
+	</div> <!-- inner row -->
+
+			</div><!-- outer column --><!--		--></div> <!-- outer row -->
+
+
+	</div>
+</div></div>
+</div>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+
+<link href="/745732998.css" rel="stylesheet" type="text/css" />
+
+<div id="SplashMessageWrapper" class="cp-Splash-wrapper">
+	<div role="dialog" aria-labelledby="cp-Splash-title" aria-describedby="editorContentDesc" aria-modal="true" tabindex="-1" id="SplashMessage" class="hidden cp-Splash cp-Splash--modal is-open">
+		<div class="cp-Splash-header">
+			<h2 class="cp-Splash-title" id="cp-Splash-title">Loading</h2>
+			<button class="cp-Splash-Btn cp-Splash-close" aria-label="Close this modal" title="Close this window">
+				<svg id="iconClose" viewBox="0 0 25 25">
+					<polygon style="fill:currentcolor"
+							 points="18.806,6.98 18.075,6.248 12.532,11.792 6.989,6.248 6.257,6.98 11.786,12.508 6.212,18.084 6.943,18.815 12.532,13.224 18.12,18.815 18.851,18.084 13.277,12.508"></polygon>
+				</svg>
+			</button>
+		</div>
+		<div class="cp-Splash-body">
+			<div class="cp-Splash-Prose editorContent fr-view" id="editorContentDesc">
+				<!-- Content from the Froala Editor will go here. -->
+				Loading
+			</div>
+		</div>
+		<div class="cp-Splash-footer">
+			<button class="cp-Splash-Btn cp-Splash-Btn--NoShow">Do Not Show Again</button>
+			<button class="cp-Splash-Btn cp-Splash-Btn--Close">Close</button>
+		</div>
+	</div>
+</div>
+
+<script src="/Assets/Scripts/APIClient.js"></script>
+<script src="/Assets/Mystique/Shared/Scripts/Moment/Moment.min.js"></script>
+<script src="/Assets/Scripts/SplashModal/SplashModalRender.js"></script>
+<script>
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '',
+				targetType: 0
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+</script>
+
+	
+	
+
+
+
+
+
+
+    <script src="/-1442400649.js" type="text/javascript"></script>
+    <!----------Google Translate (Mobile Friendly)--------->
+<style>#google-translate-container {float: right;padding: 3px 5px 0px 0px;}.goog-te-combo,.goog-te-banner *,.goog-te-ftab *,.goog-te-menu *,.goog-te-menu2 *,.goog-te-balloon * {font-family: arial;font-size: 10pt;background-image: url("https://theme.zdassets.com/theme_assets/958586/bae8aa24db8d43595871692a9d259186f2db3fb4.png");background-position: 3px 4px;background-size: 22px;background-repeat: no-repeat;padding-left: 30px !important;background-color: #fff;color: #000 !important;}.goog-logo-link {display: none !important;}.goog-te-gadget {color: transparent !important;}.goog-te-gadget .goog-te-combo {margin: 2px 0 !important;border-radius: 15px !important;}.goog-te-combo{border: 1px solid !important;border-color: #bcc9d7 #96a3b1 #96a3b1 #bcc9d7 !important;border-radius: 0 !important;height:32px !important;padding: 0 0 0 30px !important;width: 165px !important;}#launcher-wrapper {bottom: 50px !important;}</style>
+
+<div id="google-translate-container">
+<div id="google_translate_element" style="position: fixed; bottom: 0px; right: 20px; z-index: 5;"></div>
+</div>
+<script>
+function googleTranslateElementInit() {
+var el = document.getElementById("google_translate_element");
+if (el && el.innerHTML.trim() !== "") {
+    return;
+}
+
+new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+    // begin accessibility compliance
+    $('img.goog-te-gadget-icon').attr('alt','Google Translate');
+    $('div#goog-gt-tt div.logo img').attr('alt','translate');
+    $('div#goog-gt-tt .original-text').css('text-align','left');
+    $('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+}
+$(function() {
+$.getScript("//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+});
+</script>
+<!--------------End Google Translate----------------->
+
+&#160;
+
+
+<div id="google-translate-container">
+
+<div id="google_translate_element" style="position: fixed; bottom: 0px; right: 20px; z-index: 5;"></div>
+
+</div>
+
+<script>
+
+function googleTranslateElementInit() {
+var el = document.getElementById("google_translate_element");
+if (el && el.innerHTML.trim() !== "") {
+    return;
+}
+
+
+new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+
+&#160; &#160; // begin accessibility compliance
+
+&#160; &#160; $('img.goog-te-gadget-icon').attr('alt','Google Translate');
+
+&#160; &#160; $('div#goog-gt-tt div.logo img').attr('alt','translate');
+
+&#160; &#160; $('div#goog-gt-tt .original-text').css('text-align','left');
+
+&#160; &#160; $('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+
+}
+
+$(function() {
+
+$.getScript("//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+
+});
+
+</script>
+
+<!--------------End Google Translate----------------->
+
+<!-- Browsealoud -->
+<script type="text/javascript" src="https://www.browsealoud.com/plus/scripts/ba.js" ></script>
+<!-- End Browsealoud -->
+
+
+<!-- Fixed Nav Adjustment -->
+<script>
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      $(".cp-liveEditOn").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+  //const anchor = $("#angularToolbarInLegacy");
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+</script>
+<!-- End Fixed Nav Adjustment -->
+
+
+    <script type="text/javascript">
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    </script>
+
+    <noscript>
+        <style>
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        </style>
+    </noscript>
+
+        
+<div style="display: none;">
+	<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+
+		<symbol id="iconArrow--left" viewbox="0 0 25 25">
+			<title>Arrow Left</title>
+			<polygon style="fill:currentcolor" points="18.044,25 19.498,23.545 8.409,12.454 19.408,1.455 17.954,0 5.502,12.452"></polygon>
+		</symbol>
+
+		<symbol id="iconArrow--right" viewbox="0 0 25 25">
+			<title>Arrow Right</title>
+			<polygon style="fill:currentcolor" points="6.957,0 5.502,1.455 16.591,12.546 5.592,23.545 7.047,25 19.498,12.548"></polygon>
+		</symbol>
+
+	</svg>
+</div>
+    <script type="text/javascript">loadCSS('//fonts.googleapis.com/css?family=Heebo:500,700,800,900,regular|Poppins:500,500italic,600,600italic,700,700italic,italic,regular|Source+Sans+Pro:200,200italic,300,300italic,600,600italic,700,700italic,900,900italic,italic,regular|');</script>
+    
+
+    <div class="hidden activeWidgetSkinComponentsOnPageJson">[]</div>
+        <div style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol id="iconSlideshowArrowLeft" viewBox="0 0 22.68 40">
+                    <title>Slideshow Left Arrow</title>
+                    <g>
+                        <path style="fill:currentcolor;" d="M20,40a2.67,2.67,0,0,1-1.9-.79L.79,21.9a2.68,2.68,0,0,1,0-3.79L18.1.79a2.68,2.68,0,1,1,3.79,3.79L6.47,20,21.89,35.42A2.68,2.68,0,0,1,20,40Z"></path>
+                    </g>
+                </symbol>
+                <symbol id="iconSlideshowArrowRight" viewBox="0 0 22.68 40">
+                    <title>Slideshow Right Arrow</title>
+                    <g>
+                        <path style="fill:currentcolor;" d="M2.68,0a2.67,2.67,0,0,1,1.9.79L21.89,18.1a2.68,2.68,0,0,1,0,3.79L4.58,39.21A2.68,2.68,0,0,1,.79,35.42L16.21,20,.79,4.58A2.68,2.68,0,0,1,2.68,0Z"></path>
+                    </g>
+                </symbol>
+            </svg>
+        </div>
+    
+	
+
+    <div id="root-picker-outlet"></div>
+</body>
+</html>

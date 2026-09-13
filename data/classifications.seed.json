@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "rinkId": "allied-veterans-everett",
+      "title": "emass senators",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey organization or team."
+    },
+    {
+      "rinkId": "allied-veterans-everett",
+      "title": "hayden synchronized skating",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named synchronized skating organization."
+    },
+    {
+      "rinkId": "allied-veterans-everett",
+      "title": "mass bay chiefs",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey club or team."
+    },
+    {
+      "rinkId": "allied-veterans-everett",
+      "title": "north shore shamrocks",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey club or team."
+    },
+    {
+      "rinkId": "allied-veterans-everett",
+      "title": "sled hockey",
+      "category": "other",
+      "source": "seed",
+      "note": "Hockey activity without indication it is public or a rental."
+    },
+    {
+      "rinkId": "allied-veterans-everett",
+      "title": "stinkysocks hockey",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey business or league."
+    },
+    {
+      "rinkId": "allied-veterans-everett",
+      "title": "tongues out hockey",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey organization or group."
+    },
+    {
+      "rinkId": "allied-veterans-everett",
+      "title": "wentworth institute of technology",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "College ice reservation."
+    },
+    {
+      "rinkId": "cronin-revere",
+      "title": "boston pride hockey",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey organization renting ice."
+    },
+    {
+      "rinkId": "cronin-revere",
+      "title": "david collier",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named individual renting ice."
+    },
+    {
+      "rinkId": "cronin-revere",
+      "title": "fmc programs",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named organization program with no public session type specified."
+    },
+    {
+      "rinkId": "cronin-revere",
+      "title": "greater boston vipers, llc",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey organization renting ice."
+    },
+    {
+      "rinkId": "cronin-revere",
+      "title": "premier pick next gen",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named program or business renting ice."
+    },
+    {
+      "rinkId": "cronin-revere",
+      "title": "stinkysocks hockey",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey business renting ice."
+    },
+    {
+      "rinkId": "ed-burns-arlington",
+      "title": "ahc",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey club booking."
+    },
+    {
+      "rinkId": "ed-burns-arlington",
+      "title": "ahs girls captains",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "School girls hockey team booking."
+    },
+    {
+      "rinkId": "ed-burns-arlington",
+      "title": "already skating adults level 4 \" beginning figure skating and power drills\" (session 1)",
+      "category": "learn_to_skate",
+      "source": "seed",
+      "note": "Structured adult figure skating and skating drills lesson."
+    },
+    {
+      "rinkId": "ed-burns-arlington",
+      "title": "already skating adults level 4 \" beginning figure skating and power drills\" (session 2)",
+      "category": "learn_to_skate",
+      "source": "seed",
+      "note": "Structured adult figure skating and skating drills lesson."
+    },
+    {
+      "rinkId": "ed-burns-arlington",
+      "title": "mycgl",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named league or organization booking."
+    },
+    {
+      "rinkId": "ed-burns-arlington",
+      "title": "over 40",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Age-group hockey booking with no indication of public access."
+    },
+    {
+      "rinkId": "ed-burns-arlington",
+      "title": "penguins",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey team or organization booking."
+    },
+    {
+      "rinkId": "flynn-medford",
+      "title": "hockey lesson walk-on",
+      "category": "stick_puck",
+      "source": "manual",
+      "note": "Walk-on hockey skills session; treated as open ice (household preference)."
+    },
+    {
+      "rinkId": "hayden-lexington",
+      "title": "club ice",
+      "category": "freestyle",
+      "source": "manual",
+      "note": "Hayden Club Ice is figure skating practice ice."
+    },
+    {
+      "rinkId": "hayden-lexington",
+      "title": "in-person test session",
+      "category": "other",
+      "source": "seed",
+      "note": "Individual testing session, not an open skating or hockey event."
+    },
+    {
+      "rinkId": "hayden-lexington",
+      "title": "stick & puck",
+      "category": "stick_puck_adult",
+      "source": "manual",
+      "note": "Hayden's stick & puck is an adult (18+) program."
+    },
+    {
+      "rinkId": "hayden-lexington",
+      "title": "stick and puck",
+      "category": "stick_puck_adult",
+      "source": "manual",
+      "note": "Hayden's stick & puck is an adult (18+) program."
+    },
+    {
+      "rinkId": "hayden-lexington",
+      "title": "stick and puck | ages 18 and up",
+      "category": "stick_puck_adult",
+      "source": "manual",
+      "note": "Hayden's stick & puck is an adult (18+) program."
+    },
+    {
+      "rinkId": "ice-palace-burlington",
+      "title": "burlington hockey & skating association",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey and skating association booking."
+    },
+    {
+      "rinkId": "ice-palace-burlington",
+      "title": "crimson hockey",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey organization booking."
+    },
+    {
+      "rinkId": "ice-palace-burlington",
+      "title": "emass senators",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey team or club booking."
+    },
+    {
+      "rinkId": "ice-palace-burlington",
+      "title": "fmc programs",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named organization program with no public session type specified."
+    },
+    {
+      "rinkId": "ice-palace-burlington",
+      "title": "hockey north america",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey league organization booking."
+    },
+    {
+      "rinkId": "ice-palace-burlington",
+      "title": "masucci, richard",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named individual booking."
+    },
+    {
+      "rinkId": "ice-palace-burlington",
+      "title": "stinkysocks hockey",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey business or league booking."
+    },
+    {
+      "rinkId": "simoni-cambridge",
+      "title": "boston pride hockey",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey organization, indicating reserved private ice."
+    },
+    {
+      "rinkId": "simoni-cambridge",
+      "title": "catch corner- allie mullan",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Booking platform and person's name indicate a private rental."
+    },
+    {
+      "rinkId": "simoni-cambridge",
+      "title": "new england sharks",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named team or club, indicating reserved private ice."
+    },
+    {
+      "rinkId": "simoni-cambridge",
+      "title": "novartis institute for biomedical research",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named business organization, indicating reserved private ice."
+    },
+    {
+      "rinkId": "simoni-cambridge",
+      "title": "shuley nakamura",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Person's name indicates a private booking."
+    },
+    {
+      "rinkId": "simoni-cambridge",
+      "title": "stinkysocks hockey",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey organization, indicating reserved private ice."
+    },
+    {
+      "rinkId": "veterans-somerville",
+      "title": "draper hockey",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey organization; indicates reserved ice."
+    },
+    {
+      "rinkId": "veterans-somerville",
+      "title": "fmc programs",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named rink-program operator booking without a specific public session type."
+    },
+    {
+      "rinkId": "veterans-somerville",
+      "title": "friday night hockey",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named recurring hockey group, with no public or pickup wording."
+    },
+    {
+      "rinkId": "veterans-somerville",
+      "title": "hayden synchronized skating",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named synchronized skating club or team booking."
+    },
+    {
+      "rinkId": "veterans-somerville",
+      "title": "holly talanian",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Person's name indicates an individual private booking."
+    },
+    {
+      "rinkId": "veterans-somerville",
+      "title": "mikhail lukin",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Person's name indicates an individual private booking."
+    },
+    {
+      "rinkId": "veterans-somerville",
+      "title": "new england sharks",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey organization; indicates reserved team or club ice."
+    },
+    {
+      "rinkId": "veterans-somerville",
+      "title": "stinkysocks hockey",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Named hockey business or league; explicitly treated as a private rental."
+    }
+  ]
+}

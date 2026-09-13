@@ -1,0 +1,31 @@
+{
+  "name": "open-ice-finder",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Finds open ice (stick & puck, public hockey, coach's ice) at rinks near Arlington, MA",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "infra"
+  ],
+  "scripts": {
+    "dev": "npm run build:shared && npm run dev -w @openice/web",
+    "build:shared": "npm run build -w @openice/shared",
+    "build:scraper": "npm run build -w @openice/scraper",
+    "build:web": "npm run build -w @openice/web",
+    "build": "npm run build:shared && npm run build:scraper && npm run build:web",
+    "typecheck": "npm run typecheck -w @openice/shared && npm run typecheck -w @openice/scraper && npm run typecheck -w @openice/web && npm run typecheck -w @openice/infra && tsc -p scripts/tsconfig.json",
+    "test": "npm run test -w @openice/shared && npm run test -w @openice/scraper && npm run test -w @openice/web && npm run test -w @openice/infra",
+    "synth": "npm run synth -w @openice/infra",
+    "refresh:local": "npm run build:shared && node --import tsx packages/scraper/src/cli.ts",
+    "rinks:build": "node --import tsx scripts/build-rinks.ts",
+    "deploy": "./deploy.sh"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

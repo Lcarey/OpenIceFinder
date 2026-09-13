@@ -1,0 +1,1156 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #17231f;
+  background: #f5f2e9;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ink: #17231f;
+  --ink-soft: rgba(23, 35, 31, 0.62);
+  --line: rgba(31, 48, 42, 0.14);
+  --card: rgba(255, 255, 255, 0.78);
+  --forest: #13251f;
+  --gold: #f6d66f;
+  --ice: #dff1fb;
+  --ice-deep: #1f6f9f;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0) 28rem), #f5f2e9;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.shell {
+  width: min(1180px, 100%);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: calc(18px + env(safe-area-inset-top)) 18px calc(30px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 10px 0 6px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+}
+
+.brand-mark {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid rgba(31, 48, 42, 0.15);
+  border-radius: 8px;
+  color: var(--gold);
+  background: var(--forest);
+  box-shadow: 0 14px 30px rgba(19, 37, 31, 0.16);
+}
+
+h1 {
+  font-size: clamp(1.5rem, 3.6vw, 2.2rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin-top: 4px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.nav {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.nav-link.active {
+  color: var(--gold);
+  background: var(--forest);
+}
+
+.view {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+}
+
+.loading,
+.empty {
+  padding: 28px 18px;
+  text-align: center;
+  color: var(--ink-soft);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+}
+
+.empty p + p {
+  margin-top: 6px;
+}
+
+.dim {
+  color: var(--ink-soft);
+}
+
+.notice {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+
+.notice.error {
+  border-color: rgba(178, 60, 40, 0.4);
+  background: rgba(255, 236, 230, 0.9);
+}
+
+.notice.warn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  border-color: rgba(190, 140, 20, 0.4);
+  background: rgba(255, 246, 214, 0.9);
+}
+
+.link-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ice-deep);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+.filter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  min-width: 46px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.chip {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.chip:hover {
+  border-color: rgba(31, 48, 42, 0.4);
+}
+
+.chip.on {
+  color: #fff;
+  background: var(--forest);
+  border-color: var(--forest);
+}
+
+.chip.muted {
+  color: var(--ink-soft);
+  background: transparent;
+}
+
+.chip.muted.on {
+  color: #fff;
+  background: #4a5a55;
+  border-color: #4a5a55;
+}
+
+.chip-divider {
+  width: 1px;
+  height: 22px;
+  margin: 0 4px;
+  background: var(--line);
+}
+
+.rink-picker {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+
+.rink-picker-actions {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.rink-picker-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 4px 16px;
+}
+
+.rink-picker-list label {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.rink-picker-list .dim {
+  font-size: 0.8rem;
+}
+
+/* Sessions list */
+.day-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.day-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--forest);
+  padding: 0 2px;
+}
+
+.session-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.session {
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.session.live {
+  border-color: rgba(31, 111, 159, 0.5);
+  box-shadow: 0 0 0 3px rgba(31, 111, 159, 0.12);
+}
+
+.session-time {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.live-pill {
+  align-self: flex-start;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--ice-deep);
+}
+
+.session-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.session-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.session-title {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.session-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.88rem;
+}
+
+.rink-link {
+  font-weight: 600;
+  color: var(--ice-deep);
+}
+
+.rink-link:hover {
+  text-decoration: underline;
+}
+
+.session-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.drive-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--forest);
+  background: rgba(246, 214, 111, 0.55);
+  white-space: nowrap;
+}
+
+.ext {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+}
+
+.ext:hover {
+  color: var(--ink);
+  background: #fff;
+}
+
+.coverage {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.coverage summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.coverage ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.coverage a {
+  color: var(--ice-deep);
+  font-weight: 600;
+}
+
+/* Badges by category */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: #fff;
+  background: #6b7a75;
+}
+
+.badge.compact {
+  padding: 0 6px;
+  font-size: 0.68rem;
+}
+
+.cat-stick_puck_kids.badge,
+.chip.cat-stick_puck_kids.on {
+  background: #d9662b;
+  border-color: #d9662b;
+}
+.cat-stick_puck_adult.badge,
+.chip.cat-stick_puck_adult.on {
+  background: #8a3fb8;
+  border-color: #8a3fb8;
+}
+.cat-stick_puck_family.badge,
+.chip.cat-stick_puck_family.on {
+  background: #c2417a;
+  border-color: #c2417a;
+}
+.cat-stick_puck.badge,
+.chip.cat-stick_puck.on {
+  background: #b0432f;
+  border-color: #b0432f;
+}
+.cat-public_hockey.badge,
+.chip.cat-public_hockey.on {
+  background: #1f6f9f;
+  border-color: #1f6f9f;
+}
+.cat-coach_ice.badge,
+.chip.cat-coach_ice.on {
+  background: #2f7d4f;
+  border-color: #2f7d4f;
+}
+.cat-freestyle.badge {
+  background: #7b6bd1;
+}
+.cat-public_skate.badge {
+  background: #3a8fb7;
+}
+.cat-learn_to_skate.badge {
+  background: #4f8f6b;
+}
+.cat-private_rental.badge {
+  background: #8b9490;
+}
+.cat-closed.badge {
+  background: #b3403a;
+}
+.cat-other.badge {
+  background: #6b7a75;
+}
+
+/* Rink view */
+.rink-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.rink-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: calc(100vh - 220px);
+  overflow: auto;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  position: sticky;
+  top: 12px;
+}
+
+.rink-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(19, 37, 31, 0.05);
+}
+
+.rink-item:hover {
+  filter: brightness(0.97);
+}
+
+.rink-item.active {
+  background: var(--forest);
+  color: #fff;
+}
+
+.rink-item.nodata .rink-item-name {
+  color: var(--ink-soft);
+}
+
+.rink-item.active .rink-item-name,
+.rink-item.active .rink-item-meta {
+  color: #fff;
+}
+
+.rink-emoji {
+  display: inline-block;
+  width: 1.35em;
+  margin-right: 2px;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.rink-item-name .rink-emoji {
+  font-size: 1.2em;
+  margin-right: 4px;
+}
+
+.rink-emoji-lg {
+  width: 1.2em;
+  margin-right: 6px;
+}
+
+.rink-item-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.2;
+}
+
+.rink-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.open-count {
+  padding: 0 7px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: var(--forest);
+  background: var(--gold);
+}
+
+.rink-main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.rink-header h2 {
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.rink-sub {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.dot {
+  opacity: 0.6;
+}
+
+.rink-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.rink-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ice-deep);
+  font-weight: 600;
+}
+
+.cal-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cal-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cal-period {
+  margin-left: 6px;
+  font-weight: 700;
+}
+
+.icon-button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  border-color: rgba(31, 48, 42, 0.4);
+}
+
+/* Week grid */
+.week {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  overflow: hidden;
+}
+
+.week-head,
+.week-body {
+  display: grid;
+  grid-template-columns: 56px repeat(7, minmax(0, 1fr));
+}
+
+.week-head {
+  border-bottom: 1px solid var(--line);
+}
+
+.week-day-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 4px;
+  border-left: 1px solid var(--line);
+  font-size: 0.8rem;
+}
+
+.week-day-head.today .week-day-num {
+  color: var(--gold);
+  background: var(--forest);
+}
+
+.week-day-name {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+}
+
+.week-day-num {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.allday {
+  max-width: 100%;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #fff;
+  background: #8b9490;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.allday.cat-closed {
+  background: #b3403a;
+}
+
+.week-body {
+  position: relative;
+}
+
+.week-gutter {
+  position: relative;
+}
+
+.hour-label {
+  position: absolute;
+  right: 6px;
+  transform: translateY(-50%);
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.week-col {
+  position: relative;
+  border-left: 1px solid var(--line);
+}
+
+.week-col.today {
+  background: rgba(246, 214, 111, 0.12);
+}
+
+.hour-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px solid rgba(31, 48, 42, 0.07);
+}
+
+.week-event {
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  padding: 3px 5px;
+  border-radius: 6px;
+  border-left: 3px solid rgba(0, 0, 0, 0.25);
+  background: rgba(139, 148, 144, 0.22);
+  color: var(--ink);
+  font-size: 0.7rem;
+  line-height: 1.2;
+  overflow: hidden;
+}
+
+.week-event.open {
+  color: #fff;
+  border-left-color: rgba(255, 255, 255, 0.6);
+}
+
+.week-event.cat-stick_puck_kids.open {
+  background: #d9662b;
+}
+.week-event.cat-stick_puck_adult.open {
+  background: #8a3fb8;
+}
+.week-event.cat-stick_puck_family.open {
+  background: #c2417a;
+}
+.week-event.cat-stick_puck.open {
+  background: #b0432f;
+}
+.week-event.cat-public_hockey.open {
+  background: #1f6f9f;
+}
+.week-event.cat-coach_ice.open {
+  background: #2f7d4f;
+}
+.week-event.cat-public_skate {
+  background: rgba(58, 143, 183, 0.25);
+}
+.week-event.cat-freestyle {
+  background: rgba(123, 107, 209, 0.25);
+}
+.week-event.cat-learn_to_skate {
+  background: rgba(79, 143, 107, 0.25);
+}
+.week-event.cat-closed {
+  background: rgba(179, 64, 58, 0.25);
+}
+
+.week-event-time {
+  display: block;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.week-event-title {
+  display: block;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Month grid */
+.month {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--line);
+  overflow: hidden;
+}
+
+.month-head {
+  padding: 8px 6px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: var(--ink-soft);
+  background: #fff;
+}
+
+.month-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  min-height: 92px;
+  padding: 6px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.month-cell:hover {
+  background: #fff;
+}
+
+.month-cell.outside {
+  background: rgba(245, 242, 233, 0.7);
+  color: var(--ink-soft);
+}
+
+.month-cell.today .month-daynum {
+  color: var(--gold);
+  background: var(--forest);
+}
+
+.month-daynum {
+  align-self: flex-start;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.month-events {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.68rem;
+}
+
+.month-event {
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: #fff;
+  background: #6b7a75;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.month-event.cat-stick_puck_kids {
+  background: #d9662b;
+}
+.month-event.cat-stick_puck_adult {
+  background: #8a3fb8;
+}
+.month-event.cat-stick_puck_family {
+  background: #c2417a;
+}
+.month-event.cat-stick_puck {
+  background: #b0432f;
+}
+.month-event.cat-public_hockey {
+  background: #1f6f9f;
+}
+.month-event.cat-coach_ice {
+  background: #2f7d4f;
+}
+
+.month-more {
+  font-weight: 600;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media (max-width: 860px) {
+  .rink-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .rink-list {
+    position: static;
+    max-height: 220px;
+  }
+
+  .session {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .session-side {
+    justify-content: space-between;
+  }
+
+  .week-head,
+  .week-body {
+    grid-template-columns: 44px repeat(7, minmax(0, 1fr));
+  }
+
+  .week-event-title {
+    display: none;
+  }
+
+  .month-cell {
+    min-height: 64px;
+  }
+
+  .month-event {
+    font-size: 0.6rem;
+  }
+}
+
+/* Who's on the ice */
+.usage-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 380px) 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .usage-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.usage-day {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.usage-day .day-heading {
+  margin: 0 0 10px;
+}
+
+.usage-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.usage-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  border-left-width: 4px;
+  background: #fff;
+  font-size: 0.9rem;
+}
+
+.usage-row.kind-merged {
+  border-left-color: var(--forest);
+  background: #f2f8f4;
+}
+
+.usage-row.kind-program {
+  border-left-color: #b98a1c;
+  background: #fdf8ea;
+}
+
+.usage-time {
+  white-space: nowrap;
+  min-width: 112px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+
+.usage-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.usage-title {
+  font-weight: 600;
+}
+
+.usage-tag {
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  background: rgba(19, 37, 31, 0.06);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+
+.usage-teams {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 5px;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.team-chip {
+  display: inline-block;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.team-chip + .team-chip::before {
+  content: "·";
+  margin-right: 5px;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+.usage-slots {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.usage-slots li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.usage-slot-time {
+  white-space: nowrap;
+  min-width: 112px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  padding-top: 5px;
+}
+
+.usage-note {
+  flex-basis: 100%;
+}
+
+.usage-week .week-day-head {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+}
+
+.usage-week .week-day-head.selected,
+.usage-week .week-col.selected {
+  background: rgba(47, 125, 79, 0.08);
+}
+
+.usage-block.kind-merged {
+  background: #dfeee4;
+  border-left-color: var(--forest);
+}
+
+.usage-block.kind-program {
+  background: #f5e9c4;
+  border-left-color: #b98a1c;
+}
+
+.chip.today:not(.on) {
+  box-shadow: inset 0 0 0 1px var(--forest);
+}

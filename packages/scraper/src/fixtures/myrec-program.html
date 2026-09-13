@@ -1,0 +1,956 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta name="author" content="MyRec.com" /><meta name="robots" content="follow, index" /><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="manifest" href="/manifest.json?v=1" />
+
+		<!-- favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/Images/pwa.svg" /><link rel="icon" type="image/png" sizes="32x32" href="/info/includes/icons/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="16x16" href="/info/includes/icons/favicon-16x16.png" />
+		<!-- <link rel="manifest" href="/info/includes/icons/site.webmanifest" /> -->
+
+		<!-- Bootstrap CDN -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+
+		<!-- Bootstrap icons-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+
+
+		<!-- JQuery -->
+		<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+		<script>
+			//adds UTC timestamp for current day to end of CSS stylesheet links to remedy browser caching 
+			document.addEventListener('DOMContentLoaded', function () {
+			var now = new Date();
+			var version = now.getUTCFullYear() + ''
+				+ String(now.getUTCMonth() + 1).padStart(2, '0')
+				+ String(now.getUTCDate()).padStart(2, '0');
+
+				document.querySelectorAll('.versioned').forEach(function (el) {
+					var attr = el.tagName === 'SCRIPT' ? 'src' : 'href';
+					var base = el.getAttribute(attr).split('?')[0];
+					el.setAttribute(attr, base + '?v=' + version);
+				});
+			});
+		</script>
+
+		<!-- FontAwesome Kit -->
+		<script src="https://kit.fontawesome.com/b6cc480471.js" crossorigin="anonymous"></script>
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" /><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&amp;display=swap" rel="stylesheet" />
+
+		<!-- CSS Files -->
+		<link class="versioned" rel="stylesheet" href="/custom-colors.css" /> <!-- Custom colors -->
+		<link class="versioned" rel="stylesheet" href="/info/master/css/myrec_style.css" /> <!-- Global styling -->
+		<link class="versioned" rel="stylesheet" href="/info/master/css/myrec_style-mediaqueries.css" /> <!-- Viewport-specific styling -->
+		<link rel="stylesheet" href="/info/master/css/no-more-tables.css" /> <!-- OLD tables -->
+		<link rel="stylesheet" href="/info/master/css/no-more-table-sm.css" /> <!-- OLD tables mobile -->
+
+		<!-- Misc UI Update JS -->
+		<script class="versioned" src="/info/master/js/myrec-base-js.js?v=1"></script>
+
+		<!-- Fancybox -->
+		<link rel="stylesheet" href="/info/includes/fancybox3/jquery.fancybox.min.css" />
+		<script src="/info/includes/fancybox3/jquery.fancybox.min.js"></script>
+
+		<style>
+			#appButton{display:block;}
+			@media (min-width: 768px) {
+				#appButton{display:none;}
+			}
+		</style>
+
+	
+	<meta name="description" content="Program details and list of activities for online registration.">
+	
+<title>
+	Belmont Recreation and the Beech Street Center:  Stick and Puck
+</title></head>
+
+
+
+<body>
+	<a href="#skip-to-nav" class="sr">Skip to navigation</a>
+	<div id="public-alert-group">
+		
+	</div>
+
+	<form method="post" action="./program_details.aspx?ProgramID=29877" id="frmMain">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTIyMzUyNzY1Ng9kFgJmD2QWBAIBD2QWAgIiD2QWAgIBDxYCHgdWaXNpYmxlaGQCBQ9kFgwCAw9kFgQCAQ8PFgIeBFRleHQFLkJlbG1vbnQgUmVjcmVhdGlvbiBhbmQgdGhlIEJlZWNoIFN0cmVldCBDZW50ZXJkZAIDDw8WBB4HVG9vbFRpcAUuQmVsbW9udCBSZWNyZWF0aW9uIGFuZCB0aGUgQmVlY2ggU3RyZWV0IENlbnRlch8BBS5CZWxtb250IFJlY3JlYXRpb24gYW5kIHRoZSBCZWVjaCBTdHJlZXQgQ2VudGVyFgIeA2FsdAUuQmVsbW9udCBSZWNyZWF0aW9uIGFuZCB0aGUgQmVlY2ggU3RyZWV0IENlbnRlcmQCBQ9kFgICAQ9kFgQCAQ8WBB4LXyFJdGVtQ291bnQCBB8AZxYIZg9kFgQCAQ8PFggeC05hdmlnYXRlVXJsBS0vaW5mby9hY3Rpdml0aWVzL2RlZmF1bHQuYXNweD90eXBlPWFjdGl2aXRpZXMfAQUIUmVnaXN0ZXIeCENzc0NsYXNzBRhuYXYtbGluayBkcm9wZG93bi10b2dnbGUeBF8hU0ICAhYCHg5kYXRhLWJzLXRvZ2dsZQUIZHJvcGRvd25kAgUPFgQfBAIFHwBnFgoCAQ9kFgJmDxUDLS9pbmZvL2FjdGl2aXRpZXMvZGVmYXVsdC5hc3B4P3R5cGU9YWN0aXZpdGllcwAIUHJvZ3JhbXNkAgIPZBYCZg8VAy4vaW5mby9hY3Rpdml0aWVzL2RlZmF1bHQuYXNweD90eXBlPW1lbWJlcnNoaXBzAAtNZW1iZXJzaGlwc2QCAw9kFgJmDxUDOGh0dHBzOi8vYmVsbW9udG1hLm15cmVjLmNvbS9pbmZvL2ZhY2lsaXRpZXMvZGVmYXVsdC5hc3B4AA1SZXNlcnZhdGlvbnMgZAIED2QWAmYPFQNCaHR0cHM6Ly9iZWxtb250bWEubXlyZWMuY29tL2luZm8vZGVwdC9kZXRhaWxzLmFzcHg/RGVwdEluZm9JRD0xMDU4ABNUZW5uaXMgUmVzZXJ2YXRpb25zZAIFD2QWAmYPFQNQaHR0cHM6Ly9iZWxtb250bWEubXlyZWMuY29tL2luZm8vYWN0aXZpdGllcy9wcm9ncmFtX2RldGFpbHMuYXNweD9Qcm9ncmFtSUQ9Mjk4MjkAEVBhd3MgaW4gdGhlIFBhcmsgZAIBD2QWBAIBDw8WCB8FBR0vaW5mby9mYWNpbGl0aWVzL2RlZmF1bHQuYXNweB8BBQpGYWNpbGl0aWVzHwYFGG5hdi1saW5rIGRyb3Bkb3duLXRvZ2dsZR8HAgIWAh8IBQhkcm9wZG93bmQCBQ8WBB8EAgUfAGcWCgIBD2QWAmYPFQNCaHR0cHM6Ly9iZWxtb250bWEubXlyZWMuY29tL2luZm8vZGVwdC9kZXRhaWxzLmFzcHg/RGVwdEluZm9JRD0xMDU1ABJQYXJrcyAmIE9wZW4gU3BhY2VkAgIPZBYCZg8VAxsvaW5mby9jYWxlbmRhci9kZWZhdWx0LmFzcHgACENhbGVuZGFyZAIDD2QWAmYPFQNCaHR0cHM6Ly9iZWxtb250bWEubXlyZWMuY29tL2luZm8vZGVwdC9kZXRhaWxzLmFzcHg/RGVwdEluZm9JRD0xMDY2AA5VbmRlcndvb2QgUG9vbGQCBA9kFgJmDxUDSWh0dHBzOi8vYmVsbW9udG1hLm15cmVjLmNvbS9pbmZvL2ZhY2lsaXRpZXMvZGV0YWlscy5hc3B4P0ZhY2lsaXR5SUQ9MTQ2OTcADlZpZ2xpcm9sbyBSaW5rZAIFD2QWAmYPFQNCaHR0cHM6Ly9iZWxtb250bWEubXlyZWMuY29tL2luZm8vZGVwdC9kZXRhaWxzLmFzcHg/RGVwdEluZm9JRD0xMDc0ABFIaWdnaW5ib3R0b20gUG9vbGQCAg9kFgQCAQ8PFggfBQUXL2luZm8vZGVwdC9kZWZhdWx0LmFzcHgfAQUMR2VuZXJhbCBJbmZvHwYFGG5hdi1saW5rIGRyb3Bkb3duLXRvZ2dsZR8HAgIWAh8IBQhkcm9wZG93bmQCBQ8WBB8EAgQfAGcWCAIBD2QWAmYPFQMXL2luZm8vZGVwdC9kZWZhdWx0LmFzcHgACURlcHQgSW5mb2QCAg9kFgJmDxUDQmh0dHBzOi8vYmVsbW9udG1hLm15cmVjLmNvbS9pbmZvL2RlcHQvZGV0YWlscy5hc3B4P0RlcHRJbmZvSUQ9MTA2NgAOVW5kZXJ3b29kIDIwMjZkAgMPZBYCZg8VAzBodHRwczovL3d3dy5iZWxtb250LW1hLmdvdi9yZWNyZWF0aW9uLWNvbW1pc3Npb24QIHRhcmdldD0iX2JsYW5rIg5SZWMgQ29tbWlzc2lvbmQCBA9kFgJmDxUDQ2h0dHBzOi8vYmVsbW9udG1hLm15cmVjLmNvbS9pbmZvL2RlcHQvc3RhZmYuYXNweD9Db250YWN0R3JvdXBJRD03ODMAD1JlY3JlYXRpb24gVGVhbWQCAw9kFgQCAQ8PFggfBQUaL2luZm8vY29udGFjdC9kZWZhdWx0LmFzcHgfAQUHQ29udGFjdB8GBRhuYXYtbGluayBkcm9wZG93bi10b2dnbGUfBwICFgIfCAUIZHJvcGRvd25kAgUPFgQfBAIFHwBnFgoCAQ9kFgJmDxUDGi9pbmZvL2NvbnRhY3QvZGVmYXVsdC5hc3B4AApDb250YWN0IFVzZAICD2QWAmYPFQMXL2luZm8vaGVscC9kZWZhdWx0LmFzcHgABEhlbHBkAgMPZBYCZg8VAxsvaW5mby90dXRvcmlhbC9kZWZhdWx0LmFzcHgAD0hvdyB0byBSZWdpc3RlcmQCBA9kFgJmDxUDGWh0dHA6Ly93d3cuQmVsbW9udC1tYS5nb3YQIHRhcmdldD0iX2JsYW5rIg5NdW5pY2lwYWwgU2l0ZWQCBQ9kFgJmDxUDgQFodHRwczovL3Zpc2l0b3IucjIwLmNvbnN0YW50Y29udGFjdC5jb20vZC5qc3A/bGxyPTh0and1YmNiYiZwPW9pJm09OHRqd3ViY2JiJnNpdD1saXpiOGplcGImZj1iZDk4YjZjYy0yM2Q1LTQ0NTYtOWFmYy1kYjYwNDNiYTMxNjIQIHRhcmdldD0iX2JsYW5rIg5FbWFpbCBMaXN0c2VydmQCDw8WBB8EAgQfAGcWCGYPZBYEAgEPDxYIHwUFLS9pbmZvL2FjdGl2aXRpZXMvZGVmYXVsdC5hc3B4P3R5cGU9YWN0aXZpdGllcx8BBQhSZWdpc3Rlch8GBRhuYXYtbGluayBkcm9wZG93bi10b2dnbGUfBwICFgIfCAUIZHJvcGRvd25kAgcPFgQfBAIFHwBnFgpmD2QWAmYPFQMtL2luZm8vYWN0aXZpdGllcy9kZWZhdWx0LmFzcHg/dHlwZT1hY3Rpdml0aWVzAAhQcm9ncmFtc2QCAQ9kFgJmDxUDLi9pbmZvL2FjdGl2aXRpZXMvZGVmYXVsdC5hc3B4P3R5cGU9bWVtYmVyc2hpcHMAC01lbWJlcnNoaXBzZAICD2QWAmYPFQM4aHR0cHM6Ly9iZWxtb250bWEubXlyZWMuY29tL2luZm8vZmFjaWxpdGllcy9kZWZhdWx0LmFzcHgADVJlc2VydmF0aW9ucyBkAgMPZBYCZg8VA0JodHRwczovL2JlbG1vbnRtYS5teXJlYy5jb20vaW5mby9kZXB0L2RldGFpbHMuYXNweD9EZXB0SW5mb0lEPTEwNTgAE1Rlbm5pcyBSZXNlcnZhdGlvbnNkAgQPZBYCZg8VA1BodHRwczovL2JlbG1vbnRtYS5teXJlYy5jb20vaW5mby9hY3Rpdml0aWVzL3Byb2dyYW1fZGV0YWlscy5hc3B4P1Byb2dyYW1JRD0yOTgyOQARUGF3cyBpbiB0aGUgUGFyayBkAgEPZBYEAgEPDxYIHwUFHS9pbmZvL2ZhY2lsaXRpZXMvZGVmYXVsdC5hc3B4HwEFCkZhY2lsaXRpZXMfBgUYbmF2LWxpbmsgZHJvcGRvd24tdG9nZ2xlHwcCAhYCHwgFCGRyb3Bkb3duZAIHDxYEHwQCBR8AZxYKZg9kFgJmDxUDQmh0dHBzOi8vYmVsbW9udG1hLm15cmVjLmNvbS9pbmZvL2RlcHQvZGV0YWlscy5hc3B4P0RlcHRJbmZvSUQ9MTA1NQASUGFya3MgJiBPcGVuIFNwYWNlZAIBD2QWAmYPFQMbL2luZm8vY2FsZW5kYXIvZGVmYXVsdC5hc3B4AAhDYWxlbmRhcmQCAg9kFgJmDxUDQmh0dHBzOi8vYmVsbW9udG1hLm15cmVjLmNvbS9pbmZvL2RlcHQvZGV0YWlscy5hc3B4P0RlcHRJbmZvSUQ9MTA2NgAOVW5kZXJ3b29kIFBvb2xkAgMPZBYCZg8VA0lodHRwczovL2JlbG1vbnRtYS5teXJlYy5jb20vaW5mby9mYWNpbGl0aWVzL2RldGFpbHMuYXNweD9GYWNpbGl0eUlEPTE0Njk3AA5WaWdsaXJvbG8gUmlua2QCBA9kFgJmDxUDQmh0dHBzOi8vYmVsbW9udG1hLm15cmVjLmNvbS9pbmZvL2RlcHQvZGV0YWlscy5hc3B4P0RlcHRJbmZvSUQ9MTA3NAARSGlnZ2luYm90dG9tIFBvb2xkAgIPZBYEAgEPDxYIHwUFFy9pbmZvL2RlcHQvZGVmYXVsdC5hc3B4HwEFDEdlbmVyYWwgSW5mbx8GBRhuYXYtbGluayBkcm9wZG93bi10b2dnbGUfBwICFgIfCAUIZHJvcGRvd25kAgcPFgQfBAIEHwBnFghmD2QWAmYPFQMXL2luZm8vZGVwdC9kZWZhdWx0LmFzcHgACURlcHQgSW5mb2QCAQ9kFgJmDxUDQmh0dHBzOi8vYmVsbW9udG1hLm15cmVjLmNvbS9pbmZvL2RlcHQvZGV0YWlscy5hc3B4P0RlcHRJbmZvSUQ9MTA2NgAOVW5kZXJ3b29kIDIwMjZkAgIPZBYCZg8VAzBodHRwczovL3d3dy5iZWxtb250LW1hLmdvdi9yZWNyZWF0aW9uLWNvbW1pc3Npb24QIHRhcmdldD0iX2JsYW5rIg5SZWMgQ29tbWlzc2lvbmQCAw9kFgJmDxUDQ2h0dHBzOi8vYmVsbW9udG1hLm15cmVjLmNvbS9pbmZvL2RlcHQvc3RhZmYuYXNweD9Db250YWN0R3JvdXBJRD03ODMAD1JlY3JlYXRpb24gVGVhbWQCAw9kFgQCAQ8PFggfBQUaL2luZm8vY29udGFjdC9kZWZhdWx0LmFzcHgfAQUHQ29udGFjdB8GBRhuYXYtbGluayBkcm9wZG93bi10b2dnbGUfBwICFgIfCAUIZHJvcGRvd25kAgcPFgQfBAIFHwBnFgpmD2QWAmYPFQMaL2luZm8vY29udGFjdC9kZWZhdWx0LmFzcHgACkNvbnRhY3QgVXNkAgEPZBYCZg8VAxcvaW5mby9oZWxwL2RlZmF1bHQuYXNweAAESGVscGQCAg9kFgJmDxUDGy9pbmZvL3R1dG9yaWFsL2RlZmF1bHQuYXNweAAPSG93IHRvIFJlZ2lzdGVyZAIDD2QWAmYPFQMZaHR0cDovL3d3dy5CZWxtb250LW1hLmdvdhAgdGFyZ2V0PSJfYmxhbmsiDk11bmljaXBhbCBTaXRlZAIED2QWAmYPFQOBAWh0dHBzOi8vdmlzaXRvci5yMjAuY29uc3RhbnRjb250YWN0LmNvbS9kLmpzcD9sbHI9OHRqd3ViY2JiJnA9b2kmbT04dGp3dWJjYmImc2l0PWxpemI4amVwYiZmPWJkOThiNmNjLTIzZDUtNDQ1Ni05YWZjLWRiNjA0M2JhMzE2MhAgdGFyZ2V0PSJfYmxhbmsiDkVtYWlsIExpc3RzZXJ2ZAIJD2QWAgIBDw8WAh8BBQxSZWdpc3RlciBOb3dkZAILD2QWAgIBD2QWBAIjDxYCHwBoZAInDxYCHwBoZAIND2QWJAIDDxAPFgIeB0NoZWNrZWRoZGRkZAILDxAPFgIfCWdkZGRkAg0PEA8WAh8JZ2RkZGQCDw8QDxYCHwloZGRkZAITDxAPFgIfCWhkZGRkAhUPEA8WAh8JZ2RkZGQCGw8QDxYCHwlnZGRkZAIdDw8WAh8BBQ5TdGljayBhbmQgUHVja2RkAh8PFgIfAGdkAiEPFgIfAGhkAiMPZBYCAgEPDxYCHwFlZGQCJw9kFgICAQ8PFgIfAQVmVGhlIGl0ZW0geW91IGhhdmUganVzdCBhZGRlZCB0byB5b3VyIHNob3BwaW5nIGNhcnQgcmVxdWlyZXMgdGhpcyByZWdpc3RyYXRpb24gdG8gYmUgcHVyY2hhc2VkIGFzIHdlbGwuZGQCKw8PFgIfAQXCODxzcGFuIHN0eWxlPSJjb2xvcjogIzAwMDAwMDsgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMnLCBzYW5zLXNlcmlmOyBmb250LXN0eWxlOiBub3JtYWw7IGZvbnQtdmFyaWFudC1saWdhdHVyZXM6IG5vcm1hbDsgZm9udC12YXJpYW50LWNhcHM6IG5vcm1hbDsgZm9udC13ZWlnaHQ6IDQwMDsgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDsgb3JwaGFuczogMjsgdGV4dC1hbGlnbjogbGVmdDsgdGV4dC1pbmRlbnQ6IDBweDsgdGV4dC10cmFuc2Zvcm06IG5vbmU7IHdpZG93czogMjsgd29yZC1zcGFjaW5nOiAwcHg7IC13ZWJraXQtdGV4dC1zdHJva2Utd2lkdGg6IDBweDsgd2hpdGUtc3BhY2U6IG5vcm1hbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgdGV4dC1kZWNvcmF0aW9uLXRoaWNrbmVzczogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBpbml0aWFsOyB0ZXh0LWRlY29yYXRpb24tY29sb3I6IGluaXRpYWw7IGZvbnQtc2l6ZTogMTRwdDsiPlN0aWNrIGFuZCBQdWNrIGlzIGF2YWlsYWJsZSBmb3IgcmVzaWRlbnRzIGFuZCBub24tcmVzaWRlbnRzLjwvc3Bhbj48YnIgc3R5bGU9ImNvbG9yOiAjMDAwMDAwOyBmb250LWZhbWlseTogJ09wZW4gU2FucycsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTIuNTRweDsgZm9udC1zdHlsZTogbm9ybWFsOyBmb250LXZhcmlhbnQtbGlnYXR1cmVzOiBub3JtYWw7IGZvbnQtdmFyaWFudC1jYXBzOiBub3JtYWw7IGZvbnQtd2VpZ2h0OiA0MDA7IGxldHRlci1zcGFjaW5nOiBub3JtYWw7IG9ycGhhbnM6IDI7IHRleHQtYWxpZ246IGxlZnQ7IHRleHQtaW5kZW50OiAwcHg7IHRleHQtdHJhbnNmb3JtOiBub25lOyB3aWRvd3M6IDI7IHdvcmQtc3BhY2luZzogMHB4OyAtd2Via2l0LXRleHQtc3Ryb2tlLXdpZHRoOiAwcHg7IHdoaXRlLXNwYWNlOiBub3JtYWw7IGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7IHRleHQtZGVjb3JhdGlvbi10aGlja25lc3M6IGluaXRpYWw7IHRleHQtZGVjb3JhdGlvbi1zdHlsZTogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLWNvbG9yOiBpbml0aWFsOyIgLz48YnIgc3R5bGU9ImNvbG9yOiAjMDAwMDAwOyBmb250LWZhbWlseTogJ09wZW4gU2FucycsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTIuNTRweDsgZm9udC1zdHlsZTogbm9ybWFsOyBmb250LXZhcmlhbnQtbGlnYXR1cmVzOiBub3JtYWw7IGZvbnQtdmFyaWFudC1jYXBzOiBub3JtYWw7IGZvbnQtd2VpZ2h0OiA0MDA7IGxldHRlci1zcGFjaW5nOiBub3JtYWw7IG9ycGhhbnM6IDI7IHRleHQtYWxpZ246IGxlZnQ7IHRleHQtaW5kZW50OiAwcHg7IHRleHQtdHJhbnNmb3JtOiBub25lOyB3aWRvd3M6IDI7IHdvcmQtc3BhY2luZzogMHB4OyAtd2Via2l0LXRleHQtc3Ryb2tlLXdpZHRoOiAwcHg7IHdoaXRlLXNwYWNlOiBub3JtYWw7IGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7IHRleHQtZGVjb3JhdGlvbi10aGlja25lc3M6IGluaXRpYWw7IHRleHQtZGVjb3JhdGlvbi1zdHlsZTogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLWNvbG9yOiBpbml0aWFsOyIgLz48c3BhbiBzdHlsZT0iY29sb3I6ICMwMDAwMDA7IGZvbnQtZmFtaWx5OiAnT3BlbiBTYW5zJywgc2Fucy1zZXJpZjsgZm9udC1zdHlsZTogbm9ybWFsOyBmb250LXZhcmlhbnQtbGlnYXR1cmVzOiBub3JtYWw7IGZvbnQtdmFyaWFudC1jYXBzOiBub3JtYWw7IGZvbnQtd2VpZ2h0OiA0MDA7IGxldHRlci1zcGFjaW5nOiBub3JtYWw7IG9ycGhhbnM6IDI7IHRleHQtYWxpZ246IGxlZnQ7IHRleHQtaW5kZW50OiAwcHg7IHRleHQtdHJhbnNmb3JtOiBub25lOyB3aWRvd3M6IDI7IHdvcmQtc3BhY2luZzogMHB4OyAtd2Via2l0LXRleHQtc3Ryb2tlLXdpZHRoOiAwcHg7IHdoaXRlLXNwYWNlOiBub3JtYWw7IGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7IHRleHQtZGVjb3JhdGlvbi10aGlja25lc3M6IGluaXRpYWw7IHRleHQtZGVjb3JhdGlvbi1zdHlsZTogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLWNvbG9yOiBpbml0aWFsOyBmb250LXNpemU6IDE0cHQ7Ij5Zb3V0aCBhbmQgQ2hpbGRyZW4gdW5kZXIgMTg6ICQ3LjAwJm5ic3A7PC9zcGFuPjxiciBzdHlsZT0iY29sb3I6ICMwMDAwMDA7IGZvbnQtZmFtaWx5OiAnT3BlbiBTYW5zJywgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMi41NHB4OyBmb250LXN0eWxlOiBub3JtYWw7IGZvbnQtdmFyaWFudC1saWdhdHVyZXM6IG5vcm1hbDsgZm9udC12YXJpYW50LWNhcHM6IG5vcm1hbDsgZm9udC13ZWlnaHQ6IDQwMDsgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDsgb3JwaGFuczogMjsgdGV4dC1hbGlnbjogbGVmdDsgdGV4dC1pbmRlbnQ6IDBweDsgdGV4dC10cmFuc2Zvcm06IG5vbmU7IHdpZG93czogMjsgd29yZC1zcGFjaW5nOiAwcHg7IC13ZWJraXQtdGV4dC1zdHJva2Utd2lkdGg6IDBweDsgd2hpdGUtc3BhY2U6IG5vcm1hbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgdGV4dC1kZWNvcmF0aW9uLXRoaWNrbmVzczogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBpbml0aWFsOyB0ZXh0LWRlY29yYXRpb24tY29sb3I6IGluaXRpYWw7IiAvPjxzcGFuIHN0eWxlPSJjb2xvcjogIzAwMDAwMDsgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMnLCBzYW5zLXNlcmlmOyBmb250LXN0eWxlOiBub3JtYWw7IGZvbnQtdmFyaWFudC1saWdhdHVyZXM6IG5vcm1hbDsgZm9udC12YXJpYW50LWNhcHM6IG5vcm1hbDsgZm9udC13ZWlnaHQ6IDQwMDsgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDsgb3JwaGFuczogMjsgdGV4dC1hbGlnbjogbGVmdDsgdGV4dC1pbmRlbnQ6IDBweDsgdGV4dC10cmFuc2Zvcm06IG5vbmU7IHdpZG93czogMjsgd29yZC1zcGFjaW5nOiAwcHg7IC13ZWJraXQtdGV4dC1zdHJva2Utd2lkdGg6IDBweDsgd2hpdGUtc3BhY2U6IG5vcm1hbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgdGV4dC1kZWNvcmF0aW9uLXRoaWNrbmVzczogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBpbml0aWFsOyB0ZXh0LWRlY29yYXRpb24tY29sb3I6IGluaXRpYWw7IGZvbnQtc2l6ZTogMTRwdDsiPkFkdWx0czogJDEwLjAwPC9zcGFuPjxiciBzdHlsZT0iY29sb3I6ICMwMDAwMDA7IGZvbnQtZmFtaWx5OiAnT3BlbiBTYW5zJywgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMi41NHB4OyBmb250LXN0eWxlOiBub3JtYWw7IGZvbnQtdmFyaWFudC1saWdhdHVyZXM6IG5vcm1hbDsgZm9udC12YXJpYW50LWNhcHM6IG5vcm1hbDsgZm9udC13ZWlnaHQ6IDQwMDsgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDsgb3JwaGFuczogMjsgdGV4dC1hbGlnbjogbGVmdDsgdGV4dC1pbmRlbnQ6IDBweDsgdGV4dC10cmFuc2Zvcm06IG5vbmU7IHdpZG93czogMjsgd29yZC1zcGFjaW5nOiAwcHg7IC13ZWJraXQtdGV4dC1zdHJva2Utd2lkdGg6IDBweDsgd2hpdGUtc3BhY2U6IG5vcm1hbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgdGV4dC1kZWNvcmF0aW9uLXRoaWNrbmVzczogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBpbml0aWFsOyB0ZXh0LWRlY29yYXRpb24tY29sb3I6IGluaXRpYWw7IiAvPjxzcGFuIHN0eWxlPSJjb2xvcjogIzAwMDAwMDsgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMnLCBzYW5zLXNlcmlmOyBmb250LXN0eWxlOiBub3JtYWw7IGZvbnQtdmFyaWFudC1saWdhdHVyZXM6IG5vcm1hbDsgZm9udC12YXJpYW50LWNhcHM6IG5vcm1hbDsgZm9udC13ZWlnaHQ6IDQwMDsgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDsgb3JwaGFuczogMjsgdGV4dC1hbGlnbjogbGVmdDsgdGV4dC1pbmRlbnQ6IDBweDsgdGV4dC10cmFuc2Zvcm06IG5vbmU7IHdpZG93czogMjsgd29yZC1zcGFjaW5nOiAwcHg7IC13ZWJraXQtdGV4dC1zdHJva2Utd2lkdGg6IDBweDsgd2hpdGUtc3BhY2U6IG5vcm1hbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgdGV4dC1kZWNvcmF0aW9uLXRoaWNrbmVzczogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBpbml0aWFsOyB0ZXh0LWRlY29yYXRpb24tY29sb3I6IGluaXRpYWw7IGZvbnQtc2l6ZTogMTRwdDsiPlNlbmlvcnMmbmJzcDskNy4wMDwvc3Bhbj48YnIgc3R5bGU9ImNvbG9yOiAjMDAwMDAwOyBmb250LWZhbWlseTogJ09wZW4gU2FucycsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTIuNTRweDsgZm9udC1zdHlsZTogbm9ybWFsOyBmb250LXZhcmlhbnQtbGlnYXR1cmVzOiBub3JtYWw7IGZvbnQtdmFyaWFudC1jYXBzOiBub3JtYWw7IGZvbnQtd2VpZ2h0OiA0MDA7IGxldHRlci1zcGFjaW5nOiBub3JtYWw7IG9ycGhhbnM6IDI7IHRleHQtYWxpZ246IGxlZnQ7IHRleHQtaW5kZW50OiAwcHg7IHRleHQtdHJhbnNmb3JtOiBub25lOyB3aWRvd3M6IDI7IHdvcmQtc3BhY2luZzogMHB4OyAtd2Via2l0LXRleHQtc3Ryb2tlLXdpZHRoOiAwcHg7IHdoaXRlLXNwYWNlOiBub3JtYWw7IGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7IHRleHQtZGVjb3JhdGlvbi10aGlja25lc3M6IGluaXRpYWw7IHRleHQtZGVjb3JhdGlvbi1zdHlsZTogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLWNvbG9yOiBpbml0aWFsOyIgLz48YnIgc3R5bGU9ImNvbG9yOiAjMDAwMDAwOyBmb250LWZhbWlseTogJ09wZW4gU2FucycsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTIuNTRweDsgZm9udC1zdHlsZTogbm9ybWFsOyBmb250LXZhcmlhbnQtbGlnYXR1cmVzOiBub3JtYWw7IGZvbnQtdmFyaWFudC1jYXBzOiBub3JtYWw7IGZvbnQtd2VpZ2h0OiA0MDA7IGxldHRlci1zcGFjaW5nOiBub3JtYWw7IG9ycGhhbnM6IDI7IHRleHQtYWxpZ246IGxlZnQ7IHRleHQtaW5kZW50OiAwcHg7IHRleHQtdHJhbnNmb3JtOiBub25lOyB3aWRvd3M6IDI7IHdvcmQtc3BhY2luZzogMHB4OyAtd2Via2l0LXRleHQtc3Ryb2tlLXdpZHRoOiAwcHg7IHdoaXRlLXNwYWNlOiBub3JtYWw7IGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7IHRleHQtZGVjb3JhdGlvbi10aGlja25lc3M6IGluaXRpYWw7IHRleHQtZGVjb3JhdGlvbi1zdHlsZTogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLWNvbG9yOiBpbml0aWFsOyIgLz48c3BhbiBzdHlsZT0iY29sb3I6ICMwMDAwMDA7IGZvbnQtZmFtaWx5OiAnT3BlbiBTYW5zJywgc2Fucy1zZXJpZjsgZm9udC1zdHlsZTogbm9ybWFsOyBmb250LXZhcmlhbnQtbGlnYXR1cmVzOiBub3JtYWw7IGZvbnQtdmFyaWFudC1jYXBzOiBub3JtYWw7IGZvbnQtd2VpZ2h0OiA0MDA7IGxldHRlci1zcGFjaW5nOiBub3JtYWw7IG9ycGhhbnM6IDI7IHRleHQtYWxpZ246IGxlZnQ7IHRleHQtaW5kZW50OiAwcHg7IHRleHQtdHJhbnNmb3JtOiBub25lOyB3aWRvd3M6IDI7IHdvcmQtc3BhY2luZzogMHB4OyAtd2Via2l0LXRleHQtc3Ryb2tlLXdpZHRoOiAwcHg7IHdoaXRlLXNwYWNlOiBub3JtYWw7IGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7IHRleHQtZGVjb3JhdGlvbi10aGlja25lc3M6IGluaXRpYWw7IHRleHQtZGVjb3JhdGlvbi1zdHlsZTogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLWNvbG9yOiBpbml0aWFsOyBmb250LXNpemU6IDE0cHQ7Ij4oUHJpY2luZyB3aWxsIGJlIGFkanVzdGVkIGF0IGNoZWNrb3V0KTxiciAvPjxiciAvPllvdSBjYW4gc2lnbiB1cCBvbiBsaW5lIGJlbG93IG9yIHBheSBhdCB0aGUgZG9vciB3aGVuIHlvdSBhcnJpdmUuPC9zcGFuPjxiciBzdHlsZT0iY29sb3I6ICMwMDAwMDA7IGZvbnQtZmFtaWx5OiAnT3BlbiBTYW5zJywgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMi41NHB4OyBmb250LXN0eWxlOiBub3JtYWw7IGZvbnQtdmFyaWFudC1saWdhdHVyZXM6IG5vcm1hbDsgZm9udC12YXJpYW50LWNhcHM6IG5vcm1hbDsgZm9udC13ZWlnaHQ6IDQwMDsgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDsgb3JwaGFuczogMjsgdGV4dC1hbGlnbjogbGVmdDsgdGV4dC1pbmRlbnQ6IDBweDsgdGV4dC10cmFuc2Zvcm06IG5vbmU7IHdpZG93czogMjsgd29yZC1zcGFjaW5nOiAwcHg7IC13ZWJraXQtdGV4dC1zdHJva2Utd2lkdGg6IDBweDsgd2hpdGUtc3BhY2U6IG5vcm1hbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgdGV4dC1kZWNvcmF0aW9uLXRoaWNrbmVzczogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBpbml0aWFsOyB0ZXh0LWRlY29yYXRpb24tY29sb3I6IGluaXRpYWw7IiAvPjxiciBzdHlsZT0iY29sb3I6ICMwMDAwMDA7IGZvbnQtZmFtaWx5OiAnT3BlbiBTYW5zJywgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMi41NHB4OyBmb250LXN0eWxlOiBub3JtYWw7IGZvbnQtdmFyaWFudC1saWdhdHVyZXM6IG5vcm1hbDsgZm9udC12YXJpYW50LWNhcHM6IG5vcm1hbDsgZm9udC13ZWlnaHQ6IDQwMDsgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDsgb3JwaGFuczogMjsgdGV4dC1hbGlnbjogbGVmdDsgdGV4dC1pbmRlbnQ6IDBweDsgdGV4dC10cmFuc2Zvcm06IG5vbmU7IHdpZG93czogMjsgd29yZC1zcGFjaW5nOiAwcHg7IC13ZWJraXQtdGV4dC1zdHJva2Utd2lkdGg6IDBweDsgd2hpdGUtc3BhY2U6IG5vcm1hbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgdGV4dC1kZWNvcmF0aW9uLXRoaWNrbmVzczogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBpbml0aWFsOyB0ZXh0LWRlY29yYXRpb24tY29sb3I6IGluaXRpYWw7IiAvPjxzcGFuIHN0eWxlPSJjb2xvcjogIzAwMDAwMDsgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMnLCBzYW5zLXNlcmlmOyBmb250LXN0eWxlOiBub3JtYWw7IGZvbnQtdmFyaWFudC1saWdhdHVyZXM6IG5vcm1hbDsgZm9udC12YXJpYW50LWNhcHM6IG5vcm1hbDsgZm9udC13ZWlnaHQ6IDQwMDsgbGV0dGVyLXNwYWNpbmc6IG5vcm1hbDsgb3JwaGFuczogMjsgdGV4dC1hbGlnbjogbGVmdDsgdGV4dC1pbmRlbnQ6IDBweDsgdGV4dC10cmFuc2Zvcm06IG5vbmU7IHdpZG93czogMjsgd29yZC1zcGFjaW5nOiAwcHg7IC13ZWJraXQtdGV4dC1zdHJva2Utd2lkdGg6IDBweDsgd2hpdGUtc3BhY2U6IG5vcm1hbDsgYmFja2dyb3VuZC1jb2xvcjogI2ZmZmZmZjsgdGV4dC1kZWNvcmF0aW9uLXRoaWNrbmVzczogaW5pdGlhbDsgdGV4dC1kZWNvcmF0aW9uLXN0eWxlOiBpbml0aWFsOyB0ZXh0LWRlY29yYXRpb24tY29sb3I6IGluaXRpYWw7IGZvbnQtc2l6ZTogMTRwdDsiPlNrYXRlIFJlbnRhbCBpcyBhdmFpbGFibGUgZm9yICQ1LjAwLiBIb3dldmVyIHN1cHBsaWVzIGFuZCBzaXplcyBhcmUgbGltaXRlZDsgYnJpbmdpbmcgeW91ciBvd24gc2thdGVzIGlzIHJlY29tbWVuZGVkLjwvc3Bhbj5kZAItDxYEHwRmHwBoZAIvDxYEHwRmHwBoZAIxDxYEHwRmHwBoZAIzDxYEHwQCAh8AZxYEAgEPZBYQZg8VAQYxNTE3NzJkAgEPZBYIAgEPFgIeBVZhbHVlBQYxNTE3NzJkAgIPZBYCAgEPDxYCHwFlZGQCAw8PFgYfAQUsPGkgY2xhc3M9J2ZhIGZhLXVzZXIgZmEtbGcnPjwvaT4mbmJzcDtMb2cgSW4fBQU1L2luZm8vaG91c2Vob2xkL2xvZ2luLmFzcHg/UHJvZ3JhbUlEPTI5ODc3JmFJRD0xNTE3NzIfAGdkZAIED2QWAmYPFQEGMTUxNzcyZAICDxUGDlN0aWNrIGFuZCBQdWNrAAAIN3kgLSA5OXkDTi9BAlNhZAIDD2QWAmYPFQYFMjk4NzcBMAYxNTE3NzIKMDkvMTkvMjAyNhMwMzozMCBQTSAtIDA1OjMwIFBNWzxhIGhyZWY9Ii9pbmZvL2ZhY2lsaXRpZXMvZGV0YWlscy5hc3B4P0FjdGl2aXR5SUQ9MTUxNzcyIj5CZWxtb250IFNwb3J0cyBDb21wbGV4IC0gUmluazwvYT5kAgUPDxYCHwBoZGQCBg8VARokMTAuMDAgUmVzLCAkMTAuMDAgTm9uLVJlc2QCCA8VAQBkAgsPFgIfAGgWAmYPFQEGMTUxNzcyZAICD2QWEGYPFQEGMTUxNzczZAIBD2QWCAIBDxYCHwoFBjE1MTc3M2QCAg9kFgICAQ8PFgIfAWVkZAIDDw8WBh8BBSw8aSBjbGFzcz0nZmEgZmEtdXNlciBmYS1sZyc+PC9pPiZuYnNwO0xvZyBJbh8FBTUvaW5mby9ob3VzZWhvbGQvbG9naW4uYXNweD9Qcm9ncmFtSUQ9Mjk4NzcmYUlEPTE1MTc3Mx8AZ2RkAgQPZBYCZg8VAQYxNTE3NzNkAgIPFQYOU3RpY2sgYW5kIFB1Y2sAAAg3eSAtIDk5eQNOL0ECU2FkAgMPZBYCZg8VBgUyOTg3NwEwBjE1MTc3MwowOS8yNi8yMDI2EzAzOjMwIFBNIC0gMDU6MzAgUE1bPGEgaHJlZj0iL2luZm8vZmFjaWxpdGllcy9kZXRhaWxzLmFzcHg/QWN0aXZpdHlJRD0xNTE3NzMiPkJlbG1vbnQgU3BvcnRzIENvbXBsZXggLSBSaW5rPC9hPmQCBQ8PFgIfAGhkZAIGDxUBGiQxMC4wMCBSZXMsICQxMC4wMCBOb24tUmVzZAIIDxUBAGQCCw8WAh8AaBYCZg8VAQYxNTE3NzNkAkEPFgIfAGhkAhcPZBYUAgEPDxYCHwEFLkJlbG1vbnQgUmVjcmVhdGlvbiBhbmQgdGhlIEJlZWNoIFN0cmVldCBDZW50ZXJkZAIDDw8WAh8BBREyNjYgQmVlY2ggU3RyZWV0IGRkAgYPFgIfAGcWAgIBDw8WAh8BBRJCZWxtb250ICwgTUEgMDI0NzhkZAIIDxYCHwBnFgICAQ8PFgQfBQUgbWFpbHRvOnJlY3JlYXRpb25AYmVsbW9udC1tYS5nb3YfAQUZcmVjcmVhdGlvbkBiZWxtb250LW1hLmdvdmRkAgkPFgIfAGcWAgIBDw8WBB8FBQ50ZWw6NjE3OTkzMjc2MB8BBQw2MTctOTkzLTI3NjBkZAIMDxYEHwQCAh8AZxYEAgEPZBYCZg8VBCZodHRwczovL3d3dy5mYWNlYm9vay5jb20vQmVsbW9udFJlY01hLwhGYWNlYm9vawhGYWNlYm9vaxRmYS1mYWNlYm9vay1vZmZpY2lhbGQCAg9kFgJmDxUEJ2h0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20vYmVsbW9udHJlY21hLwlJbnN0YWdyYW0JSW5zdGFncmFtDGZhLWluc3RhZ3JhbWQCDg8WAh8AZxYCAgEPDxYCHwEFdTxzdHJvbmc+SG91cnMgb2YgT3BlcmF0aW9uOjwvc3Ryb25nPg0KPGRpdj5Nb25kYXk6IDhhbS03cG08YnIgLz5UdWVzZGF5LVRodXJzZGF5OiA4YW0tNHBtPGJyIC8+RnJpZGF5OiA4YW0tMTJwbTwvZGl2PmRkAhAPFgIfBAIBFgRmD2QWAgIBDw8WAh8BBQxPdXIgU3BvbnNvcnNkZAIBD2QWAmYPFQJDPGltZyBzcmM9Ii9QaG90b1Bvb2wvMzEucG5nIiB0aXRsZT0iTE9HTyIgYWx0PSJMT0dPIiB3aWR0aD0iMTUwIiAvPskBQmVsbW9udCBZb3V0aCBBY3Rpdml0aWVzIGFuZCBELkEuUi5FLjxiciAvPkx5bm4gRmluZGxheTxiciAvPkxpb25zIENsdWIgb2YgQmVsbW9udDxiciAvPkZyaWVuZXImbmJzcDtQbHVtYmluZzxiciAvPlN0b25lSGVhcnRoPGJyIC8+Q2hhbXBpb25zIFNwb3J0aW5nIEdvb2RzPGJyIC8+QmVsbW9udCBUb3kgU2hvcDxiciAvPkEgQ2hvY29sYXRlIERyZWFtZAITDw8WAh8BBQQyMDI2ZGQCFQ8PFgIfAQUuQmVsbW9udCBSZWNyZWF0aW9uIGFuZCB0aGUgQmVlY2ggU3RyZWV0IENlbnRlcmRkZKx7WpCnxcFxEcVYFbai37Pm4bFCAYRM0IEv+o872M0W" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="F289D088" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAA1wvyvR2K/LriSqeBijV/cM8oKhfq8WIQcrAYEGA4Zo5e9qcyUClWNssgob5lTHgycMJ2FKdJPFjYIyi7GszdAwPXPjI1SNHXEo7tTmjeBfcuOpf3Cj4lrwjS5r+6TmRvJ3UFjaJ3a0vzU4iclto3xjQzdFcgAttmZ+gZTy6dteuDuDQYZzxDHJzaFeufZGaobneeuXqso+vrH0IKzF8YWZp7vdB21ZwYe6HBPnI7bHUSz9+Mjz1SQMimiN2uaNHmNZf3cTdPrJGqZEb3V1ARVTeppsnDoUtt3XvRL/YRcZEkDlO0aX47v6Eov7OyYfGWA=" />
+</div>
+		<div class="policy-banner" style="display: none; border: 3px solid #5D3380;">
+			<p>
+			<b>We value your privacy.</b> This site uses two types of cookies:
+			<b>strictly necessary cookies</b> (session, login, shopping cart, and preference cookies required for the site to function &mdash; always on), and
+			<b>analytics cookies</b> (Google Analytics, used to understand how the site is used &mdash; only set if you accept).
+			We do not use advertising or marketing trackers. Learn more in our
+			<a href="/info/policies/default.aspx" target="_blank" rel="noopener noreferrer">Terms of Use</a> and
+			<a href="/info/policies/privacy.aspx" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+			</p>
+			<div class="policy-buttons text-center">
+				<button type="button" class="policy-accept">Accept</button>
+				<button type="button" class="policy-decline">Decline</button>
+			</div>
+		</div>
+
+		<!-- modal window placeholder -->
+		<div class="modal fade" id="remoteModal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Loading</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="text-center py-5">
+							<div class="spinner-border" role="status">
+								<span class="visually-hidden">Loading...</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+
+		<div id="main-container" class="container">
+			
+		<header>
+			
+
+				<!-- Department name title -->
+				<div class="siteName">
+					<span id="lblDepartmentName">Belmont Recreation and the Beech Street Center</span>
+				</div>
+
+				<!-- Banner image -->
+				<div class="banner">
+					<a id="hlHeaderImage" title="Belmont Recreation and the Beech Street Center" class="logo" alt="Belmont Recreation and the Beech Street Center" href="/info/default.aspx"><img title="Belmont Recreation and the Beech Street Center" src="/images/header_banner.jpg" alt="Belmont Recreation and the Beech Street Center" /></a>
+				</div>
+
+			
+
+			
+				<nav>
+						
+
+<nav id="myrec-main-nav" class="navbar container">
+	<ul class="navbar-nav" id="skip-to-nav">
+		<li class="nav-item">
+			<a href="/info/default.aspx" class="nav-link" aria-label="Home Page" title="Home Page"><i class="fa-solid fa-house"></i></a>
+		</li>
+		
+				<li class="nav-item dropdown">
+
+					<a id="ctrMainNav_rptNavGroups_hlNavGroup_0" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/info/activities/default.aspx?type=activities">Register</a>
+					<input type="hidden" name="ctl00$ctrMainNav$rptNavGroups$ctl00$hdnNavGroupID" id="ctrMainNav_rptNavGroups_hdnNavGroupID_0" value="1" />
+					
+							<ul class="dropdown-menu">
+						
+							<li><a href="/info/activities/default.aspx?type=activities">Programs</a></li>
+						
+							<li><a href="/info/activities/default.aspx?type=memberships">Memberships</a></li>
+						
+							<li><a href="https://belmontma.myrec.com/info/facilities/default.aspx">Reservations </a></li>
+						
+							<li><a href="https://belmontma.myrec.com/info/dept/details.aspx?DeptInfoID=1058">Tennis Reservations</a></li>
+						
+							<li><a href="https://belmontma.myrec.com/info/activities/program_details.aspx?ProgramID=29829">Paws in the Park </a></li>
+						
+							</ul>
+						
+				</li>
+			
+				<li class="nav-item dropdown">
+
+					<a id="ctrMainNav_rptNavGroups_hlNavGroup_1" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/info/facilities/default.aspx">Facilities</a>
+					<input type="hidden" name="ctl00$ctrMainNav$rptNavGroups$ctl01$hdnNavGroupID" id="ctrMainNav_rptNavGroups_hdnNavGroupID_1" value="2" />
+					
+							<ul class="dropdown-menu">
+						
+							<li><a href="https://belmontma.myrec.com/info/dept/details.aspx?DeptInfoID=1055">Parks & Open Space</a></li>
+						
+							<li><a href="/info/calendar/default.aspx">Calendar</a></li>
+						
+							<li><a href="https://belmontma.myrec.com/info/dept/details.aspx?DeptInfoID=1066">Underwood Pool</a></li>
+						
+							<li><a href="https://belmontma.myrec.com/info/facilities/details.aspx?FacilityID=14697">Viglirolo Rink</a></li>
+						
+							<li><a href="https://belmontma.myrec.com/info/dept/details.aspx?DeptInfoID=1074">Higginbottom Pool</a></li>
+						
+							</ul>
+						
+				</li>
+			
+				<li class="nav-item dropdown">
+
+					<a id="ctrMainNav_rptNavGroups_hlNavGroup_2" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/info/dept/default.aspx">General Info</a>
+					<input type="hidden" name="ctl00$ctrMainNav$rptNavGroups$ctl02$hdnNavGroupID" id="ctrMainNav_rptNavGroups_hdnNavGroupID_2" value="3" />
+					
+							<ul class="dropdown-menu">
+						
+							<li><a href="/info/dept/default.aspx">Dept Info</a></li>
+						
+							<li><a href="https://belmontma.myrec.com/info/dept/details.aspx?DeptInfoID=1066">Underwood 2026</a></li>
+						
+							<li><a href="https://www.belmont-ma.gov/recreation-commission" target="_blank">Rec Commission</a></li>
+						
+							<li><a href="https://belmontma.myrec.com/info/dept/staff.aspx?ContactGroupID=783">Recreation Team</a></li>
+						
+							</ul>
+						
+				</li>
+			
+				<li class="nav-item dropdown">
+
+					<a id="ctrMainNav_rptNavGroups_hlNavGroup_3" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/info/contact/default.aspx">Contact</a>
+					<input type="hidden" name="ctl00$ctrMainNav$rptNavGroups$ctl03$hdnNavGroupID" id="ctrMainNav_rptNavGroups_hdnNavGroupID_3" value="4" />
+					
+							<ul class="dropdown-menu">
+						
+							<li><a href="/info/contact/default.aspx">Contact Us</a></li>
+						
+							<li><a href="/info/help/default.aspx">Help</a></li>
+						
+							<li><a href="/info/tutorial/default.aspx">How to Register</a></li>
+						
+							<li><a href="http://www.Belmont-ma.gov" target="_blank">Municipal Site</a></li>
+						
+							<li><a href="https://visitor.r20.constantcontact.com/d.jsp?llr=8tjwubcbb&p=oi&m=8tjwubcbb&sit=lizb8jepb&f=bd98b6cc-23d5-4456-9afc-db6043ba3162" target="_blank">Email Listserv</a></li>
+						
+							</ul>
+						
+				</li>
+			
+		<li class="nav-item dropdown">
+			<a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="/info/household/default.aspx" aria-label="Account"><i class="fa fa-user-circle-o"></i></a>
+			<ul class="dropdown-menu dropdown-menu-lg-end">
+				
+					<li><a href="/info/household/login.aspx">Account Login</a></li>
+					<li><a href="/info/household/add_step_01.aspx">Create Account</a></li>
+				
+
+				
+			</ul>
+		</li>
+		
+	</ul>
+</nav>
+	
+
+<!--Mobile-->
+<nav id="myrec-mobile-nav" class="navbar container">
+
+	<ul class="navbar-nav" id="skip-to-nav">
+
+		<li class="nav-item"><a href="/info/default.aspx" class="nav-link" aria-label="Home Page"><i class="fa-solid fa-house"></i></a></li>
+		
+		
+		
+
+		<li class="nav-item">
+			<a class="nav-link mobile-toggle-trigger" href="#collapse-mobile-acct" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-mobile-acct" aria-label="Account"><i class="fa-solid fa-circle-user"></i></a>
+		</li>
+
+		<li class="nav-item">
+			<a class="nav-link mobile-toggle-trigger" href="#collapse-mobile" data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapse-mobile" aria-label="Menu">
+				<i class="fa-solid fa-bars"></i>
+			</a>
+			
+		</li>
+		
+	</ul>
+
+	<div class="collapse mobile-menu-toggle" id="collapse-mobile-acct" data-bs-parent="#myrec-mobile-nav">
+		<ul class="mobile-menu">
+			
+			
+				<li><a href="/info/household/login.aspx">Account Login</a></li>
+				<li><a href="/info/household/add_step_01.aspx">Create Account</a></li>
+			
+		</ul>
+	</div>
+
+	<div class="collapse mobile-menu-toggle" id="collapse-mobile" data-bs-parent="#myrec-mobile-nav">
+		<ul class="mobile-menu">
+			
+					<li class="nav-item dropdown">
+						<a id="ctrMainNav_rptNavGroups2_hlNavGroup2_0" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/info/activities/default.aspx?type=activities">Register</a>
+						<!-- <input type="hidden" name="ctl00$ctrMainNav$rptNavGroups2$ctl00$hdnNavGroupID" id="ctrMainNav_rptNavGroups2_hdnNavGroupID_0" value="1" /> -->
+						<input type="hidden" name="ctl00$ctrMainNav$rptNavGroups2$ctl00$hdnNavGroupID2" id="ctrMainNav_rptNavGroups2_hdnNavGroupID2_0" value="1" />
+						<ul class="dropdown-menu mobile-menu-submenu">
+							
+									<li class="dropdown-item"><a href="/info/activities/default.aspx?type=activities">Programs</a></li>
+								
+									<li class="dropdown-item"><a href="/info/activities/default.aspx?type=memberships">Memberships</a></li>
+								
+									<li class="dropdown-item"><a href="https://belmontma.myrec.com/info/facilities/default.aspx">Reservations </a></li>
+								
+									<li class="dropdown-item"><a href="https://belmontma.myrec.com/info/dept/details.aspx?DeptInfoID=1058">Tennis Reservations</a></li>
+								
+									<li class="dropdown-item"><a href="https://belmontma.myrec.com/info/activities/program_details.aspx?ProgramID=29829">Paws in the Park </a></li>
+								
+						</ul>
+					</li>
+				
+					<li class="nav-item dropdown">
+						<a id="ctrMainNav_rptNavGroups2_hlNavGroup2_1" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/info/facilities/default.aspx">Facilities</a>
+						<!-- <input type="hidden" name="ctl00$ctrMainNav$rptNavGroups2$ctl01$hdnNavGroupID" id="ctrMainNav_rptNavGroups2_hdnNavGroupID_1" value="2" /> -->
+						<input type="hidden" name="ctl00$ctrMainNav$rptNavGroups2$ctl01$hdnNavGroupID2" id="ctrMainNav_rptNavGroups2_hdnNavGroupID2_1" value="2" />
+						<ul class="dropdown-menu mobile-menu-submenu">
+							
+									<li class="dropdown-item"><a href="https://belmontma.myrec.com/info/dept/details.aspx?DeptInfoID=1055">Parks & Open Space</a></li>
+								
+									<li class="dropdown-item"><a href="/info/calendar/default.aspx">Calendar</a></li>
+								
+									<li class="dropdown-item"><a href="https://belmontma.myrec.com/info/dept/details.aspx?DeptInfoID=1066">Underwood Pool</a></li>
+								
+									<li class="dropdown-item"><a href="https://belmontma.myrec.com/info/facilities/details.aspx?FacilityID=14697">Viglirolo Rink</a></li>
+								
+									<li class="dropdown-item"><a href="https://belmontma.myrec.com/info/dept/details.aspx?DeptInfoID=1074">Higginbottom Pool</a></li>
+								
+						</ul>
+					</li>
+				
+					<li class="nav-item dropdown">
+						<a id="ctrMainNav_rptNavGroups2_hlNavGroup2_2" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/info/dept/default.aspx">General Info</a>
+						<!-- <input type="hidden" name="ctl00$ctrMainNav$rptNavGroups2$ctl02$hdnNavGroupID" id="ctrMainNav_rptNavGroups2_hdnNavGroupID_2" value="3" /> -->
+						<input type="hidden" name="ctl00$ctrMainNav$rptNavGroups2$ctl02$hdnNavGroupID2" id="ctrMainNav_rptNavGroups2_hdnNavGroupID2_2" value="3" />
+						<ul class="dropdown-menu mobile-menu-submenu">
+							
+									<li class="dropdown-item"><a href="/info/dept/default.aspx">Dept Info</a></li>
+								
+									<li class="dropdown-item"><a href="https://belmontma.myrec.com/info/dept/details.aspx?DeptInfoID=1066">Underwood 2026</a></li>
+								
+									<li class="dropdown-item"><a href="https://www.belmont-ma.gov/recreation-commission" target="_blank">Rec Commission</a></li>
+								
+									<li class="dropdown-item"><a href="https://belmontma.myrec.com/info/dept/staff.aspx?ContactGroupID=783">Recreation Team</a></li>
+								
+						</ul>
+					</li>
+				
+					<li class="nav-item dropdown">
+						<a id="ctrMainNav_rptNavGroups2_hlNavGroup2_3" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/info/contact/default.aspx">Contact</a>
+						<!-- <input type="hidden" name="ctl00$ctrMainNav$rptNavGroups2$ctl03$hdnNavGroupID" id="ctrMainNav_rptNavGroups2_hdnNavGroupID_3" value="4" /> -->
+						<input type="hidden" name="ctl00$ctrMainNav$rptNavGroups2$ctl03$hdnNavGroupID2" id="ctrMainNav_rptNavGroups2_hdnNavGroupID2_3" value="4" />
+						<ul class="dropdown-menu mobile-menu-submenu">
+							
+									<li class="dropdown-item"><a href="/info/contact/default.aspx">Contact Us</a></li>
+								
+									<li class="dropdown-item"><a href="/info/help/default.aspx">Help</a></li>
+								
+									<li class="dropdown-item"><a href="/info/tutorial/default.aspx">How to Register</a></li>
+								
+									<li class="dropdown-item"><a href="http://www.Belmont-ma.gov" target="_blank">Municipal Site</a></li>
+								
+									<li class="dropdown-item"><a href="https://visitor.r20.constantcontact.com/d.jsp?llr=8tjwubcbb&p=oi&m=8tjwubcbb&sit=lizb8jepb&f=bd98b6cc-23d5-4456-9afc-db6043ba3162" target="_blank">Email Listserv</a></li>
+								
+						</ul>
+					</li>
+				
+		</ul>
+	</div>
+</nav>
+
+		
+				</nav>
+			
+
+			
+
+			
+				<div class="linkStandout registerMsg">
+					<a href="/info/default.aspx" alt="Home" title="Home">
+						<i class="fa-solid fa-house"></i>
+					</a>
+
+					<a id="hlRegisterNow" href="/info/activities/default.aspx">Register Now</a>
+
+
+					
+
+				</div>
+
+				
+
+				</header>
+
+				<div id="page-content">
+
+					<div class="index-content">
+						
+					</div>
+
+				<div class="main-content">
+					
+
+					
+	<script language="javascript">
+		function EventDates(ProgramID, EventID, ActivityID) {
+			var URL = '/info/popups/activity_dates.aspx?ProgramID=' + ProgramID + '&EventID=' + EventID + '&ActivityID=' + ActivityID
+			window.open(URL, 'EventDatesWindowA' + ActivityID, 'width=650,height=520,scrollbars=1,resizable=1;')
+		}
+
+		function EventLocations(ProgramID, EventID, ActivityID) {
+			var URL = '/info/popups/activity_locations.aspx?ProgramID=' + ProgramID + '&EventID=' + EventID + '&ActivityID=' + ActivityID
+			window.open(URL, 'EventDatesWindowA' + ActivityID, 'width=650,height=520,scrollbars=1,resizable=1;')
+		}
+
+		function AdvancedFees(ActivityID) {
+			var URL = '/info/popups/activity_seats.aspx?ActivityID=' + ActivityID
+			window.open(URL, 'EventDatesWindowA' + ActivityID, 'width=820,height=520,scrollbars=1,resizable=1;')
+		}
+	</script>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+	
+	
+
+	
+
+    <h1 class="mb-3"><span id="Content_lblProgramName">Stick and Puck</span></h1>
+
+	
+		<div class="myrec-mini-menu row row-cols-auto justify-content-center mb-3">
+			<div>
+				<a class="btn btn-primary-outline icon-link" href="#activities"><i class="fa-solid fa-arrow-down"></i>Register</a>
+			</div>
+			<div>
+				<a class="btn btn-primary-outline icon-link" href="/info/datacart/default.aspx"><i class="fa-solid fa-cart-shopping"></i>View Cart</a>
+			</div>
+		</div>
+	
+
+	
+
+	
+
+	<!-- HL - assuming this is no longer used -->
+	
+
+
+	
+
+	<div id="program-details" class="mb-3">
+		<div class="col-md-4 col-12 float-md-end float-none text-center mb-3 ms-md-3">
+			
+		</div>
+		<div class="program-description">
+			<span id="Content_lblDescription"><span style="color: #000000; font-family: 'Open Sans', sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 14pt;">Stick and Puck is available for residents and non-residents.</span><br style="color: #000000; font-family: 'Open Sans', sans-serif; font-size: 12.54px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" /><br style="color: #000000; font-family: 'Open Sans', sans-serif; font-size: 12.54px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" /><span style="color: #000000; font-family: 'Open Sans', sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 14pt;">Youth and Children under 18: $7.00&nbsp;</span><br style="color: #000000; font-family: 'Open Sans', sans-serif; font-size: 12.54px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" /><span style="color: #000000; font-family: 'Open Sans', sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 14pt;">Adults: $10.00</span><br style="color: #000000; font-family: 'Open Sans', sans-serif; font-size: 12.54px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" /><span style="color: #000000; font-family: 'Open Sans', sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 14pt;">Seniors&nbsp;$7.00</span><br style="color: #000000; font-family: 'Open Sans', sans-serif; font-size: 12.54px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" /><br style="color: #000000; font-family: 'Open Sans', sans-serif; font-size: 12.54px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" /><span style="color: #000000; font-family: 'Open Sans', sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 14pt;">(Pricing will be adjusted at checkout)<br /><br />You can sign up on line below or pay at the door when you arrive.</span><br style="color: #000000; font-family: 'Open Sans', sans-serif; font-size: 12.54px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" /><br style="color: #000000; font-family: 'Open Sans', sans-serif; font-size: 12.54px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;" /><span style="color: #000000; font-family: 'Open Sans', sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 14pt;">Skate Rental is available for $5.00. However supplies and sizes are limited; bringing your own skates is recommended.</span></span>
+		</div>
+
+	</div>
+
+    
+
+	<div id="program-forms-links" class="row">
+		
+
+		
+	</div>
+	
+	
+
+
+	<a name="activities"></a>
+	
+		<table class="styled fullWidth" id="no-more-tables">
+        <thead>
+		<tr class="trTitle">
+			
+				<th class="center registertitle" width='200px'  >Register</th>
+			
+			<th>Activity</th>
+			<th>Ages</th>
+			<th>Grades</th>
+			<th>Days</th>
+			<th>Date/Time</th>
+			<th>Fees</th>
+		</tr>
+        </thead>
+        <tbody>
+	
+		<tr class="spc">
+			<td colspan="7" style="height: 0; font-size: 0;">
+				&nbsp;<a name="151772"></a>
+			</td>
+		</tr>
+		<tr class="center nobord def">
+			
+				<td class="center registertd nobotbord selectborder" rowspan="2" data-title="Register">
+					
+						&nbsp; <!--height-hold-->
+						<b>
+						
+						</b>
+					<a id="Content_rptActivities_hlLoginChangeMember_0" href="/info/household/login.aspx?ProgramID=29877&amp;aID=151772"><i class='fa fa-user fa-lg'></i>&nbsp;Log In</a>
+					<br />
+				</td>
+			
+			<td class="nobotbord selectborder" data-title="Activity">
+				<b>Stick and Puck</b>&nbsp;<b style="color: red;"></b>
+				<br />
+			</td>
+			<td class="nobotbord selectborder" data-title="Ages">
+				7y - 99y
+			</td>
+			<td class="nobotbord selectborder" data-title="Grades">
+				N/A
+			</td>
+			<td class="nobotbord selectborder" data-title="Days">
+				Sa&nbsp;
+			</td>
+			<td class="unbold nobotbord selectborder" data-title="Date/Time">
+				
+					<a href="javascript: EventDates(29877,0,151772)">
+					09/19/2026<br />
+					03:30 PM - 05:30 PM</a><br />
+					<a href="/info/facilities/details.aspx?ActivityID=151772">Belmont Sports Complex - Rink</a>
+				
+			</td>
+			<td class="nobotbord selectborder" data-title="Fees">
+				$10.00 Res, $10.00 Non-Res
+				
+			</td>
+		</tr>
+		<tr class="notes def" style="empty-cells: hide;">
+			<td colspan="5" class="selectbordertop">
+				<i></i>
+				<i class="smSpc" style="line-height: 1.1em; margin-bottom: 1em;">
+					
+				</i>
+			</td>
+			<td colspan="1" class="selectbordertop center">
+				
+			</td>
+		</tr>
+	
+		<tr class="spc">
+			<td colspan="7" style="height: 0; font-size: 0;">
+				&nbsp;<a name="151773"></a>
+			</td>
+		</tr>
+		<tr class="center nobord alt">
+			
+				<td class="center registertd nobotbord selectborder" rowspan="2" data-title="Register">
+					
+						&nbsp; <!--height-hold-->
+						<b>
+						
+						</b>
+					<a id="Content_rptActivities_hlLoginChangeMember_1" href="/info/household/login.aspx?ProgramID=29877&amp;aID=151773"><i class='fa fa-user fa-lg'></i>&nbsp;Log In</a>
+					<br />
+				</td>
+			
+			<td class="nobotbord selectborder" data-title="Activity">
+				<b>Stick and Puck</b>&nbsp;<b style="color: red;"></b>
+				<br />
+			</td>
+			<td class="nobotbord selectborder" data-title="Ages">
+				7y - 99y
+			</td>
+			<td class="nobotbord selectborder" data-title="Grades">
+				N/A
+			</td>
+			<td class="nobotbord selectborder" data-title="Days">
+				Sa&nbsp;
+			</td>
+			<td class="unbold nobotbord selectborder" data-title="Date/Time">
+				
+					<a href="javascript: EventDates(29877,0,151773)">
+					09/26/2026<br />
+					03:30 PM - 05:30 PM</a><br />
+					<a href="/info/facilities/details.aspx?ActivityID=151773">Belmont Sports Complex - Rink</a>
+				
+			</td>
+			<td class="nobotbord selectborder" data-title="Fees">
+				$10.00 Res, $10.00 Non-Res
+				
+			</td>
+		</tr>
+		<tr class="notes alt" style="empty-cells: hide;">
+			<td colspan="5" class="selectbordertop">
+				<i></i>
+				<i class="smSpc" style="line-height: 1.1em; margin-bottom: 1em;">
+					
+				</i>
+			</td>
+			<td colspan="1" class="selectbordertop center">
+				
+			</td>
+		</tr>
+	
+        </tbody>
+		</table>
+	
+
+
+
+
+  	<div class="center">
+		
+			* Adjustments and discounts will be applied during checkout if applicable. *<br />
+		
+    	<br />
+  		<b>
+  		<a id="Content_hlReturnProgram" href="/info/activities/default.aspx?type=activities"><i class='fa fa-hand-o-left fa-lg'></i> Return to Programs</a>
+  		
+  		</b> &nbsp;
+        <b><a href="/info/activities/activities.aspx" class="viewAll"><i class='fa fa-futbol-o fa-lg'></i>&nbsp;View All Activities</a></b>
+        
+
+		<!-- AddToAny BEGIN -->
+		<br /><br /><br />
+		<b style="color: #666;">Share This Page:</b>
+		<div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="width: 180px; margin: 0 auto;">
+			<a class="a2a_button_x"></a>
+			<a class="a2a_button_facebook"></a>
+			<a class="a2a_button_email"></a>
+			<a class="a2a_button_sms"></a>
+			<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+		</div>
+		<script async src="https://static.addtoany.com/menu/page.js"></script>
+		<!-- AddToAny END -->
+	</div>
+
+	<script type="text/javascript">
+		$("a.choose_member").fancybox({
+			'titlePosition' :   'inside',
+			'transitionIn'	:	'fade',
+			'transitionOut'	:	'fade',
+			'speedIn'		:	600,
+			'speedOut'		:	100,
+			'autoDimensions':	false,
+			'overlayShow'	:	true,
+			'fitToView'		: 	true,
+			'autoSize'		: 	true,
+			'padding'		:	0
+		});
+
+		$("a.add_donations").fancybox({
+			'titlePosition' :   'inside',
+			'transitionIn'	:	'fade',
+			'transitionOut'	:	'fade',
+			'speedIn'		:	600,
+			'speedOut'		:	100,
+			'autoDimensions':	false,
+			'overlayShow'	:	true,
+			'fitToView'		: 	true,
+			'autoSize'		: 	true,
+			'padding'		:	0
+		});
+
+		$("a.view_availability").fancybox({
+			'titlePosition' :   'inside',
+			'transitionIn'	:	'fade',
+			'transitionOut'	:	'fade',
+			'speedIn'		:	600,
+			'speedOut'		:	100,
+			'autoDimensions':	false,
+			'overlayShow'	:	true,
+			'fitToView'		: 	true,
+			'autoSize'		: 	true,
+			'padding'		:	0
+		});
+	</script>
+
+					
+					
+					
+
+					
+				</div>
+			</div>
+		</div>
+
+		<!-- FOOTER -->
+
+		<footer>
+			<div id="footer-top" class="myrec-flex-row">
+				
+					<div class="footer-group">
+						<h3>Contact Us</h3>
+						<div class="footer-contact">
+							<div class="bold"><span id="lblDepartmentName3">Belmont Recreation and the Beech Street Center</span></div>
+
+							<ul class="address">
+								<li><span id="lblAddress1">266 Beech Street </span></li>
+
+								
+									<li><span id="lblCityStateZip">Belmont , MA 02478</span></li>
+								
+
+							</ul>
+
+							<ul class="contact-detail">
+								
+									<li><i class="icon-phone icon-large"></i>Email: <a id="hlEmailAddress" href="mailto:recreation@belmont-ma.gov">recreation@belmont-ma.gov</a></a></li>
+								
+									<li><i class="icon-phone icon-large"></i>Phone: <a id="hlPhoneNumber" href="tel:6179932760">617-993-2760</a></a></li>
+								
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="footer-group">
+						
+								<h3>Connect with Us</h3>
+								<div class="footer-socials">
+							
+									<a href="https://www.facebook.com/BelmontRecMa/" alt="Facebook" title="Facebook" target="_blank"><i class="fa fa-facebook-official fa-2x"></i></a>
+							
+									<a href="https://www.instagram.com/belmontrecma/" alt="Instagram" title="Instagram" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+							
+								</div>
+							
+							<h3>Hours Of Operation</h3>
+								<span id="lblHoursOfOperation"><strong>Hours of Operation:</strong>
+<div>Monday: 8am-7pm<br />Tuesday-Thursday: 8am-4pm<br />Friday: 8am-12pm</div></span>
+
+
+
+					</div>
+
+						<div class="footer-group">
+							
+									<h3>
+										<a id="rptSponsors_hlSponsors" href="/info/sponsors/default.aspx">Our Sponsors</a>
+									</h3>
+									<div id="footer-slider" class="carousel slide">
+										<button class="carousel-control-prev" type="button" data-bs-target="#footer-slider" data-bs-slide="prev">
+											<i class="bi bi-arrow-left-short"></i>
+											<span class="visually-hidden">Previous</span>
+										</button>
+
+										<button class="carousel-control-next" type="button" data-bs-target="#footer-slider" data-bs-slide="next">
+											<i class="bi bi-arrow-right-short"></i>
+											<span class="visually-hidden">Next</span>
+										</button>
+
+										<div class="carousel-inner">
+								
+									<div class="carousel-item">
+										<div class="footer-slider-image"><img src="/PhotoPool/31.png" title="LOGO" alt="LOGO" width="150" /></div>
+										<div class="footer-slider-caption">Belmont Youth Activities and D.A.R.E.<br />Lynn Findlay<br />Lions Club of Belmont<br />Friener&nbsp;Plumbing<br />StoneHearth<br />Champions Sporting Goods<br />Belmont Toy Shop<br />A Chocolate Dream</div>
+									</div>
+								
+										</div>
+									</div>
+								
+						</div>
+					</div>
+
+					<div id="footer-bottom" class="myrec-flex-row">
+						<div class="footer-bottom-section">
+							<div class="bold">&copy;<span id="lblYear">2026</span>&nbsp;<span id="lblDepartmentName2">Belmont Recreation and the Beech Street Center</span></div>
+						</div>
+
+						<div class="footer-bottom-section">
+							<ul>
+								<li><a href="/info/policies/default.aspx" target="_blank">Terms</a></li>
+								<li>&#9675;</li>
+								<li><a href="/info/policies/privacy.aspx" target="_blank">Privacy</a></li>
+								<li>&#9675;</li>
+								<li><a href="#" class="policy-preferences">Cookie Preferences</a></li>
+								<li>&#9675;</li>
+								<li><a href="/info/help/default.aspx">Help</a></li>
+								<li>&#9675;</li>
+								<li><a href="/info/tutorial/default.aspx">How To</a></li>
+							</ul>
+						</div>
+
+						<div class="footer-bottom-section">
+							Provided by <a href="http://www.myrec.com" target="_blank">MyRec.com Recreation Software</a>
+						</div>
+
+					</div>
+
+			
+		</footer>
+	
+
+<script type="text/javascript">
+//<![CDATA[
+$(function() {
+	$( '.birthdatepicker' ).datepicker({
+		yearRange: '1920:2026',
+		showOtherMonths: true,
+		selectOtherMonths: true,
+		changeMonth: true,
+		changeYear: true,
+		showOn: 'both',
+		buttonImage: '/info/images/button_calendar.png',
+		buttonImageOnly: true
+	});
+});
+//]]>
+</script>
+</form>
+
+
+	
+
+	<!-- Quick script to add 'active' class to first instance of sponsor carousel slide -->
+	<script>
+		$(document).ready(function(){
+			if($(".carousel-item").length != 0){
+				$(".carousel-item:first").addClass("active");
+			}
+		});
+	</script>
+
+	<script type="text/javascript">
+		$("a.constant_contact").fancybox({
+			'titlePosition':'inside',
+			'transitionIn':'fade',
+			'transitionOut':'fade',
+			'speedIn':600,
+			'speedOut':100,
+			'width':225,
+			'height':100,
+			'autoDimensions':false,
+			'overlayShow':true
+		});
+
+		$(function() {
+			$('.phone_us').mask('(999) 999-9999');
+			$('.zip_us').mask('99999-9999');
+			$( '.datepicker' ).datepicker({
+				yearRange: '2010:2050',
+				showOtherMonths: true,
+				selectOtherMonths: true,
+				changeMonth: true,
+				changeYear: true,
+				showOn: 'both',
+				buttonImage: '/info/images/button_calendar.png',
+				buttonImageOnly: true
+			});
+
+			$( ".datepickerL" ).datepicker({
+				yearRange: "1920:2050",
+				showOtherMonths: true,
+				selectOtherMonths: true,
+				changeMonth: true,
+				changeYear: true,
+				showOn: "both",
+				buttonImage: "/management/images/button_calendar.png",
+				buttonImageOnly: true
+			});
+			$('.timeEntry').timeEntry({defaultTime: '00:00', spinnerImage: '', noSeparatorEntry: true, ampmPrefix: ' '});
+			$('.date').dateEntry({spinnerImage: ''});
+		});
+
+		function pageLoad(sender,args) {
+			$('.phone_us').mask('(999) 999-9999');
+			$('.zip_us').mask('99999-9999');
+			$( '.datepicker' ).datepicker({
+				yearRange: '2010:2050',
+				showOtherMonths: true,
+				selectOtherMonths: true,
+				changeMonth: true,
+				changeYear: true,
+				showOn: 'both',
+				buttonImage: '/info/images/button_calendar.png',
+				buttonImageOnly: true
+			});
+
+			$( ".datepickerL" ).datepicker({
+				yearRange: "1920:2050",
+				showOtherMonths: true,
+				selectOtherMonths: true,
+				changeMonth: true,
+				changeYear: true,
+				showOn: "both",
+				buttonImage: "/management/images/button_calendar.png",
+				buttonImageOnly: true
+			});
+			$('.timeEntry').timeEntry({defaultTime: '00:00', spinnerImage: '', noSeparatorEntry: true, ampmPrefix: ' '});
+			$('.date').dateEntry({spinnerImage: ''});
+		}
+
+		function setCookieConsent(decision){
+			localStorage.setItem('cookieConsent', decision);
+			localStorage.setItem('cookieConsentDate', new Date().toISOString());
+			localStorage.removeItem('policySeen'); //legacy implied-consent flag - no longer valid
+		}
+
+		//Runs any registered analytics loaders, but ONLY if the visitor accepted cookies
+		function loadConsentedAnalytics(){
+			if (localStorage.getItem('cookieConsent') !== 'accepted') { return; }
+			var loaders = window.myrecAnalyticsLoaders || [];
+			while (loaders.length) { (loaders.shift())(); }
+		}
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			if($(window).width() >= 600) {
+				$(".second_div").css({'width':($(".first_div").width()+50+'px')});
+			}
+
+		    //Cookie Consent Banner (CIPA opt-in: nothing non-essential fires until Accept)
+		    //NOTE: the legacy 'policySeen' flag was implied consent and is intentionally ignored -
+		    //visitors who only have it are treated as undecided and see the banner again.
+		    var cookieConsent = localStorage.getItem('cookieConsent');
+		    if(cookieConsent !== 'accepted' && cookieConsent !== 'declined'){
+		    	$('.policy-banner').fadeIn();
+		    }
+		    else if(cookieConsent === 'accepted'){
+				loadConsentedAnalytics();
+		    }
+
+		    $('.policy-accept').click(function(e){
+				setCookieConsent('accepted');
+		    	$('.policy-banner').fadeOut();
+				loadConsentedAnalytics();
+		    });
+
+		    $('.policy-decline').click(function(e){
+				setCookieConsent('declined');
+		    	$('.policy-banner').fadeOut();
+		    });
+
+		    //Footer link to review/change the cookie choice
+		    $('.policy-preferences').click(function(e){
+				e.preventDefault();
+		    	$('.policy-banner').fadeIn();
+		    });
+		});
+	</script>
+
+	
+
+
+	<script type="text/javascript" src="/info/includes/jquery/jquery.mask.min.js"></script> <!--Field Masking JS-->
+	<script type="text/javascript" src="/info/includes/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.js"></script> <!--UI JS-->
+	<link rel="stylesheet" type="text/css" href="/info/includes/jquery-ui-1.10.2.custom/css/themes/eggplant/jquery-ui.css" media="screen"></link> <!--Calendar Coloring JS-->
+	<script type="text/javascript" src="/info/includes/jquery.timeentry.package/jquery.timeentry.min.js"></script> <!--Time Masking JS-->
+	<script type="text/javascript" src="/info/includes/jquery.dateentry.package/jquery.dateentry.js"></script> <!--Date Masking JS-->
+
+</body>
+</html>

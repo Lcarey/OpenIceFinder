@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ahc",
+    "name": "Arlington Hockey Club",
+    "shortName": "AHC",
+    "rinkId": "ed-burns-arlington",
+    "website": "https://www.arlingtonice.com/",
+    "source": {
+      "kind": "crossbar",
+      "baseUrl": "https://www.arlingtonice.com",
+      "homeLocationPattern": "^(arlington( 1| rink)?|ed burns.*)$"
+    }
+  }
+]
