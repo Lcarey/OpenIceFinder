@@ -2,6 +2,8 @@
   "rink": {
     "id": "allied-veterans-everett",
     "name": "Allied Veterans Memorial Rink",
+    "emoji": "🦉",
+    "color": "#faf7fe",
     "town": "Everett",
     "address": "25 Elm St, Everett, MA 02149",
     "lat": 42.41206,
@@ -19,11 +21,9 @@
       "calendarKeys": [
         "sre~01~wSsAAAAAAAA~_jw"
       ]
-    },
-    "emoji": "🦉",
-    "color": "#faf7fe"
+    }
   },
-  "fetchedAt": "2026-09-13T15:35:05.811Z",
+  "fetchedAt": "2026-09-13T21:14:23.926Z",
   "rangeStart": "2026-09-13T04:00:00.000Z",
   "rangeEnd": "2026-10-18T04:00:00.000Z",
   "events": [

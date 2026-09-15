@@ -2,6 +2,8 @@
   "rink": {
     "id": "reilly-brighton",
     "name": "Reilly Memorial Rink",
+    "emoji": "🦁",
+    "color": "#f5f9fe",
     "town": "Brighton",
     "address": "355 Chestnut Hill Ave, Brighton, MA 02135",
     "lat": 42.33644,
@@ -11,17 +13,44 @@
     "website": "https://www.mass.gov/locations/reilly-memorial-rink",
     "scheduleUrl": "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule",
     "operator": "DCR",
+    "notes": "Hours from the last published DCR 2025–26 schedule. Public skate typically starts the Friday after Thanksgiving; stick time is cancelled during school vacation weeks.",
     "source": {
-      "kind": "document-vision",
-      "documentUrls": [
-        "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule"
-      ],
-      "hints": "Only use the section headed 'Reilly - Brighton'. Ignore all other rinks on the page. 'Public stick time' is DCR public hockey / stick time. Respect the season dates and the public skating start date given in the page overview; if the page says closed for the season and no upcoming season dates are listed, return no events."
-    },
-    "emoji": "🦁",
-    "color": "#f5f9fe"
+      "kind": "weekly-hours",
+      "seasonStart": "2026-11-28",
+      "seasonEnd": "2027-04-11",
+      "sessions": [
+        {
+          "title": "Public Skating",
+          "days": [
+            0,
+            6
+          ],
+          "start": "14:00",
+          "end": "15:50"
+        },
+        {
+          "title": "Public Skating",
+          "days": [
+            2,
+            4,
+            5
+          ],
+          "start": "12:00",
+          "end": "13:50"
+        },
+        {
+          "title": "Public Stick Time",
+          "days": [
+            3
+          ],
+          "start": "12:00",
+          "end": "13:50",
+          "skipSchoolVacations": true
+        }
+      ]
+    }
   },
-  "fetchedAt": "2026-09-13T15:35:05.811Z",
+  "fetchedAt": "2026-09-13T21:14:23.926Z",
   "rangeStart": "2026-09-13T04:00:00.000Z",
   "rangeEnd": "2026-10-18T04:00:00.000Z",
   "events": [],

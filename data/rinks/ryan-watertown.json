@@ -2,6 +2,8 @@
   "rink": {
     "id": "ryan-watertown",
     "name": "John A. Ryan Skating Arena",
+    "emoji": "🌊",
+    "color": "#fef7fb",
     "town": "Watertown",
     "address": "1 Paramount Pl, Watertown, MA 02472",
     "lat": 42.36513,
@@ -11,18 +13,25 @@
     "website": "https://app.rectimes.com/ryanarena",
     "scheduleUrl": "https://app.rectimes.com/ryanarena",
     "operator": "Town of Watertown",
+    "notes": "Tue/Thu public skate from the last published 2025–26 Watertown Rec season. RecTimes does not label public sessions.",
     "source": {
-      "kind": "rectimes",
-      "apiBaseUrl": "https://api.rectimes.com",
-      "facility": "ryanarena",
-      "venueIds": [
-        1281
+      "kind": "weekly-hours",
+      "seasonStart": "2026-11-03",
+      "seasonEnd": "2027-04-08",
+      "sessions": [
+        {
+          "title": "Public Skating",
+          "days": [
+            2,
+            4
+          ],
+          "start": "11:00",
+          "end": "13:00"
+        }
       ]
-    },
-    "emoji": "🌊",
-    "color": "#fef7fb"
+    }
   },
-  "fetchedAt": "2026-09-13T15:35:05.811Z",
+  "fetchedAt": "2026-09-13T21:14:23.926Z",
   "rangeStart": "2026-09-13T04:00:00.000Z",
   "rangeEnd": "2026-10-18T04:00:00.000Z",
   "events": [],

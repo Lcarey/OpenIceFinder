@@ -2,6 +2,8 @@
   "rink": {
     "id": "ristuccia-wilmington",
     "name": "MPG Arena (formerly Ristuccia)",
+    "emoji": "🐺",
+    "color": "#f5fefc",
     "town": "Wilmington",
     "address": "190 Main St, Wilmington, MA 01887",
     "lat": 42.55822,
@@ -12,17 +14,15 @@
     "operator": "MPG Arena",
     "source": {
       "kind": "link-only",
-      "reason": "No public schedule is published online."
+      "reason": "No machine-readable public calendar. Check wilmingtonyouthhockey.org for LTS/LTP sessions."
     },
-    "notes": "Private facility; no public stick & puck sessions are published.",
-    "emoji": "🐺",
-    "color": "#f5fefc"
+    "notes": "Private facility; no drop-in public calendar is published. Wilmington Youth Hockey runs learn-to-skate / learn-to-play by session."
   },
-  "fetchedAt": "2026-09-13T15:35:05.811Z",
+  "fetchedAt": "2026-09-13T21:14:23.926Z",
   "rangeStart": "2026-09-13T04:00:00.000Z",
   "rangeEnd": "2026-10-18T04:00:00.000Z",
   "events": [],
   "errors": [
-    "No public schedule is published online."
+    "No machine-readable public calendar. Check wilmingtonyouthhockey.org for LTS/LTP sessions."
   ]
 }

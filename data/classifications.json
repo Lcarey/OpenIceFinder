@@ -2,6 +2,20 @@
   "version": 1,
   "entries": [
     {
+      "rinkId": "*",
+      "title": "club ice",
+      "category": "freestyle",
+      "source": "seed",
+      "note": "FMC and Hayden Club Ice is figure skating practice ice."
+    },
+    {
+      "rinkId": "*",
+      "title": "fmc club ice",
+      "category": "freestyle",
+      "source": "seed",
+      "note": "FMC Club Ice is figure skating practice ice."
+    },
+    {
       "rinkId": "allied-veterans-everett",
       "title": "emass senators",
       "category": "private_rental",
@@ -336,6 +350,13 @@
       "category": "private_rental",
       "source": "model",
       "note": "Named hockey business or league; explicitly treated as a private rental."
+    },
+    {
+      "rinkId": "warrior-brighton",
+      "title": "adult programming",
+      "category": "private_rental",
+      "source": "seed",
+      "note": "Warrior adult league / programming block, not a public drop-in."
     }
   ]
 }

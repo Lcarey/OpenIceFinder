@@ -7,11 +7,17 @@ const WARRIOR_PROGRAMS = "https://www.warrioricearena.com/skating-hockey-program
 const WARRIOR_REGISTER = "https://warrior.finnlyconnect.com/registration/activityitemv2/35606";
 const FMC_REGISTER = "https://fmc.myhalix.io/pages/allprograms";
 
+/** Beginner learn-to-play / learn-to-skate — too low-level for the clinics page. */
+export function isBeginnerLearnProgram(title: string): boolean {
+  return /learn to (play|skate)|\bltp\b|\blts\b/.test(title.toLowerCase());
+}
+
 export function isWarriorClinicTitle(title: string): boolean {
   const t = title.toLowerCase();
   if (/blocked|conflict|adult programming/.test(t)) return false;
   if (/public hockey|public skat/.test(t)) return false;
-  return /skills|learn to play|\bltp\b|hockey programs/.test(t);
+  if (isBeginnerLearnProgram(t)) return false;
+  return /skills|hockey programs/.test(t);
 }
 
 export function warriorRegisterUrl(title: string): string {
@@ -49,8 +55,9 @@ export function clinicsFromWarrior(events: Array<RawEvent | IceEvent>, rinkId = 
 
 export function isFmcHockeyClass(title: string): boolean {
   const t = title.toLowerCase();
-  if (/learn to skate|figure|freestyle|club ice/.test(t) && !/hockey|stick/.test(t)) return false;
-  return /hockey|stick\s*(&|and)?\s*puck|skills|ltp|learn to play/.test(t);
+  if (isBeginnerLearnProgram(t)) return false;
+  if (/figure|freestyle|club ice/.test(t) && !/hockey|stick/.test(t)) return false;
+  return /hockey|stick\s*(&|and)?\s*puck|skills/.test(t);
 }
 
 export function clinicsFromFmc(classes: FmcClassEvent[]): BookableOffering[] {
@@ -69,7 +76,7 @@ export function clinicsFromFmc(classes: FmcClassEvent[]): BookableOffering[] {
 }
 
 export function clinicsFromStinkysocks(offerings: BookableOffering[]): BookableOffering[] {
-  return offerings.filter((o) => o.kind === "skills" || o.kind === "clinic" || o.kind === "learn_to_play");
+  return offerings.filter((o) => (o.kind === "skills" || o.kind === "clinic") && !isBeginnerLearnProgram(o.title));
 }
 
 export function mergeClinicOfferings(...groups: BookableOffering[][]): BookableOffering[] {
@@ -79,6 +86,7 @@ export function mergeClinicOfferings(...groups: BookableOffering[][]): BookableO
     for (const item of group) {
       const key = `${item.provider}|${item.start}|${item.title.toLowerCase()}`;
       if (seen.has(key)) continue;
+      if (item.kind === "learn_to_play" || isBeginnerLearnProgram(item.title)) continue;
       seen.add(key);
       out.push(item);
     }

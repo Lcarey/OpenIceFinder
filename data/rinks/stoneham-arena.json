@@ -2,6 +2,8 @@
   "rink": {
     "id": "stoneham-arena",
     "name": "Stoneham Arena",
+    "emoji": "🪨",
+    "color": "#f8f7fe",
     "town": "Stoneham",
     "address": "101 Montvale Ave, Stoneham, MA 02180",
     "lat": 42.48134,
@@ -15,11 +17,9 @@
       "kind": "civicengage",
       "baseUrl": "https://www.stoneham-ma.gov",
       "calendarId": 26
-    },
-    "emoji": "🪨",
-    "color": "#f8f7fe"
+    }
   },
-  "fetchedAt": "2026-09-13T15:37:54.532Z",
+  "fetchedAt": "2026-09-13T21:14:23.926Z",
   "rangeStart": "2026-09-13T04:00:00.000Z",
   "rangeEnd": "2026-10-18T04:00:00.000Z",
   "events": [

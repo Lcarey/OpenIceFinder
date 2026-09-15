@@ -24,16 +24,14 @@ describe("stinkysocks", () => {
 });
 
 describe("warrior clinics", () => {
-  it("keeps skills and LTP and drops public hockey", () => {
+  it("keeps skills and drops public hockey and learn-to-play", () => {
     const clinics = clinicsFromWarrior([
       { title: "Public Hockey", start: "2026-09-14T13:00:00-04:00", end: "2026-09-14T13:50:00-04:00" },
       { title: "Hockey Programs & Classes - WIA- Friday Skills", start: "2026-09-18T17:00:00-04:00", end: "2026-09-18T17:50:00-04:00" },
       { title: "Hockey Programs & Classes - WIA- Adult Learn To Play Hockey", start: "2026-09-16T20:00:00-04:00", end: "2026-09-16T21:00:00-04:00" },
+      { title: "Step 1: Learn to Skate", start: "2026-09-16T16:00:00-04:00", end: "2026-09-16T16:50:00-04:00" },
     ]);
-    expect(clinics.map((c) => [c.title, c.kind, c.audience])).toEqual([
-      ["WIA- Friday Skills", "skills", "youth"],
-      ["WIA- Adult Learn To Play Hockey", "learn_to_play", "adult"],
-    ]);
+    expect(clinics.map((c) => [c.title, c.kind, c.audience])).toEqual([["WIA- Friday Skills", "skills", "youth"]]);
     expect(clinics[0]!.registerUrl).toContain("youth-hockey-skills");
   });
 });

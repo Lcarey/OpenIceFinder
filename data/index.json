@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T19:32:34.120Z",
+  "generatedAt": "2026-09-13T21:18:10.695Z",
   "rinks": [
     {
       "rink": {
@@ -23,7 +23,7 @@
           "areaId": 0
         }
       },
-      "fetchedAt": "2026-09-13T19:32:34.120Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 224,
       "openIceCount": 19,
       "nextOpenIce": {
@@ -44,6 +44,8 @@
       "rink": {
         "id": "belmont-sports-complex",
         "name": "Belmont Sports Complex (Viglirolo Rink)",
+        "emoji": "🦅",
+        "color": "#f7fef9",
         "town": "Belmont",
         "address": "20 Concord Ave, Belmont, MA 02478",
         "lat": 42.39096,
@@ -59,11 +61,9 @@
           "programIds": [
             29877
           ]
-        },
-        "emoji": "🦅",
-        "color": "#f7fef9"
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 2,
       "openIceCount": 2,
       "nextOpenIce": {
@@ -84,6 +84,8 @@
       "rink": {
         "id": "ice-palace-burlington",
         "name": "Burlington Ice Palace",
+        "emoji": "🏰",
+        "color": "#fefaf5",
         "town": "Burlington",
         "address": "36 Ray Ave, Burlington, MA 01803",
         "lat": 42.48238,
@@ -101,12 +103,10 @@
           "calendarKeys": [
             "sre~fc~fmcns~4ice"
           ]
-        },
-        "emoji": "🏰",
-        "color": "#fefaf5"
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
-      "eventCount": 302,
+      "fetchedAt": "2026-09-13T21:18:10.695Z",
+      "eventCount": 376,
       "openIceCount": 0,
       "ok": true,
       "errors": []
@@ -115,6 +115,8 @@
       "rink": {
         "id": "obrien-woburn",
         "name": "O'Brien Memorial Rink",
+        "emoji": "🍀",
+        "color": "#fef8f5",
         "town": "Woburn",
         "address": "55 Locust St, Woburn, MA 01801",
         "lat": 42.47691,
@@ -123,18 +125,25 @@
         "driveMiles": 5.6,
         "website": "https://www.woburnyouthhockey.org/about/o-brien-ice-rink-information/2071",
         "operator": "City of Woburn",
+        "notes": "Sunday public skate from the last published Woburn Rec winter schedule. Confirm at woburnrec.com before you go.",
         "source": {
-          "kind": "document-vision",
-          "documentUrls": [
-            "https://www.woburnyouthhockey.org/about/o-brien-ice-rink-information/2071"
-          ],
-          "hints": "O'Brien Rink public skating is run with Woburn Recreation; the page embeds or links the current season public skating schedule (PDF or image). Extract dated public skating sessions and any stick & puck sessions."
-        },
-        "emoji": "🍀",
-        "color": "#fef8f5"
+          "kind": "weekly-hours",
+          "seasonStart": "2026-10-04",
+          "seasonEnd": "2027-03-29",
+          "sessions": [
+            {
+              "title": "Public Skating",
+              "days": [
+                0
+              ],
+              "start": "9:20",
+              "end": "10:20"
+            }
+          ]
+        }
       },
-      "fetchedAt": "2026-09-13T15:40:48.903Z",
-      "eventCount": 0,
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
+      "eventCount": 2,
       "openIceCount": 0,
       "ok": true,
       "errors": []
@@ -143,6 +152,8 @@
       "rink": {
         "id": "veterans-somerville",
         "name": "Veterans Memorial Rink",
+        "emoji": "🌟",
+        "color": "#f5fcfe",
         "town": "Somerville",
         "address": "570 Somerville Ave, Somerville, MA 02143",
         "lat": 42.383,
@@ -161,12 +172,10 @@
             "sre~01~gScAAAAAAAA~YGY",
             "sre~01~gScAAAAAAAA~WmY"
           ]
-        },
-        "emoji": "🌟",
-        "color": "#f5fcfe"
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
-      "eventCount": 295,
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
+      "eventCount": 353,
       "openIceCount": 0,
       "ok": true,
       "errors": []
@@ -175,6 +184,8 @@
       "rink": {
         "id": "flynn-medford",
         "name": "Flynn Rink (LoConte Memorial)",
+        "emoji": "🦊",
+        "color": "#faf5fe",
         "town": "Medford",
         "address": "300 Elm St, Medford, MA 02155",
         "lat": 42.43841,
@@ -192,11 +203,9 @@
           "sessions": {
             "8": "Hockey Lesson Walk-On"
           }
-        },
-        "emoji": "🦊",
-        "color": "#faf5fe"
+        }
       },
-      "fetchedAt": "2026-09-13T15:37:54.532Z",
+      "fetchedAt": "2026-09-13T21:18:10.695Z",
       "eventCount": 31,
       "openIceCount": 31,
       "nextOpenIce": {
@@ -217,6 +226,8 @@
       "rink": {
         "id": "hayden-lexington",
         "name": "Hayden Recreation Centre",
+        "emoji": "🐎",
+        "color": "#f7fef5",
         "town": "Lexington",
         "address": "10 Lincoln St, Lexington, MA 02421",
         "lat": 42.44698,
@@ -233,24 +244,22 @@
             "https://www.jwhayden.org/facility-schedules",
             "https://www.jwhayden.org/skating"
           ],
-          "hints": "Hayden's John P. Chase Ice Facility. Adult Stick and Puck is a weekly recurring session (historically Tuesdays and Thursdays 12:00-1:45 PM) that requires advance registration; the ice facility is closed weekends. Only emit ice-rink sessions, not pool or gym schedules."
-        },
-        "emoji": "🐎",
-        "color": "#f7fef5"
+          "hints": "Hayden's John P. Chase Ice Facility. Adult Stick and Puck is a weekly recurring session (historically Tuesdays and Thursdays 12:00-1:45 PM) that requires advance registration; the ice facility is closed weekends. Title the stick & puck sessions 'Adult Stick and Puck'. 'Club Ice' is figure skating practice ice. Only emit ice-rink sessions, not pool or gym schedules."
+        }
       },
-      "fetchedAt": "2026-09-13T15:41:57.557Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 346,
       "openIceCount": 10,
       "nextOpenIce": {
-        "title": "Stick and Puck",
+        "title": "Adult Stick and Puck",
         "start": "2026-09-15T12:00:00-04:00",
         "end": "2026-09-15T13:45:00-04:00",
         "surface": "John P. Chase Ice Facility",
         "url": "https://www.jwhayden.org/adult-programs",
-        "description": "Ages 18 and up; advance registration required and no drop-ins. Free for members; $13 per session for non-members.",
-        "id": "hayden-lexington-1ljrpg3",
+        "description": "Ages 18 and up; advance registration required; members free, non-members $13 per session. Times subject to change.",
+        "id": "hayden-lexington-1fc5u3",
         "rinkId": "hayden-lexington",
-        "category": "stick_puck",
+        "category": "stick_puck_adult",
         "classifiedBy": "rule"
       },
       "ok": true,
@@ -260,6 +269,8 @@
       "rink": {
         "id": "stoneham-arena",
         "name": "Stoneham Arena",
+        "emoji": "🪨",
+        "color": "#f8f7fe",
         "town": "Stoneham",
         "address": "101 Montvale Ave, Stoneham, MA 02180",
         "lat": 42.48134,
@@ -273,11 +284,9 @@
           "kind": "civicengage",
           "baseUrl": "https://www.stoneham-ma.gov",
           "calendarId": 26
-        },
-        "emoji": "🪨",
-        "color": "#f8f7fe"
+        }
       },
-      "fetchedAt": "2026-09-13T15:37:54.532Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 25,
       "openIceCount": 10,
       "nextOpenIce": {
@@ -298,6 +307,8 @@
       "rink": {
         "id": "veterans-waltham",
         "name": "Veterans Memorial Rink",
+        "emoji": "⌚",
+        "color": "#fcfef7",
         "town": "Waltham",
         "address": "295 Totten Pond Rd, Waltham, MA 02451",
         "lat": 42.39156,
@@ -313,11 +324,9 @@
             "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink"
           ],
           "hints": "City of Waltham municipal rink. Look for public skating, public hockey / stick time, and learn to skate hours, including any linked schedule PDFs or images."
-        },
-        "emoji": "⌚",
-        "color": "#fcfef7"
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 26,
       "openIceCount": 20,
       "nextOpenIce": {
@@ -325,7 +334,7 @@
         "start": "2026-09-15T12:00:00-04:00",
         "end": "2026-09-15T12:50:00-04:00",
         "url": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
-        "description": "Skaters must be age 16 or older; full equipment required. $10 per person, cash only.",
+        "description": "$10 per person, cash only. Ages 16 and older; full equipment required. Hours are subject to change due to weather, no-school days, and holidays. Season end is inferred from “open through March 2027.”",
         "id": "veterans-waltham-g6q0gb",
         "rinkId": "veterans-waltham",
         "category": "public_hockey",
@@ -338,6 +347,8 @@
       "rink": {
         "id": "ryan-watertown",
         "name": "John A. Ryan Skating Arena",
+        "emoji": "🌊",
+        "color": "#fef7fb",
         "town": "Watertown",
         "address": "1 Paramount Pl, Watertown, MA 02472",
         "lat": 42.36513,
@@ -347,18 +358,25 @@
         "website": "https://app.rectimes.com/ryanarena",
         "scheduleUrl": "https://app.rectimes.com/ryanarena",
         "operator": "Town of Watertown",
+        "notes": "Tue/Thu public skate from the last published 2025–26 Watertown Rec season. RecTimes does not label public sessions.",
         "source": {
-          "kind": "rectimes",
-          "apiBaseUrl": "https://api.rectimes.com",
-          "facility": "ryanarena",
-          "venueIds": [
-            1281
+          "kind": "weekly-hours",
+          "seasonStart": "2026-11-03",
+          "seasonEnd": "2027-04-08",
+          "sessions": [
+            {
+              "title": "Public Skating",
+              "days": [
+                2,
+                4
+              ],
+              "start": "11:00",
+              "end": "13:00"
+            }
           ]
-        },
-        "emoji": "🌊",
-        "color": "#fef7fb"
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 0,
       "openIceCount": 0,
       "ok": true,
@@ -368,6 +386,8 @@
       "rink": {
         "id": "daly-brighton",
         "name": "Daly Memorial Rink",
+        "emoji": "🌞",
+        "color": "#f7fefc",
         "town": "Brighton",
         "address": "1 Nonantum Rd, Brighton, MA 02135",
         "lat": 42.35846,
@@ -380,11 +400,9 @@
         "source": {
           "kind": "ical",
           "url": "https://www.dalyrink.org/?feed=my-calendar-ics"
-        },
-        "emoji": "🌞",
-        "color": "#f7fefc"
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 20,
       "openIceCount": 0,
       "ok": true,
@@ -394,6 +412,8 @@
       "rink": {
         "id": "simoni-cambridge",
         "name": "Simoni Memorial Skating Arena",
+        "emoji": "🎓",
+        "color": "#fefdf7",
         "town": "Cambridge",
         "address": "155 Gore St, Cambridge, MA 02141",
         "lat": 42.37307,
@@ -411,11 +431,9 @@
           "calendarKeys": [
             "sre~fc~fmcns~13ice"
           ]
-        },
-        "emoji": "🎓",
-        "color": "#fefdf7"
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 300,
       "openIceCount": 0,
       "ok": true,
@@ -425,6 +443,8 @@
       "rink": {
         "id": "warrior-brighton",
         "name": "Warrior Ice Arena",
+        "emoji": "⚔️",
+        "color": "#fdf5fe",
         "town": "Brighton",
         "address": "90 Guest St, Brighton, MA 02135",
         "lat": 42.35748,
@@ -438,14 +458,13 @@
           "kind": "finnly",
           "baseUrl": "https://warrior.finnlyconnect.com",
           "scheduleIds": [
-            20
+            20,
+            19
           ]
-        },
-        "emoji": "⚔️",
-        "color": "#fdf5fe"
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
-      "eventCount": 49,
+      "fetchedAt": "2026-09-13T21:18:10.695Z",
+      "eventCount": 200,
       "openIceCount": 4,
       "nextOpenIce": {
         "title": "Public Hockey",
@@ -466,6 +485,8 @@
       "rink": {
         "id": "emmons-charlestown",
         "name": "Emmons Horrigan O'Neil Memorial Rink",
+        "emoji": "⚓",
+        "color": "#f5fef6",
         "town": "Charlestown",
         "address": "46 Union St, Charlestown, MA 02129",
         "lat": 42.37361,
@@ -475,17 +496,43 @@
         "website": "https://www.mass.gov/locations/emmons-horrigan-oneil-memorial-rink",
         "scheduleUrl": "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule",
         "operator": "DCR",
+        "notes": "Hours from the last published DCR 2025–26 schedule. Public skate typically starts the Friday after Thanksgiving; stick time is cancelled during school vacation weeks.",
         "source": {
-          "kind": "document-vision",
-          "documentUrls": [
-            "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule"
-          ],
-          "hints": "Only use the section headed 'EHO - Charlestown' (Emmons Horrigan O'Neil Memorial Rink). Ignore all other rinks on the page. 'Public stick time' is DCR public hockey / stick time. Respect the season dates and the public skating start date given in the page overview; if the page says closed for the season and no upcoming season dates are listed, return no events."
-        },
-        "emoji": "⚓",
-        "color": "#f5fef6"
+          "kind": "weekly-hours",
+          "seasonStart": "2026-11-28",
+          "seasonEnd": "2027-04-11",
+          "sessions": [
+            {
+              "title": "Public Skating",
+              "days": [
+                0
+              ],
+              "start": "14:00",
+              "end": "15:50"
+            },
+            {
+              "title": "Public Skating",
+              "days": [
+                2,
+                4,
+                5
+              ],
+              "start": "12:00",
+              "end": "14:20"
+            },
+            {
+              "title": "Public Stick Time",
+              "days": [
+                3
+              ],
+              "start": "12:00",
+              "end": "13:50",
+              "skipSchoolVacations": true
+            }
+          ]
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 0,
       "openIceCount": 0,
       "ok": true,
@@ -495,6 +542,8 @@
       "rink": {
         "id": "allied-veterans-everett",
         "name": "Allied Veterans Memorial Rink",
+        "emoji": "🦉",
+        "color": "#faf7fe",
         "town": "Everett",
         "address": "25 Elm St, Everett, MA 02149",
         "lat": 42.41206,
@@ -512,11 +561,9 @@
           "calendarKeys": [
             "sre~01~wSsAAAAAAAA~_jw"
           ]
-        },
-        "emoji": "🦉",
-        "color": "#faf7fe"
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 192,
       "openIceCount": 0,
       "ok": true,
@@ -526,6 +573,8 @@
       "rink": {
         "id": "steriti-boston",
         "name": "Steriti Memorial Rink",
+        "emoji": "🍝",
+        "color": "#fef7f8",
         "town": "Boston (North End)",
         "address": "561 Commercial St, Boston, MA 02109",
         "lat": 42.3683,
@@ -535,17 +584,75 @@
         "website": "https://www.mass.gov/locations/steriti-memorial-rink",
         "scheduleUrl": "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule",
         "operator": "DCR",
+        "notes": "Hours from the last published DCR 2025–26 schedule. Public skate typically starts the Friday after Thanksgiving; stick time is cancelled during school vacation weeks.",
         "source": {
-          "kind": "document-vision",
-          "documentUrls": [
-            "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule"
-          ],
-          "hints": "Only use the section headed 'Steriti - Boston'. Ignore all other rinks on the page. 'Public stick time' is DCR public hockey / stick time. Respect the season dates and the public skating start date given in the page overview; if the page says closed for the season and no upcoming season dates are listed, return no events."
-        },
-        "emoji": "🍝",
-        "color": "#fef7f8"
+          "kind": "weekly-hours",
+          "seasonStart": "2026-11-28",
+          "seasonEnd": "2027-04-11",
+          "sessions": [
+            {
+              "title": "Public Skating",
+              "days": [
+                0
+              ],
+              "start": "15:00",
+              "end": "18:50"
+            },
+            {
+              "title": "Public Skating",
+              "days": [
+                1,
+                2,
+                4
+              ],
+              "start": "12:00",
+              "end": "14:20"
+            },
+            {
+              "title": "Public Skating",
+              "days": [
+                3
+              ],
+              "start": "12:00",
+              "end": "14:50"
+            },
+            {
+              "title": "Public Skating",
+              "days": [
+                5
+              ],
+              "start": "12:00",
+              "end": "15:50"
+            },
+            {
+              "title": "Public Skating",
+              "days": [
+                5
+              ],
+              "start": "19:00",
+              "end": "21:50"
+            },
+            {
+              "title": "Public Skating",
+              "days": [
+                6
+              ],
+              "start": "16:00",
+              "end": "21:50"
+            },
+            {
+              "title": "Public Stick Time",
+              "days": [
+                3
+              ],
+              "start": "10:00",
+              "end": "11:50",
+              "skipSchoolVacations": true
+            }
+          ]
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 0,
       "openIceCount": 0,
       "ok": true,
@@ -555,6 +662,8 @@
       "rink": {
         "id": "cronin-revere",
         "name": "Cronin Memorial Rink",
+        "emoji": "🏖️",
+        "color": "#f5f6fe",
         "town": "Revere",
         "address": "850 Revere Beach Pkwy, Revere, MA 02151",
         "lat": 42.40344,
@@ -572,12 +681,10 @@
           "calendarKeys": [
             "sre~fc~fmcns~10ice"
           ]
-        },
-        "emoji": "🏖️",
-        "color": "#f5f6fe"
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
-      "eventCount": 366,
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
+      "eventCount": 501,
       "openIceCount": 0,
       "ok": true,
       "errors": []
@@ -586,6 +693,8 @@
       "rink": {
         "id": "reilly-brighton",
         "name": "Reilly Memorial Rink",
+        "emoji": "🦁",
+        "color": "#f5f9fe",
         "town": "Brighton",
         "address": "355 Chestnut Hill Ave, Brighton, MA 02135",
         "lat": 42.33644,
@@ -595,17 +704,44 @@
         "website": "https://www.mass.gov/locations/reilly-memorial-rink",
         "scheduleUrl": "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule",
         "operator": "DCR",
+        "notes": "Hours from the last published DCR 2025–26 schedule. Public skate typically starts the Friday after Thanksgiving; stick time is cancelled during school vacation weeks.",
         "source": {
-          "kind": "document-vision",
-          "documentUrls": [
-            "https://www.mass.gov/info-details/dcr-ice-skating-rink-schedule"
-          ],
-          "hints": "Only use the section headed 'Reilly - Brighton'. Ignore all other rinks on the page. 'Public stick time' is DCR public hockey / stick time. Respect the season dates and the public skating start date given in the page overview; if the page says closed for the season and no upcoming season dates are listed, return no events."
-        },
-        "emoji": "🦁",
-        "color": "#f5f9fe"
+          "kind": "weekly-hours",
+          "seasonStart": "2026-11-28",
+          "seasonEnd": "2027-04-11",
+          "sessions": [
+            {
+              "title": "Public Skating",
+              "days": [
+                0,
+                6
+              ],
+              "start": "14:00",
+              "end": "15:50"
+            },
+            {
+              "title": "Public Skating",
+              "days": [
+                2,
+                4,
+                5
+              ],
+              "start": "12:00",
+              "end": "13:50"
+            },
+            {
+              "title": "Public Stick Time",
+              "days": [
+                3
+              ],
+              "start": "12:00",
+              "end": "13:50",
+              "skipSchoolVacations": true
+            }
+          ]
+        }
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 0,
       "openIceCount": 0,
       "ok": true,
@@ -615,6 +751,8 @@
       "rink": {
         "id": "ristuccia-wilmington",
         "name": "MPG Arena (formerly Ristuccia)",
+        "emoji": "🐺",
+        "color": "#f5fefc",
         "town": "Wilmington",
         "address": "190 Main St, Wilmington, MA 01887",
         "lat": 42.55822,
@@ -625,24 +763,24 @@
         "operator": "MPG Arena",
         "source": {
           "kind": "link-only",
-          "reason": "No public schedule is published online."
+          "reason": "No machine-readable public calendar. Check wilmingtonyouthhockey.org for LTS/LTP sessions."
         },
-        "notes": "Private facility; no public stick & puck sessions are published.",
-        "emoji": "🐺",
-        "color": "#f5fefc"
+        "notes": "Private facility; no drop-in public calendar is published. Wilmington Youth Hockey runs learn-to-skate / learn-to-play by session."
       },
-      "fetchedAt": "2026-09-13T15:35:05.811Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 0,
       "openIceCount": 0,
       "ok": false,
       "errors": [
-        "No public schedule is published online."
+        "No machine-readable public calendar. Check wilmingtonyouthhockey.org for LTS/LTP sessions."
       ]
     },
     {
       "rink": {
         "id": "burbank-reading",
         "name": "Burbank Ice Arena",
+        "emoji": "📚",
+        "color": "#fafef7",
         "town": "Reading",
         "address": "51 Symonds Way, Reading, MA 01867",
         "lat": 42.5412,
@@ -659,20 +797,18 @@
             "https://www.burbankicearena.com/public-skating"
           ],
           "hints": "Burbank Ice Arena publishes weekly recurring Stick Practice (all ages stick & puck) and Public Skating times as text. Use the most recent schedule block on each page; if a schedule is labelled for a season (e.g. summer) that has clearly ended, still emit it as the best available weekly schedule but note it."
-        },
-        "emoji": "📚",
-        "color": "#fafef7"
+        }
       },
-      "fetchedAt": "2026-09-13T15:37:54.532Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "eventCount": 50,
       "openIceCount": 20,
       "nextOpenIce": {
         "title": "Stick Practice",
-        "start": "2026-09-13T15:00:00-04:00",
-        "end": "2026-09-13T15:50:00-04:00",
+        "start": "2026-09-15T10:00:00-04:00",
+        "end": "2026-09-15T11:30:00-04:00",
         "url": "https://www.burbankicearena.com/stick-practice",
-        "description": "Offered all year, including summers. Open to all ages and abilities; $15 per skater. Call 781-942-2271 to confirm because times may change on holidays and school-vacation weeks.",
-        "id": "burbank-reading-o3eg4r",
+        "description": "All ages and abilities; offered all year, including summers. Call 781-942-2271 to confirm.",
+        "id": "burbank-reading-7he1no",
         "rinkId": "burbank-reading",
         "category": "stick_puck",
         "classifiedBy": "rule"
@@ -681,6 +817,20 @@
       "errors": []
     }
   ],
+  "offerings": {
+    "stinkysocks": {
+      "fetchedAt": "2026-09-13T21:18:10.695Z",
+      "eventCount": 120,
+      "ok": true,
+      "errors": []
+    },
+    "clinics": {
+      "fetchedAt": "2026-09-13T21:18:10.695Z",
+      "eventCount": 26,
+      "ok": true,
+      "errors": []
+    }
+  },
   "programs": [
     {
       "program": {
@@ -695,7 +845,7 @@
           "homeLocationPattern": "^(arlington( 1| rink)?|ed burns.*)$"
         }
       },
-      "fetchedAt": "2026-09-13T19:32:34.120Z",
+      "fetchedAt": "2026-09-13T21:14:23.926Z",
       "teamCount": 25,
       "eventCount": 242,
       "homeEventCount": 154,

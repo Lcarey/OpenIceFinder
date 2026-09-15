@@ -2,6 +2,8 @@
   "rink": {
     "id": "belmont-sports-complex",
     "name": "Belmont Sports Complex (Viglirolo Rink)",
+    "emoji": "🦅",
+    "color": "#f7fef9",
     "town": "Belmont",
     "address": "20 Concord Ave, Belmont, MA 02478",
     "lat": 42.39096,
@@ -17,11 +19,9 @@
       "programIds": [
         29877
       ]
-    },
-    "emoji": "🦅",
-    "color": "#f7fef9"
+    }
   },
-  "fetchedAt": "2026-09-13T15:35:05.811Z",
+  "fetchedAt": "2026-09-13T21:14:23.926Z",
   "rangeStart": "2026-09-13T04:00:00.000Z",
   "rangeEnd": "2026-10-18T04:00:00.000Z",
   "events": [

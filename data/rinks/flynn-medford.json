@@ -2,6 +2,8 @@
   "rink": {
     "id": "flynn-medford",
     "name": "Flynn Rink (LoConte Memorial)",
+    "emoji": "🦊",
+    "color": "#faf5fe",
     "town": "Medford",
     "address": "300 Elm St, Medford, MA 02155",
     "lat": 42.43841,
@@ -19,11 +21,9 @@
       "sessions": {
         "8": "Hockey Lesson Walk-On"
       }
-    },
-    "emoji": "🦊",
-    "color": "#faf5fe"
+    }
   },
-  "fetchedAt": "2026-09-13T15:37:54.532Z",
+  "fetchedAt": "2026-09-13T21:18:10.695Z",
   "rangeStart": "2026-09-13T04:00:00.000Z",
   "rangeEnd": "2026-10-18T04:00:00.000Z",
   "events": [

@@ -2,6 +2,8 @@
   "rink": {
     "id": "warrior-brighton",
     "name": "Warrior Ice Arena",
+    "emoji": "⚔️",
+    "color": "#fdf5fe",
     "town": "Brighton",
     "address": "90 Guest St, Brighton, MA 02135",
     "lat": 42.35748,
@@ -15,13 +17,12 @@
       "kind": "finnly",
       "baseUrl": "https://warrior.finnlyconnect.com",
       "scheduleIds": [
-        20
+        20,
+        19
       ]
-    },
-    "emoji": "⚔️",
-    "color": "#fdf5fe"
+    }
   },
-  "fetchedAt": "2026-09-13T15:35:05.811Z",
+  "fetchedAt": "2026-09-13T21:18:10.695Z",
   "rangeStart": "2026-09-13T04:00:00.000Z",
   "rangeEnd": "2026-10-18T04:00:00.000Z",
   "events": [
@@ -35,6 +36,17 @@
       "id": "warrior-brighton-1ipq09f",
       "rinkId": "warrior-brighton",
       "category": "public_hockey",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - SCORE Hockey",
+      "start": "2026-09-13T09:30:00-04:00",
+      "end": "2026-09-13T10:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-dbwzed",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
       "classifiedBy": "rule"
     },
     {
@@ -59,6 +71,40 @@
       "id": "warrior-brighton-1f1mgcy",
       "rinkId": "warrior-brighton",
       "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-09-13T14:00:00-04:00",
+      "end": "2026-09-13T18:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-vsqy30",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-09-13T18:30:00-04:00",
+      "end": "2026-09-13T21:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: 2026 Women's League Summer/ Fall Solar Bears",
+      "id": "warrior-brighton-12aks10",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Private Ice Rental",
+      "start": "2026-09-14T06:00:00-04:00",
+      "end": "2026-09-14T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-3psc8h",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
       "classifiedBy": "rule"
     },
     {
@@ -98,6 +144,51 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Hockey Programs & Classes - Learn to Play Hockey",
+      "start": "2026-09-14T16:00:00-04:00",
+      "end": "2026-09-14T16:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Monday Learn To Play Hockey/ Mite Skills LTPH/ Mite Skills",
+      "id": "warrior-brighton-5t0wfz",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Allston Brighton Youth Hockey",
+      "start": "2026-09-14T17:00:00-04:00",
+      "end": "2026-09-14T18:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-c540az",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-09-14T19:00:00-04:00",
+      "end": "2026-09-14T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1kmgiof",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-09-14T21:00:00-04:00",
+      "end": "2026-09-14T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1qyuwud",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Freestyle",
       "start": "2026-09-15T06:00:00-04:00",
       "end": "2026-09-15T06:50:00-04:00",
@@ -107,6 +198,30 @@
       "id": "warrior-brighton-7ysird",
       "rinkId": "warrior-brighton",
       "category": "freestyle",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-09-15T07:00:00-04:00",
+      "end": "2026-09-15T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-1769x30",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-15T12:00:00-04:00",
+      "end": "2026-09-15T13:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-engvd2",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
       "classifiedBy": "rule"
     },
     {
@@ -134,6 +249,52 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-09-15T18:00:00-04:00",
+      "end": "2026-09-15T21:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-wevmeb",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-09-15T22:00:00-04:00",
+      "end": "2026-09-15T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1roalfi",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-09-16T07:00:00-04:00",
+      "end": "2026-09-16T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-pgihvs",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-16T10:00:00-04:00",
+      "end": "2026-09-16T11:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-1qqhleu",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Public Skating",
       "start": "2026-09-16T14:00:00-04:00",
       "end": "2026-09-16T14:50:00-04:00",
@@ -146,6 +307,39 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Contract Ice Rental - Allston Brighton Youth Hockey",
+      "start": "2026-09-16T17:00:00-04:00",
+      "end": "2026-09-16T18:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1nm3bp7",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-09-16T19:00:00-04:00",
+      "end": "2026-09-16T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-at4r4v",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-09-16T21:00:00-04:00",
+      "end": "2026-09-16T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-g3nvi5",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Freestyle",
       "start": "2026-09-17T06:00:00-04:00",
       "end": "2026-09-17T06:50:00-04:00",
@@ -155,6 +349,30 @@
       "id": "warrior-brighton-if0gd9",
       "rinkId": "warrior-brighton",
       "category": "freestyle",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-09-17T07:00:00-04:00",
+      "end": "2026-09-17T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-10ncqp0",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-17T13:00:00-04:00",
+      "end": "2026-09-17T14:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-11qhtc4",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
       "classifiedBy": "rule"
     },
     {
@@ -182,6 +400,52 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-09-17T17:00:00-04:00",
+      "end": "2026-09-17T21:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1gk6hnc",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-09-17T22:00:00-04:00",
+      "end": "2026-09-17T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1cimcmy",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Adult Skills",
+      "start": "2026-09-18T07:00:00-04:00",
+      "end": "2026-09-18T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: AM Adult Skills  Adult AM Skills",
+      "id": "warrior-brighton-16ds3yl",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-18T13:10:00-04:00",
+      "end": "2026-09-18T14:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-z0r01v",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Public Skating",
       "start": "2026-09-18T14:00:00-04:00",
       "end": "2026-09-18T14:50:00-04:00",
@@ -191,6 +455,53 @@
       "id": "warrior-brighton-p5ncme",
       "rinkId": "warrior-brighton",
       "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Learn to Play Hockey",
+      "start": "2026-09-18T16:00:00-04:00",
+      "end": "2026-09-18T16:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Friday Learn To Play Hockey/ Mite Skills Friday LTPH/ Mite Skills",
+      "id": "warrior-brighton-9xpu2r",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Friday Skills",
+      "start": "2026-09-18T17:00:00-04:00",
+      "end": "2026-09-18T17:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Friday Skills, Squirt/ Peewee/ Bantam Skills  Friday Skills",
+      "id": "warrior-brighton-1qbywhe",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-09-18T18:00:00-04:00",
+      "end": "2026-09-18T19:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-7qr5w2",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Adult Learn To Play Hockey",
+      "start": "2026-09-18T20:00:00-04:00",
+      "end": "2026-09-18T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Adult Learn To Play Hockey Adult LTPH",
+      "id": "warrior-brighton-1c3jc8v",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
       "classifiedBy": "rule"
     },
     {
@@ -230,6 +541,41 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-09-19T14:00:00-04:00",
+      "end": "2026-09-19T19:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-19toqhe",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-20T08:30:00-04:00",
+      "end": "2026-09-20T08:40:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-1gzs3k8",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-20T12:50:00-04:00",
+      "end": "2026-09-20T13:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-ntg04t",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Public Skating",
       "start": "2026-09-20T13:00:00-04:00",
       "end": "2026-09-20T13:50:00-04:00",
@@ -242,6 +588,29 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-09-20T14:00:00-04:00",
+      "end": "2026-09-20T18:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-e9475w",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-09-20T18:30:00-04:00",
+      "end": "2026-09-20T21:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: 2026 Women's League Summer/ Fall Solar Bears",
+      "id": "warrior-brighton-8mafwg",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Freestyle",
       "start": "2026-09-21T07:00:00-04:00",
       "end": "2026-09-21T07:50:00-04:00",
@@ -251,6 +620,18 @@
       "id": "warrior-brighton-1t0ca05",
       "rinkId": "warrior-brighton",
       "category": "freestyle",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-21T12:00:00-04:00",
+      "end": "2026-09-21T13:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-1p34cd2",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
       "classifiedBy": "rule"
     },
     {
@@ -278,6 +659,51 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Hockey Programs & Classes - Learn to Play Hockey",
+      "start": "2026-09-21T16:00:00-04:00",
+      "end": "2026-09-21T16:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Monday Learn To Play Hockey/ Mite Skills LTPH/ Mite Skills",
+      "id": "warrior-brighton-1rd44wn",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Allston Brighton Youth Hockey",
+      "start": "2026-09-21T17:00:00-04:00",
+      "end": "2026-09-21T18:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1tu5etz",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-09-21T19:00:00-04:00",
+      "end": "2026-09-21T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-13c2q6v",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-09-21T21:00:00-04:00",
+      "end": "2026-09-21T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-suwv5",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Freestyle",
       "start": "2026-09-22T06:00:00-04:00",
       "end": "2026-09-22T06:50:00-04:00",
@@ -287,6 +713,30 @@
       "id": "warrior-brighton-su7jpl",
       "rinkId": "warrior-brighton",
       "category": "freestyle",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-09-22T07:00:00-04:00",
+      "end": "2026-09-22T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-86xeok",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-22T13:00:00-04:00",
+      "end": "2026-09-22T14:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-3gks98",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
       "classifiedBy": "rule"
     },
     {
@@ -314,6 +764,40 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-09-22T18:00:00-04:00",
+      "end": "2026-09-22T21:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-q2lilz",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-09-22T22:00:00-04:00",
+      "end": "2026-09-22T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1htgq5u",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-09-23T07:00:00-04:00",
+      "end": "2026-09-23T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-rdr23k",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Public Skating",
       "start": "2026-09-23T13:00:00-04:00",
       "end": "2026-09-23T13:50:00-04:00",
@@ -326,6 +810,51 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Ice Maintenance",
+      "start": "2026-09-23T14:30:00-04:00",
+      "end": "2026-09-23T15:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-1fwuzab",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Allston Brighton Youth Hockey",
+      "start": "2026-09-23T17:00:00-04:00",
+      "end": "2026-09-23T18:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1cfwcsb",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-09-23T19:00:00-04:00",
+      "end": "2026-09-23T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-m4gzyj",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-09-23T21:00:00-04:00",
+      "end": "2026-09-23T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-12ua2cl",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Freestyle",
       "start": "2026-09-24T06:00:00-04:00",
       "end": "2026-09-24T06:50:00-04:00",
@@ -335,6 +864,30 @@
       "id": "warrior-brighton-i3a26h",
       "rinkId": "warrior-brighton",
       "category": "freestyle",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-09-24T07:00:00-04:00",
+      "end": "2026-09-24T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-15c165s",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-24T13:00:00-04:00",
+      "end": "2026-09-24T14:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-1fvccog",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
       "classifiedBy": "rule"
     },
     {
@@ -362,6 +915,52 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-09-24T17:00:00-04:00",
+      "end": "2026-09-24T21:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-btuyx0",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-09-24T22:00:00-04:00",
+      "end": "2026-09-24T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1qgwft6",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Adult Skills",
+      "start": "2026-09-25T07:00:00-04:00",
+      "end": "2026-09-25T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: AM Adult Skills  Adult AM Skills",
+      "id": "warrior-brighton-c0m9d",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-25T13:00:00-04:00",
+      "end": "2026-09-25T14:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-1ofv7r8",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Public Skating",
       "start": "2026-09-25T14:00:00-04:00",
       "end": "2026-09-25T14:50:00-04:00",
@@ -371,6 +970,53 @@
       "id": "warrior-brighton-e48g8i",
       "rinkId": "warrior-brighton",
       "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Learn to Play Hockey",
+      "start": "2026-09-25T16:00:00-04:00",
+      "end": "2026-09-25T16:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Friday Learn To Play Hockey/ Mite Skills Friday LTPH/ Mite Skills",
+      "id": "warrior-brighton-1ucb823",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Friday Skills",
+      "start": "2026-09-25T17:00:00-04:00",
+      "end": "2026-09-25T17:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Friday Skills, Squirt/ Peewee/ Bantam Skills  Friday Skills",
+      "id": "warrior-brighton-7n8e1q",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-09-25T18:00:00-04:00",
+      "end": "2026-09-25T19:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1cbxx8e",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Adult Learn To Play Hockey",
+      "start": "2026-09-25T20:00:00-04:00",
+      "end": "2026-09-25T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Adult Learn To Play Hockey Adult LTPH",
+      "id": "warrior-brighton-1jmbfjr",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
       "classifiedBy": "rule"
     },
     {
@@ -410,6 +1056,51 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Ice Maintenance",
+      "start": "2026-09-26T13:30:00-04:00",
+      "end": "2026-09-26T14:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-uudet1",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Stonehill College Women's Hockey",
+      "start": "2026-09-26T14:00:00-04:00",
+      "end": "2026-09-26T17:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1xv9ge3",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-09-26T18:00:00-04:00",
+      "end": "2026-09-26T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-u8md9q",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-27T12:40:00-04:00",
+      "end": "2026-09-27T13:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-1oxdude",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Public Skating",
       "start": "2026-09-27T13:00:00-04:00",
       "end": "2026-09-27T13:50:00-04:00",
@@ -419,6 +1110,29 @@
       "id": "warrior-brighton-1lti6cm",
       "rinkId": "warrior-brighton",
       "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-09-27T14:00:00-04:00",
+      "end": "2026-09-27T18:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1x78q6w",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-09-27T18:30:00-04:00",
+      "end": "2026-09-27T21:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: 2026 Women's League Summer/ Fall Solar Bears",
+      "id": "warrior-brighton-15q6yc0",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
       "classifiedBy": "rule"
     },
     {
@@ -443,6 +1157,18 @@
       "id": "warrior-brighton-dyp2c2",
       "rinkId": "warrior-brighton",
       "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-28T10:00:00-04:00",
+      "end": "2026-09-28T11:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-we8c5m",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
       "classifiedBy": "rule"
     },
     {
@@ -482,6 +1208,51 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Hockey Programs & Classes - Learn to Play Hockey",
+      "start": "2026-09-28T16:00:00-04:00",
+      "end": "2026-09-28T16:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Monday Learn To Play Hockey/ Mite Skills LTPH/ Mite Skills",
+      "id": "warrior-brighton-1fhq5lr",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Allston Brighton Youth Hockey",
+      "start": "2026-09-28T17:00:00-04:00",
+      "end": "2026-09-28T18:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-17famfv",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-09-28T19:00:00-04:00",
+      "end": "2026-09-28T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-f5xsi7",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-09-28T21:00:00-04:00",
+      "end": "2026-09-28T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-ns283d",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Freestyle",
       "start": "2026-09-29T06:00:00-04:00",
       "end": "2026-09-29T06:50:00-04:00",
@@ -491,6 +1262,30 @@
       "id": "warrior-brighton-fsk9",
       "rinkId": "warrior-brighton",
       "category": "freestyle",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-09-29T07:00:00-04:00",
+      "end": "2026-09-29T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-j2ul2k",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-29T10:00:00-04:00",
+      "end": "2026-09-29T11:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-1dlinmu",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
       "classifiedBy": "rule"
     },
     {
@@ -518,6 +1313,52 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-09-29T18:00:00-04:00",
+      "end": "2026-09-29T21:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1330pn7",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-09-29T22:00:00-04:00",
+      "end": "2026-09-29T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-r6wx7m",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-09-30T07:00:00-04:00",
+      "end": "2026-09-30T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-y1i3xc",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-09-30T13:00:00-04:00",
+      "end": "2026-09-30T14:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-19aeu98",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Public Skating",
       "start": "2026-09-30T14:00:00-04:00",
       "end": "2026-09-30T14:50:00-04:00",
@@ -527,6 +1368,167 @@
       "id": "warrior-brighton-l5psbu",
       "rinkId": "warrior-brighton",
       "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Allston Brighton Youth Hockey",
+      "start": "2026-09-30T17:00:00-04:00",
+      "end": "2026-09-30T18:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-4g4gq7",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-09-30T19:00:00-04:00",
+      "end": "2026-09-30T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-q57v6z",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-09-30T21:00:00-04:00",
+      "end": "2026-09-30T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-4xz9id",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-10-01T07:00:00-04:00",
+      "end": "2026-10-01T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-1me8obc",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-10-01T12:45:00-04:00",
+      "end": "2026-10-01T14:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-dccg6m",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Resourceo Options Inc",
+      "start": "2026-10-01T15:00:00-04:00",
+      "end": "2026-10-01T15:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-x8d8zn",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-10-01T17:00:00-04:00",
+      "end": "2026-10-01T21:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1hjcp4k",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-10-01T22:00:00-04:00",
+      "end": "2026-10-01T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1qnx9v2",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Adult Skills",
+      "start": "2026-10-02T07:00:00-04:00",
+      "end": "2026-10-02T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: AM Adult Skills  Adult AM Skills",
+      "id": "warrior-brighton-51wrup",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-10-02T10:30:00-04:00",
+      "end": "2026-10-02T11:30:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-fwj9h2",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Learn to Play Hockey",
+      "start": "2026-10-02T16:00:00-04:00",
+      "end": "2026-10-02T16:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Friday Learn To Play Hockey/ Mite Skills Friday LTPH/ Mite Skills",
+      "id": "warrior-brighton-5957p3",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Friday Skills",
+      "start": "2026-10-02T17:00:00-04:00",
+      "end": "2026-10-02T17:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Friday Skills, Squirt/ Peewee/ Bantam Skills  Friday Skills",
+      "id": "warrior-brighton-14v68ni",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-10-02T18:00:00-04:00",
+      "end": "2026-10-02T19:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1hv58i2",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Adult Learn To Play Hockey",
+      "start": "2026-10-02T20:00:00-04:00",
+      "end": "2026-10-02T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Adult Learn To Play Hockey Adult LTPH",
+      "id": "warrior-brighton-9f8lwv",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
       "classifiedBy": "rule"
     },
     {
@@ -542,6 +1544,17 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-10-03T13:00:00-04:00",
+      "end": "2026-10-03T16:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-15c2u4l",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Public Skating",
       "start": "2026-10-03T16:30:00-04:00",
       "end": "2026-10-03T17:50:00-04:00",
@@ -551,6 +1564,28 @@
       "id": "warrior-brighton-1nc1unc",
       "rinkId": "warrior-brighton",
       "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Stonehill College Men's Hockey",
+      "start": "2026-10-03T18:00:00-04:00",
+      "end": "2026-10-03T21:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1mydlji",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-10-04T08:00:00-04:00",
+      "end": "2026-10-04T09:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-pbi6xl",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
       "classifiedBy": "rule"
     },
     {
@@ -566,6 +1601,304 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-10-04T14:00:00-04:00",
+      "end": "2026-10-04T18:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-13l45iw",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-10-04T18:30:00-04:00",
+      "end": "2026-10-04T21:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: 2026 Women's League Summer/ Fall Solar Bears",
+      "id": "warrior-brighton-krt1kc",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-10-05T11:45:00-04:00",
+      "end": "2026-10-05T13:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-1hgwiqi",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Learn to Play Hockey",
+      "start": "2026-10-05T16:00:00-04:00",
+      "end": "2026-10-05T16:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Monday Learn To Play Hockey/ Mite Skills LTPH/ Mite Skills",
+      "id": "warrior-brighton-1sopu9r",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-10-05T17:00:00-04:00",
+      "end": "2026-10-05T18:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-zhwrhs",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-10-05T19:00:00-04:00",
+      "end": "2026-10-05T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1jolw9j",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-10-05T21:00:00-04:00",
+      "end": "2026-10-05T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-mzen91",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - John Farrell",
+      "start": "2026-10-06T06:00:00-04:00",
+      "end": "2026-10-06T06:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1qgp2wt",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-10-06T07:00:00-04:00",
+      "end": "2026-10-06T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-1fdsbzo",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-10-06T12:40:00-04:00",
+      "end": "2026-10-06T13:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-w6242e",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-10-06T18:00:00-04:00",
+      "end": "2026-10-06T21:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1bfmcsn",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-10-06T22:00:00-04:00",
+      "end": "2026-10-06T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1hzobci",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-10-07T07:00:00-04:00",
+      "end": "2026-10-07T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-z9e09k",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-10-07T12:40:00-04:00",
+      "end": "2026-10-07T13:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-13bd43q",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Franciscan Children's Hospital",
+      "start": "2026-10-07T16:00:00-04:00",
+      "end": "2026-10-07T16:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1plh6sb",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Allston Brighton Youth Hockey",
+      "start": "2026-10-07T17:00:00-04:00",
+      "end": "2026-10-07T18:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-11u7b2z",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-10-07T19:00:00-04:00",
+      "end": "2026-10-07T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1hamp73",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-10-07T21:00:00-04:00",
+      "end": "2026-10-07T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-130hnj9",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-10-08T07:00:00-04:00",
+      "end": "2026-10-08T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-14m6z98",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-10-08T11:45:00-04:00",
+      "end": "2026-10-08T13:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-1po0fm",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-10-08T17:00:00-04:00",
+      "end": "2026-10-08T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-3x5q35",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-10-08T22:00:00-04:00",
+      "end": "2026-10-08T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-42chom",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Adult Skills",
+      "start": "2026-10-09T07:00:00-04:00",
+      "end": "2026-10-09T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: AM Adult Skills  Adult AM Skills",
+      "id": "warrior-brighton-eayq59",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Learn to Play Hockey",
+      "start": "2026-10-09T16:00:00-04:00",
+      "end": "2026-10-09T16:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Friday Learn To Play Hockey/ Mite Skills Friday LTPH/ Mite Skills",
+      "id": "warrior-brighton-1no2ln",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Friday Skills",
+      "start": "2026-10-09T17:00:00-04:00",
+      "end": "2026-10-09T17:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Friday Skills, Squirt/ Peewee/ Bantam Skills  Friday Skills",
+      "id": "warrior-brighton-h71lea",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Stonehill College Men's Hockey",
+      "start": "2026-10-09T18:00:00-04:00",
+      "end": "2026-10-09T21:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1uvmuoq",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Public Skating",
       "start": "2026-10-10T12:30:00-04:00",
       "end": "2026-10-10T13:50:00-04:00",
@@ -578,6 +1911,52 @@
       "classifiedBy": "rule"
     },
     {
+      "title": "Ice Maintenance",
+      "start": "2026-10-10T17:30:00-04:00",
+      "end": "2026-10-10T18:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-57xi1d",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Stonehill College Men's Hockey",
+      "start": "2026-10-10T18:00:00-04:00",
+      "end": "2026-10-10T21:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-7r6fbi",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - SCORE Hockey",
+      "start": "2026-10-11T08:00:00-04:00",
+      "end": "2026-10-11T09:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-17i4rat",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-10-11T12:40:00-04:00",
+      "end": "2026-10-11T13:00:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-439sgu",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
       "title": "Public Skating",
       "start": "2026-10-11T13:00:00-04:00",
       "end": "2026-10-11T13:50:00-04:00",
@@ -587,6 +1966,338 @@
       "id": "warrior-brighton-1rao85m",
       "rinkId": "warrior-brighton",
       "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-10-11T14:00:00-04:00",
+      "end": "2026-10-11T18:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1hua1gw",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-10-11T18:30:00-04:00",
+      "end": "2026-10-11T21:20:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: 2026 Women's League Summer/ Fall Solar Bears",
+      "id": "warrior-brighton-1kri5h0",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-10-12T10:30:00-04:00",
+      "end": "2026-10-12T11:30:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-gqq25m",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Learn to Play Hockey",
+      "start": "2026-10-12T16:00:00-04:00",
+      "end": "2026-10-12T16:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Monday Learn To Play Hockey/ Mite Skills LTPH/ Mite Skills",
+      "id": "warrior-brighton-1mjd5bz",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Allston Brighton Youth Hockey",
+      "start": "2026-10-12T17:00:00-04:00",
+      "end": "2026-10-12T18:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-18j7djf",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-10-12T19:00:00-04:00",
+      "end": "2026-10-12T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-evadab",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-10-12T21:00:00-04:00",
+      "end": "2026-10-12T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-ym9xc1",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - John Farrell",
+      "start": "2026-10-13T06:00:00-04:00",
+      "end": "2026-10-13T06:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-yvts15",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-10-13T07:00:00-04:00",
+      "end": "2026-10-13T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-19mui24",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-10-13T10:30:00-04:00",
+      "end": "2026-10-13T11:30:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-qhmwje",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-10-13T18:00:00-04:00",
+      "end": "2026-10-13T21:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1pccx8b",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-10-13T22:00:00-04:00",
+      "end": "2026-10-13T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-i2y9zm",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-10-14T07:00:00-04:00",
+      "end": "2026-10-14T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-xn42fs",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-10-14T10:30:00-04:00",
+      "end": "2026-10-14T11:30:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-17tjjrq",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Franciscan Children's Hospital",
+      "start": "2026-10-14T16:00:00-04:00",
+      "end": "2026-10-14T16:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-bmfmx3",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Allston Brighton Youth Hockey",
+      "start": "2026-10-14T17:00:00-04:00",
+      "end": "2026-10-14T18:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-gtdtqv",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-10-14T19:00:00-04:00",
+      "end": "2026-10-14T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1ox6svj",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-10-14T21:00:00-04:00",
+      "end": "2026-10-14T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1t6kwkl",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - Adult Programming",
+      "start": "2026-10-15T07:00:00-04:00",
+      "end": "2026-10-15T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Warrior AM League Fall/ Winter 25-26 Blackhawks",
+      "id": "warrior-brighton-1cjvj28",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Ice Maintenance",
+      "start": "2026-10-15T10:30:00-04:00",
+      "end": "2026-10-15T11:30:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Ice Maintenance",
+      "id": "warrior-brighton-1bbk0su",
+      "rinkId": "warrior-brighton",
+      "category": "closed",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-10-15T17:00:00-04:00",
+      "end": "2026-10-15T21:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1cgso0o",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - StinkySocks Hockey",
+      "start": "2026-10-15T22:00:00-04:00",
+      "end": "2026-10-15T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1k13pde",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Adult Skills",
+      "start": "2026-10-16T07:00:00-04:00",
+      "end": "2026-10-16T07:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: AM Adult Skills  Adult AM Skills",
+      "id": "warrior-brighton-q8kedd",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Boston College Men's Varsity Hockey",
+      "start": "2026-10-16T11:00:00-04:00",
+      "end": "2026-10-16T11:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-1p0lgnt",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Boston College Men's Varsity Hockey",
+      "start": "2026-10-16T14:30:00-04:00",
+      "end": "2026-10-16T15:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-dkdfz3",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Learn to Play Hockey",
+      "start": "2026-10-16T16:00:00-04:00",
+      "end": "2026-10-16T16:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Friday Learn To Play Hockey/ Mite Skills Friday LTPH/ Mite Skills",
+      "id": "warrior-brighton-l6b0yj",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Friday Skills",
+      "start": "2026-10-16T17:00:00-04:00",
+      "end": "2026-10-16T17:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Friday Skills, Squirt/ Peewee/ Bantam Skills  Friday Skills",
+      "id": "warrior-brighton-d93iq2",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Brookline Youth Hockey",
+      "start": "2026-10-16T18:00:00-04:00",
+      "end": "2026-10-16T19:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-nk85hy",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Hockey Programs & Classes - WIA- Adult Learn To Play Hockey",
+      "start": "2026-10-16T20:00:00-04:00",
+      "end": "2026-10-16T20:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "description": "Activity: Adult Learn To Play Hockey Adult LTPH",
+      "id": "warrior-brighton-rj8n77",
+      "rinkId": "warrior-brighton",
+      "category": "learn_to_skate",
       "classifiedBy": "rule"
     },
     {
@@ -611,6 +2322,28 @@
       "id": "warrior-brighton-1uutgog",
       "rinkId": "warrior-brighton",
       "category": "public_skate",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Boston Junior Eagles",
+      "start": "2026-10-17T14:00:00-04:00",
+      "end": "2026-10-17T19:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-9qki3e",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
+      "classifiedBy": "rule"
+    },
+    {
+      "title": "Contract Ice Rental - Wentworth Club Hockey",
+      "start": "2026-10-17T20:00:00-04:00",
+      "end": "2026-10-17T22:50:00-04:00",
+      "surface": "Ice Rink- Full Sheet",
+      "url": "https://warrior.finnlyconnect.com/schedule/19",
+      "id": "warrior-brighton-hdrgw5",
+      "rinkId": "warrior-brighton",
+      "category": "private_rental",
       "classifiedBy": "rule"
     }
   ],

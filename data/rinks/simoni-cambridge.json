@@ -2,6 +2,8 @@
   "rink": {
     "id": "simoni-cambridge",
     "name": "Simoni Memorial Skating Arena",
+    "emoji": "🎓",
+    "color": "#fefdf7",
     "town": "Cambridge",
     "address": "155 Gore St, Cambridge, MA 02141",
     "lat": 42.37307,
@@ -19,11 +21,9 @@
       "calendarKeys": [
         "sre~fc~fmcns~13ice"
       ]
-    },
-    "emoji": "🎓",
-    "color": "#fefdf7"
+    }
   },
-  "fetchedAt": "2026-09-13T15:35:05.811Z",
+  "fetchedAt": "2026-09-13T21:14:23.926Z",
   "rangeStart": "2026-09-13T04:00:00.000Z",
   "rangeEnd": "2026-10-18T04:00:00.000Z",
   "events": [
@@ -3168,6 +3168,7 @@
       "end": "2026-10-17T21:50:00-04:00",
       "surface": "Cambridge - Ice Sheet",
       "url": "https://fmc.myhalix.io/pages/calendars.cambridge",
+      "description": "Catch Corner",
       "id": "simoni-cambridge-l1oymb",
       "rinkId": "simoni-cambridge",
       "category": "private_rental",
