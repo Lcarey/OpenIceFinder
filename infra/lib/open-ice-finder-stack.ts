@@ -170,7 +170,8 @@ function handler(event) {
       assumedBy: new iam.WebIdentityPrincipal(githubOidcArn, {
         StringEquals: {
           "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-          "token.actions.githubusercontent.com:sub": "repo:Lcarey/OpenIceFinder:ref:refs/heads/main",
+          // GitHub now mints sub as owner@id/repo@id so repo renames cannot steal the role.
+          "token.actions.githubusercontent.com:sub": "repo:Lcarey@7055619/OpenIceFinder@1368862512:ref:refs/heads/main",
         },
       }),
       maxSessionDuration: Duration.hours(1),

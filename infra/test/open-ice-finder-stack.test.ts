@@ -106,7 +106,7 @@ describe("OpenIceFinderStack", () => {
             Condition: Match.objectLike({
               StringEquals: Match.objectLike({
                 "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-                "token.actions.githubusercontent.com:sub": "repo:Lcarey/OpenIceFinder:ref:refs/heads/main",
+                "token.actions.githubusercontent.com:sub": "repo:Lcarey@7055619/OpenIceFinder@1368862512:ref:refs/heads/main",
               }),
             }),
           }),
