@@ -32,7 +32,7 @@ npm run dev                      # Vite dev server reading local data/
 
 Rinks whose schedules are only published as PDFs, images, or prose use the `document-vision` source, which sends the documents to an OpenAI vision model with a structured output schema. Rinks with no public schedule are `link-only` and appear in the index with an error note.
 
-Known limitation: `mass.gov` (DCR rinks: Emmons, Steriti, Reilly) returns HTTP 403 to AWS egress IPs, so those rinks only populate from local refreshes. Elite 9 also hides unpublished upcoming games from AWS, so `/rangers` upcoming games are scraped by `.github/workflows/refresh-rangers.yml` on a GitHub-hosted runner (needs `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` repo secrets) and uploaded to S3.
+Known limitation: `mass.gov` (DCR rinks: Emmons, Steriti, Reilly) returns HTTP 403 to AWS egress IPs, so those rinks only populate from local refreshes. Elite 9 also hides unpublished upcoming games from AWS, so `/rangers` upcoming games are scraped by `.github/workflows/refresh-rangers.yml` on a GitHub-hosted runner. The workflow assumes IAM role `OpenIceFinderGitHubRangersRefresh` via GitHub OIDC (no access keys in the repo).
 
 ## Validation
 

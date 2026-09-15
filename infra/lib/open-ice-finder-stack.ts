@@ -158,10 +158,38 @@ function handler(event) {
       targets: [new targets.LambdaFunction(refreshFunction, { retryAttempts: 1 })],
     });
 
+    const githubOidcArn = Stack.of(this).formatArn({
+      service: "iam",
+      region: "",
+      resource: "oidc-provider",
+      resourceName: "token.actions.githubusercontent.com",
+    });
+    const rangersGithubRole = new iam.Role(this, "GitHubRangersRefreshRole", {
+      roleName: "OpenIceFinderGitHubRangersRefresh",
+      description: "GitHub Actions publishes data/rangers.json via OIDC; no long-lived access keys.",
+      assumedBy: new iam.WebIdentityPrincipal(githubOidcArn, {
+        StringEquals: {
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          "token.actions.githubusercontent.com:sub": "repo:Lcarey/OpenIceFinder:ref:refs/heads/main",
+        },
+      }),
+      maxSessionDuration: Duration.hours(1),
+    });
+    webBucket.grantPut(rangersGithubRole, "data/rangers.json");
+    rangersGithubRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: ["cloudfront:CreateInvalidation"],
+        resources: [
+          Stack.of(this).formatArn({ service: "cloudfront", region: "", resource: "distribution", resourceName: distribution.distributionId }),
+        ],
+      }),
+    );
+
     new CfnOutput(this, "AppUrl", { value: `https://${distribution.distributionDomainName}` });
     new CfnOutput(this, "BucketName", { value: webBucket.bucketName });
     new CfnOutput(this, "DistributionId", { value: distribution.distributionId });
     new CfnOutput(this, "RefreshFunctionName", { value: refreshFunction.functionName });
     new CfnOutput(this, "OpenAiApiKeySecretArn", { value: openAiApiKeySecret.secretArn });
+    new CfnOutput(this, "GitHubRangersRefreshRoleArn", { value: rangersGithubRole.roleArn });
   }
 }

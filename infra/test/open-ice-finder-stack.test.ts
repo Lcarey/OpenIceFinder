@@ -89,8 +89,29 @@ describe("OpenIceFinderStack", () => {
   it("keeps the OpenAI secret and exposes the expected outputs", () => {
     const template = synthTemplate();
     template.hasResource("AWS::SecretsManager::Secret", { DeletionPolicy: "Retain" });
-    for (const key of ["AppUrl", "BucketName", "DistributionId", "RefreshFunctionName", "OpenAiApiKeySecretArn"]) {
+    for (const key of ["AppUrl", "BucketName", "DistributionId", "RefreshFunctionName", "OpenAiApiKeySecretArn", "GitHubRangersRefreshRoleArn"]) {
       assert.ok(template.findOutputs(key)[key], `missing output ${key}`);
     }
+  });
+
+  it("lets GitHub Actions on main assume an OIDC role that can put rangers.json", () => {
+    const template = synthTemplate();
+    template.hasResourceProperties("AWS::IAM::Role", {
+      RoleName: "OpenIceFinderGitHubRangersRefresh",
+      AssumeRolePolicyDocument: {
+        Statement: Match.arrayWith([
+          Match.objectLike({
+            Action: "sts:AssumeRoleWithWebIdentity",
+            Effect: "Allow",
+            Condition: Match.objectLike({
+              StringEquals: Match.objectLike({
+                "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+                "token.actions.githubusercontent.com:sub": "repo:Lcarey/OpenIceFinder:ref:refs/heads/main",
+              }),
+            }),
+          }),
+        ]),
+      },
+    });
   });
 });
