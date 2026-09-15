@@ -307,6 +307,10 @@ export interface RangersStandingRow {
   rank: number;
   record: RangersRecord;
   isUs: boolean;
+  /** USA 10U MyHockeyRankings listing rank, when published. */
+  mhrRank?: number;
+  /** Team page on myhockeyrankings.com for this Elite 9 club. */
+  mhrUrl?: string;
 }
 
 export interface RangersPlayedGame {

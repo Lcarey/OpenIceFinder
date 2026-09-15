@@ -1,4 +1,5 @@
 import type { RangersBelief, RangersBeliefLevel, RangersFeed, RangersPlayedGame, RangersScoutCard, RangersStandingRow } from "@openice/shared";
+import { formatMhrRank, matchRangersMhrTeam, rangersMhrUrl } from "@openice/shared";
 import { CalendarDays, Check, ChevronDown, ExternalLink, Home, Link2, MapPin, Shield } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { loadRangers } from "../api";
@@ -166,6 +167,26 @@ function ScoutSheet({ card, index, id }: { card: RangersScoutCard; index: number
   );
 }
 
+function mhrFor(row: RangersStandingRow): { url?: string; label: string; rank?: number } {
+  const matched = matchRangersMhrTeam(row.name) ?? matchRangersMhrTeam(row.shortName);
+  return {
+    url: row.mhrUrl ?? (matched ? rangersMhrUrl(matched.id) : undefined),
+    label: formatMhrRank(row.mhrRank),
+    rank: row.mhrRank,
+  };
+}
+
+function MhrValue({ row }: { row: RangersStandingRow }) {
+  const { url, label, rank } = mhrFor(row);
+  const aria = rank && rank > 0 ? `MyHockeyRankings rank ${rank}` : "MyHockeyRankings (rank not released)";
+  if (!url) return label;
+  return (
+    <a href={url} target="_blank" rel="noreferrer" aria-label={aria}>
+      {label}
+    </a>
+  );
+}
+
 function ordinal(n: number): string {
   const v = n % 100;
   if (v >= 11 && v <= 13) return "th";
@@ -212,6 +233,9 @@ function Standings({ rows }: { rows: RangersStandingRow[] }) {
               <span className="tape-standings-name">{row.shortName}</span>
               <span className="tape-standings-rec">{recordLine(row.record)}</span>
               <span className="tape-standings-pts">{row.record.points}</span>
+              <span className="tape-standings-mhr">
+                <MhrValue row={row} />
+              </span>
             </li>
           ))}
         </ul>
@@ -224,6 +248,9 @@ function Standings({ rows }: { rows: RangersStandingRow[] }) {
               <tr>
                 <th>#</th>
                 <th>Team</th>
+                <th>
+                  <abbr title="MyHockeyRankings USA 10U ranking">MHR</abbr>
+                </th>
                 <th>GP</th>
                 <th>W–L–T</th>
                 <th>PTS</th>
@@ -237,6 +264,9 @@ function Standings({ rows }: { rows: RangersStandingRow[] }) {
                 <tr key={row.teamId} className={row.isUs ? "us" : undefined}>
                   <td>{row.rank}</td>
                   <td>{row.shortName}</td>
+                  <td>
+                    <MhrValue row={row} />
+                  </td>
                   <td>{row.record.gp}</td>
                   <td>{recordLine(row.record)}</td>
                   <td>{row.record.points}</td>

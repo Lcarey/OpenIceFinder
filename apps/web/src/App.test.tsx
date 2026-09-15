@@ -242,6 +242,11 @@ describe("App", () => {
     await waitFor(() => expect(writeText).toHaveBeenCalledWith("http://localhost/rangers#winter-club"));
     expect(screen.getByRole("button", { name: "Copied" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /2016 White/i })).toBeInTheDocument();
+    if (!screen.queryByRole("columnheader", { name: "MHR" })) {
+      fireEvent.click(screen.getByRole("button", { name: /2016 White/i }));
+    }
+    expect(screen.getByRole("columnheader", { name: "MHR" })).toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: "MyHockeyRankings (rank not released)" }).length).toBeGreaterThan(0);
     expect(screen.queryByRole("navigation", { name: "Views" })).not.toBeInTheDocument();
   });
 });

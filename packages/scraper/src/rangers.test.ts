@@ -383,6 +383,7 @@ describe("refreshRangers", () => {
     const calls: Array<{ path: string; teamId?: string }> = [];
     const feed = await refreshRangers({
       now: new Date("2026-09-14T16:00:00Z"),
+      fetchMhrHtml: async () => "",
       post: async <T>(path: string, body: unknown) => {
         const teamId = (body as { TeamID?: string }).TeamID;
         calls.push({ path, teamId });
@@ -432,6 +433,9 @@ describe("refreshRangers", () => {
     expect(feed.upcoming).toHaveLength(5);
     expect(feed.upcoming.map((c) => c.opponent.teamId)).toEqual(["902", "814", "924", "975", "852"]);
     expect(feed.errors).toEqual([]);
+    expect(feed.team.mhrUrl).toBe("https://myhockeyrankings.com/team-info/1116/2026");
+    expect(feed.team.mhrRank).toBeUndefined();
+    expect(feed.standings.find((row) => row.shortName.includes("Winter Club"))?.mhrUrl).toContain("32702");
   });
 });
 

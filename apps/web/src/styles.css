@@ -1328,7 +1328,7 @@ body:has(.tape-shell) {
 
 .tape-standings-strip li {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   grid-template-rows: auto auto;
   column-gap: 8px;
   row-gap: 2px;
@@ -1355,14 +1355,34 @@ body:has(.tape-shell) {
   white-space: nowrap;
 }
 
+.tape-standings-mhr {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+
 .tape-standings-rec,
-.tape-standings-pts {
+.tape-standings-pts,
+.tape-standings-mhr {
   font-variant-numeric: tabular-nums;
   color: rgba(238, 243, 251, 0.72);
 }
 
-.tape-standings-pts {
+.tape-standings-pts,
+.tape-standings-mhr {
   text-align: right;
+}
+
+.tape-table a,
+.tape-standings-mhr a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.tape-table abbr {
+  text-decoration: none;
+  cursor: help;
 }
 
 .tape-table-wrap {
@@ -1371,7 +1391,7 @@ body:has(.tape-shell) {
 
 .tape-table {
   width: 100%;
-  min-width: 520px;
+  min-width: 560px;
   border-collapse: collapse;
   font-variant-numeric: tabular-nums;
   font-size: 0.88rem;
@@ -1671,8 +1691,8 @@ body:has(.tape-shell) {
     grid-template-columns: 1fr;
   }
 
-  .tape-table th:nth-child(n + 6),
-  .tape-table td:nth-child(n + 6) {
+  .tape-table th:nth-last-child(-n + 3),
+  .tape-table td:nth-last-child(-n + 3) {
     display: none;
   }
 

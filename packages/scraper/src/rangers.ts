@@ -14,6 +14,7 @@ import {
 } from "@openice/shared";
 import { stripTags } from "./html.js";
 import { fetchJson, httpFetch } from "./http.js";
+import { attachMhrToFeed, fetchMhrRanks } from "./mhr.js";
 
 export const RANGERS_STANDINGS_URL = "https://www.elite9hockey.com/pages/standings/boys-2026-27/";
 export const RANGERS_SCHEDULE_URL = "https://www.elite9hockey.com/pages/schedules/boys-2026-27-schedule/";
@@ -83,6 +84,7 @@ export interface RefreshRangersOptions {
   upcomingCount?: number;
   log?: (message: string) => void;
   post?: RangersPost;
+  fetchMhrHtml?: (url: string) => Promise<string>;
 }
 
 function num(value: number | string | undefined): number {
@@ -716,6 +718,8 @@ export async function refreshRangers(options: RefreshRangersOptions = {}): Promi
   );
 
   const feed = buildRangersFeed({ standings, ourSchedule, opponentSchedules, fetchedAt, now, upcomingCount: options.upcomingCount, errors });
-  log(`rangers: ${feed.team.name} ${formatRecord(feed.team.record)} · ${feed.upcoming.length} upcoming`);
-  return feed;
+  const ranks = await fetchMhrRanks({ standings: feed.standings, fetchHtml: options.fetchMhrHtml, log });
+  const withMhr = attachMhrToFeed(feed, ranks);
+  log(`rangers: ${withMhr.team.name} ${formatRecord(withMhr.team.record)} · ${withMhr.upcoming.length} upcoming`);
+  return withMhr;
 }
