@@ -82,7 +82,7 @@ describe("OpenIceFinderStack", () => {
       CachePolicyConfig: Match.objectLike({ DefaultTTL: 60, MaxTTL: 600 }),
     });
     template.hasResourceProperties("AWS::CloudFront::Function", {
-      FunctionCode: Match.stringLikeRegexp("/data/"),
+      FunctionCode: Match.stringLikeRegexp("/rangers.html"),
     });
   });
 

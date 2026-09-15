@@ -4,8 +4,30 @@ import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
 import { defineConfig, type Plugin } from "vite";
 
-const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
+const webDir = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(webDir, "..", "..");
 const dataDir = path.join(repoRoot, "data");
+
+/** Serve `rangers.html` at `/rangers` so the tab title and link preview match production. */
+function rangersHtmlPlugin(): Plugin {
+  const rewrite = (req: { url?: string }, _res: unknown, next: () => void) => {
+    const raw = req.url ?? "";
+    const q = raw.indexOf("?");
+    const path = q >= 0 ? raw.slice(0, q) : raw;
+    const qs = q >= 0 ? raw.slice(q) : "";
+    if (path === "/rangers" || path === "/rangers/") req.url = `/rangers.html${qs}`;
+    next();
+  };
+  return {
+    name: "openice-rangers-html",
+    configureServer(server) {
+      server.middlewares.use(rewrite);
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use(rewrite);
+    },
+  };
+}
 
 /** Serve the locally refreshed `data/` directory at `/data/*` during dev and preview. */
 function localDataPlugin(): Plugin {
@@ -35,8 +57,16 @@ function localDataPlugin(): Plugin {
 }
 
 export default defineConfig({
-  plugins: [react(), localDataPlugin()],
+  plugins: [react(), rangersHtmlPlugin(), localDataPlugin()],
   server: { port: 5174, strictPort: true },
   preview: { port: 4174, strictPort: true },
-  build: { sourcemap: true },
+  build: {
+    sourcemap: true,
+    rollupOptions: {
+      input: {
+        main: path.join(webDir, "index.html"),
+        rangers: path.join(webDir, "rangers.html"),
+      },
+    },
+  },
 });

@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { GetObjectCommand, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
-import type { ClassificationTable, OfferingsFeed, ProgramFeed, RinkFeed, RinkIndex } from "@openice/shared";
+import type { ClassificationTable, OfferingsFeed, ProgramFeed, RangersFeed, RinkFeed, RinkIndex } from "@openice/shared";
 
 export interface FeedStore {
   readClassifications(): Promise<ClassificationTable | undefined>;
@@ -11,6 +11,8 @@ export interface FeedStore {
   readProgramFeed(programId: string): Promise<ProgramFeed | undefined>;
   writeIndex(index: RinkIndex): Promise<void>;
   writeOfferings(feed: OfferingsFeed): Promise<void>;
+  writeRangers(feed: RangersFeed): Promise<void>;
+  readRangers(): Promise<RangersFeed | undefined>;
 }
 
 const JSON_INDENT = 2;
@@ -58,6 +60,18 @@ export class LocalStore implements FeedStore {
 
   writeOfferings(feed: OfferingsFeed): Promise<void> {
     return this.write(`offerings/${feed.id}.json`, feed);
+  }
+
+  writeRangers(feed: RangersFeed): Promise<void> {
+    return this.write("rangers.json", feed);
+  }
+
+  async readRangers(): Promise<RangersFeed | undefined> {
+    try {
+      return JSON.parse(await readFile(path.join(this.dir, "rangers.json"), "utf8")) as RangersFeed;
+    } catch {
+      return undefined;
+    }
   }
 }
 
@@ -125,6 +139,21 @@ export class S3Store implements FeedStore {
   writeOfferings(feed: OfferingsFeed): Promise<void> {
     return this.put(`offerings/${feed.id}.json`, feed, "public, max-age=60");
   }
+
+  writeRangers(feed: RangersFeed): Promise<void> {
+    return this.put("rangers.json", feed, "public, max-age=60");
+  }
+
+  async readRangers(): Promise<RangersFeed | undefined> {
+    try {
+      const res = await this.client.send(new GetObjectCommand({ Bucket: this.bucket, Key: `${this.prefix}rangers.json` }));
+      const body = await res.Body?.transformToString();
+      return body ? (JSON.parse(body) as RangersFeed) : undefined;
+    } catch (error) {
+      if ((error as { name?: string }).name === "NoSuchKey") return undefined;
+      throw error;
+    }
+  }
 }
 
 export async function persistResult(
@@ -134,10 +163,12 @@ export async function persistResult(
   table: ClassificationTable,
   programFeeds: ProgramFeed[] = [],
   offeringFeeds: OfferingsFeed[] = [],
+  rangersFeed: RangersFeed | null = null,
 ): Promise<void> {
   for (const feed of feeds) await store.writeFeed(feed);
   for (const feed of programFeeds) await store.writeProgramFeed(feed);
   for (const feed of offeringFeeds) await store.writeOfferings(feed);
+  if (rangersFeed) await store.writeRangers(rangersFeed);
   await store.writeIndex(index);
   await store.writeClassifications(table);
 }

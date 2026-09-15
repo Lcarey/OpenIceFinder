@@ -280,3 +280,93 @@ export interface ClassificationTable {
   version: 1;
   entries: ClassificationEntry[];
 }
+
+/** W-L-T plus goals for a youth hockey team in an Elite 9 standings group. */
+export interface RangersRecord {
+  gp: number;
+  wins: number;
+  losses: number;
+  ties: number;
+  points: number;
+  gf: number;
+  ga: number;
+  gd: number;
+  streak: string;
+  lastFive: string;
+}
+
+export type RangersResult = "W" | "L" | "T";
+export type RangersBeliefLevel = "steal" | "toss_up" | "uphill" | "long_shot";
+
+export interface RangersStandingRow {
+  teamId: string;
+  name: string;
+  shortName: string;
+  division: string;
+  logo?: string;
+  rank: number;
+  record: RangersRecord;
+  isUs: boolean;
+}
+
+export interface RangersPlayedGame {
+  date: string;
+  start?: string;
+  opponentId: string;
+  opponentName: string;
+  result: RangersResult;
+  ourScore: number;
+  theirScore: number;
+  isHome: boolean;
+  location: string;
+  rink: string;
+}
+
+export interface RangersUpcomingGame {
+  date: string;
+  start?: string;
+  opponentId: string;
+  opponentName: string;
+  isHome: boolean;
+  location: string;
+  rink: string;
+}
+
+export interface RangersBelief {
+  level: RangersBeliefLevel;
+  /** Short label for the lamp, e.g. "Gettable". */
+  label: string;
+  /** 0–100 scouting score; not a prediction market. */
+  score: number;
+  why: string[];
+  blurb: string;
+  /** ISO time the grade was computed. */
+  gradedAt?: string;
+  /** Our GP when the grade was computed. */
+  sampleGp?: number;
+}
+
+export interface RangersScoutCard {
+  opponent: RangersStandingRow;
+  game: RangersUpcomingGame;
+  beaten: RangersPlayedGame[];
+  lostTo: RangersPlayedGame[];
+  tied: RangersPlayedGame[];
+  /** Games this opponent plays before they see us. */
+  warmup: RangersUpcomingGame[];
+  prior?: RangersPlayedGame;
+  belief: RangersBelief;
+}
+
+/** Hidden /rangers page feed: 2016 Boston Jr. Rangers scouting tape from Elite 9. */
+export interface RangersFeed {
+  fetchedAt: string;
+  sourceUrl: string;
+  scheduleUrl: string;
+  seasonLabel: string;
+  team: RangersStandingRow;
+  standings: RangersStandingRow[];
+  recent: RangersPlayedGame[];
+  upcoming: RangersScoutCard[];
+  errors: string[];
+}

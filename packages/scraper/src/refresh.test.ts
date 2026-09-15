@@ -63,5 +63,6 @@ describe("refreshAll", () => {
     expect(indexB.nextOpenIce?.title).toBe("Adult Stick & Puck");
     expect(indexB.ok).toBe(true);
     expect(result.index.rinks[0]!.ok).toBe(false);
+    expect(result.rangersFeed).toBeNull();
   });
 });

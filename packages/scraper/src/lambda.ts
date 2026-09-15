@@ -3,6 +3,7 @@ import type { Context, ScheduledEvent } from "aws-lambda";
 import { Classifier, mergeTables } from "./classify.js";
 import { PROGRAMS, RINKS, SEED_CLASSIFICATIONS } from "./data.js";
 import { DEFAULT_OPENAI_MODEL, openAiClientProvider } from "./openai-client.js";
+import { reuseHiddenUpcoming } from "./rangers.js";
 import { refreshAll } from "./refresh.js";
 import { S3Store, persistResult } from "./storage.js";
 
@@ -19,6 +20,7 @@ export interface RefreshSummary {
   programEvents: number;
   offerings: number;
   offeringEvents: number;
+  rangers: boolean;
   failures: string[];
   learnedClassifications: number;
   invalidated: boolean;
@@ -49,7 +51,14 @@ export async function handler(event: Partial<ScheduledEvent> & RefreshEvent = {}
     log,
     previousProgramFeed: (id) => store.readProgramFeed(id),
   });
-  await persistResult(store, result.feeds, result.index, classifier.table, result.programFeeds, result.offeringFeeds);
+  if (result.rangersFeed) {
+    const scraped = result.rangersFeed.upcoming.length;
+    result.rangersFeed = reuseHiddenUpcoming(result.rangersFeed, await store.readRangers(), new Date());
+    if (result.rangersFeed.upcoming.length > scraped) {
+      log(`rangers: reused ${result.rangersFeed.upcoming.length} upcoming games the widget hid from this IP`);
+    }
+  }
+  await persistResult(store, result.feeds, result.index, classifier.table, result.programFeeds, result.offeringFeeds, result.rangersFeed);
 
   let invalidated = false;
   if (distributionId) {
@@ -71,10 +80,12 @@ export async function handler(event: Partial<ScheduledEvent> & RefreshEvent = {}
     programEvents: result.programFeeds.reduce((sum, f) => sum + f.events.length, 0),
     offerings: result.offeringFeeds.length,
     offeringEvents: result.offeringFeeds.reduce((sum, f) => sum + f.offerings.length, 0),
+    rangers: Boolean(result.rangersFeed && result.rangersFeed.errors.length === 0),
     failures: [
       ...result.index.rinks.filter((r) => !r.ok).map((r) => `${r.rink.id}: ${r.errors.join("; ")}`),
       ...(result.index.programs ?? []).filter((p) => !p.ok).map((p) => `${p.program.id}: ${p.errors.join("; ")}`),
       ...Object.entries(result.index.offerings ?? {}).filter(([, e]) => !e.ok).map(([id, e]) => `${id}: ${e.errors.join("; ")}`),
+      ...(result.rangersFeed?.errors.length ? [`rangers: ${result.rangersFeed.errors.join("; ")}`] : []),
     ],
     learnedClassifications: classifier.added.length,
     invalidated,

@@ -1,0 +1,667 @@
+{
+  "fetchedAt": "2026-09-15T00:33:43.916Z",
+  "sourceUrl": "https://www.elite9hockey.com/pages/standings/boys-2026-27/",
+  "scheduleUrl": "https://www.elite9hockey.com/pages/schedules/boys-2026-27-schedule/",
+  "seasonLabel": "2026–27",
+  "team": {
+    "teamId": "999840797",
+    "name": "Boston Jr. Rangers 16 - Elite",
+    "shortName": "Jr. Rangers 16 - Elite",
+    "division": "2016 White",
+    "logo": "https://s3.amazonaws.com/valley-media/prod/4e89777e745d7a17951cd97e21e559eb_rangers.png",
+    "rank": 5,
+    "record": {
+      "gp": 1,
+      "wins": 0,
+      "losses": 1,
+      "ties": 0,
+      "points": 0,
+      "gf": 0,
+      "ga": 7,
+      "gd": -7,
+      "streak": "L 1",
+      "lastFive": "0-1-0"
+    },
+    "isUs": true
+  },
+  "standings": [
+    {
+      "teamId": "999840902",
+      "name": "Winter Club 16 - Elite",
+      "shortName": "Winter Club 16 - Elite",
+      "division": "2016 White",
+      "logo": "https://s3.amazonaws.com/valley-media/prod/af5558522041bf821086726537ba1687_LOVELLWC-150.png",
+      "rank": 1,
+      "record": {
+        "gp": 2,
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points": 2,
+        "gf": 13,
+        "ga": 3,
+        "gd": 10,
+        "streak": "L 1",
+        "lastFive": "1-1-0"
+      },
+      "isUs": false
+    },
+    {
+      "teamId": "999840814",
+      "name": "NH Avalanche 16 - Elite 2",
+      "shortName": "Avalanche 16 - Elite 2",
+      "division": "2016 White",
+      "logo": "https://s3.amazonaws.com/valley-media/prod/f6eaae063adad92cb50be748fa27bede_Nh-AVALANCHE-150.png",
+      "rank": 2,
+      "record": {
+        "gp": 1,
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points": 2,
+        "gf": 7,
+        "ga": 0,
+        "gd": 7,
+        "streak": "W 1",
+        "lastFive": "1-0-0"
+      },
+      "isUs": false
+    },
+    {
+      "teamId": "999840924",
+      "name": "Boston Jr. Bruins 16 - Elite",
+      "shortName": "Jr. Bruins 16 - Elite",
+      "division": "2016 White",
+      "logo": "https://s3.amazonaws.com/valley-media/prod/eb7714fda1e235ab20580be4f5d46183_JR-BRUINS-150.png",
+      "rank": 3,
+      "record": {
+        "gp": 1,
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points": 2,
+        "gf": 4,
+        "ga": 1,
+        "gd": 3,
+        "streak": "W 1",
+        "lastFive": "1-0-0"
+      },
+      "isUs": false
+    },
+    {
+      "teamId": "999840975",
+      "name": "Middlesex Icemen 16 - Elite",
+      "shortName": "Icemen 16 - Elite",
+      "division": "2016 White",
+      "logo": "https://s3.amazonaws.com/valley-media/prod/4f6266c93e25aa7a331774f09c6cd8e1_ICEMEN-150.png",
+      "rank": 4,
+      "record": {
+        "gp": 2,
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points": 2,
+        "gf": 4,
+        "ga": 6,
+        "gd": -2,
+        "streak": "W 1",
+        "lastFive": "1-1-0"
+      },
+      "isUs": false
+    },
+    {
+      "teamId": "999840797",
+      "name": "Boston Jr. Rangers 16 - Elite",
+      "shortName": "Jr. Rangers 16 - Elite",
+      "division": "2016 White",
+      "logo": "https://s3.amazonaws.com/valley-media/prod/4e89777e745d7a17951cd97e21e559eb_rangers.png",
+      "rank": 5,
+      "record": {
+        "gp": 1,
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points": 0,
+        "gf": 0,
+        "ga": 7,
+        "gd": -7,
+        "streak": "L 1",
+        "lastFive": "0-1-0"
+      },
+      "isUs": true
+    },
+    {
+      "teamId": "999840852",
+      "name": "Junior Railers 16 - Select 1",
+      "shortName": "Railers 16 - Select 1",
+      "division": "2016 White",
+      "logo": "https://s3.amazonaws.com/valley-media/prod/daf327d061bd9692a554a5c67982dd9f_RAILERS-150-190.png",
+      "rank": 6,
+      "record": {
+        "gp": 1,
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points": 0,
+        "gf": 0,
+        "ga": 11,
+        "gd": -11,
+        "streak": "L 1",
+        "lastFive": "0-1-0"
+      },
+      "isUs": false
+    }
+  ],
+  "recent": [
+    {
+      "date": "2026-09-13",
+      "start": "2026-09-13T14:30:00-04:00",
+      "opponentId": "999840814",
+      "opponentName": "Avalanche 16 - E 2",
+      "result": "L",
+      "ourScore": 0,
+      "theirScore": 7,
+      "isHome": false,
+      "location": "Ice Den",
+      "rink": "Hooksett"
+    }
+  ],
+  "upcoming": [
+    {
+      "opponent": {
+        "teamId": "999840902",
+        "name": "Winter Club 16 - Elite",
+        "shortName": "Winter Club 16 - Elite",
+        "division": "2016 White",
+        "logo": "https://s3.amazonaws.com/valley-media/prod/af5558522041bf821086726537ba1687_LOVELLWC-150.png",
+        "rank": 1,
+        "record": {
+          "gp": 2,
+          "wins": 1,
+          "losses": 1,
+          "ties": 0,
+          "points": 2,
+          "gf": 13,
+          "ga": 3,
+          "gd": 10,
+          "streak": "L 1",
+          "lastFive": "1-1-0"
+        },
+        "isUs": false
+      },
+      "game": {
+        "date": "2026-09-27",
+        "start": "2026-09-27T11:10:00-04:00",
+        "opponentId": "999840902",
+        "opponentName": "Winter Club 16 - E",
+        "isHome": false,
+        "location": "Pilgrim C",
+        "rink": "Hingham"
+      },
+      "beaten": [
+        {
+          "date": "2026-09-12",
+          "start": "2026-09-12T17:20:00-04:00",
+          "opponentId": "999840852",
+          "opponentName": "Railers 16 - S 1",
+          "result": "W",
+          "ourScore": 11,
+          "theirScore": 0,
+          "isHome": true,
+          "location": "Pilgrim C",
+          "rink": "Hingham"
+        }
+      ],
+      "lostTo": [
+        {
+          "date": "2026-09-13",
+          "start": "2026-09-13T16:00:00-04:00",
+          "opponentId": "999840975",
+          "opponentName": "Icemen 16 - E",
+          "result": "L",
+          "ourScore": 2,
+          "theirScore": 3,
+          "isHome": false,
+          "location": "East Boston",
+          "rink": "East Boston"
+        }
+      ],
+      "tied": [],
+      "warmup": [
+        {
+          "date": "2026-09-19",
+          "start": "2026-09-19T17:30:00-04:00",
+          "opponentId": "999840814",
+          "opponentName": "Avalanche 16 - E 2",
+          "isHome": false,
+          "location": "Ice Den",
+          "rink": "Hooksett"
+        },
+        {
+          "date": "2026-09-26",
+          "start": "2026-09-26T19:00:00-04:00",
+          "opponentId": "999840924",
+          "opponentName": "Jr. Bruins 16 - E",
+          "isHome": false,
+          "location": "Brighton",
+          "rink": "Brighton"
+        }
+      ],
+      "belief": {
+        "level": "steal",
+        "label": "Gettable",
+        "score": 55,
+        "why": [
+          "They have a loss on the board (Icemen 16 - E 2-3).",
+          "Someone already took them to a one-goal game.",
+          "Road game at Hingham.",
+          "We have not scored yet this season."
+        ],
+        "blurb": "Winter Club 16 - Elite dropped a one-goal game to Icemen 16 - E (3–2). That's the opening. They also flattened Railers 16 - S 1 11-0, so the window is real, not wide. We're on the road at Hingham.",
+        "gradedAt": "2026-09-15T00:33:43.916Z",
+        "sampleGp": 1
+      }
+    },
+    {
+      "opponent": {
+        "teamId": "999840814",
+        "name": "NH Avalanche 16 - Elite 2",
+        "shortName": "Avalanche 16 - Elite 2",
+        "division": "2016 White",
+        "logo": "https://s3.amazonaws.com/valley-media/prod/f6eaae063adad92cb50be748fa27bede_Nh-AVALANCHE-150.png",
+        "rank": 2,
+        "record": {
+          "gp": 1,
+          "wins": 1,
+          "losses": 0,
+          "ties": 0,
+          "points": 2,
+          "gf": 7,
+          "ga": 0,
+          "gd": 7,
+          "streak": "W 1",
+          "lastFive": "1-0-0"
+        },
+        "isUs": false
+      },
+      "game": {
+        "date": "2026-10-04",
+        "start": "2026-10-04T10:00:00-04:00",
+        "opponentId": "999840814",
+        "opponentName": "Avalanche 16 - E 2",
+        "isHome": false,
+        "location": "Ice Den",
+        "rink": "Hooksett"
+      },
+      "beaten": [
+        {
+          "date": "2026-09-13",
+          "start": "2026-09-13T14:30:00-04:00",
+          "opponentId": "999840797",
+          "opponentName": "Jr. Rangers 16 - E",
+          "result": "W",
+          "ourScore": 7,
+          "theirScore": 0,
+          "isHome": true,
+          "location": "Ice Den",
+          "rink": "Hooksett"
+        }
+      ],
+      "lostTo": [],
+      "tied": [],
+      "warmup": [
+        {
+          "date": "2026-09-19",
+          "start": "2026-09-19T17:30:00-04:00",
+          "opponentId": "999840902",
+          "opponentName": "Winter Club 16 - E",
+          "isHome": true,
+          "location": "Ice Den",
+          "rink": "Hooksett"
+        },
+        {
+          "date": "2026-09-20",
+          "start": "2026-09-20T10:00:00-04:00",
+          "opponentId": "999840975",
+          "opponentName": "Icemen 16 - E",
+          "isHome": true,
+          "location": "Ice Den",
+          "rink": "Hooksett"
+        },
+        {
+          "date": "2026-09-26",
+          "start": "2026-09-26T10:00:00-04:00",
+          "opponentId": "999840852",
+          "opponentName": "Railers 16 - S 1",
+          "isHome": true,
+          "location": "Ice Den",
+          "rink": "Hooksett"
+        }
+      ],
+      "prior": {
+        "date": "2026-09-13",
+        "start": "2026-09-13T14:30:00-04:00",
+        "opponentId": "999840814",
+        "opponentName": "Avalanche 16 - E 2",
+        "result": "L",
+        "ourScore": 0,
+        "theirScore": 7,
+        "isHome": false,
+        "location": "Ice Den",
+        "rink": "Hooksett"
+      },
+      "belief": {
+        "level": "long_shot",
+        "label": "Tall order",
+        "score": 6,
+        "why": [
+          "Undefeated so far — small sample, still undefeated.",
+          "They already beat us 7–0.",
+          "Road game at Hooksett.",
+          "We have not scored yet this season."
+        ],
+        "blurb": "Rematch. They hung a 7–0 on us last time. We're on the road at Hooksett.",
+        "gradedAt": "2026-09-15T00:33:43.916Z",
+        "sampleGp": 1
+      }
+    },
+    {
+      "opponent": {
+        "teamId": "999840924",
+        "name": "Boston Jr. Bruins 16 - Elite",
+        "shortName": "Jr. Bruins 16 - Elite",
+        "division": "2016 White",
+        "logo": "https://s3.amazonaws.com/valley-media/prod/eb7714fda1e235ab20580be4f5d46183_JR-BRUINS-150.png",
+        "rank": 3,
+        "record": {
+          "gp": 1,
+          "wins": 1,
+          "losses": 0,
+          "ties": 0,
+          "points": 2,
+          "gf": 4,
+          "ga": 1,
+          "gd": 3,
+          "streak": "W 1",
+          "lastFive": "1-0-0"
+        },
+        "isUs": false
+      },
+      "game": {
+        "date": "2026-10-18",
+        "start": "2026-10-18T18:20:00-04:00",
+        "opponentId": "999840924",
+        "opponentName": "Jr. Bruins 16 - E",
+        "isHome": true,
+        "location": "Tewksbury 2",
+        "rink": "Tewksbury"
+      },
+      "beaten": [
+        {
+          "date": "2026-09-12",
+          "start": "2026-09-12T17:30:00-04:00",
+          "opponentId": "999840975",
+          "opponentName": "Icemen 16 - E",
+          "result": "W",
+          "ourScore": 4,
+          "theirScore": 1,
+          "isHome": true,
+          "location": "Brighton",
+          "rink": "Brighton"
+        }
+      ],
+      "lostTo": [],
+      "tied": [],
+      "warmup": [
+        {
+          "date": "2026-09-19",
+          "start": "2026-09-19T19:00:00-04:00",
+          "opponentId": "999840852",
+          "opponentName": "Railers 16 - S 1",
+          "isHome": true,
+          "location": "Brighton",
+          "rink": "Brighton"
+        },
+        {
+          "date": "2026-09-20",
+          "start": "2026-09-20T16:10:00-04:00",
+          "opponentId": "999840852",
+          "opponentName": "Railers 16 - S 1",
+          "isHome": false,
+          "location": "Worcester Gray",
+          "rink": "Worcester Ice Center"
+        },
+        {
+          "date": "2026-09-26",
+          "start": "2026-09-26T19:00:00-04:00",
+          "opponentId": "999840902",
+          "opponentName": "Winter Club 16 - E",
+          "isHome": true,
+          "location": "Brighton",
+          "rink": "Brighton"
+        }
+      ],
+      "belief": {
+        "level": "uphill",
+        "label": "Uphill",
+        "score": 31,
+        "why": [
+          "Undefeated so far — small sample, still undefeated.",
+          "Home ice (Tewksbury).",
+          "We have not scored yet this season."
+        ],
+        "blurb": "Undefeated. Wins: Icemen 16 - E 4-1. Home ice, Tewksbury.",
+        "gradedAt": "2026-09-15T00:33:43.916Z",
+        "sampleGp": 1
+      }
+    },
+    {
+      "opponent": {
+        "teamId": "999840975",
+        "name": "Middlesex Icemen 16 - Elite",
+        "shortName": "Icemen 16 - Elite",
+        "division": "2016 White",
+        "logo": "https://s3.amazonaws.com/valley-media/prod/4f6266c93e25aa7a331774f09c6cd8e1_ICEMEN-150.png",
+        "rank": 4,
+        "record": {
+          "gp": 2,
+          "wins": 1,
+          "losses": 1,
+          "ties": 0,
+          "points": 2,
+          "gf": 4,
+          "ga": 6,
+          "gd": -2,
+          "streak": "W 1",
+          "lastFive": "1-1-0"
+        },
+        "isUs": false
+      },
+      "game": {
+        "date": "2026-10-25",
+        "start": "2026-10-25T16:00:00-04:00",
+        "opponentId": "999840975",
+        "opponentName": "Icemen 16 - E",
+        "isHome": false,
+        "location": "East Boston",
+        "rink": "East Boston"
+      },
+      "beaten": [
+        {
+          "date": "2026-09-13",
+          "start": "2026-09-13T16:00:00-04:00",
+          "opponentId": "999840902",
+          "opponentName": "Winter Club 16 - E",
+          "result": "W",
+          "ourScore": 3,
+          "theirScore": 2,
+          "isHome": true,
+          "location": "East Boston",
+          "rink": "East Boston"
+        }
+      ],
+      "lostTo": [
+        {
+          "date": "2026-09-12",
+          "start": "2026-09-12T17:30:00-04:00",
+          "opponentId": "999840924",
+          "opponentName": "Jr. Bruins 16 - E",
+          "result": "L",
+          "ourScore": 1,
+          "theirScore": 4,
+          "isHome": false,
+          "location": "Brighton",
+          "rink": "Brighton"
+        }
+      ],
+      "tied": [],
+      "warmup": [
+        {
+          "date": "2026-09-20",
+          "start": "2026-09-20T10:00:00-04:00",
+          "opponentId": "999840814",
+          "opponentName": "Avalanche 16 - E 2",
+          "isHome": false,
+          "location": "Ice Den",
+          "rink": "Hooksett"
+        },
+        {
+          "date": "2026-09-27",
+          "start": "2026-09-27T16:00:00-04:00",
+          "opponentId": "999840852",
+          "opponentName": "Railers 16 - S 1",
+          "isHome": true,
+          "location": "East Boston",
+          "rink": "East Boston"
+        },
+        {
+          "date": "2026-10-03",
+          "start": "2026-10-03T13:20:00-04:00",
+          "opponentId": "999840852",
+          "opponentName": "Railers 16 - S 1",
+          "isHome": false,
+          "location": "Worcester Blue",
+          "rink": "Worcester Ice Center"
+        }
+      ],
+      "belief": {
+        "level": "toss_up",
+        "label": "Even-ish",
+        "score": 45,
+        "why": [
+          "They have a loss on the board (Jr. Bruins 16 - E 1-4).",
+          "Road game at East Boston.",
+          "We have not scored yet this season."
+        ],
+        "blurb": "Someone's gotten to them: Jr. Bruins 16 - E 1-4. We're on the road at East Boston.",
+        "gradedAt": "2026-09-15T00:33:43.916Z",
+        "sampleGp": 1
+      }
+    },
+    {
+      "opponent": {
+        "teamId": "999840902",
+        "name": "Winter Club 16 - Elite",
+        "shortName": "Winter Club 16 - Elite",
+        "division": "2016 White",
+        "logo": "https://s3.amazonaws.com/valley-media/prod/af5558522041bf821086726537ba1687_LOVELLWC-150.png",
+        "rank": 1,
+        "record": {
+          "gp": 2,
+          "wins": 1,
+          "losses": 1,
+          "ties": 0,
+          "points": 2,
+          "gf": 13,
+          "ga": 3,
+          "gd": 10,
+          "streak": "L 1",
+          "lastFive": "1-1-0"
+        },
+        "isUs": false
+      },
+      "game": {
+        "date": "2026-10-31",
+        "start": "2026-10-31T18:40:00-04:00",
+        "opponentId": "999840902",
+        "opponentName": "Winter Club 16 - E",
+        "isHome": false,
+        "location": "Pilgrim C",
+        "rink": "Hingham"
+      },
+      "beaten": [
+        {
+          "date": "2026-09-12",
+          "start": "2026-09-12T17:20:00-04:00",
+          "opponentId": "999840852",
+          "opponentName": "Railers 16 - S 1",
+          "result": "W",
+          "ourScore": 11,
+          "theirScore": 0,
+          "isHome": true,
+          "location": "Pilgrim C",
+          "rink": "Hingham"
+        }
+      ],
+      "lostTo": [
+        {
+          "date": "2026-09-13",
+          "start": "2026-09-13T16:00:00-04:00",
+          "opponentId": "999840975",
+          "opponentName": "Icemen 16 - E",
+          "result": "L",
+          "ourScore": 2,
+          "theirScore": 3,
+          "isHome": false,
+          "location": "East Boston",
+          "rink": "East Boston"
+        }
+      ],
+      "tied": [],
+      "warmup": [
+        {
+          "date": "2026-09-19",
+          "start": "2026-09-19T17:30:00-04:00",
+          "opponentId": "999840814",
+          "opponentName": "Avalanche 16 - E 2",
+          "isHome": false,
+          "location": "Ice Den",
+          "rink": "Hooksett"
+        },
+        {
+          "date": "2026-09-26",
+          "start": "2026-09-26T19:00:00-04:00",
+          "opponentId": "999840924",
+          "opponentName": "Jr. Bruins 16 - E",
+          "isHome": false,
+          "location": "Brighton",
+          "rink": "Brighton"
+        },
+        {
+          "date": "2026-09-27",
+          "start": "2026-09-27T11:10:00-04:00",
+          "opponentId": "999840797",
+          "opponentName": "Jr. Rangers 16 - E",
+          "isHome": true,
+          "location": "Pilgrim C",
+          "rink": "Hingham"
+        }
+      ],
+      "belief": {
+        "level": "steal",
+        "label": "Gettable",
+        "score": 55,
+        "why": [
+          "They have a loss on the board (Icemen 16 - E 2-3).",
+          "Someone already took them to a one-goal game.",
+          "Road game at Hingham.",
+          "We have not scored yet this season."
+        ],
+        "blurb": "Winter Club 16 - Elite dropped a one-goal game to Icemen 16 - E (3–2). That's the opening. They also flattened Railers 16 - S 1 11-0, so the window is real, not wide. We're on the road at Hingham.",
+        "gradedAt": "2026-09-15T00:33:43.916Z",
+        "sampleGp": 1
+      }
+    }
+  ],
+  "errors": []
+}

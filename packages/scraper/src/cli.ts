@@ -12,6 +12,7 @@ import type { ClassificationTable, RinkIndex } from "@openice/shared";
 import { Classifier, mergeTables } from "./classify.js";
 import { PROGRAMS, RINKS, SEED_CLASSIFICATIONS } from "./data.js";
 import { DEFAULT_OPENAI_MODEL, openAiClientProvider } from "./openai-client.js";
+import { reuseHiddenUpcoming } from "./rangers.js";
 import { refreshAll } from "./refresh.js";
 import { LocalStore, persistResult } from "./storage.js";
 
@@ -41,6 +42,9 @@ async function main() {
   const classifier = new Classifier(table, { model, log, ...(useModel ? { openai } : {}) });
 
   const result = await refreshAll({ rinks, programs, classifier, openai, openaiModel: model, rangeDays: days, log, previousProgramFeed: (id) => store.readProgramFeed(id) });
+  if (result.rangersFeed) {
+    result.rangersFeed = reuseHiddenUpcoming(result.rangersFeed, await store.readRangers(), new Date());
+  }
   if (rinkFilter) {
     // Partial run: keep the other rinks' index entries.
     try {
@@ -57,7 +61,7 @@ async function main() {
       /* no existing index */
     }
   }
-  await persistResult(store, result.feeds, result.index, classifier.table, result.programFeeds, result.offeringFeeds);
+  await persistResult(store, result.feeds, result.index, classifier.table, result.programFeeds, result.offeringFeeds, result.rangersFeed);
 
   if (updateSeed && classifier.added.length > 0) {
     const seedFile = path.join(repoRoot, "data", "classifications.seed.json");
@@ -77,6 +81,11 @@ async function main() {
   }
   for (const [id, entry] of Object.entries(result.index.offerings ?? {})) {
     process.stdout.write(`${entry.ok ? "ok " : "ERR"} offerings:${id.padEnd(16)} ${String(entry.eventCount).padStart(4)} ev${entry.errors.length ? `  [${entry.errors[0]}]` : ""}\n`);
+  }
+  if (result.rangersFeed) {
+    const r = result.rangersFeed;
+    const rec = `${r.team.record.wins}-${r.team.record.losses}-${r.team.record.ties}`;
+    process.stdout.write(`${r.errors.length ? "ERR" : "ok "} rangers:${r.team.shortName.padEnd(22)} ${rec}  next:${r.upcoming.length}${r.errors.length ? `  [${r.errors[0]}]` : ""}\n`);
   }
   process.stdout.write(`\nWrote ${result.feeds.length} feeds to ${path.relative(repoRoot, outDir) || "."}\n`);
 }

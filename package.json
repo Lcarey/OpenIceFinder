@@ -18,6 +18,7 @@
     "test": "npm run test -w @openice/shared && npm run test -w @openice/scraper && npm run test -w @openice/web && npm run test -w @openice/infra",
     "synth": "npm run synth -w @openice/infra",
     "refresh:local": "npm run build:shared && node --import tsx packages/scraper/src/cli.ts",
+    "refresh:rangers": "npm run build:shared && node --import tsx packages/scraper/src/rangers-cli.ts",
     "rinks:build": "node --import tsx scripts/build-rinks.ts",
     "deploy": "./deploy.sh"
   },

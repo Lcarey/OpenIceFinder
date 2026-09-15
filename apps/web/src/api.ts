@@ -1,4 +1,4 @@
-import type { OfferingsCatalogId, OfferingsFeed, ProgramFeed, RinkFeed, RinkIndex } from "@openice/shared";
+import type { OfferingsCatalogId, OfferingsFeed, ProgramFeed, RangersFeed, RinkFeed, RinkIndex } from "@openice/shared";
 
 const DATA_BASE = "/data";
 
@@ -49,6 +49,10 @@ export async function loadOfferings(id: OfferingsCatalogId): Promise<OfferingsFe
   } catch {
     return null;
   }
+}
+
+export function loadRangers(): Promise<RangersFeed> {
+  return getJson<RangersFeed>("/rangers.json");
 }
 
 /** Load every rink feed listed in the index; failures become empty feeds with an error. */

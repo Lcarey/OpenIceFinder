@@ -111,7 +111,7 @@ aws s3 sync "$WEB_DIST/" "s3://$BUCKET_NAME/" \
 echo "Invalidating the SPA entry point..."
 aws cloudfront create-invalidation \
   --distribution-id "$DISTRIBUTION_ID" \
-  --paths "/" "/index.html" \
+  --paths "/" "/index.html" "/rangers" "/rangers.html" \
   --query "Invalidation.Id" \
   --output text >/dev/null
 

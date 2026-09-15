@@ -8,6 +8,7 @@ import {
   type OfferingsFeed,
   type Program,
   type ProgramFeed,
+  type RangersFeed,
   type RawEvent,
   type Rink,
   type RinkFeed,
@@ -19,6 +20,7 @@ import { fetchRinkEvents, type AdapterContext } from "./adapters/index.js";
 import type { Classifier, UnknownTitle } from "./classify.js";
 import { applyFmcClassOverlay, refreshOfferings, type OfferingsRefreshContext } from "./offerings/index.js";
 import { refreshPrograms, type RefreshProgramsOptions } from "./programs/index.js";
+import { refreshRangers } from "./rangers.js";
 
 export interface RefreshOptions {
   rinks: Rink[];
@@ -40,12 +42,15 @@ export interface RefreshOptions {
   previousProgramFeed?: RefreshProgramsOptions["previous"];
   /** Override offerings scrapers (tests). When `fetchEvents` is set and this is omitted, offerings are skipped. */
   fetchOfferings?: (ctx: OfferingsRefreshContext) => ReturnType<typeof refreshOfferings>;
+  /** Override the hidden /rangers Elite 9 scrape (tests). Skipped when `fetchEvents` is set unless this is provided. */
+  fetchRangers?: () => Promise<RangersFeed>;
 }
 
 export interface RefreshResult {
   feeds: RinkFeed[];
   programFeeds: ProgramFeed[];
   offeringFeeds: OfferingsFeed[];
+  rangersFeed: RangersFeed | null;
   index: RinkIndex;
 }
 
@@ -178,5 +183,36 @@ export async function refreshAll(options: RefreshOptions): Promise<RefreshResult
       };
     }
   }
-  return { feeds, programFeeds: programResult.feeds, offeringFeeds: offeringResult.feeds, index };
+
+  const shouldLoadRangers = Boolean(options.fetchRangers) || !options.fetchEvents;
+  let rangersFeed: RangersFeed | null = null;
+  if (shouldLoadRangers) {
+    try {
+      rangersFeed = await (options.fetchRangers ?? (() => refreshRangers({ now, log })))();
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      log(`rangers FAILED: ${message}`);
+      rangersFeed = {
+        fetchedAt,
+        sourceUrl: "https://www.elite9hockey.com/pages/standings/boys-2026-27/",
+        scheduleUrl: "https://www.elite9hockey.com/pages/schedules/boys-2026-27-schedule/",
+        seasonLabel: "2026–27",
+        team: {
+          teamId: "",
+          name: "Boston Jr. Rangers 16 - Elite",
+          shortName: "Jr. Rangers 16 - Elite",
+          division: "2016 White",
+          rank: 0,
+          record: { gp: 0, wins: 0, losses: 0, ties: 0, points: 0, gf: 0, ga: 0, gd: 0, streak: "", lastFive: "" },
+          isUs: true,
+        },
+        standings: [],
+        recent: [],
+        upcoming: [],
+        errors: [message],
+      };
+    }
+  }
+
+  return { feeds, programFeeds: programResult.feeds, offeringFeeds: offeringResult.feeds, rangersFeed, index };
 }

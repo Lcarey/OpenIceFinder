@@ -1,0 +1,41 @@
+name: Refresh Rangers forecast
+
+on:
+  schedule:
+    - cron: "20 11 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: refresh-rangers
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Scrape Elite 9 from the GitHub runner
+        run: npm run refresh:rangers
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: Publish rangers.json
+        env:
+          BUCKET: openicefinderstack-webbucket12880f5b-q4mot9fj5rou
+          DISTRIBUTION: E1W550PA7KZ48B
+        run: |
+          aws s3 cp data/rangers.json "s3://$BUCKET/data/rangers.json" \
+            --content-type "application/json; charset=utf-8" \
+            --cache-control "public, max-age=60"
+          aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION" --paths /data/rangers.json

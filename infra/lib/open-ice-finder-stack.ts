@@ -41,12 +41,16 @@ export class OpenIceFinderStack extends Stack {
     const staticOrigin = origins.S3BucketOrigin.withOriginAccessControl(webBucket);
 
     const spaRewrite = new cloudfront.Function(this, "SpaRewrite", {
-      comment: "Serve index.html for extensionless client-side routes",
+      comment: "Serve index.html for extensionless client-side routes; /rangers keeps its own preview HTML",
       code: cloudfront.FunctionCode.fromInline(`
 function handler(event) {
   var request = event.request;
   if (request.method === "GET" || request.method === "HEAD") {
     var uri = request.uri;
+    if (uri === "/rangers" || uri === "/rangers/") {
+      request.uri = "/rangers.html";
+      return request;
+    }
     if (uri.indexOf("/data/") !== 0) {
       var lastSegment = uri.substring(uri.lastIndexOf("/") + 1);
       if (lastSegment.indexOf(".") === -1) {
