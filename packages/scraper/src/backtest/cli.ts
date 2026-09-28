@@ -118,6 +118,20 @@ async function writeShippedModel(
   const idx: number[] = [];
   for (let i = 0; i < table.games.length; i++) if (table.priorHome[i]! >= 2 && table.priorAway[i]! >= 2) idx.push(i);
   const ordered = fitOrderedLogit(x, table.y, idx);
+  // 80% band for the goal differential: 10th and 90th percentiles of (actual − predicted), early and later games.
+  const band = (keep: (i: number) => boolean) => {
+    const res: number[] = [];
+    for (let i = 0; i < table.games.length; i++) {
+      if (!keep(i)) continue;
+      const g = table.games[i]!;
+      res.push(g.homeGoals - g.awayGoals - x[i]!);
+    }
+    res.sort((a, b) => a - b);
+    const q = (p: number) => res[Math.min(res.length - 1, Math.floor(p * res.length))]!;
+    return { q10: q(0.1), q90: q(0.9), games: res.length };
+  };
+  const minGames = (i: number) => Math.min(table.priorHome[i]!, table.priorAway[i]!);
+  const marginBand = { early: band((i) => minGames(i) < 5), later: band((i) => minGames(i) >= 5) };
   const mhr = mergeMhr(await readData<MhrSnapshot>("mhr-e9-2025-26.json"), await readData<MhrSnapshot>("mhr-usa-2025-26.json"));
   const sources = compactPriorSources(snapshot.seasonLabel, snapshot.games, mhr);
   const r4 = (v: number) => Math.round(v * 1e4) / 1e4;
@@ -131,6 +145,11 @@ export const SHIPPED_MODEL = {
   cap: 8,
   calibration: { intercept: ${r4(calibration.intercept)}, slope: ${r4(calibration.slope)}, games: ${calibration.games} },
   ordered: { slope: ${r4(ordered.slope)}, c1: ${r4(ordered.c1)}, c2: ${r4(ordered.c2)} },
+  /** 80% range of (actual − predicted) goal differential; "early" is before either team has five results. */
+  marginBand: {
+    early: { q10: ${r4(marginBand.early.q10)}, q90: ${r4(marginBand.early.q90)}, games: ${marginBand.early.games} },
+    later: { q10: ${r4(marginBand.later.q10)}, q90: ${r4(marginBand.later.q90)}, games: ${marginBand.later.games} },
+  },
   trainedOn: ${JSON.stringify(`Elite 9 ${snapshot.seasonLabel}, 2013–2016 birth years`)},
 } as const;
 

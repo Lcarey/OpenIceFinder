@@ -14,7 +14,7 @@ import {
 } from "@openice/shared";
 import type { BtGame } from "./backtest/games.js";
 import { identities, type TeamIdentity } from "./backtest/priors.js";
-import { fitBeliefModel, type MatchupPrediction } from "./belief-model.js";
+import { BELIEF_MODEL, fitBeliefModel, type MatchupPrediction } from "./belief-model.js";
 import { stripTags } from "./html.js";
 import { fetchJson, httpFetch } from "./http.js";
 import { attachMhrToFeed, fetchMhrRanks } from "./mhr.js";
@@ -593,7 +593,18 @@ export function buildBelief(input: {
     gradedAt: input.now.toISOString(),
     sampleGp: input.us.gp,
     ...(odds.outcome ? { outcome: { win: round3(odds.outcome.win), tie: round3(odds.outcome.tie), loss: round3(odds.outcome.loss) } } : {}),
+    margin: marginRange(odds),
   };
+}
+
+/** Our projected goal differential with last season's 80% miss band (early band before either side has five games). */
+export function marginRange(odds: BeliefOdds): { expected: number; low: number; high: number; coverage: number } {
+  const band = Math.min(odds.usGames, odds.themGames) < 5 ? BELIEF_MODEL.marginBand.early : BELIEF_MODEL.marginBand.later;
+  // Bands are measured from the home side; from our side they flip only in sign, and they are nearly symmetric.
+  const lowMiss = Math.min(band.q10, -band.q90);
+  const highMiss = Math.max(band.q90, -band.q10);
+  const half = (x: number) => Math.round(x * 2) / 2;
+  return { expected: half(odds.expectedMargin), low: half(odds.expectedMargin + lowMiss), high: half(odds.expectedMargin + highMiss), coverage: 0.8 };
 }
 
 function round3(x: number): number {

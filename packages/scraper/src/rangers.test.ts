@@ -396,11 +396,13 @@ describe("buildBelief", () => {
     expect(belief.blurb).toMatch(/^Close on paper/);
     expect(belief.blurb).toMatch(/one-goal game to Icemen/);
     expect(belief.sampleGp).toBe(6);
+    expect(belief.margin).toEqual({ expected: -0.5, low: -4.5, high: 4, coverage: 0.8 });
   });
 
   it("flags small samples", () => {
     const belief = buildBelief({ ...base, odds: { pUs: 0.2, expectedMargin: -2.5, usRating: -1, themRating: 1.3, usGames: 2, themGames: 6 } });
     expect(belief.level).toBe("uphill");
+    expect(belief.margin!.high - belief.margin!.low).toBeGreaterThan(9);
     expect(belief.why).toContain("Early grade: 2 game(s) on the smaller sample, so ratings are pulled toward average.");
     expect(belief.blurb).toMatch(/Winter Club rates 2\.3 goals a game better/);
   });

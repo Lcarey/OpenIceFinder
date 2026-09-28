@@ -210,7 +210,7 @@ describe("App", () => {
           ],
           tied: [],
           warmup: [{ date: "2026-09-19", opponentId: "814", opponentName: "Avalanche 16 - E 2", isHome: false, location: "Ice Den", rink: "Hooksett" }],
-          belief: { level: "steal" as const, label: "Gettable", score: 59, why: [], blurb: "Winter Club dropped a one-goal game to Icemen.", gradedAt: "2026-09-14T16:00:00.000Z", sampleGp: 1, outcome: { win: 0.52, tie: 0.14, loss: 0.34 } },
+          belief: { level: "steal" as const, label: "Gettable", score: 59, why: [], blurb: "Winter Club dropped a one-goal game to Icemen.", gradedAt: "2026-09-14T16:00:00.000Z", sampleGp: 1, outcome: { win: 0.52, tie: 0.14, loss: 0.34 }, margin: { expected: 0.5, low: -3.5, high: 4.5, coverage: 0.8 } },
         },
       ],
       errors: [],
@@ -237,6 +237,8 @@ describe("App", () => {
     expect(screen.getByText("Gettable")).toBeInTheDocument();
     expect(screen.getByText("Win 52%")).toBeInTheDocument();
     expect(screen.getByText("Tie 14%")).toBeInTheDocument();
+    expect(screen.getByText("+0.5")).toBeInTheDocument();
+    expect(screen.getByText("80% range −3.5 to +4.5")).toBeInTheDocument();
     expect(screen.getByText(/graded Sep 14 · 1 GP/i)).toBeInTheDocument();
     expect(screen.getByText("Before they see us").closest(".tape-warmup")).toHaveTextContent("Sep 19 @ Avalanche");
     expect(screen.queryByText(/Before they see us:.*Avalanche/)).not.toBeInTheDocument();

@@ -8,6 +8,11 @@ export const SHIPPED_MODEL = {
   cap: 8,
   calibration: { intercept: -0.0166, slope: 0.5221, games: 1650 },
   ordered: { slope: 0.5346, c1: -0.3038, c2: 0.3348 },
+  /** 80% range of (actual − predicted) goal differential; "early" is before either team has five results. */
+  marginBand: {
+    early: { q10: -4.7585, q90: 4.6708, games: 371 },
+    later: { q10: -3.979, q90: 4.1501, games: 1444 },
+  },
   trainedOn: "Elite 9 2025–26, 2013–2016 birth years",
 } as const;
 

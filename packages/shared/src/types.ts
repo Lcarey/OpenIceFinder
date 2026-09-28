@@ -350,6 +350,8 @@ export interface RangersBelief {
   sampleGp?: number;
   /** Win / tie / loss chances for us. */
   outcome?: { win: number; tie: number; loss: number };
+  /** Our projected goal differential and its 80% range (a tie is 0). */
+  margin?: { expected: number; low: number; high: number; coverage: number };
 }
 
 export interface RangersScoutCard {

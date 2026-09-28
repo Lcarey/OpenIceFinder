@@ -116,6 +116,38 @@ function OutcomeOdds({ outcome }: { outcome: NonNullable<RangersBelief["outcome"
   );
 }
 
+function goals(x: number): string {
+  if (x === 0) return "0";
+  return `${x > 0 ? "+" : "−"}${Math.abs(x).toFixed(1).replace(/\.0$/, "")}`;
+}
+
+function MarginRange({ margin }: { margin: NonNullable<RangersBelief["margin"]> }) {
+  const span = Math.max(10, Math.ceil(Math.max(Math.abs(margin.low), Math.abs(margin.high)) + 1));
+  const at = (x: number) => `${((x + span) / (2 * span)) * 100}%`;
+  return (
+    <div className="tape-margin">
+      <div className="tape-margin-head">
+        <span>
+          Projected goal differential <strong>{goals(margin.expected)}</strong>
+        </span>
+        <span className="dim">
+          {Math.round(margin.coverage * 100)}% range {goals(margin.low)} to {goals(margin.high)}
+        </span>
+      </div>
+      <div className="tape-margin-track" aria-hidden="true">
+        <span className="tape-margin-band" style={{ left: at(margin.low), width: `calc(${at(margin.high)} - ${at(margin.low)})` }} />
+        <span className="tape-margin-zero" style={{ left: at(0) }} />
+        <span className="tape-margin-dot" style={{ left: at(margin.expected) }} />
+      </div>
+      <div className="tape-margin-axis" aria-hidden="true">
+        <span>they win by {span}</span>
+        <span>tie</span>
+        <span>we win by {span}</span>
+      </div>
+    </div>
+  );
+}
+
 function ScoutSheet({ card, index, id }: { card: RangersScoutCard; index: number; id: string }) {
   const { opponent, game, beaten, lostTo, tied, warmup, belief } = card;
   const stamp = gradeStamp(belief);
@@ -152,6 +184,7 @@ function ScoutSheet({ card, index, id }: { card: RangersScoutCard; index: number
 
       <p className="tape-blurb">{belief.blurb}</p>
       {belief.outcome ? <OutcomeOdds outcome={belief.outcome} /> : null}
+      {belief.margin ? <MarginRange margin={belief.margin} /> : null}
 
       <div className="tape-columns">
         <section>
