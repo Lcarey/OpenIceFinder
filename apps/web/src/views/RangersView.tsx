@@ -98,6 +98,24 @@ function CopyGameLink({ id }: { id: string }) {
   );
 }
 
+function OutcomeOdds({ outcome }: { outcome: NonNullable<RangersBelief["outcome"]> }) {
+  const pct = (x: number) => `${Math.round(x * 100)}%`;
+  return (
+    <div className="tape-odds" aria-label={`Win ${pct(outcome.win)}, tie ${pct(outcome.tie)}, loss ${pct(outcome.loss)}`}>
+      <div className="tape-odds-bar" aria-hidden="true">
+        <span style={{ width: pct(outcome.win) }} />
+        <span style={{ width: pct(outcome.tie) }} />
+        <span style={{ width: pct(outcome.loss) }} />
+      </div>
+      <div className="tape-odds-labels">
+        <span>Win {pct(outcome.win)}</span>
+        <span>Tie {pct(outcome.tie)}</span>
+        <span>Loss {pct(outcome.loss)}</span>
+      </div>
+    </div>
+  );
+}
+
 function ScoutSheet({ card, index, id }: { card: RangersScoutCard; index: number; id: string }) {
   const { opponent, game, beaten, lostTo, tied, warmup, belief } = card;
   const stamp = gradeStamp(belief);
@@ -133,6 +151,7 @@ function ScoutSheet({ card, index, id }: { card: RangersScoutCard; index: number
       </header>
 
       <p className="tape-blurb">{belief.blurb}</p>
+      {belief.outcome ? <OutcomeOdds outcome={belief.outcome} /> : null}
 
       <div className="tape-columns">
         <section>

@@ -1,0 +1,883 @@
+{
+ "source": "https://myhockeyrankings.com",
+ "mhrYear": 2025,
+ "season": "2025-26",
+ "fetchedAt": "2026-09-28T17:11:58Z",
+ "divisions": [
+  {
+   "label": "E9HL 12U White - North",
+   "age": 12,
+   "url": "https://myhockeyrankings.com/division-info?d=38&y=2025",
+   "teams": [
+    {
+     "mhrId": 3634,
+     "name": "Boston Advantage (Elite) 11U AAA",
+     "record": "43-11-2",
+     "rating": 95.63
+    },
+    {
+     "mhrId": 1129,
+     "name": "Springfield Jr Thunderbirds (Elite) 12U AAA",
+     "record": "32-14-6",
+     "rating": 93.08
+    },
+    {
+     "mhrId": 27906,
+     "name": "Boston Americans 12U AAA",
+     "record": "28-18-7",
+     "rating": 92.57
+    },
+    {
+     "mhrId": 1474,
+     "name": "Greater Boston Jr Bruins 12U AAA",
+     "record": "25-13-7",
+     "rating": 92.33
+    },
+    {
+     "mhrId": 2238,
+     "name": "Boston Advantage (Elite) 12U AAA",
+     "record": "22-19-3",
+     "rating": 91.83
+    },
+    {
+     "mhrId": 16942,
+     "name": "Middlesex Icemen (Elite) 12U AAA",
+     "record": "22-25-5",
+     "rating": 91.64
+    },
+    {
+     "mhrId": 27618,
+     "name": "Cape Cod TA Seahawks 12U AAA",
+     "record": "26-17-8",
+     "rating": 90.64
+    },
+    {
+     "mhrId": 16743,
+     "name": "Worcester Jr Railers (Elite) 12U AAA",
+     "record": "12-21-5",
+     "rating": 89.5
+    }
+   ]
+  },
+  {
+   "label": "E9HL 12U White - South",
+   "age": 12,
+   "url": "https://myhockeyrankings.com/division-info?d=556&y=2025",
+   "teams": [
+    {
+     "mhrId": 1304,
+     "name": "Assabet Valley Patriots (Elite) 12U AAA",
+     "record": "17-16-6",
+     "rating": 90.05
+    },
+    {
+     "mhrId": 3072,
+     "name": "Casco Bay Mariners 12U AAA",
+     "record": "23-20-9",
+     "rating": 89.85
+    },
+    {
+     "mhrId": 1384,
+     "name": "Vermont Jr Catamounts (Elite) 12U AAA",
+     "record": "24-31-2",
+     "rating": 89.38
+    },
+    {
+     "mhrId": 1309,
+     "name": "East Coast Wizards (Elite) 12U AAA",
+     "record": "20-23-8",
+     "rating": 89.22
+    },
+    {
+     "mhrId": 7383,
+     "name": "95 Giants (Elite) 12U AAA",
+     "record": "16-24-5",
+     "rating": 88.34
+    },
+    {
+     "mhrId": 1339,
+     "name": "New Hampshire Avalanche (Elite) 12U AAA",
+     "record": "19-39-1",
+     "rating": 87.78
+    },
+    {
+     "mhrId": 1354,
+     "name": "Valley Jr Warriors (Elite) 12U AAA",
+     "record": "13-37-6",
+     "rating": 87.24
+    }
+   ]
+  },
+  {
+   "label": "E9HL 12U Blue",
+   "age": 12,
+   "url": "https://myhockeyrankings.com/division-info?d=3367&y=2025",
+   "teams": [
+    {
+     "mhrId": 29993,
+     "name": "Lovell Winter Club (Elite) 12U AAA",
+     "record": "29-11-6",
+     "rating": 87.23
+    },
+    {
+     "mhrId": 1514,
+     "name": "Rhode Island Saints (Elite) 12U AAA",
+     "record": "29-12-4",
+     "rating": 86.35
+    },
+    {
+     "mhrId": 4623,
+     "name": "Walpole Express (Elite) 12U AAA",
+     "record": "18-11-4",
+     "rating": 85.37
+    },
+    {
+     "mhrId": 18719,
+     "name": "Assabet Valley Patriots (Select) 12U AAA",
+     "record": "21-9-5",
+     "rating": 85.3
+    },
+    {
+     "mhrId": 1364,
+     "name": "Valley Jr Warriors (Select) 12U AAA",
+     "record": "16-17-5",
+     "rating": 84.47
+    },
+    {
+     "mhrId": 23145,
+     "name": "Vermont Jr Catamounts (Select) 12U AAA",
+     "record": "24-34-5",
+     "rating": 84.09
+    },
+    {
+     "mhrId": 1119,
+     "name": "Boston Junior Rangers 12U AAA",
+     "record": "12-31-3",
+     "rating": 83.98
+    },
+    {
+     "mhrId": 2283,
+     "name": "Lovell Winter Club (Select) 12U AAA",
+     "record": "13-19-4",
+     "rating": 83.59
+    },
+    {
+     "mhrId": 20112,
+     "name": "New Hampshire Avalanche (Select) 12U AAA",
+     "record": "18-30-10",
+     "rating": 83.37
+    },
+    {
+     "mhrId": 14318,
+     "name": "East Coast Wizards (Select) 12U AAA",
+     "record": "9-19-3",
+     "rating": 83.13
+    },
+    {
+     "mhrId": 19858,
+     "name": "New England Knights 12U AAA",
+     "record": "8-31-2",
+     "rating": 80.92
+    }
+   ]
+  },
+  {
+   "label": "E9HL 12U Red",
+   "age": 12,
+   "url": "https://myhockeyrankings.com/division-info?d=48&y=2025",
+   "teams": [
+    {
+     "mhrId": 23347,
+     "name": "Worcester Jr Railers (Select #1) 12U AAA",
+     "record": "23-10-1",
+     "rating": 81.74
+    },
+    {
+     "mhrId": 37480,
+     "name": "Middlesex Icemen (Select) 12U AAA",
+     "record": "19-8-2",
+     "rating": 80.73
+    },
+    {
+     "mhrId": 37478,
+     "name": "New England Jr Hawks 12U AAA",
+     "record": "17-8-4",
+     "rating": 80.57
+    },
+    {
+     "mhrId": 37479,
+     "name": "Boston Advantage (Select #2) 12U AAA",
+     "record": "17-15-3",
+     "rating": 80.38
+    },
+    {
+     "mhrId": 2148,
+     "name": "Boston Advantage (Select #1) 12U AAA",
+     "record": "14-10-3",
+     "rating": 79.4
+    },
+    {
+     "mhrId": 37477,
+     "name": "Worcester Jr Railers (Select #2) 12U AAA",
+     "record": "14-17-4",
+     "rating": 79.07
+    },
+    {
+     "mhrId": 7380,
+     "name": "Walpole Express (Select) 12U AAA",
+     "record": "6-20-2",
+     "rating": 78.48
+    },
+    {
+     "mhrId": 34548,
+     "name": "Rhode Island Saints (Select) 12U AAA",
+     "record": "9-15-5",
+     "rating": 78.29
+    },
+    {
+     "mhrId": 15589,
+     "name": "Springfield Jr Thunderbirds (Select) 12U AAA",
+     "record": "10-19-6",
+     "rating": 78.01
+    },
+    {
+     "mhrId": 26426,
+     "name": "95 Giants West (Elite) 12U AAA",
+     "record": "1-24-0",
+     "rating": 74.83
+    }
+   ]
+  },
+  {
+   "label": "E9HL 11U White - North",
+   "age": 11,
+   "url": "https://myhockeyrankings.com/division-info?d=3220&y=2025",
+   "teams": [
+    {
+     "mhrId": 24208,
+     "name": "Boston Americans 11U AAA",
+     "record": "31-19-5",
+     "rating": 90.35
+    },
+    {
+     "mhrId": 28951,
+     "name": "Vermont Jr Catamounts 11U AAA",
+     "record": "23-20-12",
+     "rating": 88.84
+    },
+    {
+     "mhrId": 1130,
+     "name": "Springfield Jr Thunderbirds (Elite) 11U AAA",
+     "record": "23-24-6",
+     "rating": 88.55
+    },
+    {
+     "mhrId": 1305,
+     "name": "Assabet Valley Patriots (Elite) 11U AAA",
+     "record": "21-25-3",
+     "rating": 87.58
+    }
+   ]
+  },
+  {
+   "label": "E9HL 11U White - South",
+   "age": 11,
+   "url": "https://myhockeyrankings.com/division-info?d=47&y=2025",
+   "teams": [
+    {
+     "mhrId": 2570,
+     "name": "Lovell Winter Club (Elite) 11U AAA",
+     "record": "33-15-7",
+     "rating": 87.42
+    },
+    {
+     "mhrId": 29991,
+     "name": "Lovell Winter Club (Select #1) 11U AAA",
+     "record": "30-12-7",
+     "rating": 86.92
+    },
+    {
+     "mhrId": 1310,
+     "name": "East Coast Wizards (Elite) 11U AAA",
+     "record": "23-17-4",
+     "rating": 86.28
+    },
+    {
+     "mhrId": 1355,
+     "name": "Valley Jr Warriors (Elite) 11U AAA",
+     "record": "20-26-5",
+     "rating": 85.73
+    },
+    {
+     "mhrId": 1475,
+     "name": "Greater Boston Jr Bruins 11U AAA",
+     "record": "16-26-5",
+     "rating": 84.79
+    },
+    {
+     "mhrId": 27760,
+     "name": "Casco Bay Mariners 11U AAA",
+     "record": "20-28-8",
+     "rating": 84.4
+    },
+    {
+     "mhrId": 1340,
+     "name": "New Hampshire Avalanche 11U AAA",
+     "record": "10-34-7",
+     "rating": 82.86
+    },
+    {
+     "mhrId": 5898,
+     "name": "Assabet Valley Patriots (Select) 11U AAA",
+     "record": "4-33-3",
+     "rating": 82.46
+    }
+   ]
+  },
+  {
+   "label": "E9HL 11U Blue",
+   "age": 11,
+   "url": "https://myhockeyrankings.com/division-info?d=49&y=2025",
+   "teams": [
+    {
+     "mhrId": 34550,
+     "name": "New England Jr Hawks 11U AAA",
+     "record": "41-27-8",
+     "rating": 83.24
+    },
+    {
+     "mhrId": 37476,
+     "name": "Walpole Express (Elite) 11U AAA",
+     "record": "25-11-4",
+     "rating": 82.79
+    },
+    {
+     "mhrId": 37475,
+     "name": "Boston Advantage (Select #1) 11U AAA",
+     "record": "25-17-5",
+     "rating": 82.59
+    },
+    {
+     "mhrId": 1120,
+     "name": "Boston Junior Rangers 11U AAA",
+     "record": "16-17-5",
+     "rating": 81.88
+    },
+    {
+     "mhrId": 37474,
+     "name": "New England Knights (Elite) 11U AAA",
+     "record": "19-16-7",
+     "rating": 81.6
+    },
+    {
+     "mhrId": 3433,
+     "name": "Cape Cod TA Seahawks 11U AAA",
+     "record": "17-20-7",
+     "rating": 81.32
+    },
+    {
+     "mhrId": 27862,
+     "name": "Springfield Jr Thunderbirds (Select) 11U AAA",
+     "record": "19-25-2",
+     "rating": 80.92
+    },
+    {
+     "mhrId": 34083,
+     "name": "Middlesex Icemen 11U AAA",
+     "record": "14-19-2",
+     "rating": 80.78
+    },
+    {
+     "mhrId": 1325,
+     "name": "Worcester Jr Railers (Select #1) 11U AAA",
+     "record": "10-23-5",
+     "rating": 80.56
+    },
+    {
+     "mhrId": 34549,
+     "name": "Lovell Winter Club (Select #2) 11U AAA",
+     "record": "7-22-1",
+     "rating": 79.15
+    },
+    {
+     "mhrId": 1365,
+     "name": "Valley Jr Warriors (Select) 11U AAA",
+     "record": "9-25-3",
+     "rating": 78.85
+    }
+   ]
+  },
+  {
+   "label": "E9HL 11U Red",
+   "age": 11,
+   "url": "https://myhockeyrankings.com/division-info?d=39&y=2025",
+   "teams": [
+    {
+     "mhrId": 13471,
+     "name": "95 Giants (Elite) 11U AAA",
+     "record": "29-7-0",
+     "rating": 80.97
+    },
+    {
+     "mhrId": 13725,
+     "name": "Walpole Express (Select) 11U AAA",
+     "record": "24-12-3",
+     "rating": 80.63
+    },
+    {
+     "mhrId": 13448,
+     "name": "East Coast Wizards (Select) 11U AAA",
+     "record": "20-12-0",
+     "rating": 79.38
+    },
+    {
+     "mhrId": 3000,
+     "name": "Boston Advantage (Select #2) 11U AAA",
+     "record": "14-13-3",
+     "rating": 78.45
+    },
+    {
+     "mhrId": 32312,
+     "name": "95 Giants (Select) 11U AAA",
+     "record": "20-21-3",
+     "rating": 78.41
+    },
+    {
+     "mhrId": 1515,
+     "name": "Rhode Island Saints (Elite) 11U AAA",
+     "record": "9-15-3",
+     "rating": 77.99
+    },
+    {
+     "mhrId": 1324,
+     "name": "Worcester Jr Railers (Select #2) 11U AAA",
+     "record": "6-17-3",
+     "rating": 76.93
+    },
+    {
+     "mhrId": 34242,
+     "name": "Rhode Island Saints (Select) 11U AAA",
+     "record": "0-5-0",
+     "rating": 74.91
+    },
+    {
+     "mhrId": 1500,
+     "name": "95 Giants West (Elite) 11U AAA",
+     "record": "10-24-1",
+     "rating": 74.27
+    },
+    {
+     "mhrId": 16902,
+     "name": "New England Knights (Select) 11U AAA",
+     "record": "2-24-2",
+     "rating": 72.68
+    }
+   ]
+  },
+  {
+   "label": "E9HL 10U White",
+   "age": 10,
+   "url": "https://myhockeyrankings.com/division-info?d=40&y=2025",
+   "teams": [
+    {
+     "mhrId": 1306,
+     "name": "East Coast Wizards (Elite) 10U AAA",
+     "record": "33-8-9",
+     "rating": 92.8
+    },
+    {
+     "mhrId": 1351,
+     "name": "Valley Jr Warriors (Elite) 10U AAA",
+     "record": "31-15-7",
+     "rating": 92.5
+    },
+    {
+     "mhrId": 28905,
+     "name": "Vermont Jr Catamounts 10U AAA",
+     "record": "24-23-7",
+     "rating": 91.2
+    },
+    {
+     "mhrId": 1126,
+     "name": "Springfield Jr Thunderbirds (Elite) 10U AAA",
+     "record": "23-25-5",
+     "rating": 90.8
+    },
+    {
+     "mhrId": 27759,
+     "name": "Casco Bay Mariners 10U AAA",
+     "record": "25-28-6",
+     "rating": 90.6
+    },
+    {
+     "mhrId": 2808,
+     "name": "Boston Advantage (Elite) 10U AAA",
+     "record": "20-27-6",
+     "rating": 90.5
+    },
+    {
+     "mhrId": 24209,
+     "name": "Boston Americans 10U AAA",
+     "record": "10-20-6",
+     "rating": 89.7
+    },
+    {
+     "mhrId": 1301,
+     "name": "Assabet Valley Patriots (Elite) 10U AAA",
+     "record": "14-25-3",
+     "rating": 89.6
+    }
+   ]
+  },
+  {
+   "label": "E9HL 10U Blue - North",
+   "age": 10,
+   "url": "https://myhockeyrankings.com/division-info?d=558&y=2025",
+   "teams": [
+    {
+     "mhrId": 1116,
+     "name": "Boston Junior Rangers 10U AAA",
+     "record": "40-12-2",
+     "rating": 91.0
+    },
+    {
+     "mhrId": 1471,
+     "name": "Greater Boston Jr Bruins 10U AAA",
+     "record": "26-16-5",
+     "rating": 89.8
+    },
+    {
+     "mhrId": 1321,
+     "name": "Worcester Jr Railers (Elite) 10U AAA",
+     "record": "22-13-6",
+     "rating": 89.8
+    },
+    {
+     "mhrId": 2059,
+     "name": "Cape Cod TA Seahawks 10U AAA",
+     "record": "20-16-4",
+     "rating": 87.6
+    },
+    {
+     "mhrId": 1336,
+     "name": "New Hampshire Avalanche (Elite) 10U AAA",
+     "record": "11-21-5",
+     "rating": 86.6
+    },
+    {
+     "mhrId": 4878,
+     "name": "East Coast Wizards (Select) 10U AAA",
+     "record": "13-20-7",
+     "rating": 86.0
+    }
+   ]
+  },
+  {
+   "label": "E9HL 10U Blue - South",
+   "age": 10,
+   "url": "https://myhockeyrankings.com/division-info?d=3676&y=2025",
+   "teams": [
+    {
+     "mhrId": 32699,
+     "name": "Rhode Island Saints 10U AAA",
+     "record": "23-16-7",
+     "rating": 87.8
+    },
+    {
+     "mhrId": 6474,
+     "name": "Middlesex Icemen (Elite) 10U AAA",
+     "record": "21-11-7",
+     "rating": 87.6
+    },
+    {
+     "mhrId": 3137,
+     "name": "Lovell Winter Club (Select) 10U AAA",
+     "record": "21-23-2",
+     "rating": 86.0
+    },
+    {
+     "mhrId": 2829,
+     "name": "New England Knights 10U AAA",
+     "record": "7-21-7",
+     "rating": 85.2
+    },
+    {
+     "mhrId": 6525,
+     "name": "Boston Advantage (Select) 10U AAA",
+     "record": "7-27-5",
+     "rating": 84.3
+    }
+   ]
+  },
+  {
+   "label": "E9HL 10U Red",
+   "age": 10,
+   "url": "https://myhockeyrankings.com/division-info?d=3677&y=2025",
+   "teams": [
+    {
+     "mhrId": 15511,
+     "name": "Walpole Express (Elite) 10U AAA",
+     "record": "28-2-1",
+     "rating": 85.2
+    },
+    {
+     "mhrId": 23032,
+     "name": "Worcester Jr Railers (Select) 10U AAA",
+     "record": "22-10-7",
+     "rating": 82.9
+    },
+    {
+     "mhrId": 27874,
+     "name": "New Hampshire Avalanche (Select) 10U AAA",
+     "record": "22-10-6",
+     "rating": 82.5
+    },
+    {
+     "mhrId": 1361,
+     "name": "Valley Jr Warriors (Select) 10U AAA",
+     "record": "12-14-3",
+     "rating": 82.0
+    },
+    {
+     "mhrId": 2827,
+     "name": "Assabet Valley Patriots (Select) 10U AAA",
+     "record": "12-16-5",
+     "rating": 81.5
+    },
+    {
+     "mhrId": 34551,
+     "name": "Springfield Jr Thunderbirds (Select) 10U AAA",
+     "record": "13-18-3",
+     "rating": 81.1
+    },
+    {
+     "mhrId": 32703,
+     "name": "Middlesex Icemen (Select) 10U AAA",
+     "record": "7-23-2",
+     "rating": 79.8
+    },
+    {
+     "mhrId": 30148,
+     "name": "95 Giants West 10U AAA",
+     "record": "4-30-0",
+     "rating": 75.8
+    }
+   ]
+  },
+  {
+   "label": "E9HL 9U White - North",
+   "age": 9,
+   "url": "https://myhockeyrankings.com/division-info?d=50&y=2025",
+   "teams": [
+    {
+     "mhrId": 3464,
+     "name": "Boston Advantage (Elite) 9U AAA",
+     "record": "35-16-2",
+     "rating": 89.8
+    },
+    {
+     "mhrId": 24210,
+     "name": "Boston Americans 9U AAA",
+     "record": "29-16-4",
+     "rating": 88.3
+    },
+    {
+     "mhrId": 28762,
+     "name": "New Hampshire Avalanche (Elite) 9U AAA",
+     "record": "25-18-1",
+     "rating": 87.8
+    },
+    {
+     "mhrId": 3073,
+     "name": "Casco Bay Mariners 9U AAA",
+     "record": "18-25-3",
+     "rating": 86.2
+    },
+    {
+     "mhrId": 25109,
+     "name": "Vermont Jr Catamounts 9U AAA",
+     "record": "12-30-5",
+     "rating": 84.2
+    }
+   ]
+  },
+  {
+   "label": "E9HL 9U White - South",
+   "age": 9,
+   "url": "https://myhockeyrankings.com/division-info?d=195&y=2025",
+   "teams": [
+    {
+     "mhrId": 2076,
+     "name": "Worcester Jr Railers (Elite) 9U AAA",
+     "record": "27-16-4",
+     "rating": 85.4
+    },
+    {
+     "mhrId": 6442,
+     "name": "Assabet Valley Patriots (Elite) 9U AAA",
+     "record": "19-21-6",
+     "rating": 83.8
+    },
+    {
+     "mhrId": 6453,
+     "name": "Valley Jr Warriors 9U AAA",
+     "record": "10-21-4",
+     "rating": 83.0
+    },
+    {
+     "mhrId": 6452,
+     "name": "Lovell Winter Club (Elite) 9U AAA",
+     "record": "8-21-3",
+     "rating": 82.6
+    },
+    {
+     "mhrId": 3117,
+     "name": "East Coast Wizards (Elite) 9U AAA",
+     "record": "2-29-1",
+     "rating": 79.1
+    }
+   ]
+  },
+  {
+   "label": "E9HL 9U Blue",
+   "age": 9,
+   "url": "https://myhockeyrankings.com/division-info?d=186&y=2025",
+   "teams": [
+    {
+     "mhrId": 37481,
+     "name": "Middlesex Icemen (Elite) 9U AAA",
+     "record": "30-8-2",
+     "rating": 83.7
+    },
+    {
+     "mhrId": 6470,
+     "name": "Greater Boston Jr Bruins 9U AAA",
+     "record": "27-10-2",
+     "rating": 83.3
+    },
+    {
+     "mhrId": 37482,
+     "name": "Worcester Jr Railers (Select #1) 9U AAA",
+     "record": "16-20-2",
+     "rating": 81.6
+    },
+    {
+     "mhrId": 6413,
+     "name": "Springfield Jr Thunderbirds (Elite) 9U AAA",
+     "record": "20-21-3",
+     "rating": 81.5
+    },
+    {
+     "mhrId": 28761,
+     "name": "Boston Junior Rangers 9U AAA",
+     "record": "6-24-3",
+     "rating": 79.6
+    },
+    {
+     "mhrId": 37483,
+     "name": "95 Giants West (Elite) 9U AAA",
+     "record": "10-24-0",
+     "rating": 79.0
+    }
+   ]
+  },
+  {
+   "label": "E9HL 9U Red",
+   "age": 9,
+   "url": "https://myhockeyrankings.com/division-info?d=185&y=2025",
+   "teams": [
+    {
+     "mhrId": 14418,
+     "name": "Assabet Valley Patriots (Select) 9U AAA",
+     "record": "25-7-3",
+     "rating": 81.0
+    },
+    {
+     "mhrId": 6460,
+     "name": "Boston Advantage (Select) 9U AAA",
+     "record": "21-9-3",
+     "rating": 80.6
+    },
+    {
+     "mhrId": 18447,
+     "name": "Middlesex Icemen (Select) 9U AAA",
+     "record": "21-12-6",
+     "rating": 80.4
+    },
+    {
+     "mhrId": 7375,
+     "name": "Cape Cod TA Seahawks 9U AAA",
+     "record": "16-19-1",
+     "rating": 79.4
+    },
+    {
+     "mhrId": 26336,
+     "name": "Lovell Winter Club (Select #1) 9U AAA",
+     "record": "18-14-2",
+     "rating": 79.2
+    },
+    {
+     "mhrId": 28764,
+     "name": "New Hampshire Avalanche (Select) 9U AAA",
+     "record": "3-26-2",
+     "rating": 76.1
+    },
+    {
+     "mhrId": 21637,
+     "name": "New England Knights 9U AAA",
+     "record": "6-28-2",
+     "rating": 75.6
+    }
+   ]
+  },
+  {
+   "label": "E9HL 9U Green",
+   "age": 9,
+   "url": "https://myhockeyrankings.com/division-info?d=37&y=2025",
+   "teams": [
+    {
+     "mhrId": 19353,
+     "name": "Worcester Jr Railers (Select #2) 9U AAA",
+     "record": "23-7-5",
+     "rating": 77.8
+    },
+    {
+     "mhrId": 28763,
+     "name": "95 Giants East (Elite) 9U AAA",
+     "record": "22-10-5",
+     "rating": 77.5
+    },
+    {
+     "mhrId": 14419,
+     "name": "East Coast Wizards (Select) 9U AAA",
+     "record": "21-7-4",
+     "rating": 76.9
+    },
+    {
+     "mhrId": 32701,
+     "name": "Springfield Jr Thunderbirds (Select) 9U AAA",
+     "record": "17-25-3",
+     "rating": 75.7
+    },
+    {
+     "mhrId": 26337,
+     "name": "Walpole Express (Select) 9U AAA",
+     "record": "11-13-7",
+     "rating": 75.0
+    },
+    {
+     "mhrId": 37485,
+     "name": "Lovell Winter Club (Select #2) 9U AAA",
+     "record": "7-25-3",
+     "rating": 72.5
+    },
+    {
+     "mhrId": 37484,
+     "name": "Rhode Island Saints 9U AAA",
+     "record": "2-29-1",
+     "rating": 71.4
+    }
+   ]
+  }
+ ]
+}

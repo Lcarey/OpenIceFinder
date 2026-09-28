@@ -1578,6 +1578,40 @@ body:has(.tape-shell) {
   line-height: 1.45;
 }
 
+.tape-odds {
+  display: grid;
+  gap: 6px;
+  margin: -4px 0 14px;
+}
+
+.tape-odds-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #e6e1d6;
+}
+
+.tape-odds-bar span:nth-child(1) {
+  background: #2f7d4a;
+}
+
+.tape-odds-bar span:nth-child(2) {
+  background: #b7a76a;
+}
+
+.tape-odds-bar span:nth-child(3) {
+  background: #c8102e;
+}
+
+.tape-odds-labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
 .tape-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;

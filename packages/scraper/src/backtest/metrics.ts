@@ -9,7 +9,8 @@ import type { RangersPlayedGame, RangersRecord } from "@openice/shared";
 import { dayNumber, type History, type TeamGame } from "./games.js";
 import { legacyBeliefScore } from "./legacy-belief.js";
 import { logit, sigmoid, solveSpd } from "./linalg.js";
-import { masseyRatings, teamIndex, type MasseyOptions } from "./ratings.js";
+import { priorValue, type PriorMode, type TeamPrior } from "./priors.js";
+import { KalmanRatings, masseyRatings, teamIndex, type KalmanOptions, type MasseyOptions } from "./ratings.js";
 
 export { masseyRatings, type MasseyOptions };
 
@@ -472,6 +473,77 @@ function homeByBirthYearMetric(): Metric {
   return { name: "home:constant", family: "home", complexity: 1, prepare: () => () => 1 };
 }
 
+function masseyPriorMetric(priors: Map<string, TeamPrior>, mode: PriorMode, rho: number, lambda: number, mhrScale = 1): Metric {
+  return {
+    name: `massey+prior:${mode}:rho${rho}:l${lambda}${mhrScale !== 1 ? `:mhrx${mhrScale}` : ""}`,
+    family: "massey+prior",
+    complexity: 5,
+    prepare(history, date) {
+      const priorMean = (id: string) => priorValue(priors.get(id), mode, rho, mhrScale) ?? 0;
+      const m = masseyRatings(history, date, { cap: 8, lambda, target: "margin", priorMean });
+      return (home, away) => m.rating(home) - m.rating(away) + m.hfa;
+    },
+  };
+}
+
+function kalmanMetric(opts: KalmanOptions, label: string, complexity: number): Metric {
+  let filter: KalmanRatings | undefined;
+  let seen: History | undefined;
+  return {
+    name: `kalman:${label}`,
+    family: opts.prior ? "kalman+prior" : "kalman",
+    complexity,
+    prepare(history) {
+      if (!filter || seen !== history || filter.processed > history.games.length) {
+        filter = new KalmanRatings(opts);
+        seen = history;
+      }
+      for (; filter.processed < history.games.length; filter.processed++) {
+        const g = history.games[filter.processed]!;
+        filter.update(g.homeId, g.awayId, g.homeGoals - g.awayGoals, dayNumber(g.date));
+      }
+      const f = filter;
+      return (home, away) => f.rating(home) - f.rating(away) + f.hfa;
+    },
+  };
+}
+
+export interface MetricContext {
+  /** Pre-season priors for this season's teams (see priors.ts). */
+  priors?: Map<string, TeamPrior>;
+}
+
+export function priorMetrics(ctx: MetricContext): Metric[] {
+  const out: Metric[] = [];
+  for (const q of [0, 0.002, 0.005, 0.01, 0.02]) {
+    for (const r of [9, 14]) {
+      for (const v0 of [1, 3]) out.push(kalmanMetric({ q, r, v0, cap: 8 }, `q${q}:r${r}:v${v0}`, 4));
+    }
+  }
+  const priors = ctx.priors;
+  if (!priors) return out;
+  for (const mode of ["e9", "mhr", "blend"] as const) {
+    for (const rho of [0.25, 0.5, 0.75, 1]) {
+      for (const lambda of [1, 2, 4]) out.push(masseyPriorMetric(priors, mode, rho, lambda));
+    }
+  }
+  for (const mhrScale of [0.5, 0.25]) {
+    for (const lambda of [2, 4]) out.push(masseyPriorMetric(priors, "blend", 1, lambda, mhrScale));
+  }
+  for (const rho of [0.5, 1]) {
+    for (const pv of [0.5, 1.5]) {
+      for (const q of [0, 0.005, 0.01]) {
+        const prior = (id: string) => {
+          const mean = priorValue(priors.get(id), "blend", rho);
+          return mean == null ? undefined : { mean, variance: pv };
+        };
+        out.push(kalmanMetric({ q, r: 9, v0: 3, cap: 8, prior }, `prior-blend:rho${rho}:pv${pv}:q${q}`, 6));
+      }
+    }
+  }
+  return out;
+}
+
 // ---------------------------------------------------------------- head-to-head, rest, current belief
 
 function meetings(history: History, homeId: string, awayId: string): TeamGame[] {
@@ -574,8 +646,8 @@ export function baselineMetrics(): Metric[] {
   ];
 }
 
-export function candidateMetrics(): Metric[] {
-  const out: Metric[] = [];
+export function candidateMetrics(ctx: MetricContext = {}): Metric[] {
+  const out: Metric[] = [...priorMetrics(ctx)];
 
   // Season-to-date record.
   out.push(diffMetric("record:points-pct", "record", 1, (g) => summarize(g).wp));

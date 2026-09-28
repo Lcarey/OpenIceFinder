@@ -1,0 +1,276 @@
+{
+ "source": "https://myhockeyrankings.com",
+ "mhrYear": 2024,
+ "season": "2024-25",
+ "fetchedAt": "2026-09-28T17:11:55Z",
+ "divisions": [
+  {
+   "label": "E9HL 12U AAA",
+   "age": 12,
+   "url": "https://myhockeyrankings.com/division-info?d=38&y=2024",
+   "teams": [
+    {
+     "mhrId": 16743,
+     "name": "Worcester Jr Railers (Elite) 12U AAA",
+     "record": "47-16-1",
+     "rating": 95.59
+    },
+    {
+     "mhrId": 1129,
+     "name": "Springfield Jr Thunderbirds (Elite) 12U AAA",
+     "record": "37-12-8",
+     "rating": 92.39
+    },
+    {
+     "mhrId": 1354,
+     "name": "Valley Jr Warriors (Elite) 12U AAA",
+     "record": "30-29-2",
+     "rating": 91.49
+    },
+    {
+     "mhrId": 1309,
+     "name": "East Coast Wizards (Elite) 12U AAA",
+     "record": "25-22-8",
+     "rating": 91.44
+    },
+    {
+     "mhrId": 1339,
+     "name": "New Hampshire Avalanche (Elite) 12U AAA",
+     "record": "39-15-3",
+     "rating": 91.22
+    },
+    {
+     "mhrId": 27906,
+     "name": "Boston Americans 12U AAA",
+     "record": "25-26-6",
+     "rating": 90.19
+    },
+    {
+     "mhrId": 3634,
+     "name": "Boston Advantage (Elite) 11U AAA",
+     "record": "25-29-7",
+     "rating": 88.94
+    },
+    {
+     "mhrId": 2238,
+     "name": "Boston Advantage (Elite) 12U AAA",
+     "record": "12-33-1",
+     "rating": 88.83
+    },
+    {
+     "mhrId": 3072,
+     "name": "Casco Bay Mariners 12U AAA",
+     "record": "23-28-6",
+     "rating": 88.64
+    },
+    {
+     "mhrId": 1474,
+     "name": "Greater Boston Jr Bruins 12U AAA",
+     "record": "16-27-6",
+     "rating": 88.54
+    },
+    {
+     "mhrId": 1304,
+     "name": "Assabet Valley Patriots (Elite) 12U AAA",
+     "record": "7-35-1",
+     "rating": 87.77
+    }
+   ]
+  },
+  {
+   "label": "E9HL 11U AAA",
+   "age": 11,
+   "url": "https://myhockeyrankings.com/division-info?d=39&y=2024",
+   "teams": [
+    {
+     "mhrId": 24208,
+     "name": "Boston Americans 11U AAA",
+     "record": "29-13-7",
+     "rating": 87.0
+    },
+    {
+     "mhrId": 1130,
+     "name": "Springfield Jr Thunderbirds (Elite) 11U AAA",
+     "record": "29-19-6",
+     "rating": 86.53
+    },
+    {
+     "mhrId": 34083,
+     "name": "Middlesex Icemen (Elite) 11U AAA",
+     "record": "27-22-3",
+     "rating": 85.94
+    },
+    {
+     "mhrId": 1475,
+     "name": "Greater Boston Jr Bruins 11U AAA",
+     "record": "33-13-1",
+     "rating": 85.94
+    },
+    {
+     "mhrId": 1324,
+     "name": "Worcester Jr Railers (Elite) 11U AAA",
+     "record": "12-29-3",
+     "rating": 84.09
+    },
+    {
+     "mhrId": 3433,
+     "name": "Cape Cod TA Seahawks 11U AAA",
+     "record": "19-25-2",
+     "rating": 83.66
+    },
+    {
+     "mhrId": 1305,
+     "name": "Assabet Valley Patriots (Elite) 11U AAA",
+     "record": "15-16-4",
+     "rating": 83.63
+    },
+    {
+     "mhrId": 1355,
+     "name": "Valley Jr Warriors (Elite) 11U AAA",
+     "record": "12-43-4",
+     "rating": 82.35
+    },
+    {
+     "mhrId": 1310,
+     "name": "East Coast Wizards (Elite) 11U AAA",
+     "record": "13-37-3",
+     "rating": 82.31
+    }
+   ]
+  },
+  {
+   "label": "E9HL 10U AAA",
+   "age": 10,
+   "url": "https://myhockeyrankings.com/division-info?d=40&y=2024",
+   "teams": [
+    {
+     "mhrId": 24209,
+     "name": "Boston Americans 10U AAA",
+     "record": "41-17-2",
+     "rating": 94.0
+    },
+    {
+     "mhrId": 1351,
+     "name": "Valley Jr Warriors (Elite) 10U AAA",
+     "record": "50-15-5",
+     "rating": 93.5
+    },
+    {
+     "mhrId": 6452,
+     "name": "Lovell Winter Club (Elite) 9U AAA",
+     "record": "48-14-4",
+     "rating": 92.3
+    },
+    {
+     "mhrId": 1126,
+     "name": "Springfield Jr Thunderbirds (Elite) 10U AAA",
+     "record": "23-17-2",
+     "rating": 92.0
+    },
+    {
+     "mhrId": 28905,
+     "name": "Vermont Jr Catamounts (Elite) 10U AAA",
+     "record": "31-23-2",
+     "rating": 91.1
+    },
+    {
+     "mhrId": 1301,
+     "name": "Assabet Valley Patriots (Elite) 10U AAA",
+     "record": "24-16-4",
+     "rating": 90.9
+    },
+    {
+     "mhrId": 32702,
+     "name": "Lovell Winter Club (Elite) 10U AAA",
+     "record": "20-25-4",
+     "rating": 89.6
+    },
+    {
+     "mhrId": 1471,
+     "name": "Greater Boston Jr Bruins 10U AAA",
+     "record": "13-27-4",
+     "rating": 88.2
+    },
+    {
+     "mhrId": 1306,
+     "name": "East Coast Wizards (Elite) 10U AAA",
+     "record": "14-26-3",
+     "rating": 88.2
+    },
+    {
+     "mhrId": 1321,
+     "name": "Worcester Jr Railers (Elite) 10U AAA",
+     "record": "5-32-1",
+     "rating": 86.9
+    }
+   ]
+  },
+  {
+   "label": "E9HL 9U AAA",
+   "age": 9,
+   "url": "https://myhockeyrankings.com/division-info?d=186&y=2024",
+   "teams": [
+    {
+     "mhrId": 2076,
+     "name": "Worcester Jr Railers (Elite) 9U AAA",
+     "record": "39-13-2",
+     "rating": 89.6
+    },
+    {
+     "mhrId": 6413,
+     "name": "Springfield Jr Thunderbirds (Elite) 9U AAA",
+     "record": "31-14-2",
+     "rating": 87.7
+    },
+    {
+     "mhrId": 3117,
+     "name": "East Coast Wizards (Elite) 9U AAA",
+     "record": "29-14-1",
+     "rating": 85.9
+    },
+    {
+     "mhrId": 28762,
+     "name": "New Hampshire Avalanche (Elite) 9U AAA",
+     "record": "21-21-3",
+     "rating": 84.0
+    },
+    {
+     "mhrId": 3073,
+     "name": "Casco Bay Mariners 9U AAA",
+     "record": "32-25-4",
+     "rating": 83.9
+    },
+    {
+     "mhrId": 6453,
+     "name": "Valley Jr Warriors 9U AAA",
+     "record": "26-22-5",
+     "rating": 83.9
+    },
+    {
+     "mhrId": 3464,
+     "name": "Boston Advantage (Elite) 9U AAA",
+     "record": "12-24-6",
+     "rating": 83.0
+    },
+    {
+     "mhrId": 24210,
+     "name": "Boston Americans 9U AAA",
+     "record": "16-27-3",
+     "rating": 82.7
+    },
+    {
+     "mhrId": 6442,
+     "name": "Assabet Valley Patriots (Elite) 9U AAA",
+     "record": "9-26-5",
+     "rating": 82.5
+    },
+    {
+     "mhrId": 6470,
+     "name": "Greater Boston Jr Bruins 9U AAA",
+     "record": "12-28-3",
+     "rating": 81.6
+    }
+   ]
+  }
+ ]
+}

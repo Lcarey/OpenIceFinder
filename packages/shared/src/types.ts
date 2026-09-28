@@ -348,6 +348,8 @@ export interface RangersBelief {
   gradedAt?: string;
   /** Our GP when the grade was computed. */
   sampleGp?: number;
+  /** Win / tie / loss chances for us. */
+  outcome?: { win: number; tie: number; loss: number };
 }
 
 export interface RangersScoutCard {

@@ -2,13 +2,15 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { BELIEF_MODEL, fitBeliefModel } from "../belief-model.js";
-import { finalCalibration } from "./cli.js";
+import { fitBeliefModel } from "../belief-model.js";
+import { finalCalibration, SHIPPED_METRIC } from "./cli.js";
+import { SHIPPED_MODEL } from "../belief-model.generated.js";
 import { History, type BtGame, type BtSnapshot } from "./games.js";
 import { computeFeatures, scoreGames, splitEligible, walkForward } from "./harness.js";
-import { fitLogistic, predictLogistic } from "./linalg.js";
+import { fitLogistic, fitOrderedLogit, orderedProbs, predictLogistic } from "./linalg.js";
 import { candidateMetrics, eloRatings, poissonOutcome, type Metric } from "./metrics.js";
-import { masseyRatings } from "./ratings.js";
+import { KalmanRatings, masseyRatings } from "./ratings.js";
+import { buildPriors, identities, matchMhr, matchTeams, mergeMhr, normalizeLevel, parseE9Name, parseMhrName, type MhrSnapshot } from "./priors.js";
 
 let seq = 0;
 function g(date: string, homeId: string, awayId: string, homeGoals: number, awayGoals: number): BtGame {
@@ -124,28 +126,99 @@ describe("metrics", () => {
     expect(predictLogistic(m, [-3])).toBeLessThan(0.1);
   });
 
-  it("offers at least 100 distinct candidates", () => {
+  it("offers at least 200 distinct candidates", () => {
     const names = candidateMetrics().map((m) => m.name);
     expect(new Set(names).size).toBe(names.length);
     expect(names.length).toBeGreaterThanOrEqual(100);
+    expect(candidateMetrics({ priors: new Map() }).length).toBeGreaterThan(200);
+  });
+});
+
+describe("priors", () => {
+  it("parses Elite 9 and MHR names into program and level", () => {
+    expect(parseE9Name("Jr. Rangers 16 - E")).toEqual({ program: "jr rangers", level: "elite" });
+    expect(parseE9Name("Railers 16 - S 1")).toEqual({ program: "railers", level: "select" });
+    expect(parseE9Name("Avalanche 16 - E 2")).toEqual({ program: "avalanche", level: "elite 2" });
+    expect(parseE9Name("Casco Bay U14H - Elite")).toEqual({ program: "casco bay", level: "elite" });
+    expect(parseMhrName("Worcester Jr Railers (Select #1) 9U AAA")).toEqual({ words: ["worcester", "jr", "railers"], level: "select" });
+    expect(parseMhrName("Walpole Express (BHL) 11U AAA").level).toBe("elite");
+    expect(normalizeLevel("Elite #2")).toBe("elite 2");
+  });
+
+  it("matches teams across seasons by program, birth year and level", () => {
+    const prev = identities([g("2024-10-01", "p1", "p2", 1, 0)].map((x) => ({ ...x, homeName: "Jr. Bruins 15 - E", awayName: "Railers 15 - Elite", homeDiv: "2015", awayDiv: "2015" })));
+    const cur = identities([g("2025-10-01", "c1", "c2", 1, 0)].map((x) => ({ ...x, homeName: "Jr. Bruins 15 - Elite", awayName: "Railers 15 - Select", homeDiv: "2015 White", awayDiv: "2015 Red" })));
+    expect([...matchTeams(prev, cur)]).toEqual([["c1", "p1"]]);
+  });
+
+  it("finds a team's MHR rating at the right age and prefers the New England club", () => {
+    const mhr: MhrSnapshot = {
+      mhrYear: 2024,
+      season: "2024-25",
+      divisions: [
+        {
+          label: "USA 11U",
+          age: 11,
+          teams: [
+            { mhrId: 1, name: "Connecticut Jr Rangers 11U AAA", state: "CT", record: "", rating: 80 },
+            { mhrId: 2, name: "Boston Junior Rangers 11U AAA", state: "MA", record: "", rating: 88 },
+            { mhrId: 3, name: "Boston Junior Rangers 10U AAA", state: "MA", record: "", rating: 90 },
+          ],
+        },
+      ],
+    };
+    const team = { id: "x", name: "Jr. Rangers 13 - Elite", division: "2013 Blue", birthYear: "2013", program: "jr rangers", level: "elite" };
+    expect(matchMhr(team, mhr)?.mhrId).toBe(2);
+  });
+
+  it("centers priors within each current division", () => {
+    const prevGames = [g("2024-10-01", "p1", "p2", 5, 1), g("2024-10-02", "p2", "p1", 1, 5)].map((x) => ({ ...x, homeName: x.homeId === "p1" ? "Icemen 15 - E" : "Wizards 15 - E", awayName: x.awayId === "p1" ? "Icemen 15 - E" : "Wizards 15 - E", homeDiv: "2015", awayDiv: "2015" }));
+    const curGames = [g("2025-10-01", "c1", "c2", 1, 1)].map((x) => ({ ...x, homeName: "Icemen 15 - Elite", awayName: "Wizards 15 - Elite", homeDiv: "2015 Blue", awayDiv: "2015 Blue" }));
+    const b = buildPriors(curGames, prevGames, undefined);
+    expect(b.priors.get("c1")!.e9! + b.priors.get("c2")!.e9!).toBeCloseTo(0, 6);
+    expect(b.priors.get("c1")!.e9!).toBeGreaterThan(0);
+    expect(mergeMhr(undefined)).toBeUndefined();
+  });
+});
+
+describe("kalman and ordered logit", () => {
+  it("Kalman ratings move toward observed margins and stay put without drift", () => {
+    const k = new KalmanRatings({ q: 0, r: 9, v0: 3, cap: 8 });
+    for (let d = 0; d < 20; d++) k.update("A", "B", 3, d);
+    expect(k.rating("A") - k.rating("B") + k.hfa).toBeGreaterThan(2.5);
+    expect(k.variance("A")).toBeLessThan(3);
+  });
+
+  it("ordered logit puts more tie mass on close games", () => {
+    const x = Float64Array.from({ length: 600 }, (_, i) => ((i % 60) - 30) / 5);
+    const y = Float64Array.from(x, (v, i) => (Math.abs(v) < 0.8 && i % 3 === 0 ? 0.5 : v + ((i * 7) % 11) / 5 - 1 > 0 ? 1 : 0));
+    const m = fitOrderedLogit(x, y, [...x.keys()]);
+    expect(orderedProbs(m, 0).tie).toBeGreaterThan(orderedProbs(m, 5).tie);
+    const p = orderedProbs(m, 1);
+    expect(p.home + p.tie + p.away).toBeCloseTo(1, 9);
   });
 });
 
 describe("shipped belief model", () => {
   const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "..", "..");
-  const snapshot = JSON.parse(readFileSync(path.join(repoRoot, "data", "backtest", "elite9-2025-26.json"), "utf8")) as BtSnapshot;
+  const read = <T>(f: string) => JSON.parse(readFileSync(path.join(repoRoot, "data", "backtest", f), "utf8")) as T;
+  const snapshot = read<BtSnapshot>("elite9-2025-26.json");
 
-  it("uses the calibration fitted on the 2025-26 snapshot", () => {
-    const winner = candidateMetrics().find((m) => m.name === BELIEF_MODEL.metric)!;
-    const cal = finalCalibration(computeFeatures(snapshot.games, [winner]), winner.name);
-    expect(cal.intercept).toBeCloseTo(BELIEF_MODEL.intercept, 3);
-    expect(cal.slope).toBeCloseTo(BELIEF_MODEL.slope, 3);
+  it("uses the calibration fitted on the 2025-26 snapshot with last season's priors", () => {
+    const priors = buildPriors(snapshot.games, read<BtSnapshot>("elite9-2024-25.json").games, mergeMhr(read<MhrSnapshot>("mhr-e9-2024-25.json"), read<MhrSnapshot>("mhr-usa-2024-25.json"))).priors;
+    const metric = candidateMetrics({ priors }).find((m) => m.name === SHIPPED_METRIC)!;
+    expect(SHIPPED_MODEL.metric).toBe(SHIPPED_METRIC);
+    const cal = finalCalibration(computeFeatures(snapshot.games, [metric]), metric.name);
+    expect(cal.intercept).toBeCloseTo(SHIPPED_MODEL.calibration.intercept, 3);
+    expect(cal.slope).toBeCloseTo(SHIPPED_MODEL.calibration.slope, 3);
   });
 
   it("predicts from games before the date and favours the stronger team", () => {
     const model = fitBeliefModel(season(), "2025-10-17");
     const ab = model.predict("A", "B");
     expect(ab.pHome).toBeGreaterThan(0.5);
+    expect(ab.outcome.win).toBeGreaterThan(ab.outcome.loss);
+    expect(ab.outcome.win + ab.outcome.tie + ab.outcome.loss).toBeCloseTo(1, 9);
     expect(ab.homeGames).toBe(16);
     expect(fitBeliefModel(season(), "2025-10-01").predict("A", "B").homeGames).toBe(0);
   });

@@ -19,7 +19,7 @@
     "synth": "npm run synth -w @openice/infra",
     "refresh:local": "npm run build:shared && node --import tsx packages/scraper/src/cli.ts",
     "refresh:rangers": "npm run build:shared && node --import tsx packages/scraper/src/rangers-cli.ts",
-    "backtest:fetch": "npm run build:shared && node --import tsx packages/scraper/src/backtest/fetch-2025-26.ts",
+    "backtest:fetch": "npm run build:shared && node --import tsx packages/scraper/src/backtest/fetch-season.ts",
     "backtest:belief": "npm run build:shared && node --import tsx packages/scraper/src/backtest/cli.ts",
     "rinks:build": "node --import tsx scripts/build-rinks.ts",
     "deploy": "./deploy.sh"

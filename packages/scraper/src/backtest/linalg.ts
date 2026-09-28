@@ -98,3 +98,59 @@ export function predictLogistic(model: LogisticModel, x: ArrayLike<number>): num
   for (let j = 0; j < model.mean.length; j++) eta += model.beta[j + 1]! * ((x[j]! - model.mean[j]!) / model.sd[j]!);
   return sigmoid(eta);
 }
+
+export interface OrderedLogit {
+  slope: number;
+  /** Cut points on the latent scale: P(away) = σ(c1 − s·x), P(away or tie) = σ(c2 − s·x). */
+  c1: number;
+  c2: number;
+}
+
+/** Three-way (away / tie / home) ordered logit on one signal, fit by gradient ascent with backtracking. */
+export function fitOrderedLogit(x: Float64Array, y: Float64Array, idx: number[], init?: OrderedLogit): OrderedLogit {
+  let th = init ? [init.slope, init.c1, Math.log(Math.max(1e-3, init.c2 - init.c1))] : [0.5, -0.3, Math.log(0.6)];
+  const ll = (t: number[]) => {
+    const [s, c1, ld] = t as [number, number, number];
+    const c2 = c1 + Math.exp(ld);
+    let sum = 0;
+    for (const i of idx) {
+      const z = s * x[i]!;
+      const a = sigmoid(c1 - z);
+      const b = sigmoid(c2 - z);
+      const p = y[i] === 0 ? a : y[i] === 0.5 ? b - a : 1 - b;
+      sum += Math.log(Math.max(p, 1e-12));
+    }
+    return sum - 0.5 * 1e-3 * s * s;
+  };
+  let cur = ll(th);
+  let step = 1e-3;
+  for (let it = 0; it < 120; it++) {
+    const g = th.map((_, k) => {
+      const e = 1e-5;
+      const t2 = [...th];
+      t2[k]! += e;
+      return (ll(t2) - cur) / e;
+    });
+    let improved = false;
+    for (let tries = 0; tries < 12; tries++) {
+      const cand = th.map((v, k) => v + step * g[k]!);
+      const val = ll(cand);
+      if (val > cur) {
+        th = cand;
+        cur = val;
+        step *= 1.6;
+        improved = true;
+        break;
+      }
+      step /= 3;
+    }
+    if (!improved) break;
+  }
+  return { slope: th[0]!, c1: th[1]!, c2: th[1]! + Math.exp(th[2]!) };
+}
+
+export function orderedProbs(m: OrderedLogit, x: number): { away: number; tie: number; home: number } {
+  const a = sigmoid(m.c1 - m.slope * x);
+  const b = sigmoid(m.c2 - m.slope * x);
+  return { away: a, tie: Math.max(0, b - a), home: 1 - b };
+}

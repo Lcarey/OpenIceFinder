@@ -13,6 +13,7 @@ import {
   type RangersUpcomingGame,
 } from "@openice/shared";
 import type { BtGame } from "./backtest/games.js";
+import { identities, type TeamIdentity } from "./backtest/priors.js";
 import { fitBeliefModel, type MatchupPrediction } from "./belief-model.js";
 import { stripTags } from "./html.js";
 import { fetchJson, httpFetch } from "./http.js";
@@ -300,6 +301,32 @@ export function gamesFromRows(rows: VaGameRow[], seasonEndYear = Number(RANGERS_
   return { games, skipped };
 }
 
+/** Every team seen in the rows, played or not, with its division, for matching last season's ratings. */
+export function teamIdentitiesFromRows(rows: VaGameRow[]): Map<string, TeamIdentity> {
+  const teamDiv = new Map<string, string>();
+  for (const r of rows) if (r.CurrTeamID && r.DivisionName) teamDiv.set(String(r.CurrTeamID), r.DivisionName);
+  const stubs: BtGame[] = [];
+  for (const r of rows) {
+    const cur = String(r.CurrTeamID ?? "");
+    const opp = String(r.OpponentTeamID ?? "");
+    if (!cur || !opp) continue;
+    stubs.push({
+      id: "",
+      date: "",
+      time: "",
+      homeId: cur,
+      awayId: opp,
+      homeName: (r.CurrTeamShortName ?? "").trim(),
+      awayName: opponentDisplayName(r.OpponentName3 ?? ""),
+      homeGoals: 0,
+      awayGoals: 0,
+      homeDiv: teamDiv.get(cur) ?? "",
+      awayDiv: teamDiv.get(opp) ?? "",
+    });
+  }
+  return identities(stubs);
+}
+
 export function gameStartIso(game: VaGameRow): string | undefined {
   const date = parseDateOnly(gameDateKey(game));
   if (!date) return undefined;
@@ -459,6 +486,11 @@ function signed(x: number): string {
 export interface BeliefOdds {
   /** Our expected points share (ties half). */
   pUs: number;
+  /** Our win / tie / loss chances. */
+  outcome?: { win: number; tie: number; loss: number };
+  /** Last season's ratings, centered in the division, when known. */
+  usPrior?: number;
+  themPrior?: number;
   /** Our expected goal margin, including home ice. */
   expectedMargin: number;
   usRating: number;
@@ -471,6 +503,9 @@ export function oddsForUs(prediction: MatchupPrediction, isHome: boolean): Belie
   return isHome
     ? {
         pUs: prediction.pHome,
+        outcome: prediction.outcome,
+        usPrior: prediction.homePrior,
+        themPrior: prediction.awayPrior,
         expectedMargin: prediction.expectedHomeMargin,
         usRating: prediction.homeRating,
         themRating: prediction.awayRating,
@@ -479,6 +514,9 @@ export function oddsForUs(prediction: MatchupPrediction, isHome: boolean): Belie
       }
     : {
         pUs: 1 - prediction.pHome,
+        outcome: { win: prediction.outcome.loss, tie: prediction.outcome.tie, loss: prediction.outcome.win },
+        usPrior: prediction.awayPrior,
+        themPrior: prediction.homePrior,
         expectedMargin: -prediction.expectedHomeMargin,
         usRating: prediction.awayRating,
         themRating: prediction.homeRating,
@@ -505,8 +543,15 @@ export function buildBelief(input: {
     `Model: ${pct}% expected points for us, projected margin ${signed(odds.expectedMargin)} goals.`,
     `Schedule-adjusted goal margin per game: us ${signed(odds.usRating)}, ${input.opponentName} ${signed(odds.themRating)}.`,
   ];
+  if (odds.outcome) {
+    why.push(`Win ${Math.round(100 * odds.outcome.win)}%, tie ${Math.round(100 * odds.outcome.tie)}%, loss ${Math.round(100 * odds.outcome.loss)}%.`);
+  }
   if (Math.min(odds.usGames, odds.themGames) < 5) {
-    why.push(`Early grade: ${Math.min(odds.usGames, odds.themGames)} game(s) on the smaller sample, so ratings are pulled toward average.`);
+    const priorNote =
+      odds.usPrior != null || odds.themPrior != null
+        ? ` Last season's ratings seed the start at quarter weight (us ${odds.usPrior != null ? signed(odds.usPrior) : "unknown"}, them ${odds.themPrior != null ? signed(odds.themPrior) : "unknown"}).`
+        : "";
+    why.push(`Early grade: ${Math.min(odds.usGames, odds.themGames)} game(s) on the smaller sample, so ratings are pulled toward average.${priorNote}`);
   }
   if (input.prior) {
     why.push(
@@ -539,7 +584,20 @@ export function buildBelief(input: {
   if (input.game.isHome) parts.push(`Home ice, ${input.game.rink || "Tewksbury"}.`);
   else parts.push(`We're on the road at ${input.game.rink || "their barn"}.`);
 
-  return { level, label: BELIEF_LABEL[level], score: pct, why, blurb: parts.join(" "), gradedAt: input.now.toISOString(), sampleGp: input.us.gp };
+  return {
+    level,
+    label: BELIEF_LABEL[level],
+    score: pct,
+    why,
+    blurb: parts.join(" "),
+    gradedAt: input.now.toISOString(),
+    sampleGp: input.us.gp,
+    ...(odds.outcome ? { outcome: { win: round3(odds.outcome.win), tie: round3(odds.outcome.tie), loss: round3(odds.outcome.loss) } } : {}),
+  };
+}
+
+function round3(x: number): number {
+  return Math.round(x * 1000) / 1000;
 }
 
 /** Last season's fitted home-ice edge, in words for the card. */
@@ -623,7 +681,7 @@ export function buildRangersFeed(input: {
     ...ourGames.map((g) => (g.CurrTeamID ? g : { ...g, CurrTeamID: us.teamId })),
     ...Object.entries(input.opponentSchedules).flatMap(([id, feed]) => flattenSchedule(feed.Games).map((g) => (g.CurrTeamID ? g : { ...g, CurrTeamID: id }))),
   ];
-  const model = fitBeliefModel(gamesFromRows(ratingRows).games, todayKey(input.now));
+  const model = fitBeliefModel(gamesFromRows(ratingRows).games, todayKey(input.now), teamIdentitiesFromRows(ratingRows));
 
   const upcoming: RangersScoutCard[] = upcomingGames.map((game) => {
     const opponent = byId.get(game.opponentId) ?? placeholderStanding(game.opponentId, game.opponentName, us.division);

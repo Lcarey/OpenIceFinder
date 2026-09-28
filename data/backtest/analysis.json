@@ -298,6 +298,510 @@
    "homeWhenNotFavoured": null
   },
   {
+   "name": "kalman:q0:r9:v1",
+   "favoursHomeN": 761,
+   "homeWhenFavoured": 0.7503285151116952,
+   "favoursAwayN": 683,
+   "homeWhenNotFavoured": 0.27013177159590046
+  },
+  {
+   "name": "kalman:q0:r9:v3",
+   "favoursHomeN": 763,
+   "homeWhenFavoured": 0.754259501965924,
+   "favoursAwayN": 681,
+   "homeWhenNotFavoured": 0.2643171806167401
+  },
+  {
+   "name": "kalman:q0:r14:v1",
+   "favoursHomeN": 765,
+   "homeWhenFavoured": 0.7470588235294118,
+   "favoursAwayN": 679,
+   "homeWhenNotFavoured": 0.2709867452135493
+  },
+  {
+   "name": "kalman:q0:r14:v3",
+   "favoursHomeN": 758,
+   "homeWhenFavoured": 0.7532981530343008,
+   "favoursAwayN": 686,
+   "homeWhenNotFavoured": 0.26895043731778423
+  },
+  {
+   "name": "kalman:q0.002:r9:v1",
+   "favoursHomeN": 755,
+   "homeWhenFavoured": 0.7556291390728477,
+   "favoursAwayN": 689,
+   "homeWhenNotFavoured": 0.26850507982583455
+  },
+  {
+   "name": "kalman:q0.002:r9:v3",
+   "favoursHomeN": 756,
+   "homeWhenFavoured": 0.7566137566137566,
+   "favoursAwayN": 688,
+   "homeWhenNotFavoured": 0.26671511627906974
+  },
+  {
+   "name": "kalman:q0.002:r14:v1",
+   "favoursHomeN": 760,
+   "homeWhenFavoured": 0.7519736842105263,
+   "favoursAwayN": 684,
+   "homeWhenNotFavoured": 0.26900584795321636
+  },
+  {
+   "name": "kalman:q0.002:r14:v3",
+   "favoursHomeN": 755,
+   "homeWhenFavoured": 0.7529801324503311,
+   "favoursAwayN": 689,
+   "homeWhenNotFavoured": 0.2714078374455733
+  },
+  {
+   "name": "kalman:q0.005:r9:v1",
+   "favoursHomeN": 753,
+   "homeWhenFavoured": 0.7556440903054449,
+   "favoursAwayN": 691,
+   "homeWhenNotFavoured": 0.2698986975397974
+  },
+  {
+   "name": "kalman:q0.005:r9:v3",
+   "favoursHomeN": 760,
+   "homeWhenFavoured": 0.7546052631578948,
+   "favoursAwayN": 684,
+   "homeWhenNotFavoured": 0.26608187134502925
+  },
+  {
+   "name": "kalman:q0.005:r14:v1",
+   "favoursHomeN": 755,
+   "homeWhenFavoured": 0.756953642384106,
+   "favoursAwayN": 689,
+   "homeWhenNotFavoured": 0.26705370101596515
+  },
+  {
+   "name": "kalman:q0.005:r14:v3",
+   "favoursHomeN": 756,
+   "homeWhenFavoured": 0.7559523809523809,
+   "favoursAwayN": 688,
+   "homeWhenNotFavoured": 0.26744186046511625
+  },
+  {
+   "name": "kalman:q0.01:r9:v1",
+   "favoursHomeN": 756,
+   "homeWhenFavoured": 0.753968253968254,
+   "favoursAwayN": 688,
+   "homeWhenNotFavoured": 0.2696220930232558
+  },
+  {
+   "name": "kalman:q0.01:r9:v3",
+   "favoursHomeN": 763,
+   "homeWhenFavoured": 0.7562254259501966,
+   "favoursAwayN": 681,
+   "homeWhenNotFavoured": 0.2621145374449339
+  },
+  {
+   "name": "kalman:q0.01:r14:v1",
+   "favoursHomeN": 754,
+   "homeWhenFavoured": 0.7546419098143236,
+   "favoursAwayN": 690,
+   "homeWhenNotFavoured": 0.2702898550724638
+  },
+  {
+   "name": "kalman:q0.01:r14:v3",
+   "favoursHomeN": 759,
+   "homeWhenFavoured": 0.7569169960474308,
+   "favoursAwayN": 685,
+   "homeWhenNotFavoured": 0.26423357664233577
+  },
+  {
+   "name": "kalman:q0.02:r9:v1",
+   "favoursHomeN": 755,
+   "homeWhenFavoured": 0.7536423841059603,
+   "favoursAwayN": 689,
+   "homeWhenNotFavoured": 0.2706821480406386
+  },
+  {
+   "name": "kalman:q0.02:r9:v3",
+   "favoursHomeN": 763,
+   "homeWhenFavoured": 0.7549148099606815,
+   "favoursAwayN": 681,
+   "homeWhenNotFavoured": 0.263582966226138
+  },
+  {
+   "name": "kalman:q0.02:r14:v1",
+   "favoursHomeN": 754,
+   "homeWhenFavoured": 0.753315649867374,
+   "favoursAwayN": 690,
+   "homeWhenNotFavoured": 0.2717391304347826
+  },
+  {
+   "name": "kalman:q0.02:r14:v3",
+   "favoursHomeN": 761,
+   "homeWhenFavoured": 0.7555847568988173,
+   "favoursAwayN": 683,
+   "homeWhenNotFavoured": 0.2642752562225476
+  },
+  {
+   "name": "massey+prior:e9:rho0.25:l1",
+   "favoursHomeN": 768,
+   "homeWhenFavoured": 0.7532552083333334,
+   "favoursAwayN": 676,
+   "homeWhenNotFavoured": 0.2618343195266272
+  },
+  {
+   "name": "massey+prior:e9:rho0.25:l2",
+   "favoursHomeN": 765,
+   "homeWhenFavoured": 0.7549019607843137,
+   "favoursAwayN": 679,
+   "homeWhenNotFavoured": 0.2621502209131075
+  },
+  {
+   "name": "massey+prior:e9:rho0.25:l4",
+   "favoursHomeN": 767,
+   "homeWhenFavoured": 0.7509778357235984,
+   "favoursAwayN": 677,
+   "homeWhenNotFavoured": 0.2651403249630724
+  },
+  {
+   "name": "massey+prior:e9:rho0.5:l1",
+   "favoursHomeN": 768,
+   "homeWhenFavoured": 0.7532552083333334,
+   "favoursAwayN": 676,
+   "homeWhenNotFavoured": 0.2618343195266272
+  },
+  {
+   "name": "massey+prior:e9:rho0.5:l2",
+   "favoursHomeN": 768,
+   "homeWhenFavoured": 0.7526041666666666,
+   "favoursAwayN": 676,
+   "homeWhenNotFavoured": 0.2625739644970414
+  },
+  {
+   "name": "massey+prior:e9:rho0.5:l4",
+   "favoursHomeN": 766,
+   "homeWhenFavoured": 0.75,
+   "favoursAwayN": 678,
+   "homeWhenNotFavoured": 0.2669616519174041
+  },
+  {
+   "name": "massey+prior:e9:rho0.75:l1",
+   "favoursHomeN": 768,
+   "homeWhenFavoured": 0.7526041666666666,
+   "favoursAwayN": 676,
+   "homeWhenNotFavoured": 0.2625739644970414
+  },
+  {
+   "name": "massey+prior:e9:rho0.75:l2",
+   "favoursHomeN": 770,
+   "homeWhenFavoured": 0.7519480519480519,
+   "favoursAwayN": 674,
+   "homeWhenNotFavoured": 0.26186943620178044
+  },
+  {
+   "name": "massey+prior:e9:rho0.75:l4",
+   "favoursHomeN": 772,
+   "homeWhenFavoured": 0.7467616580310881,
+   "favoursAwayN": 672,
+   "homeWhenNotFavoured": 0.2663690476190476
+  },
+  {
+   "name": "massey+prior:e9:rho1:l1",
+   "favoursHomeN": 769,
+   "homeWhenFavoured": 0.7503250975292588,
+   "favoursAwayN": 675,
+   "homeWhenNotFavoured": 0.2644444444444444
+  },
+  {
+   "name": "massey+prior:e9:rho1:l2",
+   "favoursHomeN": 772,
+   "homeWhenFavoured": 0.7487046632124352,
+   "favoursAwayN": 672,
+   "homeWhenNotFavoured": 0.26413690476190477
+  },
+  {
+   "name": "massey+prior:e9:rho1:l4",
+   "favoursHomeN": 770,
+   "homeWhenFavoured": 0.7487012987012988,
+   "favoursAwayN": 674,
+   "homeWhenNotFavoured": 0.2655786350148368
+  },
+  {
+   "name": "massey+prior:mhr:rho0.25:l1",
+   "favoursHomeN": 765,
+   "homeWhenFavoured": 0.7529411764705882,
+   "favoursAwayN": 679,
+   "homeWhenNotFavoured": 0.26435935198821797
+  },
+  {
+   "name": "massey+prior:mhr:rho0.25:l2",
+   "favoursHomeN": 762,
+   "homeWhenFavoured": 0.7559055118110236,
+   "favoursAwayN": 682,
+   "homeWhenNotFavoured": 0.2631964809384164
+  },
+  {
+   "name": "massey+prior:mhr:rho0.25:l4",
+   "favoursHomeN": 762,
+   "homeWhenFavoured": 0.7506561679790026,
+   "favoursAwayN": 682,
+   "homeWhenNotFavoured": 0.2690615835777126
+  },
+  {
+   "name": "massey+prior:mhr:rho0.5:l1",
+   "favoursHomeN": 762,
+   "homeWhenFavoured": 0.7545931758530183,
+   "favoursAwayN": 682,
+   "homeWhenNotFavoured": 0.26466275659824046
+  },
+  {
+   "name": "massey+prior:mhr:rho0.5:l2",
+   "favoursHomeN": 765,
+   "homeWhenFavoured": 0.7529411764705882,
+   "favoursAwayN": 679,
+   "homeWhenNotFavoured": 0.26435935198821797
+  },
+  {
+   "name": "massey+prior:mhr:rho0.5:l4",
+   "favoursHomeN": 763,
+   "homeWhenFavoured": 0.7490170380078637,
+   "favoursAwayN": 681,
+   "homeWhenNotFavoured": 0.2701908957415565
+  },
+  {
+   "name": "massey+prior:mhr:rho0.75:l1",
+   "favoursHomeN": 765,
+   "homeWhenFavoured": 0.7522875816993464,
+   "favoursAwayN": 679,
+   "homeWhenNotFavoured": 0.2650957290132548
+  },
+  {
+   "name": "massey+prior:mhr:rho0.75:l2",
+   "favoursHomeN": 767,
+   "homeWhenFavoured": 0.7535853976531942,
+   "favoursAwayN": 677,
+   "homeWhenNotFavoured": 0.2621861152141802
+  },
+  {
+   "name": "massey+prior:mhr:rho0.75:l4",
+   "favoursHomeN": 764,
+   "homeWhenFavoured": 0.7486910994764397,
+   "favoursAwayN": 680,
+   "homeWhenNotFavoured": 0.2698529411764706
+  },
+  {
+   "name": "massey+prior:mhr:rho1:l1",
+   "favoursHomeN": 766,
+   "homeWhenFavoured": 0.7513054830287206,
+   "favoursAwayN": 678,
+   "homeWhenNotFavoured": 0.26548672566371684
+  },
+  {
+   "name": "massey+prior:mhr:rho1:l2",
+   "favoursHomeN": 765,
+   "homeWhenFavoured": 0.7496732026143791,
+   "favoursAwayN": 679,
+   "homeWhenNotFavoured": 0.26804123711340205
+  },
+  {
+   "name": "massey+prior:mhr:rho1:l4",
+   "favoursHomeN": 767,
+   "homeWhenFavoured": 0.7477183833116037,
+   "favoursAwayN": 677,
+   "homeWhenNotFavoured": 0.2688330871491876
+  },
+  {
+   "name": "massey+prior:blend:rho0.25:l1",
+   "favoursHomeN": 766,
+   "homeWhenFavoured": 0.7532637075718016,
+   "favoursAwayN": 678,
+   "homeWhenNotFavoured": 0.26327433628318586
+  },
+  {
+   "name": "massey+prior:blend:rho0.25:l2",
+   "favoursHomeN": 763,
+   "homeWhenFavoured": 0.7562254259501966,
+   "favoursAwayN": 681,
+   "homeWhenNotFavoured": 0.2621145374449339
+  },
+  {
+   "name": "massey+prior:blend:rho0.25:l4",
+   "favoursHomeN": 763,
+   "homeWhenFavoured": 0.7509829619921363,
+   "favoursAwayN": 681,
+   "homeWhenNotFavoured": 0.26798825256975034
+  },
+  {
+   "name": "massey+prior:blend:rho0.5:l1",
+   "favoursHomeN": 764,
+   "homeWhenFavoured": 0.7552356020942408,
+   "favoursAwayN": 680,
+   "homeWhenNotFavoured": 0.2625
+  },
+  {
+   "name": "massey+prior:blend:rho0.5:l2",
+   "favoursHomeN": 766,
+   "homeWhenFavoured": 0.7526109660574413,
+   "favoursAwayN": 678,
+   "homeWhenNotFavoured": 0.2640117994100295
+  },
+  {
+   "name": "massey+prior:blend:rho0.5:l4",
+   "favoursHomeN": 765,
+   "homeWhenFavoured": 0.7503267973856209,
+   "favoursAwayN": 679,
+   "homeWhenNotFavoured": 0.26730486008836524
+  },
+  {
+   "name": "massey+prior:blend:rho0.75:l1",
+   "favoursHomeN": 769,
+   "homeWhenFavoured": 0.7516254876462939,
+   "favoursAwayN": 675,
+   "homeWhenNotFavoured": 0.26296296296296295
+  },
+  {
+   "name": "massey+prior:blend:rho0.75:l2",
+   "favoursHomeN": 769,
+   "homeWhenFavoured": 0.752925877763329,
+   "favoursAwayN": 675,
+   "homeWhenNotFavoured": 0.2614814814814815
+  },
+  {
+   "name": "massey+prior:blend:rho0.75:l4",
+   "favoursHomeN": 772,
+   "homeWhenFavoured": 0.7467616580310881,
+   "favoursAwayN": 672,
+   "homeWhenNotFavoured": 0.2663690476190476
+  },
+  {
+   "name": "massey+prior:blend:rho1:l1",
+   "favoursHomeN": 766,
+   "homeWhenFavoured": 0.7513054830287206,
+   "favoursAwayN": 678,
+   "homeWhenNotFavoured": 0.26548672566371684
+  },
+  {
+   "name": "massey+prior:blend:rho1:l2",
+   "favoursHomeN": 766,
+   "homeWhenFavoured": 0.7519582245430809,
+   "favoursAwayN": 678,
+   "homeWhenNotFavoured": 0.26474926253687314
+  },
+  {
+   "name": "massey+prior:blend:rho1:l4",
+   "favoursHomeN": 773,
+   "homeWhenFavoured": 0.7464424320827943,
+   "favoursAwayN": 671,
+   "homeWhenNotFavoured": 0.2660208643815201
+  },
+  {
+   "name": "massey+prior:blend:rho1:l2:mhrx0.5",
+   "favoursHomeN": 766,
+   "homeWhenFavoured": 0.7532637075718016,
+   "favoursAwayN": 678,
+   "homeWhenNotFavoured": 0.26327433628318586
+  },
+  {
+   "name": "massey+prior:blend:rho1:l4:mhrx0.5",
+   "favoursHomeN": 763,
+   "homeWhenFavoured": 0.7483617300131061,
+   "favoursAwayN": 681,
+   "homeWhenNotFavoured": 0.2709251101321586
+  },
+  {
+   "name": "massey+prior:blend:rho1:l2:mhrx0.25",
+   "favoursHomeN": 766,
+   "homeWhenFavoured": 0.7545691906005222,
+   "favoursAwayN": 678,
+   "homeWhenNotFavoured": 0.2617994100294985
+  },
+  {
+   "name": "massey+prior:blend:rho1:l4:mhrx0.25",
+   "favoursHomeN": 764,
+   "homeWhenFavoured": 0.7467277486910995,
+   "favoursAwayN": 680,
+   "homeWhenNotFavoured": 0.27205882352941174
+  },
+  {
+   "name": "kalman:prior-blend:rho0.5:pv0.5:q0",
+   "favoursHomeN": 787,
+   "homeWhenFavoured": 0.7198221092757306,
+   "favoursAwayN": 657,
+   "homeWhenNotFavoured": 0.2876712328767123
+  },
+  {
+   "name": "kalman:prior-blend:rho0.5:pv0.5:q0.005",
+   "favoursHomeN": 771,
+   "homeWhenFavoured": 0.732166018158236,
+   "favoursAwayN": 673,
+   "homeWhenNotFavoured": 0.2838038632986627
+  },
+  {
+   "name": "kalman:prior-blend:rho0.5:pv0.5:q0.01",
+   "favoursHomeN": 769,
+   "homeWhenFavoured": 0.7425227568270482,
+   "favoursAwayN": 675,
+   "homeWhenNotFavoured": 0.2733333333333333
+  },
+  {
+   "name": "kalman:prior-blend:rho0.5:pv1.5:q0",
+   "favoursHomeN": 776,
+   "homeWhenFavoured": 0.7442010309278351,
+   "favoursAwayN": 668,
+   "homeWhenNotFavoured": 0.26646706586826346
+  },
+  {
+   "name": "kalman:prior-blend:rho0.5:pv1.5:q0.005",
+   "favoursHomeN": 767,
+   "homeWhenFavoured": 0.7509778357235984,
+   "favoursAwayN": 677,
+   "homeWhenNotFavoured": 0.2651403249630724
+  },
+  {
+   "name": "kalman:prior-blend:rho0.5:pv1.5:q0.01",
+   "favoursHomeN": 761,
+   "homeWhenFavoured": 0.7536136662286466,
+   "favoursAwayN": 683,
+   "homeWhenNotFavoured": 0.2664714494875549
+  },
+  {
+   "name": "kalman:prior-blend:rho1:pv0.5:q0",
+   "favoursHomeN": 768,
+   "homeWhenFavoured": 0.71484375,
+   "favoursAwayN": 676,
+   "homeWhenNotFavoured": 0.30547337278106507
+  },
+  {
+   "name": "kalman:prior-blend:rho1:pv0.5:q0.005",
+   "favoursHomeN": 768,
+   "homeWhenFavoured": 0.7265625,
+   "favoursAwayN": 676,
+   "homeWhenNotFavoured": 0.2921597633136095
+  },
+  {
+   "name": "kalman:prior-blend:rho1:pv0.5:q0.01",
+   "favoursHomeN": 772,
+   "homeWhenFavoured": 0.7318652849740933,
+   "favoursAwayN": 672,
+   "homeWhenNotFavoured": 0.28348214285714285
+  },
+  {
+   "name": "kalman:prior-blend:rho1:pv1.5:q0",
+   "favoursHomeN": 767,
+   "homeWhenFavoured": 0.741851368970013,
+   "favoursAwayN": 677,
+   "homeWhenNotFavoured": 0.275480059084195
+  },
+  {
+   "name": "kalman:prior-blend:rho1:pv1.5:q0.005",
+   "favoursHomeN": 767,
+   "homeWhenFavoured": 0.7444589308996089,
+   "favoursAwayN": 677,
+   "homeWhenNotFavoured": 0.2725258493353028
+  },
+  {
+   "name": "kalman:prior-blend:rho1:pv1.5:q0.01",
+   "favoursHomeN": 762,
+   "homeWhenFavoured": 0.7513123359580053,
+   "favoursAwayN": 682,
+   "homeWhenNotFavoured": 0.26832844574780057
+  },
+  {
    "name": "record:points-pct",
    "favoursHomeN": 714,
    "homeWhenFavoured": 0.75,
@@ -1384,6 +1888,28 @@
  ],
  "familyBest": [
   {
+   "name": "massey+prior:mhr:rho0.5:l1",
+   "family": "massey+prior",
+   "all": {
+    "n": 1444,
+    "accuracy": 0.7427285318559557,
+    "logLoss": 0.5118499308213614,
+    "brier": 0.1430830666585862
+   },
+   "holdout": {
+    "n": 563,
+    "accuracy": 0.7522202486678508,
+    "logLoss": 0.4937477319723118,
+    "brier": 0.13442345840869374
+   },
+   "train": {
+    "n": 881,
+    "accuracy": 0.7366628830874007,
+    "logLoss": 0.5234180783264863,
+    "brier": 0.14861695933133234
+   }
+  },
+  {
    "name": "massey:cap8:l1",
    "family": "massey",
    "all": {
@@ -1447,6 +1973,50 @@
     "accuracy": 0.7423382519863791,
     "logLoss": 0.5265565077787834,
     "brier": 0.1503942689697309
+   }
+  },
+  {
+   "name": "kalman:q0.002:r9:v3",
+   "family": "kalman",
+   "all": {
+    "n": 1444,
+    "accuracy": 0.746191135734072,
+    "logLoss": 0.513950404142342,
+    "brier": 0.14379509224646825
+   },
+   "holdout": {
+    "n": 563,
+    "accuracy": 0.7539964476021315,
+    "logLoss": 0.49439789427404296,
+    "brier": 0.13490253297618535
+   },
+   "train": {
+    "n": 881,
+    "accuracy": 0.7412031782065834,
+    "logLoss": 0.526445367883378,
+    "brier": 0.14947785146232487
+   }
+  },
+  {
+   "name": "kalman:prior-blend:rho0.5:pv1.5:q0.01",
+   "family": "kalman+prior",
+   "all": {
+    "n": 1444,
+    "accuracy": 0.7413434903047091,
+    "logLoss": 0.5194393319091548,
+    "brier": 0.14614087144938886
+   },
+   "holdout": {
+    "n": 563,
+    "accuracy": 0.7468916518650088,
+    "logLoss": 0.4969592301790274,
+    "brier": 0.13608900823899253
+   },
+   "train": {
+    "n": 881,
+    "accuracy": 0.7377979568671964,
+    "logLoss": 0.5338051630942421,
+    "brier": 0.15256447983469337
    }
   },
   {
@@ -1670,5 +2240,2885 @@
    }
   }
  ],
- "homeRatingEdge": 0.20355540749996848
+ "homeRatingEdge": 0.20355540749996848,
+ "ceiling": [
+  {
+   "name": "ceiling:leave-one-out",
+   "description": "Ratings from every other game of the season, past and future. Knows each team's true strength but not this result.",
+   "eligible": {
+    "n": 1444,
+    "accuracy": 0.7676592797783933,
+    "logLoss": 0.4945612387478289,
+    "brier": 0.13656851067114925
+   },
+   "holdout": {
+    "n": 563,
+    "accuracy": 0.7557726465364121,
+    "logLoss": 0.4869708547642425,
+    "brier": 0.13220947442334888
+   }
+  },
+  {
+   "name": "ceiling:hindsight",
+   "description": "Ratings from the whole season including this game, calibrated on the same games.",
+   "eligible": {
+    "n": 1444,
+    "accuracy": 0.7780470914127424,
+    "logLoss": 0.46629190411506305,
+    "brier": 0.1259079904149462
+   },
+   "holdout": {
+    "n": 563,
+    "accuracy": 0.7699822380106572,
+    "logLoss": 0.45960638351137906,
+    "brier": 0.12204387869247012
+   }
+  },
+  {
+   "name": "ceiling:oracle",
+   "description": "Knows every result. Ties still count half, so the most any predictor can score is 94.6%.",
+   "eligible": {
+    "n": 1444,
+    "accuracy": 0.9456371191135734,
+    "logLoss": 0.07536384650176821,
+    "brier": 8.912742382541246e-13
+   },
+   "holdout": {
+    "n": 563,
+    "accuracy": 0.9404973357015985,
+    "logLoss": 0.08248908898359596,
+    "brier": 8.809946714286258e-13
+   }
+  }
+ ],
+ "priors": {
+  "coverage": {
+   "teams": 126,
+   "e9": 37,
+   "mhr": 78,
+   "either": 87
+  },
+  "matches": [
+   {
+    "team": "Winter Club 15 - S",
+    "division": "2015 Blue South",
+    "mhrFrom": "Lovell Winter Club (Select) 9U AAA"
+   },
+   {
+    "team": "Icemen 15 - Elite",
+    "division": "2015 Blue South",
+    "mhrFrom": "Middlesex Icemen 9U AAA"
+   },
+   {
+    "team": "Wizards 15 - Select",
+    "division": "2015 Blue North",
+    "mhrFrom": "East Coast Wizards (Select) 9U AAA"
+   },
+   {
+    "team": "Jr. Bruins 15 - Elite",
+    "division": "2015 Blue North",
+    "e9From": "Jr. Bruins 15 - Elite",
+    "mhrFrom": "Greater Boston Jr Bruins 9U AAA"
+   },
+   {
+    "team": "Casco Bay 16 - Elite",
+    "division": "2016 White North"
+   },
+   {
+    "team": "Wizards 16 - E",
+    "division": "2016 White South"
+   },
+   {
+    "team": "Winter Club 13 - Elite",
+    "division": "2013 Blue",
+    "mhrFrom": "Lovell Winter Club (Elite) 11U AAA"
+   },
+   {
+    "team": "Jr. Rangers 13 - Elite",
+    "division": "2013 Blue",
+    "mhrFrom": "Boston Junior Rangers 11U AAA"
+   },
+   {
+    "team": "Wizards 16 - S",
+    "division": "2016 Green"
+   },
+   {
+    "team": "Express 16 - Select",
+    "division": "2016 Green"
+   },
+   {
+    "team": "Avalanche 13 - Select",
+    "division": "2013 Blue",
+    "mhrFrom": "New Hampshire Avalanche (Select) 11U AAA"
+   },
+   {
+    "team": "Warriors 13 - Select",
+    "division": "2013 Blue",
+    "mhrFrom": "Valley Jr Warriors (Select) 11U AAA"
+   },
+   {
+    "team": "Advantage 14 - Select 1",
+    "division": "2014 Blue",
+    "mhrFrom": "Boston Advantage (Select) 10U AAA"
+   },
+   {
+    "team": "Warriors 14 - Select",
+    "division": "2014 Blue",
+    "mhrFrom": "Valley Jr Warriors (Select) 10U AAA"
+   },
+   {
+    "team": "Avalanche 16 - Elite",
+    "division": "2016 White North",
+    "e9From": "Avalanche 16 - Elite"
+   },
+   {
+    "team": "Advantage 16 - Elite",
+    "division": "2016 White North",
+    "e9From": "Advantage 16 - Elite"
+   },
+   {
+    "team": "Thunderbirds 14 - Elite",
+    "division": "2014 White North",
+    "e9From": "Thunderbirds 14 - Elite",
+    "mhrFrom": "Springfield Jr Thunderbirds (Elite) 10U AAA"
+   },
+   {
+    "team": "Winter Club 15 - Elite",
+    "division": "2014 White North",
+    "mhrFrom": "Lovell Winter Club (Elite) 10U AAA"
+   },
+   {
+    "team": "Patriots 16 - Select",
+    "division": "2016 Red"
+   },
+   {
+    "team": "Icemen 16 - Select",
+    "division": "2016 Red"
+   },
+   {
+    "team": "Giants East 16 - Elite",
+    "division": "2016 Green"
+   },
+   {
+    "team": "Thunderbirds 16 - Select",
+    "division": "2016 Green"
+   },
+   {
+    "team": "Thunderbirds 13 - Elite",
+    "division": "2013 White North",
+    "e9From": "Thunderbirds 13 - Elite",
+    "mhrFrom": "Springfield Jr Thunderbirds (Elite) 11U AAA"
+   },
+   {
+    "team": "Advantage 13 - Elite",
+    "division": "2013 White North",
+    "e9From": "Advantage 14 - Elite 1",
+    "mhrFrom": "Boston Advantage (Elite) 11U AAA"
+   },
+   {
+    "team": "Avalanche 16 - Select",
+    "division": "2016 Red"
+   },
+   {
+    "team": "Seahawks 16 - Elite",
+    "division": "2016 Red"
+   },
+   {
+    "team": "Wizards 13 - E",
+    "division": "2013 White South",
+    "e9From": "Wizards 13 - E",
+    "mhrFrom": "East Coast Wizards (Elite) 11U AAA"
+   },
+   {
+    "team": "Patriots 13 - Elite",
+    "division": "2013 White South",
+    "e9From": "Patriots 13 - Elite",
+    "mhrFrom": "Assabet Valley Patriots (Elite) 11U AAA"
+   },
+   {
+    "team": "Giants - West 15 - Elite",
+    "division": "2015 Red",
+    "mhrFrom": "95 Giants 9U AAA"
+   },
+   {
+    "team": "Warriors 15 - S",
+    "division": "2015 Red"
+   },
+   {
+    "team": "Patriots 16 - Elite",
+    "division": "2016 White South",
+    "e9From": "Patriots 16 - Elite"
+   },
+   {
+    "team": "Railers 16 - Elite",
+    "division": "2016 White South",
+    "e9From": "Railers 16 - Elite"
+   },
+   {
+    "team": "Thunderbirds 14 - Select",
+    "division": "2014 Blue",
+    "mhrFrom": "Springfield Jr Thunderbirds (Select) 10U AAA"
+   },
+   {
+    "team": "Seahawks 14 - Elite",
+    "division": "2014 Blue",
+    "mhrFrom": "Cape Cod TA Seahawks 10U AAA"
+   },
+   {
+    "team": "Giants - West 16 - Elite",
+    "division": "2016 Blue"
+   },
+   {
+    "team": "Jr. Bruins 16 - Elite",
+    "division": "2016 Blue"
+   },
+   {
+    "team": "Thunderbirds 16 - E",
+    "division": "2016 Blue",
+    "e9From": "Thunderbirds 16 - Elite"
+   },
+   {
+    "team": "Icemen 16 - Elite",
+    "division": "2016 Blue",
+    "e9From": "Icemen 16 - Elite"
+   },
+   {
+    "team": "Wizards 13 - S",
+    "division": "2013 Blue",
+    "mhrFrom": "East Coast Wizards (Select) 11U AAA"
+   },
+   {
+    "team": "Express 13 - Elite",
+    "division": "2013 Blue",
+    "mhrFrom": "Walpole Express (BHL) 11U AAA"
+   },
+   {
+    "team": "Thunderbirds 15 - Select",
+    "division": "2015 Red",
+    "mhrFrom": "Springfield Jr Thunderbirds (Select) 9U AAA"
+   },
+   {
+    "team": "Railers 15 - Select",
+    "division": "2015 Red",
+    "mhrFrom": "Worcester Jr Railers (Select) 9U AAA"
+   },
+   {
+    "team": "Icemen 15 - Select",
+    "division": "2015 Red"
+   },
+   {
+    "team": "Avalanche 15 - Select",
+    "division": "2015 Red",
+    "mhrFrom": "New Hampshire Avalanche (Select) 9U AAA"
+   },
+   {
+    "team": "Giants - West 13 - Elite",
+    "division": "2013 Red",
+    "mhrFrom": "95 Giants (Elite) 11U AAA"
+   },
+   {
+    "team": "Thunderbirds 13 - S",
+    "division": "2013 Red",
+    "mhrFrom": "Springfield Jr Thunderbirds (Select) 11U AAA"
+   },
+   {
+    "team": "Icemen 14 - Elite",
+    "division": "2014 Blue",
+    "mhrFrom": "Middlesex Icemen 10U AAA"
+   },
+   {
+    "team": "Railers 14 - Select 1",
+    "division": "2014 Blue",
+    "mhrFrom": "Worcester Jr Railers (Select) 10U AAA"
+   },
+   {
+    "team": "Patriots 14 - Select",
+    "division": "2014 White South",
+    "mhrFrom": "Assabet Valley Patriots (Select) 10U AAA"
+   },
+   {
+    "team": "Warriors 14 - Elite",
+    "division": "2014 White South",
+    "e9From": "Warriors 14 - Elite",
+    "mhrFrom": "Valley Jr Warriors (Elite) 10U AAA"
+   },
+   {
+    "team": "Icemen 13 - Select",
+    "division": "2013 Red",
+    "mhrFrom": "Middlesex Icemen (Select) 11U AAA"
+   },
+   {
+    "team": "Railers 13 - Select 1",
+    "division": "2013 Red",
+    "mhrFrom": "Worcester Jr Railers (Select) 11U AAA"
+   },
+   {
+    "team": "Winter Club 16 - S 1",
+    "division": "2016 Red"
+   },
+   {
+    "team": "Patriots 15 - Select",
+    "division": "2015 Red",
+    "mhrFrom": "Assabet Valley Patriots (Select) 9U AAA"
+   },
+   {
+    "team": "Saints 16 - Select",
+    "division": "2016 Green"
+   },
+   {
+    "team": "Winter Club 16 - Select 2",
+    "division": "2016 Green"
+   },
+   {
+    "team": "Giants - West 14 - Elite",
+    "division": "2014 Red",
+    "mhrFrom": "95 Giants 10U AAA"
+   },
+   {
+    "team": "Giants East 14 - Elite",
+    "division": "2014 Red"
+   },
+   {
+    "team": "Winter Club 16 - Elite",
+    "division": "2016 White South",
+    "e9From": "Winter Club 16 - E"
+   },
+   {
+    "team": "Warriors 16 - Elite",
+    "division": "2016 White South"
+   },
+   {
+    "team": "Advantage 16 - Select",
+    "division": "2016 Red",
+    "e9From": "Advantage 16 - Select"
+   },
+   {
+    "team": "Giants East 13 - Elite",
+    "division": "2013 White South"
+   },
+   {
+    "team": "Jr. Rangers 14 - Elite",
+    "division": "2014 Blue",
+    "mhrFrom": "Boston Junior Rangers 10U AAA"
+   },
+   {
+    "team": "Advantage 15 - Select",
+    "division": "2015 Blue South",
+    "mhrFrom": "Boston Advantage (Select) 9U AAA"
+   },
+   {
+    "team": "Saints 15 - Elite",
+    "division": "2015 Blue South"
+   },
+   {
+    "team": "Avalanche 15 - Elite",
+    "division": "2015 Blue North",
+    "e9From": "Avalanche 15 - Elite",
+    "mhrFrom": "New Hampshire Avalanche (Elite) 9U AAA"
+   },
+   {
+    "team": "Railers 15 - Elite",
+    "division": "2015 Blue North",
+    "e9From": "Railers 15 - Elite",
+    "mhrFrom": "Worcester Jr Railers (Elite) 9U AAA"
+   },
+   {
+    "team": "Express 13 - Select",
+    "division": "2013 Red"
+   },
+   {
+    "team": "Advantage 13 - Select 2",
+    "division": "2013 Red"
+   },
+   {
+    "team": "Americans 14 - Elite",
+    "division": "2014 White North",
+    "e9From": "Americans 14 - Elite",
+    "mhrFrom": "Boston Americans 10U AAA"
+   },
+   {
+    "team": "Jr. Hawks 14 - Elite",
+    "division": "2014 Blue",
+    "mhrFrom": "New England Jr Hawks 10U AAA"
+   },
+   {
+    "team": "Saints 13 - Elite",
+    "division": "2013 Blue",
+    "mhrFrom": "Rhode Island Saints 11U AAA"
+   },
+   {
+    "team": "Saints 14 - Elite",
+    "division": "2014 Red"
+   },
+   {
+    "team": "Express 14 - Select",
+    "division": "2014 Red"
+   },
+   {
+    "team": "Casco Bay 14 - Elite",
+    "division": "2014 White South",
+    "mhrFrom": "Casco Bay Mariners 10U AAA"
+   },
+   {
+    "team": "Wizards 14 - E",
+    "division": "2014 White South",
+    "e9From": "Wizards 14 - E",
+    "mhrFrom": "East Coast Wizards (Elite) 10U AAA"
+   },
+   {
+    "team": "Winter Club 14 - Select 1",
+    "division": "2014 White South",
+    "mhrFrom": "Lovell Winter Club (Select) 10U AAA"
+   },
+   {
+    "team": "Jr. Rangers 15 - Elite",
+    "division": "2015 Blue North",
+    "mhrFrom": "Boston Junior Rangers 9U AAA"
+   },
+   {
+    "team": "VT Jr. Catamounts 13 - Elite",
+    "division": "2013 White South",
+    "mhrFrom": "Vermont Jr Catamounts 11U AAA"
+   },
+   {
+    "team": "Seahawks 13 - Elite",
+    "division": "2013 White North",
+    "e9From": "Seahawks 13 - Elite",
+    "mhrFrom": "Cape Cod TA Seahawks 11U AAA"
+   },
+   {
+    "team": "Jr. Bruins 13 - Elite",
+    "division": "2013 White North",
+    "e9From": "Jr. Bruins 13 - Elite",
+    "mhrFrom": "Greater Boston Jr Bruins 11U AAA"
+   },
+   {
+    "team": "VT Jr. Catamounts 13 - Select",
+    "division": "2013 Blue"
+   },
+   {
+    "team": "Patriots 13 - Select",
+    "division": "2013 Blue",
+    "mhrFrom": "Assabet Valley Patriots (Select) 11U AAA"
+   },
+   {
+    "team": "Winter Club 13 - Select",
+    "division": "2013 Blue",
+    "mhrFrom": "Lovell Winter Club (Select #1) 11U AAA"
+   },
+   {
+    "team": "VT Jr. Catamounts 14 - Elite",
+    "division": "2014 White North",
+    "e9From": "VT Jr. Catamounts 14 - Elite",
+    "mhrFrom": "Vermont Jr Catamounts (Elite) 10U AAA"
+   },
+   {
+    "team": "Railers 16 - Select 2",
+    "division": "2016 Green"
+   },
+   {
+    "team": "Seahawks 15 - Elite",
+    "division": "2015 Blue North",
+    "mhrFrom": "Cape Cod TA Seahawks 9U AAA"
+   },
+   {
+    "team": "Railers 13 - Elite",
+    "division": "2013 White North",
+    "e9From": "Railers 13 - Elite",
+    "mhrFrom": "Worcester Jr Railers (Elite) 11U AAA"
+   },
+   {
+    "team": "Patriots 15 - Elite",
+    "division": "2015 White North",
+    "e9From": "Patriots 15 - Elite",
+    "mhrFrom": "Assabet Valley Patriots (Elite) 9U AAA"
+   },
+   {
+    "team": "Wizards 15 - E",
+    "division": "2015 White North",
+    "e9From": "Wizards 15 - E",
+    "mhrFrom": "East Coast Wizards (Elite) 9U AAA"
+   },
+   {
+    "team": "Express 14 - Elite",
+    "division": "2014 Blue",
+    "mhrFrom": "Walpole Express 10U AAA"
+   },
+   {
+    "team": "VT Jr. Catamounts 15 - Elite",
+    "division": "2015 White North"
+   },
+   {
+    "team": "Americans 15 - Elite",
+    "division": "2015 White North",
+    "e9From": "Americans 15 - Elite",
+    "mhrFrom": "Boston Americans 9U AAA"
+   },
+   {
+    "team": "Railers 13 - Select 2",
+    "division": "2013 Red"
+   },
+   {
+    "team": "Giants East 14 - Select",
+    "division": "2014 Red"
+   },
+   {
+    "team": "Wizards 14 - S",
+    "division": "2014 Red",
+    "mhrFrom": "East Coast Wizards (Select) 10U AAA"
+   },
+   {
+    "team": "Advantage 13 - Select 1",
+    "division": "2013 Red",
+    "mhrFrom": "Boston Advantage (Select) 11U AAA"
+   },
+   {
+    "team": "Jr. Bruins 14 - Elite",
+    "division": "2014 White South",
+    "e9From": "Jr. Bruins 14 - Elite",
+    "mhrFrom": "Greater Boston Jr Bruins 10U AAA"
+   },
+   {
+    "team": "Winter Club 14 - Elite",
+    "division": "2014 White South",
+    "mhrFrom": "Lovell Winter Club (Elite) 10U AAA"
+   },
+   {
+    "team": "NE Knights 15 - Elite",
+    "division": "2015 Blue South",
+    "mhrFrom": "New England Knights 9U AAA"
+   },
+   {
+    "team": "Patriots 14 - Elite",
+    "division": "2014 White North",
+    "e9From": "Patriots 14 - Elite",
+    "mhrFrom": "Assabet Valley Patriots (Elite) 10U AAA"
+   },
+   {
+    "team": "Americans 16 - Elite",
+    "division": "2016 White North",
+    "e9From": "Americans 16 - Elite"
+   },
+   {
+    "team": "Winter Club 14 - S 2",
+    "division": "2014 Blue"
+   },
+   {
+    "team": "Advantage 15 - Elite",
+    "division": "2015 White North",
+    "e9From": "Advantage 15 - Elite",
+    "mhrFrom": "Boston Advantage (Elite) 9U AAA"
+   },
+   {
+    "team": "Jr. Hawks 13 - Elite",
+    "division": "2013 Red",
+    "mhrFrom": "New England Jr Hawks 11U AAA"
+   },
+   {
+    "team": "Avalanche 14 - Elite",
+    "division": "2014 White South",
+    "mhrFrom": "New Hampshire Avalanche (Elite) 10U AAA"
+   },
+   {
+    "team": "NE Knights 13 - Elite",
+    "division": "2013 Blue",
+    "mhrFrom": "New England Knights 11U AAA"
+   },
+   {
+    "team": "Jr. Rangers 16 - Elite",
+    "division": "2016 Blue"
+   },
+   {
+    "team": "Railers 16 - Select 1",
+    "division": "2016 Blue"
+   },
+   {
+    "team": "Railers 14 - Select 2",
+    "division": "2014 Red"
+   },
+   {
+    "team": "NE Knights 14 - Elite",
+    "division": "2014 Blue",
+    "mhrFrom": "New England Knights 10U AAA"
+   },
+   {
+    "team": "Warriors 15 - Elite",
+    "division": "2015 White North",
+    "e9From": "Warriors 15 - Elite",
+    "mhrFrom": "Valley Jr Warriors 9U AAA"
+   },
+   {
+    "team": "Express 15 - Elite",
+    "division": "2015 Red",
+    "mhrFrom": "Walpole Express (BHL) 9U AAA"
+   },
+   {
+    "team": "Warriors 13 - Elite",
+    "division": "2013 White South",
+    "e9From": "Warriors 13 - Elite",
+    "mhrFrom": "Valley Jr Warriors (Elite) 11U AAA"
+   },
+   {
+    "team": "Americans 13 - Elite",
+    "division": "2013 White North",
+    "e9From": "Americans 13 - Elite",
+    "mhrFrom": "Boston Americans 11U AAA"
+   },
+   {
+    "team": "Saints 13 - Select",
+    "division": "2013 Red"
+   },
+   {
+    "team": "Avalanche 13 - Elite",
+    "division": "2013 White South",
+    "mhrFrom": "New Hampshire Avalanche (Elite) 11U AAA"
+   },
+   {
+    "team": "Icemen 13 - Elite",
+    "division": "2013 White North",
+    "e9From": "Icemen 13 - Elite",
+    "mhrFrom": "Middlesex Icemen (Elite) 11U AAA"
+   },
+   {
+    "team": "Advantage 14 - Select 2",
+    "division": "2014 Red"
+   },
+   {
+    "team": "NE Knights 16 - Elite",
+    "division": "2016 Red"
+   },
+   {
+    "team": "NE Knights 14 - Select",
+    "division": "2014 Red"
+   },
+   {
+    "team": "Casco Bay 13 - Elite",
+    "division": "2013 White South",
+    "mhrFrom": "Casco Bay Mariners 11U AAA"
+   },
+   {
+    "team": "Thunderbirds 15 - Elite",
+    "division": "2015 White North",
+    "e9From": "Thunderbirds 15 - Elite",
+    "mhrFrom": "Springfield Jr Thunderbirds (Elite) 9U AAA"
+   },
+   {
+    "team": "VT Jr. Catamounts 16 - Elite",
+    "division": "2016 White North"
+   },
+   {
+    "team": "Casco Bay 15 - Elite",
+    "division": "2015 White North",
+    "e9From": "Casco Bay 15 - Elite",
+    "mhrFrom": "Casco Bay Mariners 9U AAA"
+   },
+   {
+    "team": "Advantage 14 - Elite",
+    "division": "2013 White North",
+    "e9From": "Advantage 14 - Elite 1",
+    "mhrFrom": "Boston Advantage (Elite) 11U AAA"
+   }
+  ]
+ },
+ "early": {
+  "games": 371,
+  "calibration": {
+   "intercept": 0.04166995784593233,
+   "slope": 0.5581915327940883,
+   "games": 536
+  },
+  "results": [
+   {
+    "name": "massey+prior:mhr:rho0.25:l1",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6630727762803235,
+     "logLoss": 0.5722638744756008,
+     "brier": 0.16776974365946107
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7286501377410468,
+     "logLoss": 0.5230639427778925,
+     "brier": 0.14765739610806236
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho0.25:l1",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6738544474393531,
+     "logLoss": 0.5723849333967328,
+     "brier": 0.16764777990029958
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7308539944903581,
+     "logLoss": 0.5231103148378325,
+     "brier": 0.14762947975084645
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho0.25:l2",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6846361185983828,
+     "logLoss": 0.5742460761607978,
+     "brier": 0.16829686602290492
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7319559228650138,
+     "logLoss": 0.5240693797232713,
+     "brier": 0.14802764119301023
+    }
+   },
+   {
+    "name": "massey+prior:mhr:rho0.25:l2",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6792452830188679,
+     "logLoss": 0.5743127925129526,
+     "brier": 0.16837834891063685
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7297520661157024,
+     "logLoss": 0.524059738340149,
+     "brier": 0.14805190505468221
+    }
+   },
+   {
+    "name": "massey+prior:mhr:rho0.5:l1",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6738544474393531,
+     "logLoss": 0.5746684976502462,
+     "brier": 0.16860121239611028
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7297520661157024,
+     "logLoss": 0.5235708575370688,
+     "brier": 0.14781909381792216
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho0.5:l1",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6792452830188679,
+     "logLoss": 0.5750022643875554,
+     "brier": 0.16835349701313754
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7325068870523416,
+     "logLoss": 0.5236866032559229,
+     "brier": 0.14776447794889302
+    }
+   },
+   {
+    "name": "massey:cap10:l1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6495956873315364,
+     "logLoss": 0.5779907226478181,
+     "brier": 0.16999887460575577
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7264462809917356,
+     "logLoss": 0.5250911809268686,
+     "brier": 0.14834389259436193
+    }
+   },
+   {
+    "name": "massey+prior:e9:rho0.25:l1",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.5782132518898591,
+     "brier": 0.17034348342744232
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7269972451790634,
+     "logLoss": 0.5243742825463522,
+     "brier": 0.14822738293627322
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho0.5:l2",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6765498652291105,
+     "logLoss": 0.5784789665432557,
+     "brier": 0.1698811224791055
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7325068870523416,
+     "logLoss": 0.5251923588510966,
+     "brier": 0.14842542582850632
+    }
+   },
+   {
+    "name": "massey+prior:mhr:rho0.5:l2",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6765498652291105,
+     "logLoss": 0.5785045413261689,
+     "brier": 0.17001277796113445
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7319559228650138,
+     "logLoss": 0.5251386504390775,
+     "brier": 0.14845998904552105
+    }
+   },
+   {
+    "name": "massey:cap8:l1:hl90d",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6495956873315364,
+     "logLoss": 0.5791444115695189,
+     "brier": 0.17081757058430963
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.728099173553719,
+     "logLoss": 0.525101118760649,
+     "brier": 0.14872979541429293
+    }
+   },
+   {
+    "name": "massey:cap8:l1:hl120d",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6495956873315364,
+     "logLoss": 0.5792308276184139,
+     "brier": 0.17085204236821372
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7292011019283746,
+     "logLoss": 0.5248351310106208,
+     "brier": 0.14857852578611147
+    }
+   },
+   {
+    "name": "massey:cap12:l1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6415094339622641,
+     "logLoss": 0.5793846117245564,
+     "brier": 0.17041911078038816
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7225895316804408,
+     "logLoss": 0.5258819056622221,
+     "brier": 0.14853253074465336
+    }
+   },
+   {
+    "name": "massey:cap8:l1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6469002695417789,
+     "logLoss": 0.5795249047442154,
+     "brier": 0.17096569532209044
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7242424242424242,
+     "logLoss": 0.5246334037672735,
+     "brier": 0.1483561133877487
+    }
+   },
+   {
+    "name": "massey+prior:e9:rho0.5:l1",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.5803877890235144,
+     "brier": 0.17111219183796994
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7275482093663912,
+     "logLoss": 0.5248659278062904,
+     "brier": 0.14839902788997691
+    }
+   },
+   {
+    "name": "massey+prior:e9:rho0.25:l2",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.660377358490566,
+     "logLoss": 0.5807378325700636,
+     "brier": 0.17137853455173274
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7286501377410468,
+     "logLoss": 0.5255226025766476,
+     "brier": 0.1487359992079959
+    }
+   },
+   {
+    "name": "massey:capInfinity:l1:hl90d",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6469002695417789,
+     "logLoss": 0.5808122972035007,
+     "brier": 0.17080907930106348
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7225895316804408,
+     "logLoss": 0.5271495998091393,
+     "brier": 0.14919307101806614
+    }
+   },
+   {
+    "name": "massey:capInfinity:l1:hl120d",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6469002695417789,
+     "logLoss": 0.5809832606116927,
+     "brier": 0.17085175045000497
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7231404958677686,
+     "logLoss": 0.5270419569748457,
+     "brier": 0.14906858030315884
+    }
+   },
+   {
+    "name": "massey:cap15:l1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6442048517520216,
+     "logLoss": 0.5811548604266121,
+     "brier": 0.17094257971114096
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7214876033057851,
+     "logLoss": 0.5271388106552599,
+     "brier": 0.14890127003396655
+    }
+   },
+   {
+    "name": "massey:capInfinity:l1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6469002695417789,
+     "logLoss": 0.5815310305449845,
+     "brier": 0.17098824436648766
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7203856749311295,
+     "logLoss": 0.5274013727285302,
+     "brier": 0.14895052961665745
+    }
+   },
+   {
+    "name": "kalman:q0.02:r9:v3",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.5815921748658233,
+     "brier": 0.1711641250144607
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.724793388429752,
+     "logLoss": 0.5289539045088463,
+     "brier": 0.1503296223355052
+    }
+   },
+   {
+    "name": "kalman:q0.01:r9:v3",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.660377358490566,
+     "logLoss": 0.582263172222738,
+     "brier": 0.1714116117283322
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7275482093663912,
+     "logLoss": 0.5273091131032158,
+     "brier": 0.1495162648336869
+    }
+   },
+   {
+    "name": "kalman:q0.005:r9:v3",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6549865229110512,
+     "logLoss": 0.5826447325494197,
+     "brier": 0.17155575010148558
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7269972451790634,
+     "logLoss": 0.5268464441419772,
+     "brier": 0.14922145409987903
+    }
+   },
+   {
+    "name": "kalman:q0.002:r9:v3",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6549865229110512,
+     "logLoss": 0.582890566063232,
+     "brier": 0.17164979334788313
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7269972451790634,
+     "logLoss": 0.526884665094751,
+     "brier": 0.14915893027808458
+    }
+   },
+   {
+    "name": "kalman:q0:r9:v3",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6549865229110512,
+     "logLoss": 0.5830620899069866,
+     "brier": 0.17171592508064276
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7253443526170799,
+     "logLoss": 0.527167494819391,
+     "brier": 0.14921599196383903
+    }
+   },
+   {
+    "name": "massey+prior:e9:rho0.5:l2",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6657681940700808,
+     "logLoss": 0.5835283279714244,
+     "brier": 0.17260386581765683
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7286501377410468,
+     "logLoss": 0.5262524670837981,
+     "brier": 0.14905720109799214
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho1:l2:mhrx0.25",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6738544474393531,
+     "logLoss": 0.5836544268594276,
+     "brier": 0.17164658864507865
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7292011019283746,
+     "logLoss": 0.5264290520717092,
+     "brier": 0.14889630712083496
+    }
+   },
+   {
+    "name": "massey:cap6:l1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6522911051212938,
+     "logLoss": 0.5847856921622954,
+     "brier": 0.1732838484556259
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7292011019283746,
+     "logLoss": 0.5272776430136726,
+     "brier": 0.14936034884597335
+    }
+   },
+   {
+    "name": "massey+prior:mhr:rho0.75:l1",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6765498652291105,
+     "logLoss": 0.5848957656234816,
+     "brier": 0.17163908869284245
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7308539944903581,
+     "logLoss": 0.5257763957444332,
+     "brier": 0.14846790285312494
+    }
+   },
+   {
+    "name": "massey+prior:e9:rho0.75:l1",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.5856731327110238,
+     "brier": 0.1728841577133199
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7264462809917356,
+     "logLoss": 0.5260315398313161,
+     "brier": 0.14879182762163945
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho0.75:l1",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6873315363881402,
+     "logLoss": 0.585747170372364,
+     "brier": 0.17145907759941853
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7336088154269973,
+     "logLoss": 0.5260284937688513,
+     "brier": 0.1484285137512317
+    }
+   },
+   {
+    "name": "massey:cap10:l0.3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.660377358490566,
+     "logLoss": 0.5871413574029988,
+     "brier": 0.17216320565887874
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7286501377410468,
+     "logLoss": 0.5275893301104697,
+     "brier": 0.14880472340340237
+    }
+   },
+   {
+    "name": "massey:capInfinity:l3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6415094339622641,
+     "logLoss": 0.5871529007206452,
+     "brier": 0.1738824871242558
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7198347107438017,
+     "logLoss": 0.5285918122731046,
+     "brier": 0.14989127221697887
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho0.25:l4",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6873315363881402,
+     "logLoss": 0.5873041828959444,
+     "brier": 0.1732552585574677
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7325068870523416,
+     "logLoss": 0.5294469603367107,
+     "brier": 0.15000230125351713
+    }
+   },
+   {
+    "name": "massey+prior:mhr:rho0.25:l4",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6819407008086253,
+     "logLoss": 0.5874825331909304,
+     "brier": 0.17326431809625858
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.731404958677686,
+     "logLoss": 0.5294523140245869,
+     "brier": 0.15001442681363322
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho1:l2:mhrx0.5",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6792452830188679,
+     "logLoss": 0.5876446493014245,
+     "brier": 0.17296067491902414
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7325068870523416,
+     "logLoss": 0.5274537831049023,
+     "brier": 0.14921875128487558
+    }
+   },
+   {
+    "name": "massey:cap8:l0.3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.5887506122640126,
+     "brier": 0.17354285115303333
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7258953168044077,
+     "logLoss": 0.5266596990968645,
+     "brier": 0.14881110851818458
+    }
+   },
+   {
+    "name": "massey:cap12:l0.3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6442048517520216,
+     "logLoss": 0.5888089651959472,
+     "brier": 0.17249281308052805
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7225895316804408,
+     "logLoss": 0.5286378749577879,
+     "brier": 0.1490085298897726
+    }
+   },
+   {
+    "name": "massey:cap8:l3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6442048517520216,
+     "logLoss": 0.5890500813989116,
+     "brier": 0.1744734016038019
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7242424242424242,
+     "logLoss": 0.528393940422154,
+     "brier": 0.14978394987595234
+    }
+   },
+   {
+    "name": "massey:cap5:l1:hl60d",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.5899918499526039,
+     "brier": 0.17537413365245674
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7264462809917356,
+     "logLoss": 0.5339475689154514,
+     "brier": 0.1518336504833878
+    }
+   },
+   {
+    "name": "massey:cap5:l1:hl30d",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.660377358490566,
+     "logLoss": 0.5900787793481828,
+     "brier": 0.17528127461469495
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7209366391184573,
+     "logLoss": 0.5391750309676291,
+     "brier": 0.1539392749008262
+    }
+   },
+   {
+    "name": "massey:cap5:l1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6495956873315364,
+     "logLoss": 0.590212266464643,
+     "brier": 0.17557008553433728
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7264462809917356,
+     "logLoss": 0.5313043694437118,
+     "brier": 0.15078049115900152
+    }
+   },
+   {
+    "name": "massey+prior:e9:rho0.75:l2",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6630727762803235,
+     "logLoss": 0.5903265931970212,
+     "brier": 0.17511415290323898
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7275482093663912,
+     "logLoss": 0.5279295726304768,
+     "brier": 0.1496962850647707
+    }
+   },
+   {
+    "name": "massey:sqrt:capInfinity:l0.3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.5904716325370408,
+     "brier": 0.17458612649569966
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7258953168044077,
+     "logLoss": 0.5557076335158433,
+     "brier": 0.15903750582416762
+    }
+   },
+   {
+    "name": "massey:cap15:l0.3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6469002695417789,
+     "logLoss": 0.5910292226317968,
+     "brier": 0.17305981914345103
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7231404958677686,
+     "logLoss": 0.5301096344566093,
+     "brier": 0.1494072009400242
+    }
+   },
+   {
+    "name": "massey:capInfinity:l0.3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6469002695417789,
+     "logLoss": 0.5913917257972499,
+     "brier": 0.1731217473776616
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7231404958677686,
+     "logLoss": 0.5303844587659016,
+     "brier": 0.14946005488867015
+    }
+   },
+   {
+    "name": "kalman:q0.02:r14:v3",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6549865229110512,
+     "logLoss": 0.5913991234076289,
+     "brier": 0.17480222397659398
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7253443526170799,
+     "logLoss": 0.5313405938487881,
+     "brier": 0.1510536101998161
+    }
+   },
+   {
+    "name": "kalman:q0.01:r14:v3",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6549865229110512,
+     "logLoss": 0.5923447340119189,
+     "brier": 0.17516992152346877
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7264462809917356,
+     "logLoss": 0.5309790427087605,
+     "brier": 0.15074595487329095
+    }
+   },
+   {
+    "name": "massey+prior:mhr:rho0.75:l2",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6684636118598383,
+     "logLoss": 0.5926618106283245,
+     "brier": 0.17466435683330672
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7286501377410468,
+     "logLoss": 0.5285885543173408,
+     "brier": 0.14960837101784805
+    }
+   },
+   {
+    "name": "kalman:q0.005:r14:v3",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.592858816189733,
+     "brier": 0.17537237146295057
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7275482093663912,
+     "logLoss": 0.5311946052632988,
+     "brier": 0.15072838829417828
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho0.75:l2",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6765498652291105,
+     "logLoss": 0.5930611667746315,
+     "brier": 0.17470332251937004
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7319559228650138,
+     "logLoss": 0.5287794199260827,
+     "brier": 0.14961850103560564
+    }
+   },
+   {
+    "name": "kalman:q0.002:r14:v3",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.5931818929618822,
+     "brier": 0.17550048438810112
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.728099173553719,
+     "logLoss": 0.5315814494282807,
+     "brier": 0.15081328147086218
+    }
+   },
+   {
+    "name": "massey:cap6:l0.3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6522911051212938,
+     "logLoss": 0.593235232250026,
+     "brier": 0.17597486574135385
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7286501377410468,
+     "logLoss": 0.5281358596236587,
+     "brier": 0.14959370535142924
+    }
+   },
+   {
+    "name": "kalman:q0:r14:v3",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.5934037468336046,
+     "brier": 0.17558884384199847
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7253443526170799,
+     "logLoss": 0.5320112929780009,
+     "brier": 0.15093614153373744
+    }
+   },
+   {
+    "name": "massey+prior:e9:rho1:l1",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.5936540939191505,
+     "brier": 0.17531152980571357
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7264462809917356,
+     "logLoss": 0.5277861469743033,
+     "brier": 0.14933463594501462
+    }
+   },
+   {
+    "name": "massey+prior:e9:rho0.25:l4",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6630727762803235,
+     "logLoss": 0.594055131589465,
+     "brier": 0.1765481883928212
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7264462809917356,
+     "logLoss": 0.5310545117917934,
+     "brier": 0.150797784358973
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho0.5:l4",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6765498652291105,
+     "logLoss": 0.5948903920536703,
+     "brier": 0.17658524083886265
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7297520661157024,
+     "logLoss": 0.5319216142025915,
+     "brier": 0.15106001351299006
+    }
+   },
+   {
+    "name": "massey+prior:mhr:rho0.5:l4",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6684636118598383,
+     "logLoss": 0.5950845320713559,
+     "brier": 0.17650392896843078
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7275482093663912,
+     "logLoss": 0.5318642329636614,
+     "brier": 0.15103888965291792
+    }
+   },
+   {
+    "name": "massey:sqrt:cap8:l0.3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6684636118598383,
+     "logLoss": 0.5955035099270446,
+     "brier": 0.17663657828458193
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.728099173553719,
+     "logLoss": 0.5592377272257095,
+     "brier": 0.1603605027997439
+    }
+   },
+   {
+    "name": "massey:cap5:l0.3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.5978573574401659,
+     "brier": 0.17832294745792795
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.728099173553719,
+     "logLoss": 0.5313577602436346,
+     "brier": 0.150851722965293
+    }
+   },
+   {
+    "name": "massey+prior:e9:rho0.5:l4",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.660377358490566,
+     "logLoss": 0.5979793724492989,
+     "brier": 0.17837071321914277
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7242424242424242,
+     "logLoss": 0.532320362850005,
+     "brier": 0.15140036113071284
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho1:l4:mhrx0.25",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.660377358490566,
+     "logLoss": 0.6000027013542907,
+     "brier": 0.17825487293858952
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7236914600550964,
+     "logLoss": 0.533309311575697,
+     "brier": 0.15160670690110445
+    }
+   },
+   {
+    "name": "kalman:prior-blend:rho0.5:pv1.5:q0.01",
+    "family": "kalman+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6711590296495957,
+     "logLoss": 0.6002885960825796,
+     "brier": 0.17945179328825434
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7286501377410468,
+     "logLoss": 0.5346955817534729,
+     "brier": 0.1525483814404093
+    }
+   },
+   {
+    "name": "massey+prior:e9:rho1:l2",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6549865229110512,
+     "logLoss": 0.6005578830401798,
+     "brier": 0.178374467195689
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7253443526170799,
+     "logLoss": 0.5304350912259377,
+     "brier": 0.15054224268873212
+    }
+   },
+   {
+    "name": "massey:cap8:l0.1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6549865229110512,
+     "logLoss": 0.6010287658354527,
+     "brier": 0.17666501302648546
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7253443526170799,
+     "logLoss": 0.5293348495056404,
+     "brier": 0.149453617189108
+    }
+   },
+   {
+    "name": "massey:sqrt:capInfinity:l1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6549865229110512,
+     "logLoss": 0.6013204311012201,
+     "brier": 0.17863063675141036
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7231404958677686,
+     "logLoss": 0.5615823549284598,
+     "brier": 0.1612906826119175
+    }
+   },
+   {
+    "name": "massey+prior:mhr:rho1:l1",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6765498652291105,
+     "logLoss": 0.6013450942518734,
+     "brier": 0.1757824150075022
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7319559228650138,
+     "logLoss": 0.5293525091988531,
+     "brier": 0.14937785326615768
+    }
+   },
+   {
+    "name": "kalman:prior-blend:rho0.5:pv1.5:q0.005",
+    "family": "kalman+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6684636118598383,
+     "logLoss": 0.6014281030246106,
+     "brier": 0.1799361176175918
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7269972451790634,
+     "logLoss": 0.5353119227984566,
+     "brier": 0.1526878248311586
+    }
+   },
+   {
+    "name": "massey:cap5:l3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6630727762803235,
+     "logLoss": 0.6025587602348469,
+     "brier": 0.17987324381914704
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7303030303030303,
+     "logLoss": 0.5388771657822532,
+     "brier": 0.15333683007271137
+    }
+   },
+   {
+    "name": "kalman:prior-blend:rho0.5:pv1.5:q0",
+    "family": "kalman+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6657681940700808,
+     "logLoss": 0.6026712250973433,
+     "brier": 0.18046713528758584
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7236914600550964,
+     "logLoss": 0.537384311561266,
+     "brier": 0.1533905303551792
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho1:l1",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6873315363881402,
+     "logLoss": 0.6030967044988885,
+     "brier": 0.17581123248345312
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7352617079889807,
+     "logLoss": 0.5298241848196513,
+     "brier": 0.1493852997803685
+    }
+   },
+   {
+    "name": "massey:cap5:l3:hl60d",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.6047690550799388,
+     "brier": 0.18065730145715664
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7264462809917356,
+     "logLoss": 0.545959347968415,
+     "brier": 0.15594684359738384
+    }
+   },
+   {
+    "name": "massey:sqrt:cap8:l1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.6052736009596966,
+     "brier": 0.18030821502371133
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.724793388429752,
+     "logLoss": 0.5649159195970441,
+     "brier": 0.16256669710566782
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho1:l4:mhrx0.5",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6630727762803235,
+     "logLoss": 0.6071234211754781,
+     "brier": 0.18099030473933353
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.724793388429752,
+     "logLoss": 0.535552737966125,
+     "brier": 0.1524648799500941
+    }
+   },
+   {
+    "name": "massey+prior:e9:rho0.75:l4",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6469002695417789,
+     "logLoss": 0.6071619807938027,
+     "brier": 0.18178286312032238
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7209366391184573,
+     "logLoss": 0.5350447163047096,
+     "brier": 0.15249264913144323
+    }
+   },
+   {
+    "name": "massey:cap5:l3:hl30d",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.6074289750548735,
+     "brier": 0.18165705814964983
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7203856749311295,
+     "logLoss": 0.5562367617525523,
+     "brier": 0.159952993492598
+    }
+   },
+   {
+    "name": "massey:cap3:l1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6469002695417789,
+     "logLoss": 0.6075657175563076,
+     "brier": 0.18225776506198846
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7264462809917356,
+     "logLoss": 0.5531367500080934,
+     "brier": 0.15835626126259203
+    }
+   },
+   {
+    "name": "massey:cap3:l0.3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6684636118598383,
+     "logLoss": 0.6079171784492042,
+     "brier": 0.18274322203799281
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7297520661157024,
+     "logLoss": 0.550122240277178,
+     "brier": 0.15733904736109972
+    }
+   },
+   {
+    "name": "kalman:q0.02:r9:v1",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6549865229110512,
+     "logLoss": 0.6113162064752476,
+     "brier": 0.18315069944095114
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7253443526170799,
+     "logLoss": 0.5400254837972224,
+     "brier": 0.1546236761807493
+    }
+   },
+   {
+    "name": "massey:cap2:l0.3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.660377358490566,
+     "logLoss": 0.6140840658263875,
+     "brier": 0.18480620477082227
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.724793388429752,
+     "logLoss": 0.5739143443320286,
+     "brier": 0.1664744050935586
+    }
+   },
+   {
+    "name": "kalman:q0.01:r9:v1",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6495956873315364,
+     "logLoss": 0.6143247933015722,
+     "brier": 0.1843991307913998
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7242424242424242,
+     "logLoss": 0.5405608183990045,
+     "brier": 0.15455886559873203
+    }
+   },
+   {
+    "name": "massey+prior:mhr:rho1:l2",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6792452830188679,
+     "logLoss": 0.6147343788914497,
+     "brier": 0.1808554061780323
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7303030303030303,
+     "logLoss": 0.5339839251641423,
+     "brier": 0.15118971336563194
+    }
+   },
+   {
+    "name": "massey+prior:mhr:rho0.75:l4",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6711590296495957,
+     "logLoss": 0.6156198461952285,
+     "brier": 0.18377786924861425
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7264462809917356,
+     "logLoss": 0.5379192821301293,
+     "brier": 0.15326627409220506
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho0.75:l4",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6765498652291105,
+     "logLoss": 0.6159416475404933,
+     "brier": 0.18426313100569353
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.731404958677686,
+     "logLoss": 0.5381933899095771,
+     "brier": 0.15341956781823846
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho1:l2",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6846361185983828,
+     "logLoss": 0.6160344628723042,
+     "brier": 0.1812307211599028
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7319559228650138,
+     "logLoss": 0.5344259992371234,
+     "brier": 0.15129025342695454
+    }
+   },
+   {
+    "name": "kalman:q0.005:r9:v1",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6495956873315364,
+     "logLoss": 0.6160516588339563,
+     "brier": 0.18512805129930124
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7242424242424242,
+     "logLoss": 0.5419722066297913,
+     "brier": 0.15489944009891712
+    }
+   },
+   {
+    "name": "kalman:q0.002:r9:v1",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6495956873315364,
+     "logLoss": 0.6171732406376765,
+     "brier": 0.18560611010657393
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7236914600550964,
+     "logLoss": 0.5437494758600537,
+     "brier": 0.1554339471102077
+    }
+   },
+   {
+    "name": "kalman:q0:r9:v1",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6495956873315364,
+     "logLoss": 0.6179607525588005,
+     "brier": 0.18594390398476807
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7214876033057851,
+     "logLoss": 0.5457140174410817,
+     "brier": 0.1560833833104822
+    }
+   },
+   {
+    "name": "massey:cap2:l1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6469002695417789,
+     "logLoss": 0.6199277518513422,
+     "brier": 0.18696322208792074
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7225895316804408,
+     "logLoss": 0.5785940152642135,
+     "brier": 0.1683512875765662
+    }
+   },
+   {
+    "name": "massey+prior:e9:rho1:l4",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6388140161725068,
+     "logLoss": 0.6207557143130727,
+     "brier": 0.18599114907921846
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7159779614325069,
+     "logLoss": 0.5390433767453712,
+     "brier": 0.15389639599916374
+    }
+   },
+   {
+    "name": "massey:cap3:l3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6415094339622641,
+     "logLoss": 0.6234145594988548,
+     "brier": 0.18853721625251602
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7231404958677686,
+     "logLoss": 0.5643262229032612,
+     "brier": 0.16264962120866797
+    }
+   },
+   {
+    "name": "massey:capInfinity:l10",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6415094339622641,
+     "logLoss": 0.6245260067331017,
+     "brier": 0.1895182872872318
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7170798898071625,
+     "logLoss": 0.546514985080496,
+     "brier": 0.15692065565618907
+    }
+   },
+   {
+    "name": "kalman:q0.02:r14:v1",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.6273813928042694,
+     "brier": 0.19015435009492557
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7242424242424242,
+     "logLoss": 0.5471122724962447,
+     "brier": 0.1572851276129313
+    }
+   },
+   {
+    "name": "massey:cap8:l10",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.628032345013477,
+     "logLoss": 0.6286592182358061,
+     "brier": 0.19102241271217324
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7165289256198347,
+     "logLoss": 0.549990847286328,
+     "brier": 0.15788027771990676
+    }
+   },
+   {
+    "name": "kalman:q0.01:r14:v1",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.6305637876793297,
+     "brier": 0.19155497121851944
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7242424242424242,
+     "logLoss": 0.5502343064141872,
+     "brier": 0.15822241455639652
+    }
+   },
+   {
+    "name": "kalman:q0.005:r14:v1",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.632326736886933,
+     "brier": 0.1923403120898132
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7242424242424242,
+     "logLoss": 0.5533859165108116,
+     "brier": 0.1592571758241439
+    }
+   },
+   {
+    "name": "kalman:q0.002:r14:v1",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6549865229110512,
+     "logLoss": 0.633447758246875,
+     "brier": 0.192843127495714
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.724793388429752,
+     "logLoss": 0.5563622712563056,
+     "brier": 0.16028505052699799
+    }
+   },
+   {
+    "name": "kalman:prior-blend:rho0.5:pv0.5:q0.01",
+    "family": "kalman+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6307277628032345,
+     "logLoss": 0.633744866258096,
+     "brier": 0.19425291612913384
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7132231404958678,
+     "logLoss": 0.5519699477640192,
+     "brier": 0.1598665463100409
+    }
+   },
+   {
+    "name": "kalman:q0:r14:v1",
+    "family": "kalman",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6549865229110512,
+     "logLoss": 0.6342237682968859,
+     "brier": 0.19319274002919326
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7214876033057851,
+     "logLoss": 0.5591295888052887,
+     "brier": 0.1612768552041907
+    }
+   },
+   {
+    "name": "kalman:prior-blend:rho0.5:pv0.5:q0.005",
+    "family": "kalman+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.628032345013477,
+     "logLoss": 0.6365928498754505,
+     "brier": 0.19545350397784722
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7099173553719008,
+     "logLoss": 0.5568488965579842,
+     "brier": 0.1617500911921813
+    }
+   },
+   {
+    "name": "massey:cap2:l3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6415094339622641,
+     "logLoss": 0.6375766417629196,
+     "brier": 0.19471330878401444
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7176308539944903,
+     "logLoss": 0.5905208682579521,
+     "brier": 0.17347111065723642
+    }
+   },
+   {
+    "name": "kalman:prior-blend:rho0.5:pv0.5:q0",
+    "family": "kalman+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6226415094339622,
+     "logLoss": 0.639762402223144,
+     "brier": 0.19678215701112722
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.6994490358126721,
+     "logLoss": 0.5677968704252179,
+     "brier": 0.16612936698637665
+    }
+   },
+   {
+    "name": "massey:cap5:l10",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.628032345013477,
+     "logLoss": 0.6401642408890182,
+     "brier": 0.19610437043294948
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7192837465564739,
+     "logLoss": 0.5648861631215574,
+     "brier": 0.16333944261941719
+    }
+   },
+   {
+    "name": "massey:result:l1",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6576819407008087,
+     "logLoss": 0.6461319664136883,
+     "brier": 0.19861116076033955
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7231404958677686,
+     "logLoss": 0.6218384082405408,
+     "brier": 0.1876160733745259
+    }
+   },
+   {
+    "name": "massey+prior:mhr:rho1:l4",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6684636118598383,
+     "logLoss": 0.6461809460060117,
+     "brier": 0.19282909645921342
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7253443526170799,
+     "logLoss": 0.5469741338532622,
+     "brier": 0.1561866090635872
+    }
+   },
+   {
+    "name": "massey+prior:blend:rho1:l4",
+    "family": "massey+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6630727762803235,
+     "logLoss": 0.6476664208164912,
+     "brier": 0.19399392452881958
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7236914600550964,
+     "logLoss": 0.5476516436016701,
+     "brier": 0.1565690418243659
+    }
+   },
+   {
+    "name": "massey:cap3:l10",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6145552560646901,
+     "logLoss": 0.6552434536964563,
+     "brier": 0.2030921089104806
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7110192837465564,
+     "logLoss": 0.5920047347158721,
+     "brier": 0.17434695787535032
+    }
+   },
+   {
+    "name": "massey:result:l3",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6469002695417789,
+     "logLoss": 0.6600740977353053,
+     "brier": 0.205316354380775
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7181818181818181,
+     "logLoss": 0.6310913654783386,
+     "brier": 0.19202358929803995
+    }
+   },
+   {
+    "name": "kalman:prior-blend:rho1:pv1.5:q0.01",
+    "family": "kalman+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6388140161725068,
+     "logLoss": 0.664419880565589,
+     "brier": 0.20076860255932608
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7165289256198347,
+     "logLoss": 0.5534552260542526,
+     "brier": 0.15914886667373443
+    }
+   },
+   {
+    "name": "massey:cap2:l10",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6118598382749326,
+     "logLoss": 0.6644445672293396,
+     "brier": 0.20749135035701685
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7066115702479339,
+     "logLoss": 0.6156533934197176,
+     "brier": 0.18487720943871241
+    }
+   },
+   {
+    "name": "kalman:prior-blend:rho1:pv1.5:q0.005",
+    "family": "kalman+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6361185983827493,
+     "logLoss": 0.6663687628320797,
+     "brier": 0.2015303456253037
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.71267217630854,
+     "logLoss": 0.5555154927231425,
+     "brier": 0.15986250599257879
+    }
+   },
+   {
+    "name": "kalman:prior-blend:rho1:pv1.5:q0",
+    "family": "kalman+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6388140161725068,
+     "logLoss": 0.6684728183690769,
+     "brier": 0.20235208256988452
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7137741046831956,
+     "logLoss": 0.5598400212136116,
+     "brier": 0.16146384271456513
+    }
+   },
+   {
+    "name": "massey:result:l10",
+    "family": "massey",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6145552560646901,
+     "logLoss": 0.6772066786591826,
+     "brier": 0.2137538386425399
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7088154269972452,
+     "logLoss": 0.6482357234935764,
+     "brier": 0.20033449386016805
+    }
+   },
+   {
+    "name": "kalman:prior-blend:rho1:pv0.5:q0.01",
+    "family": "kalman+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6118598382749326,
+     "logLoss": 0.7217399429356327,
+     "brier": 0.22106962004612263
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.7016528925619835,
+     "logLoss": 0.5850991850436162,
+     "brier": 0.17085589258025952
+    }
+   },
+   {
+    "name": "kalman:prior-blend:rho1:pv0.5:q0.005",
+    "family": "kalman+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6118598382749326,
+     "logLoss": 0.7263342595984712,
+     "brier": 0.22257439091617684
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.6961432506887052,
+     "logLoss": 0.5951851961769041,
+     "brier": 0.17450516808077898
+    }
+   },
+   {
+    "name": "kalman:prior-blend:rho1:pv0.5:q0",
+    "family": "kalman+prior",
+    "early": {
+     "n": 371,
+     "accuracy": 0.6091644204851752,
+     "logLoss": 0.7313962871135826,
+     "brier": 0.22421321646901798
+    },
+    "season": {
+     "n": 1815,
+     "accuracy": 0.6862258953168044,
+     "logLoss": 0.6161756228057029,
+     "brier": 0.18223313322631335
+    }
+   }
+  ]
+ },
+ "ties": [
+  {
+   "name": "flat tie rate",
+   "eligible": {
+    "n": 1444,
+    "logLoss": 0.7973269153739339,
+    "predictedTies": 0.10696372978055217,
+    "actualTies": 0.10872576177285319,
+    "tieBins": [
+     {
+      "lo": 0,
+      "hi": 0.05,
+      "n": 29,
+      "predicted": 0.028329051444730472,
+      "actual": 0
+     },
+     {
+      "lo": 0.05,
+      "hi": 0.1,
+      "n": 53,
+      "predicted": 0.07336275886828501,
+      "actual": 0.018867924528301886
+     },
+     {
+      "lo": 0.1,
+      "hi": 0.15,
+      "n": 1362,
+      "predicted": 0.10994556320939901,
+      "actual": 0.1145374449339207
+     }
+    ]
+   },
+   "holdout": {
+    "n": 563,
+    "logLoss": 0.784099597587871,
+    "predictedTies": 0.10436330234234131,
+    "actualTies": 0.11900532859680284,
+    "tieBins": [
+     {
+      "lo": 0,
+      "hi": 0.05,
+      "n": 12,
+      "predicted": 0.026984584743486695,
+      "actual": 0
+     },
+     {
+      "lo": 0.05,
+      "hi": 0.1,
+      "n": 27,
+      "predicted": 0.07539401269178587,
+      "actual": 0.037037037037037035
+     },
+     {
+      "lo": 0.1,
+      "hi": 0.15,
+      "n": 524,
+      "predicted": 0.10762802644873683,
+      "actual": 0.12595419847328243
+     }
+    ]
+   },
+   "train": {
+    "n": 881,
+    "logLoss": 0.8057797870124742,
+    "predictedTies": 0.10862552393232572,
+    "actualTies": 0.1021566401816118,
+    "tieBins": [
+     {
+      "lo": 0,
+      "hi": 0.05,
+      "n": 17,
+      "predicted": 0.029278086763255492,
+      "actual": 0
+     },
+     {
+      "lo": 0.05,
+      "hi": 0.1,
+      "n": 26,
+      "predicted": 0.07125337989772641,
+      "actual": 0
+     },
+     {
+      "lo": 0.1,
+      "hi": 0.15,
+      "n": 838,
+      "predicted": 0.11139471507406055,
+      "actual": 0.10739856801909307
+     }
+    ]
+   }
+  },
+  {
+   "name": "ordered logit",
+   "eligible": {
+    "n": 1444,
+    "logLoss": 0.7511865486214969,
+    "predictedTies": 0.10585441935293115,
+    "actualTies": 0.10872576177285319,
+    "tieBins": [
+     {
+      "lo": 0,
+      "hi": 0.05,
+      "n": 197,
+      "predicted": 0.029798256603712738,
+      "actual": 0.02030456852791878
+     },
+     {
+      "lo": 0.05,
+      "hi": 0.1,
+      "n": 351,
+      "predicted": 0.07560173102369368,
+      "actual": 0.08831908831908832
+     },
+     {
+      "lo": 0.1,
+      "hi": 0.15,
+      "n": 719,
+      "predicted": 0.1296104025540063,
+      "actual": 0.13908205841446453
+     },
+     {
+      "lo": 0.15,
+      "hi": 0.2,
+      "n": 177,
+      "predicted": 0.15399682468392203,
+      "actual": 0.12429378531073447
+     }
+    ]
+   },
+   "holdout": {
+    "n": 563,
+    "logLoss": 0.7414292652265216,
+    "predictedTies": 0.10376584129868692,
+    "actualTies": 0.11900532859680284,
+    "tieBins": [
+     {
+      "lo": 0,
+      "hi": 0.05,
+      "n": 89,
+      "predicted": 0.030071203043868962,
+      "actual": 0.02247191011235955
+     },
+     {
+      "lo": 0.05,
+      "hi": 0.1,
+      "n": 134,
+      "predicted": 0.0750458596040926,
+      "actual": 0.07462686567164178
+     },
+     {
+      "lo": 0.1,
+      "hi": 0.15,
+      "n": 273,
+      "predicted": 0.12943967040466642,
+      "actual": 0.17216117216117216
+     },
+     {
+      "lo": 0.15,
+      "hi": 0.2,
+      "n": 67,
+      "predicted": 0.15448740854976228,
+      "actual": 0.11940298507462686
+     }
+    ]
+   },
+   "train": {
+    "n": 881,
+    "logLoss": 0.7574219067955843,
+    "predictedTies": 0.10718911792789092,
+    "actualTies": 0.1021566401816118,
+    "tieBins": [
+     {
+      "lo": 0,
+      "hi": 0.05,
+      "n": 108,
+      "predicted": 0.029573328518769166,
+      "actual": 0.018518518518518517
+     },
+     {
+      "lo": 0.05,
+      "hi": 0.1,
+      "n": 217,
+      "predicted": 0.07594498802934595,
+      "actual": 0.0967741935483871
+     },
+     {
+      "lo": 0.1,
+      "hi": 0.15,
+      "n": 446,
+      "predicted": 0.12971490900416305,
+      "actual": 0.11883408071748879
+     },
+     {
+      "lo": 0.15,
+      "hi": 0.2,
+      "n": 110,
+      "predicted": 0.15369801451109205,
+      "actual": 0.12727272727272726
+     }
+    ]
+   }
+  },
+  {
+   "name": "ordered logit by birth year",
+   "eligible": {
+    "n": 1444,
+    "logLoss": 0.7542763850480952,
+    "predictedTies": 0.10534032631293946,
+    "actualTies": 0.10872576177285319,
+    "tieBins": [
+     {
+      "lo": 0,
+      "hi": 0.05,
+      "n": 212,
+      "predicted": 0.02967808480536833,
+      "actual": 0.018867924528301886
+     },
+     {
+      "lo": 0.05,
+      "hi": 0.1,
+      "n": 382,
+      "predicted": 0.07620789466679263,
+      "actual": 0.09947643979057591
+     },
+     {
+      "lo": 0.1,
+      "hi": 0.15,
+      "n": 611,
+      "predicted": 0.1260213124536653,
+      "actual": 0.12438625204582651
+     },
+     {
+      "lo": 0.15,
+      "hi": 0.2,
+      "n": 227,
+      "predicted": 0.16399281657364076,
+      "actual": 0.16740088105726872
+     },
+     {
+      "lo": 0.2,
+      "hi": 0.3,
+      "n": 12,
+      "predicted": 0.20690584858548747,
+      "actual": 0.08333333333333333
+     }
+    ]
+   },
+   "holdout": {
+    "n": 563,
+    "logLoss": 0.7456293531631931,
+    "predictedTies": 0.10429210005869621,
+    "actualTies": 0.11900532859680284,
+    "tieBins": [
+     {
+      "lo": 0,
+      "hi": 0.05,
+      "n": 94,
+      "predicted": 0.02943156737212883,
+      "actual": 0.02127659574468085
+     },
+     {
+      "lo": 0.05,
+      "hi": 0.1,
+      "n": 148,
+      "predicted": 0.07577004669723293,
+      "actual": 0.0945945945945946
+     },
+     {
+      "lo": 0.1,
+      "hi": 0.15,
+      "n": 214,
+      "predicted": 0.12475127184860689,
+      "actual": 0.1542056074766355
+     },
+     {
+      "lo": 0.15,
+      "hi": 0.2,
+      "n": 105,
+      "predicted": 0.16797995743367122,
+      "actual": 0.17142857142857143
+     },
+     {
+      "lo": 0.2,
+      "hi": 0.3,
+      "n": 2,
+      "predicted": 0.20062519136897858,
+      "actual": 0
+     }
+    ]
+   },
+   "train": {
+    "n": 881,
+    "logLoss": 0.7598022408383333,
+    "predictedTies": 0.10601019167178079,
+    "actualTies": 0.1021566401816118,
+    "tieBins": [
+     {
+      "lo": 0,
+      "hi": 0.05,
+      "n": 118,
+      "predicted": 0.029874463099643863,
+      "actual": 0.01694915254237288
+     },
+     {
+      "lo": 0.05,
+      "hi": 0.1,
+      "n": 234,
+      "predicted": 0.07648482415181333,
+      "actual": 0.10256410256410256
+     },
+     {
+      "lo": 0.1,
+      "hi": 0.15,
+      "n": 397,
+      "predicted": 0.1267059187244022,
+      "actual": 0.10831234256926953
+     },
+     {
+      "lo": 0.15,
+      "hi": 0.2,
+      "n": 122,
+      "predicted": 0.16056126091541778,
+      "actual": 0.16393442622950818
+     },
+     {
+      "lo": 0.2,
+      "hi": 0.3,
+      "n": 10,
+      "predicted": 0.20816198002878927,
+      "actual": 0.1
+     }
+    ]
+   }
+  }
+ ]
 }

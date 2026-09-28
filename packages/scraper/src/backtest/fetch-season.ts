@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Snapshot last season's Elite 9 results for the 2013–2016 birth years into data/backtest/elite9-2025-26.json.
+ * Snapshot a finished Elite 9 season for the 2013–2016 birth years into data/backtest/elite9-<label>.json.
  *
- * Usage: node --import tsx packages/scraper/src/backtest/fetch-2025-26.ts
+ * Usage: npm run backtest:fetch -- [--season 2026]   (widget seasons are named by their end year)
  */
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -21,7 +21,13 @@ import {
 import type { BtSnapshot } from "./games.js";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "..", "..");
-const SEASON = "2026";
+function arg(name: string): string | undefined {
+  const i = process.argv.indexOf(name);
+  return i >= 0 ? process.argv[i + 1] : undefined;
+}
+
+const SEASON = arg("--season") ?? "2026";
+const LABEL = `${Number(SEASON) - 1}-${SEASON.slice(2)}`;
 const BIRTH_YEARS = /\b(2013|2014|2015|2016)\b/;
 
 async function main() {
@@ -37,13 +43,13 @@ async function main() {
   const { games, skipped } = gamesFromRows(rows, Number(SEASON));
   const snapshot: BtSnapshot = {
     season: SEASON,
-    seasonLabel: "2025–26",
+    seasonLabel: LABEL.replace("-", "–"),
     fetchedAt: new Date().toISOString(),
     source: `${RANGERS_WIDGETS}/schedules/get (Season ${SEASON}, league e9bhl)`,
     divisions: groups.map(([d]) => d),
     games,
   };
-  const out = path.join(repoRoot, "data", "backtest", "elite9-2025-26.json");
+  const out = path.join(repoRoot, "data", "backtest", `elite9-${LABEL}.json`);
   await mkdir(path.dirname(out), { recursive: true });
   await writeFile(out, `${JSON.stringify(snapshot, null, 1)}\n`);
   log(`${rows.length} team-rows from ${groups.length} divisions → ${games.length} games (${skipped} rows skipped) → ${path.relative(repoRoot, out)}`);
