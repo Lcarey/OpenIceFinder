@@ -1,4 +1,65 @@
 {
+ "pairs": {
+  "eligible": 1444,
+  "meetingsPerPair": {
+   "1": 123,
+   "2": 30,
+   "3": 213,
+   "4": 111,
+   "5": 81,
+   "6": 24
+  },
+  "walkForward": {
+   "games": 1142,
+   "coverage": 0.7908587257617729,
+   "pairOnly": {
+    "n": 1142,
+    "accuracy": 0.7053415061295972,
+    "logLoss": 0.5839296043096932,
+    "brier": 0.1705332992800151
+   },
+   "rating": {
+    "n": 1142,
+    "accuracy": 0.7373029772329247,
+    "logLoss": 0.5202873091242893,
+    "brier": 0.14596571336086964
+   },
+   "ratingAllEligible": {
+    "n": 1444,
+    "accuracy": 0.7448060941828255,
+    "logLoss": 0.512052331496618,
+    "brier": 0.14319017084963861
+   }
+  },
+  "hindsight": {
+   "games": 1337,
+   "coverage": 0.9259002770083102,
+   "pairOnly": {
+    "n": 1337,
+    "accuracy": 0.706432311144353,
+    "logLoss": 0.5771837070097751,
+    "brier": 0.16802854649713247
+   },
+   "rating": {
+    "n": 1337,
+    "accuracy": 0.7587883320867614,
+    "logLoss": 0.5045242308962682,
+    "brier": 0.14055323959394786
+   }
+  },
+  "repeat": {
+   "pairs": 459,
+   "consecutive": 1233,
+   "sameWinner": 0.5806974858069749,
+   "flipped": 0.22708840227088403,
+   "involvedTie": 0.1922141119221411
+  },
+  "matchupEffect": {
+   "games": 1337,
+   "correlation": 0.07138574919556075,
+   "slope": 0.12236705399983684
+  }
+ },
  "winner": "massey:cap8:l1",
  "byBirthYear": [
   {

@@ -9,6 +9,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { analyze } from "./analysis.js";
 import { ceilings } from "./ceiling.js";
+import { pairStudy } from "./pairs.js";
 import type { BtSnapshot } from "./games.js";
 import { computeFeatures, evaluateCombo, evaluateMetric, scoreGames, splitEligible, type FeatureTable, type MetricResult, type Split } from "./harness.js";
 import { fitLogistic } from "./linalg.js";
@@ -242,7 +243,11 @@ async function main() {
   const ceiling = ceilings(table, split);
   log("\nceilings (use future games on purpose):");
   for (const c of ceiling) log(`  ${c.name.padEnd(24)} eligible ${pct(c.eligible.accuracy)} ll ${f3(c.eligible.logLoss)} · holdout ${pct(c.holdout.accuracy)}`);
+  const pairs = pairStudy(table, split, winner.name);
+  log(`\nmatchup only: walk-forward ${pct(pairs.walkForward.pairOnly.accuracy)} vs rating ${pct(pairs.walkForward.rating.accuracy)} on ${pairs.walkForward.games} games (${pct(pairs.walkForward.coverage)} had met before)`);
+  log(`  hindsight ${pct(pairs.hindsight.pairOnly.accuracy)} vs leave-one-out rating ${pct(pairs.hindsight.rating.accuracy)} on ${pairs.hindsight.games} games; repeat winner ${pct(pairs.repeat.sameWinner)}, flipped ${pct(pairs.repeat.flipped)}, tie involved ${pct(pairs.repeat.involvedTie)}; matchup effect r=${pairs.matchupEffect.correlation.toFixed(3)}`);
   const analysis = {
+    pairs,
     ...analyze(table, split, winner.name, results),
     ceiling,
     priors: { coverage: priorBuild.coverage, matches: priorBuild.matches },
