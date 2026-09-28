@@ -41,9 +41,20 @@ async function main() {
   const log = (message: string) => process.stderr.write(`${message}\n`);
   const classifier = new Classifier(table, { model, log, ...(useModel ? { openai } : {}) });
 
-  const result = await refreshAll({ rinks, programs, classifier, openai, openaiModel: model, rangeDays: days, log, previousProgramFeed: (id) => store.readProgramFeed(id) });
+  const previousRangers = await store.readRangers();
+  const result = await refreshAll({
+    rinks,
+    programs,
+    classifier,
+    openai,
+    openaiModel: model,
+    rangeDays: days,
+    log,
+    previousProgramFeed: (id) => store.readProgramFeed(id),
+    previousRangers,
+  });
   if (result.rangersFeed) {
-    result.rangersFeed = reuseHiddenUpcoming(result.rangersFeed, await store.readRangers(), new Date());
+    result.rangersFeed = reuseHiddenUpcoming(result.rangersFeed, previousRangers, new Date());
   }
   if (rinkFilter) {
     // Partial run: keep the other rinks' index entries.

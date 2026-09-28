@@ -9,6 +9,7 @@ import {
   gameDateKey,
   isHomeGame,
   isRangers2016,
+  mergeUpcoming,
   opponentDisplayName,
   playedFromRow,
   refreshRangers,
@@ -439,6 +440,45 @@ describe("refreshRangers", () => {
   });
 });
 
+const awsStandings = standings;
+/** What Elite 9 shows an AWS IP on 2026-09-27 after the Winter Club game: completed games only. */
+const awsRangersGames: VaGameRow[] = [
+  rangersGames[0]!,
+  game({ ...rangersGames[1]!, WinLoss: "L", GameScore: "5-0", GameStatus: "Completed" }),
+];
+
+function fullFeed(now: Date) {
+  return buildRangersFeed({
+    standings,
+    ourSchedule: sched("797", rangersGames),
+    opponentSchedules: { "902": sched("902", winterGames), "814": sched("814", avalancheGames), "924": sched("924", bruinsGames) },
+    fetchedAt: now.toISOString(),
+    now,
+  });
+}
+
+describe("mergeUpcoming", () => {
+  const now = new Date("2026-09-27T20:00:00Z");
+  const remembered = fullFeed(new Date("2026-09-14T16:00:00Z")).upcoming.map((c) => c.game);
+
+  it("keeps remembered future games a partial scrape cannot see and drops ones that now have a result", () => {
+    const played = awsRangersGames.map((g) => playedFromRow(g)!);
+    expect(mergeUpcoming([], remembered, played, now, 5).map((g) => g.date)).toEqual(["2026-10-04", "2026-10-18", "2026-10-25", "2026-10-31"]);
+  });
+
+  it("prefers freshly scraped rows over remembered duplicates and caps the list", () => {
+    const fresh = selectUpcoming([game({ ...rangersGames[2]!, LocationName: "Ice Den 2" })], now, 5);
+    const merged = mergeUpcoming(fresh, remembered, [], now, 3);
+    expect(merged.map((g) => g.date)).toEqual(["2026-09-27", "2026-10-04", "2026-10-18"]);
+    expect(merged[1]?.location).toBe("Ice Den 2");
+  });
+
+  it("returns the scrape untouched when there is nothing remembered", () => {
+    const fresh = selectUpcoming(rangersGames, now, 5);
+    expect(mergeUpcoming(fresh, [], [], now, 5)).toBe(fresh);
+  });
+});
+
 describe("reuseHiddenUpcoming", () => {
   it("keeps still-future scout cards when this scrape found none", () => {
     const now = new Date("2026-09-14T16:00:00Z");
@@ -452,5 +492,56 @@ describe("reuseHiddenUpcoming", () => {
     const current = { upcoming: [] } as unknown as import("@openice/shared").RangersFeed;
     expect(reuseHiddenUpcoming(current, previous, now).upcoming.map((c) => c.game.date)).toEqual(["2026-09-27", "2026-10-04"]);
     expect(reuseHiddenUpcoming({ ...current, upcoming: previous.upcoming }, previous, now).upcoming).toBe(previous.upcoming);
+  });
+
+  it("does not let a game-day scrape that only sees today's game wipe the rest of the board", () => {
+    const now = new Date("2026-09-27T12:00:00Z");
+    const previous = fullFeed(new Date("2026-09-14T16:00:00Z"));
+    const gameDay = buildRangersFeed({
+      standings,
+      ourSchedule: sched("797", rangersGames.slice(0, 2)),
+      opponentSchedules: { "902": sched("902", winterGames) },
+      fetchedAt: now.toISOString(),
+      now,
+    });
+    expect(gameDay.upcoming.map((c) => c.game.date)).toEqual(["2026-09-27"]);
+    const merged = reuseHiddenUpcoming(gameDay, previous, now);
+    expect(merged.upcoming.map((c) => c.game.date)).toEqual(["2026-09-27", "2026-10-04", "2026-10-18", "2026-10-25", "2026-10-31"]);
+    expect(merged.upcoming[0]).toBe(gameDay.upcoming[0]);
+  });
+});
+
+describe("refreshRangers with a previous feed", () => {
+  it("rebuilds scout cards for remembered games with fresh standings and results", async () => {
+    const now = new Date("2026-09-27T20:00:00Z");
+    const previous = fullFeed(new Date("2026-09-14T16:00:00Z"));
+    const scheduleCalls: string[] = [];
+    const log: string[] = [];
+    const feed = await refreshRangers({
+      now,
+      previous,
+      log: (m) => log.push(m),
+      fetchMhrHtml: async () => "",
+      post: async <T>(path: string, body: unknown) => {
+        const teamId = String((body as { TeamID?: string }).TeamID ?? "");
+        if (path === "/index/getwidgetformat") return { result: "success", token: "t" } as T;
+        if (path === "/standings/get") return awsStandings as T;
+        if (path === "/schedules/get") {
+          scheduleCalls.push(teamId);
+          if (teamId === "" || teamId === "797") return sched("797", awsRangersGames) as T;
+          if (teamId === "814") return sched("814", avalancheGames) as T;
+          return sched(teamId, []) as T;
+        }
+        throw new Error(`unexpected ${path}`);
+      },
+    });
+    expect(feed.recent.map((g) => `${g.date} ${g.result}`)).toEqual(["2026-09-13 L", "2026-09-27 L"]);
+    expect(feed.upcoming.map((c) => c.game.date)).toEqual(["2026-10-04", "2026-10-18", "2026-10-25", "2026-10-31"]);
+    expect(feed.upcoming.map((c) => c.opponent.teamId)).toEqual(["814", "924", "975", "852"]);
+    expect(feed.upcoming[0]?.beaten.map((g) => g.opponentName)).toEqual(["Jr. Rangers 16 - E"]);
+    expect(feed.upcoming[0]?.prior?.result).toBe("L");
+    expect(scheduleCalls).toEqual(expect.arrayContaining(["814", "924", "975", "852"]));
+    expect(log.some((m) => m.includes("kept 4 upcoming"))).toBe(true);
+    expect(feed.errors).toEqual([]);
   });
 });

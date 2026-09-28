@@ -85,6 +85,8 @@ export interface RefreshRangersOptions {
   log?: (message: string) => void;
   post?: RangersPost;
   fetchMhrHtml?: (url: string) => Promise<string>;
+  /** Last published feed; its still-future games are kept when this IP only sees part of the Elite 9 board. */
+  previous?: RangersFeed;
 }
 
 function num(value: number | string | undefined): number {
@@ -303,13 +305,50 @@ function todayKey(now: Date): string {
   return `${get("year")}-${get("month")}-${get("day")}`;
 }
 
-/** AWS IPs only see published/completed Elite 9 games; keep still-future scout cards from the last good scrape. */
-export function reuseHiddenUpcoming(feed: RangersFeed, previous: RangersFeed | undefined, now: Date): RangersFeed {
-  if (feed.upcoming.length > 0) return feed;
+function upcomingKey(game: Pick<RangersUpcomingGame, "date" | "opponentId" | "opponentName">): string {
+  return `${game.date}|${game.opponentId || (game.opponentName ?? "").toLowerCase()}`;
+}
+
+/**
+ * AWS IPs only see part of the Elite 9 board (completed games plus, on game day, that day's game), while the GitHub
+ * runner sees the whole season. Union this scrape's upcoming games with still-future ones from the last good scrape so
+ * a partial view never wipes the board. Freshly scraped rows win; games that now have a result are dropped.
+ */
+export function mergeUpcoming(
+  scraped: RangersUpcomingGame[],
+  remembered: RangersUpcomingGame[],
+  played: RangersPlayedGame[],
+  now: Date,
+  count: number,
+): RangersUpcomingGame[] {
+  if (remembered.length === 0) return scraped;
   const today = todayKey(now);
-  const kept = (previous?.upcoming ?? []).filter((card) => card.game.date >= today);
-  if (kept.length === 0) return feed;
-  return { ...feed, upcoming: kept };
+  const seen = new Set([...scraped, ...played].map(upcomingKey));
+  const merged = [...scraped];
+  for (const game of remembered) {
+    if (game.date < today) continue;
+    const key = upcomingKey(game);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    merged.push(game);
+  }
+  return merged.sort((a, b) => a.date.localeCompare(b.date) || (a.start ?? "").localeCompare(b.start ?? "")).slice(0, count);
+}
+
+/** Feed-level fallback for callers that could not pass `previous` into `refreshRangers`: keeps last scrape's still-future scout cards. */
+export function reuseHiddenUpcoming(feed: RangersFeed, previous: RangersFeed | undefined, now: Date, count = RANGERS_UPCOMING_COUNT): RangersFeed {
+  const remembered = previous?.upcoming ?? [];
+  if (remembered.length === 0) return feed;
+  const games = mergeUpcoming(
+    feed.upcoming.map((card) => card.game),
+    remembered.map((card) => card.game),
+    feed.recent ?? [],
+    now,
+    Math.max(count, feed.upcoming.length),
+  );
+  if (games.length === feed.upcoming.length) return feed;
+  const cards = new Map([...remembered, ...feed.upcoming].map((card) => [upcomingKey(card.game), card]));
+  return { ...feed, upcoming: games.map((game) => cards.get(upcomingKey(game))!).filter(Boolean) };
 }
 
 export function selectUpcoming(games: VaGameRow[], now: Date, count: number): RangersUpcomingGame[] {
@@ -471,6 +510,8 @@ export function buildRangersFeed(input: {
   now: Date;
   upcomingCount?: number;
   errors?: string[];
+  /** Still-future games from the last published feed (see `mergeUpcoming`). */
+  knownUpcoming?: RangersUpcomingGame[];
 }): RangersFeed {
   const errors = [...(input.errors ?? [])];
   const rows = flattenStandings(input.standings.Teams);
@@ -500,7 +541,8 @@ export function buildRangersFeed(input: {
     .map((g) => playedFromRow(g))
     .filter((g): g is RangersPlayedGame => Boolean(g))
     .sort((a, b) => a.date.localeCompare(b.date) || (a.start ?? "").localeCompare(b.start ?? ""));
-  const upcomingGames = selectUpcoming(ourGames, input.now, input.upcomingCount ?? RANGERS_UPCOMING_COUNT);
+  const count = input.upcomingCount ?? RANGERS_UPCOMING_COUNT;
+  const upcomingGames = mergeUpcoming(selectUpcoming(ourGames, input.now, count), input.knownUpcoming ?? [], recent, input.now, count);
 
   const upcoming: RangersScoutCard[] = upcomingGames.map((game) => {
     const opponent = byId.get(game.opponentId) ?? placeholderStanding(game.opponentId, game.opponentName, us.division);
@@ -688,8 +730,16 @@ export async function refreshRangers(options: RefreshRangersOptions = {}): Promi
     }
   }
 
+  const remembered = (options.previous?.upcoming ?? []).map((card) => card.game);
+  const scrapedCount = upcoming.length;
+  const played = ourGames.map((g) => playedFromRow(g)).filter((g): g is RangersPlayedGame => Boolean(g));
+  upcoming = mergeUpcoming(upcoming, remembered, played, now, options.upcomingCount ?? RANGERS_UPCOMING_COUNT);
+  if (upcoming.length > scrapedCount) {
+    log(`rangers: kept ${upcoming.length - scrapedCount} upcoming game(s) from the last scrape that the widget hid from this IP`);
+  }
+
   log(`rangers schedule: ${ourGames.length} rows (${ourGames.filter(isCompletedGame).length} completed, ${upcoming.length} upcoming)`);
-  if (ourGames.length && upcoming.length === 0) {
+  if (ourGames.length && scrapedCount === 0) {
     const sample = ourGames[0] ?? {};
     log(
       `rangers no upcoming: GameDate=${sample.GameDate ?? ""} GameDateF=${sample.GameDateF ?? ""} GameStatus=${sample.GameStatus ?? ""} keys=${Object.keys(sample).join(",")}`,
@@ -717,7 +767,7 @@ export async function refreshRangers(options: RefreshRangersOptions = {}): Promi
     }),
   );
 
-  const feed = buildRangersFeed({ standings, ourSchedule, opponentSchedules, fetchedAt, now, upcomingCount: options.upcomingCount, errors });
+  const feed = buildRangersFeed({ standings, ourSchedule, opponentSchedules, fetchedAt, now, upcomingCount: options.upcomingCount, errors, knownUpcoming: remembered });
   const ranks = await fetchMhrRanks({ standings: feed.standings, fetchHtml: options.fetchMhrHtml, log });
   const withMhr = attachMhrToFeed(feed, ranks);
   log(`rangers: ${withMhr.team.name} ${formatRecord(withMhr.team.record)} · ${withMhr.upcoming.length} upcoming`);

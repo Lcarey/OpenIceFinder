@@ -40,6 +40,7 @@ export async function handler(event: Partial<ScheduledEvent> & RefreshEvent = {}
   const classifier = new Classifier(table, { model, log, openai });
 
   const programs = event.rinkIds?.length ? PROGRAMS.filter((p) => event.rinkIds!.includes(p.rinkId)) : PROGRAMS;
+  const previousRangers = await store.readRangers();
   const result = await refreshAll({
     rinks,
     programs,
@@ -50,13 +51,11 @@ export async function handler(event: Partial<ScheduledEvent> & RefreshEvent = {}
     concurrency: Number(process.env.CONCURRENCY ?? "4"),
     log,
     previousProgramFeed: (id) => store.readProgramFeed(id),
+    previousRangers,
   });
   if (result.rangersFeed) {
-    const scraped = result.rangersFeed.upcoming.length;
-    result.rangersFeed = reuseHiddenUpcoming(result.rangersFeed, await store.readRangers(), new Date());
-    if (result.rangersFeed.upcoming.length > scraped) {
-      log(`rangers: reused ${result.rangersFeed.upcoming.length} upcoming games the widget hid from this IP`);
-    }
+    // Safety net for a scrape that failed outright and came back with no cards at all.
+    result.rangersFeed = reuseHiddenUpcoming(result.rangersFeed, previousRangers, new Date());
   }
   await persistResult(store, result.feeds, result.index, classifier.table, result.programFeeds, result.offeringFeeds, result.rangersFeed);
 

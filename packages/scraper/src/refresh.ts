@@ -44,6 +44,8 @@ export interface RefreshOptions {
   fetchOfferings?: (ctx: OfferingsRefreshContext) => ReturnType<typeof refreshOfferings>;
   /** Override the hidden /rangers Elite 9 scrape (tests). Skipped when `fetchEvents` is set unless this is provided. */
   fetchRangers?: () => Promise<RangersFeed>;
+  /** Last published rangers feed; keeps upcoming games this IP cannot see (see `mergeUpcoming`). */
+  previousRangers?: RangersFeed;
 }
 
 export interface RefreshResult {
@@ -188,7 +190,7 @@ export async function refreshAll(options: RefreshOptions): Promise<RefreshResult
   let rangersFeed: RangersFeed | null = null;
   if (shouldLoadRangers) {
     try {
-      rangersFeed = await (options.fetchRangers ?? (() => refreshRangers({ now, log })))();
+      rangersFeed = await (options.fetchRangers ?? (() => refreshRangers({ now, log, previous: options.previousRangers })))();
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       log(`rangers FAILED: ${message}`);
