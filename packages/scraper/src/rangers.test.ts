@@ -1,11 +1,13 @@
 import { describe, expect, it } from "vitest";
 import {
+  beliefLevel,
   buildBelief,
   buildRangersFeed,
   formatRecord,
   flattenSchedule,
   cookieHeaderFromSetCookie,
   gamesForTeam,
+  gamesFromRows,
   gameDateKey,
   isHomeGame,
   isRangers2016,
@@ -328,18 +330,22 @@ describe("rangers scouting feed", () => {
     expect(b!.beaten[0]).toMatchObject({ opponentName: "Icemen 16 - E", ourScore: 4, theirScore: 1 });
   });
 
-  it("flags Winter Club as gettable, Avalanche as a tall order, Bruins as uphill", () => {
-    expect(feed.upcoming[0]!.belief.level).toBe("steal");
+  it("grades each opponent from schedule-adjusted goal margin", () => {
+    const [club, avs, b, , railers] = feed.upcoming;
+    expect(club!.belief.level).toBe("long_shot");
+    expect(club!.belief.why[0]).toMatch(/^Model: \d+% expected points/);
+    expect(club!.belief.why.some((w) => /Early grade/.test(w))).toBe(true);
+    expect(railers!.belief.level).toBe("steal");
+    expect(railers!.belief.score).toBeGreaterThan(b!.belief.score);
     expect(feed.upcoming[0]!.belief.blurb).toMatch(/one-goal/);
     expect(feed.upcoming[0]!.belief.blurb).not.toMatch(/Before they see us/);
     expect(feed.upcoming[0]!.belief.gradedAt).toBe(now.toISOString());
     expect(feed.upcoming[0]!.belief.sampleGp).toBe(1);
     expect(feed.upcoming[0]!.warmup[0]?.opponentName).toMatch(/Avalanche/);
-    expect(feed.upcoming[1]!.belief.level).toBe("long_shot");
-    expect(feed.upcoming[1]!.belief.blurb).toMatch(/Rematch/);
-    expect(feed.upcoming[1]!.belief.blurb).not.toMatch(/flattened Jr\. Rangers/);
-    expect(feed.upcoming[2]!.belief.level).toBe("uphill");
-    expect(feed.upcoming[2]!.belief.blurb).toMatch(/Home ice/);
+    expect(avs!.belief.level).toBe("long_shot");
+    expect(avs!.belief.blurb).toMatch(/Rematch/);
+    expect(avs!.belief.why.some((w) => /already inside the rating/.test(w))).toBe(true);
+    expect(b!.belief.blurb).toMatch(/Home ice/);
   });
 
   it("skips past games when selecting upcoming", () => {
@@ -362,20 +368,56 @@ describe("rangers scouting feed", () => {
 });
 
 describe("buildBelief", () => {
-  it("rewards a one-goal loss on the opponent's tape", () => {
-    const belief = buildBelief({
-      us: { gp: 1, wins: 0, losses: 1, ties: 0, points: 0, gf: 0, ga: 7, gd: -7, streak: "L 1", lastFive: "0-1-0" },
-      them: { gp: 2, wins: 1, losses: 1, ties: 0, points: 2, gf: 13, ga: 3, gd: 10, streak: "L 1", lastFive: "1-1-0" },
-      beaten: [{ date: "2026-09-12", opponentId: "x", opponentName: "Railers", result: "W", ourScore: 11, theirScore: 0, isHome: true, location: "", rink: "" }],
-      lostTo: [{ date: "2026-09-13", opponentId: "y", opponentName: "Icemen", result: "L", ourScore: 2, theirScore: 3, isHome: false, location: "", rink: "" }],
-      game: { isHome: false, rink: "Hingham" },
-      opponentName: "Winter Club",
-      now: new Date("2026-09-14T16:00:00Z"),
-    });
-    expect(belief.level).toBe("steal");
-    expect(belief.label).toBe("Gettable");
-    expect(belief.blurb).not.toMatch(/Before they see us/);
-    expect(belief.sampleGp).toBe(1);
+  const base = {
+    us: { gp: 6, wins: 3, losses: 3, ties: 0, points: 6, gf: 18, ga: 18, gd: 0, streak: "L 1", lastFive: "2-3-0" },
+    them: { gp: 6, wins: 4, losses: 2, ties: 0, points: 8, gf: 20, ga: 14, gd: 6, streak: "W 1", lastFive: "3-2-0" },
+    beaten: [],
+    lostTo: [{ date: "2026-09-13", opponentId: "y", opponentName: "Icemen", result: "L" as const, ourScore: 2, theirScore: 3, isHome: false, location: "", rink: "" }],
+    game: { isHome: false, rink: "Hingham" },
+    opponentName: "Winter Club",
+    now: new Date("2026-10-14T16:00:00Z"),
+  };
+
+  it("maps the model's expected points to the lamp bands", () => {
+    expect(beliefLevel(0.7)).toBe("steal");
+    expect(beliefLevel(0.55)).toBe("steal");
+    expect(beliefLevel(0.5)).toBe("toss_up");
+    expect(beliefLevel(0.3)).toBe("uphill");
+    expect(beliefLevel(0.1)).toBe("long_shot");
+  });
+
+  it("leads with the model and keeps the tape as context", () => {
+    const belief = buildBelief({ ...base, odds: { pUs: 0.46, expectedMargin: -0.3, usRating: 0.4, themRating: 0.5, usGames: 6, themGames: 6 } });
+    expect(belief.level).toBe("toss_up");
+    expect(belief.label).toBe("Even-ish");
+    expect(belief.score).toBe(46);
+    expect(belief.why[0]).toBe("Model: 46% expected points for us, projected margin −0.3 goals.");
+    expect(belief.why.some((w) => /Early grade/.test(w))).toBe(false);
+    expect(belief.blurb).toMatch(/^Close on paper/);
+    expect(belief.blurb).toMatch(/one-goal game to Icemen/);
+    expect(belief.sampleGp).toBe(6);
+  });
+
+  it("flags small samples", () => {
+    const belief = buildBelief({ ...base, odds: { pUs: 0.2, expectedMargin: -2.5, usRating: -1, themRating: 1.3, usGames: 2, themGames: 6 } });
+    expect(belief.level).toBe("uphill");
+    expect(belief.why).toContain("Early grade: 2 game(s) on the smaller sample, so ratings are pulled toward average.");
+    expect(belief.blurb).toMatch(/Winter Club rates 2\.3 goals a game better/);
+  });
+});
+
+describe("gamesFromRows", () => {
+  it("dedupes the two team-rows of a game and orients home and away", () => {
+    const rows = [
+      game({ GameDate: "2025-09-13", StartTime: "2:30 PM", OpponentName3: '<span class="wordat">at </span>Avalanche', OpponentTeamID: "814", CurrTeamID: "797", CurrTeamShortName: "Rangers", WinLoss: "L", GameScore: "0-7", GameStatus: "Completed", DivisionName: "2016 White" }),
+      game({ GameDate: "2025-09-13", StartTime: "2:30 PM", OpponentName3: '<span class="wordvs">vs </span>Rangers', OpponentTeamID: "797", CurrTeamID: "814", CurrTeamShortName: "Avalanche", WinLoss: "W", GameScore: "0-7", GameStatus: "Completed", DivisionName: "2016 White" }),
+      game({ GameDate: "2025-09-20", OpponentTeamID: "814", CurrTeamID: "797", GameStatus: "Upcoming" }),
+    ];
+    const { games, skipped } = gamesFromRows(rows, 2026);
+    expect(skipped).toBe(1);
+    expect(games).toEqual([
+      expect.objectContaining({ date: "2025-09-13", time: "14:30", homeId: "814", awayId: "797", homeGoals: 7, awayGoals: 0, homeName: "Avalanche", awayName: "Rangers", homeDiv: "2016 White" }),
+    ]);
   });
 });
 

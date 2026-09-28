@@ -12,6 +12,8 @@ import {
   type RangersStandingRow,
   type RangersUpcomingGame,
 } from "@openice/shared";
+import type { BtGame } from "./backtest/games.js";
+import { fitBeliefModel, type MatchupPrediction } from "./belief-model.js";
 import { stripTags } from "./html.js";
 import { fetchJson, httpFetch } from "./http.js";
 import { attachMhrToFeed, fetchMhrRanks } from "./mhr.js";
@@ -60,6 +62,7 @@ export interface VaGameRow {
   OpponentTeamID?: string;
   CurrTeamID?: string;
   CurrTeamShortName?: string;
+  DivisionName?: string;
   WinLoss?: string;
   GameScore?: string;
   GameStatus?: string;
@@ -248,6 +251,55 @@ export function gameDateKey(game: VaGameRow, seasonEndYear = Number(RANGERS_SEAS
   return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 }
 
+function clock24(start: string): string {
+  const c = parseClock(start.trim());
+  return c ? `${String(c.hour).padStart(2, "0")}:${String(c.minute).padStart(2, "0")}` : "";
+}
+
+/**
+ * Completed games from Elite 9 team-rows, deduped (each game appears once per team).
+ * Home/away comes from the current team's `wordvs`/`wordat` marker and scores are visitor–home.
+ */
+export function gamesFromRows(rows: VaGameRow[], seasonEndYear = Number(RANGERS_SEASON)): { games: BtGame[]; skipped: number } {
+  const teamDiv = new Map<string, string>();
+  for (const r of rows) if (r.CurrTeamID && r.DivisionName) teamDiv.set(String(r.CurrTeamID), r.DivisionName);
+  const byId = new Map<string, BtGame>();
+  let skipped = 0;
+  for (const r of rows) {
+    const cur = String(r.CurrTeamID ?? "");
+    const opp = String(r.OpponentTeamID ?? "");
+    const score = parseVisitorHomeScore(r.GameScore ?? "");
+    const date = gameDateKey(r, seasonEndYear);
+    if (!cur || !opp || !score || !date || !isCompletedGame(r)) {
+      skipped++;
+      continue;
+    }
+    const curHome = isHomeGame(r.OpponentName3 ?? "");
+    const homeId = curHome ? cur : opp;
+    const awayId = curHome ? opp : cur;
+    const time = clock24(r.StartTime ?? "");
+    const id = `${date}|${time}|${homeId}|${awayId}`;
+    if (byId.has(id)) continue;
+    const curName = (r.CurrTeamShortName ?? "").trim();
+    const oppName = opponentDisplayName(r.OpponentName3 ?? "");
+    byId.set(id, {
+      id,
+      date,
+      time,
+      homeId,
+      awayId,
+      homeName: curHome ? curName : oppName,
+      awayName: curHome ? oppName : curName,
+      homeGoals: score.home,
+      awayGoals: score.visitor,
+      homeDiv: teamDiv.get(homeId) ?? "",
+      awayDiv: teamDiv.get(awayId) ?? "",
+    });
+  }
+  const games = [...byId.values()].sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time) || a.id.localeCompare(b.id));
+  return { games, skipped };
+}
+
 export function gameStartIso(game: VaGameRow): string | undefined {
   const date = parseDateOnly(gameDateKey(game));
   if (!date) return undefined;
@@ -391,11 +443,48 @@ const BELIEF_LABEL: Record<RangersBeliefLevel, string> = {
   long_shot: "Tall order",
 };
 
-function beliefLevel(score: number): RangersBeliefLevel {
-  if (score >= 50) return "steal";
-  if (score >= 42) return "toss_up";
-  if (score >= 28) return "uphill";
+/** Probability bands for the lamp, on our expected points share from `belief-model.ts`. */
+export function beliefLevel(pUs: number): RangersBeliefLevel {
+  if (pUs >= 0.55) return "steal";
+  if (pUs >= 0.4) return "toss_up";
+  if (pUs >= 0.2) return "uphill";
   return "long_shot";
+}
+
+function signed(x: number): string {
+  const r = Math.round(x * 10) / 10;
+  return `${r > 0 ? "+" : r < 0 ? "−" : "±"}${Math.abs(r).toFixed(1)}`;
+}
+
+export interface BeliefOdds {
+  /** Our expected points share (ties half). */
+  pUs: number;
+  /** Our expected goal margin, including home ice. */
+  expectedMargin: number;
+  usRating: number;
+  themRating: number;
+  usGames: number;
+  themGames: number;
+}
+
+export function oddsForUs(prediction: MatchupPrediction, isHome: boolean): BeliefOdds {
+  return isHome
+    ? {
+        pUs: prediction.pHome,
+        expectedMargin: prediction.expectedHomeMargin,
+        usRating: prediction.homeRating,
+        themRating: prediction.awayRating,
+        usGames: prediction.homeGames,
+        themGames: prediction.awayGames,
+      }
+    : {
+        pUs: 1 - prediction.pHome,
+        expectedMargin: -prediction.expectedHomeMargin,
+        usRating: prediction.awayRating,
+        themRating: prediction.homeRating,
+        usGames: prediction.awayGames,
+        themGames: prediction.homeGames,
+      };
 }
 
 export function buildBelief(input: {
@@ -407,73 +496,54 @@ export function buildBelief(input: {
   game: Pick<RangersUpcomingGame, "isHome" | "rink">;
   opponentName: string;
   now: Date;
+  odds: BeliefOdds;
 }): RangersBelief {
-  const why: string[] = [];
-  let score = 42;
-
-  if (input.lostTo.length > 0) {
-    score += 16;
-    why.push(`They have a loss on the board (${listNames(input.lostTo)}).`);
-    if (input.lostTo.some(oneGoalLoss)) {
-      score += 10;
-      why.push("Someone already took them to a one-goal game.");
-    }
-  } else if (input.them.gp > 0) {
-    score -= 6;
-    why.push("Undefeated so far — small sample, still undefeated.");
+  const { odds } = input;
+  const pct = Math.round(odds.pUs * 100);
+  const gap = odds.usRating - odds.themRating;
+  const why: string[] = [
+    `Model: ${pct}% expected points for us, projected margin ${signed(odds.expectedMargin)} goals.`,
+    `Schedule-adjusted goal margin per game: us ${signed(odds.usRating)}, ${input.opponentName} ${signed(odds.themRating)}.`,
+  ];
+  if (Math.min(odds.usGames, odds.themGames) < 5) {
+    why.push(`Early grade: ${Math.min(odds.usGames, odds.themGames)} game(s) on the smaller sample, so ratings are pulled toward average.`);
   }
-
-  if (input.prior?.result === "L") {
-    const margin = input.prior.theirScore - input.prior.ourScore;
-    score -= 18;
-    if (margin >= 5) score -= 10;
-    why.push(`They already beat us ${input.prior.theirScore}–${input.prior.ourScore}.`);
-  } else if (input.prior?.result === "W") {
-    score += 12;
-    why.push(`We already got them ${input.prior.ourScore}–${input.prior.theirScore}.`);
+  if (input.prior) {
+    why.push(
+      input.prior.result === "L"
+        ? `They beat us ${input.prior.theirScore}–${input.prior.ourScore} last time (already inside the rating).`
+        : input.prior.result === "W"
+          ? `We beat them ${input.prior.ourScore}–${input.prior.theirScore} last time (already inside the rating).`
+          : `Last meeting ended ${input.prior.ourScore}–${input.prior.theirScore}.`,
+    );
   }
+  if (input.lostTo.length > 0) why.push(`Their losses: ${listNames(input.lostTo)}.`);
+  why.push(input.game.isHome ? `Home ice (${input.game.rink || "Tewksbury"}), worth about ${BELIEF_HOME_EDGE}.` : `Road game at ${input.game.rink || "their rink"}.`);
 
-  if (input.game.isHome) {
-    score += 7;
-    why.push(`Home ice (${input.game.rink || "Tewksbury"}).`);
-  } else {
-    score -= 5;
-    why.push(`Road game at ${input.game.rink || "their rink"}.`);
-  }
-
-  if (input.us.gf === 0 && input.us.gp > 0) {
-    score -= 4;
-    why.push("We have not scored yet this season.");
-  }
-  if (input.us.wins > 0) score += 8;
-
-  score += Math.round((input.us.wins / Math.max(input.us.gp, 1) - input.them.wins / Math.max(input.them.gp, 1)) * 8);
-  score = Math.max(6, Math.min(90, score));
-
-  const level = beliefLevel(score);
+  const level = beliefLevel(odds.pUs);
   const parts: string[] = [];
+  if (Math.abs(gap) < 1) parts.push(`Close on paper: the two ratings are within a goal a game.`);
+  else if (gap > 0) parts.push(`We rate ${Math.abs(gap).toFixed(1)} goals a game better than ${input.opponentName} once schedule is counted.`);
+  else parts.push(`${input.opponentName} rates ${Math.abs(gap).toFixed(1)} goals a game better than us once schedule is counted.`);
   if (input.prior?.result === "L") {
     parts.push(`Rematch. They hung a ${input.prior.theirScore}–${input.prior.ourScore} on us last time.`);
   }
   if (input.lostTo.some(oneGoalLoss)) {
     const g = input.lostTo.find(oneGoalLoss)!;
-    parts.push(`${input.opponentName} dropped a one-goal game to ${g.opponentName} (${g.theirScore}–${g.ourScore}). That's the opening.`);
-  } else if (input.lostTo.length > 0) {
-    parts.push(`Someone's gotten to them: ${listNames(input.lostTo)}.`);
-  } else if (input.beaten.length > 0 && !input.prior) {
-    parts.push(`Undefeated. Wins: ${listNames(input.beaten)}.`);
+    parts.push(`${input.opponentName} dropped a one-goal game to ${g.opponentName} (${g.theirScore}–${g.ourScore}).`);
+  } else if (input.beaten.length > 0 && input.lostTo.length === 0 && !input.prior) {
+    parts.push(`Undefeated so far. Wins: ${listNames(input.beaten)}.`);
   } else if (!input.prior && input.beaten.length === 0 && input.lostTo.length === 0) {
-    parts.push(`${input.opponentName} has not played a completed game yet — there's no tape, only a date.`);
-  }
-  const blowout = input.beaten.find((g) => g.ourScore - g.theirScore >= 5 && !RANGERS_NAME.test(g.opponentName));
-  if (blowout) {
-    parts.push(`They also flattened ${blowout.opponentName} ${scoreLabel(blowout)}, so the window is real, not wide.`);
+    parts.push(`${input.opponentName} has not played a completed game yet, so this grade leans on the league average.`);
   }
   if (input.game.isHome) parts.push(`Home ice, ${input.game.rink || "Tewksbury"}.`);
   else parts.push(`We're on the road at ${input.game.rink || "their barn"}.`);
 
-  return { level, label: BELIEF_LABEL[level], score, why, blurb: parts.join(" "), gradedAt: input.now.toISOString(), sampleGp: input.us.gp };
+  return { level, label: BELIEF_LABEL[level], score: pct, why, blurb: parts.join(" "), gradedAt: input.now.toISOString(), sampleGp: input.us.gp };
 }
+
+/** Last season's fitted home-ice edge, in words for the card. */
+const BELIEF_HOME_EDGE = "a fifth of a goal";
 
 export function buildScoutCard(input: {
   us: RangersStandingRow;
@@ -482,6 +552,7 @@ export function buildScoutCard(input: {
   opponentGames: VaGameRow[];
   ourRecent: RangersPlayedGame[];
   now: Date;
+  odds: BeliefOdds;
 }): RangersScoutCard {
   const played = input.opponentGames.map((g) => playedFromRow(g)).filter((g): g is RangersPlayedGame => Boolean(g));
   const beaten = played.filter((g) => g.result === "W");
@@ -498,6 +569,7 @@ export function buildScoutCard(input: {
     game: input.game,
     opponentName: input.opponent.shortName || input.opponent.name,
     now: input.now,
+    odds: input.odds,
   });
   return { opponent: input.opponent, game: input.game, beaten, lostTo, tied, warmup, prior, belief };
 }
@@ -512,6 +584,8 @@ export function buildRangersFeed(input: {
   errors?: string[];
   /** Still-future games from the last published feed (see `mergeUpcoming`). */
   knownUpcoming?: RangersUpcomingGame[];
+  /** League-wide completed rows for the rating model; our and opponent schedules are always included. */
+  leagueRows?: VaGameRow[];
 }): RangersFeed {
   const errors = [...(input.errors ?? [])];
   const rows = flattenStandings(input.standings.Teams);
@@ -544,12 +618,21 @@ export function buildRangersFeed(input: {
   const count = input.upcomingCount ?? RANGERS_UPCOMING_COUNT;
   const upcomingGames = mergeUpcoming(selectUpcoming(ourGames, input.now, count), input.knownUpcoming ?? [], recent, input.now, count);
 
+  const ratingRows = [
+    ...(input.leagueRows ?? []),
+    ...ourGames.map((g) => (g.CurrTeamID ? g : { ...g, CurrTeamID: us.teamId })),
+    ...Object.entries(input.opponentSchedules).flatMap(([id, feed]) => flattenSchedule(feed.Games).map((g) => (g.CurrTeamID ? g : { ...g, CurrTeamID: id }))),
+  ];
+  const model = fitBeliefModel(gamesFromRows(ratingRows).games, todayKey(input.now));
+
   const upcoming: RangersScoutCard[] = upcomingGames.map((game) => {
     const opponent = byId.get(game.opponentId) ?? placeholderStanding(game.opponentId, game.opponentName, us.division);
     const oppFeed = input.opponentSchedules[game.opponentId];
     const oppGames = flattenSchedule(oppFeed?.Games);
     if (!oppFeed) errors.push(`No schedule for ${opponent.name}.`);
-    return buildScoutCard({ us, opponent, game, opponentGames: oppGames, ourRecent: recent, now: input.now });
+    const prediction = game.isHome ? model.predict(us.teamId, game.opponentId) : model.predict(game.opponentId, us.teamId);
+    const odds = oddsForUs(prediction, game.isHome);
+    return buildScoutCard({ us, opponent, game, opponentGames: oppGames, ourRecent: recent, now: input.now, odds });
   });
 
   return {
@@ -572,7 +655,7 @@ export function cookieHeaderFromSetCookie(setCookie: readonly string[]): string 
     .join("; ");
 }
 
-async function widgetSessionCookie(log: (message: string) => void): Promise<string> {
+export async function widgetSessionCookie(log: (message: string) => void): Promise<string> {
   try {
     const res = await httpFetch(`${RANGERS_WIDGETS}/schedules`, { headers: { Accept: "text/html" } });
     const parts = typeof res.headers.getSetCookie === "function" ? res.headers.getSetCookie() : [];
@@ -609,10 +692,10 @@ export function rangersPostWithCookie(cookie: string): RangersPost {
 
 export const defaultRangersPost: RangersPost = rangersPostWithCookie("");
 
-function standingsBody(): unknown {
+export function standingsBody(season = RANGERS_SEASON): unknown {
   return {
     CustomerID: RANGERS_CUSTOMER_ID,
-    Season: RANGERS_SEASON,
+    Season: season,
     League: RANGERS_LEAGUE,
     Program: "",
     TeamID: "",
@@ -632,10 +715,10 @@ function standingsBody(): unknown {
   };
 }
 
-function scheduleBody(teamId: string, token = ""): unknown {
+export function scheduleBody(teamId: string, token = "", season = RANGERS_SEASON): unknown {
   return {
     CustomerID: RANGERS_CUSTOMER_ID,
-    Season: RANGERS_SEASON,
+    Season: season,
     League: RANGERS_LEAGUE,
     Program: "",
     TeamID: teamId,
@@ -670,7 +753,7 @@ function scheduleBody(teamId: string, token = ""): unknown {
   };
 }
 
-async function widgetToken(post: RangersPost, log: (message: string) => void): Promise<string> {
+export async function widgetToken(post: RangersPost, log: (message: string) => void): Promise<string> {
   try {
     const res = await post<{ result?: string; token?: string }>("/index/getwidgetformat", { CustomerID: RANGERS_CUSTOMER_ID, FormatName: "e9" });
     return res.token ?? "";
@@ -767,7 +850,17 @@ export async function refreshRangers(options: RefreshRangersOptions = {}): Promi
     }),
   );
 
-  const feed = buildRangersFeed({ standings, ourSchedule, opponentSchedules, fetchedAt, now, upcomingCount: options.upcomingCount, errors, knownUpcoming: remembered });
+  const feed = buildRangersFeed({
+    standings,
+    ourSchedule,
+    opponentSchedules,
+    fetchedAt,
+    now,
+    upcomingCount: options.upcomingCount,
+    errors,
+    knownUpcoming: remembered,
+    leagueRows: leagueGames,
+  });
   const ranks = await fetchMhrRanks({ standings: feed.standings, fetchHtml: options.fetchMhrHtml, log });
   const withMhr = attachMhrToFeed(feed, ranks);
   log(`rangers: ${withMhr.team.name} ${formatRecord(withMhr.team.record)} · ${withMhr.upcoming.length} upcoming`);
