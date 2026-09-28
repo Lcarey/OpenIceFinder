@@ -121,6 +121,8 @@ function goals(x: number): string {
   return `${x > 0 ? "+" : "−"}${Math.abs(x).toFixed(1).replace(/\.0$/, "")}`;
 }
 
+const TICKS = [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
 function MarginRange({ margin }: { margin: NonNullable<RangersBelief["margin"]> }) {
   const span = Math.max(10, Math.ceil(Math.max(Math.abs(margin.low), Math.abs(margin.high)) + 1));
   const at = (x: number) => `${((x + span) / (2 * span)) * 100}%`;
@@ -136,13 +138,22 @@ function MarginRange({ margin }: { margin: NonNullable<RangersBelief["margin"]> 
       </div>
       <div className="tape-margin-track" aria-hidden="true">
         <span className="tape-margin-band" style={{ left: at(margin.low), width: `calc(${at(margin.high)} - ${at(margin.low)})` }} />
+        {TICKS.map((t) => (
+          <span key={t} className={`tape-margin-tick${Math.abs(t) % 5 === 0 ? " major" : ""}`} style={{ left: at(t) }} />
+        ))}
         <span className="tape-margin-zero" style={{ left: at(0) }} />
         <span className="tape-margin-dot" style={{ left: at(margin.expected) }} />
       </div>
       <div className="tape-margin-axis" aria-hidden="true">
-        <span>they win by {span}</span>
-        <span>tie</span>
-        <span>we win by {span}</span>
+        {[-10, -5, 0, 5, 10].map((t) => (
+          <span key={t} style={{ left: at(t) }} className={t === -span ? "start" : t === span ? "end" : undefined}>
+            {t === 0 ? "tie" : goals(t)}
+          </span>
+        ))}
+      </div>
+      <div className="tape-margin-sides" aria-hidden="true">
+        <span>they win</span>
+        <span>we win</span>
       </div>
     </div>
   );

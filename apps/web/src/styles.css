@@ -1662,11 +1662,49 @@ body:has(.tape-shell) {
   border: 2px solid #fff;
 }
 
+.tape-margin-tick {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  margin-left: -0.5px;
+  background: rgba(31, 42, 36, 0.28);
+}
+
+.tape-margin-tick.major {
+  top: 1px;
+  bottom: 1px;
+  background: rgba(31, 42, 36, 0.5);
+}
+
 .tape-margin-axis {
+  position: relative;
+  height: 1.1em;
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+
+.tape-margin-axis span {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.tape-margin-axis span.start {
+  transform: none;
+}
+
+.tape-margin-axis span.end {
+  transform: translateX(-100%);
+}
+
+.tape-margin-sides {
   display: flex;
   justify-content: space-between;
-  font-size: 0.72rem;
-  opacity: 0.7;
+  font-size: 0.7rem;
+  opacity: 0.6;
 }
 
 .tape-columns {
