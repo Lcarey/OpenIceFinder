@@ -197,7 +197,10 @@ function handler(event) {
       }),
       maxSessionDuration: Duration.hours(1),
     });
-    webBucket.grantPut(youthGithubRole, "data/youth-hockey.json");
+    youthGithubRole.addToPolicy(new iam.PolicyStatement({
+      actions: ["s3:PutObject"],
+      resources: [webBucket.arnForObjects("data/youth-hockey.json")],
+    }));
     youthGithubRole.addToPolicy(new iam.PolicyStatement({
       actions: ["cloudfront:CreateInvalidation"],
       resources: [Stack.of(this).formatArn({ service: "cloudfront", region: "", resource: "distribution", resourceName: distribution.distributionId })],

@@ -40,7 +40,7 @@ export function teamKey(name: string): string {
   return normalizeLocation(name).replace(/\bjuniors?\b/g, "jr").replace(/\b(?:2015|2016|15|16|elite|aaa)\b/g, "").replace(/\s+/g, " ").trim();
 }
 export function resolveIceSheet(location: string): string {
-  const match = normalizeLocation(location).match(/(?:^| )(?:rink )?([1-9]|upper|lower|east|west|nhl|oly|olympic|blue|red|gold|gray|lawler|gallant)$/);
+  const match = normalizeLocation(location).match(/(?:^| )(?:rink )?([1-9]|upper|lower|east|west|nhl|oly|olympic|blue|red|gold|gray|lawler|gallant|a|b|c)(?: arena)?$/);
   if (!match) return "";
   const sheet = match[1]!;
   return /^\d$/.test(sheet) ? `Rink ${sheet}` : sheet === "oly" ? "Olympic" : sheet[0]!.toUpperCase() + sheet.slice(1);
@@ -107,7 +107,7 @@ export async function refreshYouthHockey(options: {
       const age = previous?.fetchedAt ? now.getTime() - Date.parse(previous.fetchedAt) : Infinity;
       status.status = Number.isFinite(age) && age <= YOUTH_STALE_LIMIT_MS ? "stale" : "unavailable";
       // Collector errors contain public source information only; never routing URLs or origin configuration.
-      status.message = error instanceof Error ? error.message : "Schedule could not be loaded.";
+      status.message = error instanceof Error ? error.message.split("\n")[0]!.replace(/^page\.[^:]+: (?:Error: )?/, "") : "Schedule could not be loaded.";
       if (status.status === "stale") {
         const cached = (options.previous?.games ?? []).filter((g) => g.sourceId === source.id && Date.parse(g.start) >= now.getTime() && Date.parse(g.start) < rangeEnd.getTime() && now.getTime() - Date.parse(g.verifiedAt) <= YOUTH_STALE_LIMIT_MS);
         games.push(...cached);

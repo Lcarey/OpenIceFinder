@@ -6,7 +6,7 @@ import type { RawYouthGame } from "./core.js";
 
 export const FED_CONFIG = { season: "15008", seasonStart: "2026-08-01", seasonEnd: "2027-08-01", divisions: { 2015: "80179", 2016: "80161" } };
 export const EXPOSURE_URL = "https://www.easternexposurecup.com/en/index.html";
-export interface VerifiedYouthRoster { name: string; birthYear: YouthBirthYear; evidenceUrl: string; aliases?: string[] }
+export interface VerifiedYouthRoster { name: string; birthYear: YouthBirthYear; evidenceUrl: string; seasonYear?: number; aliases?: string[] }
 interface GameSheetTeam { id?: string | number; title?: string; division?: { id?: string | number; title?: string } }
 export interface GameSheetRow {
   gameId?: string | number;
@@ -54,6 +54,36 @@ export function discoverExposureSchedule(html: string, year: number): string | u
   return undefined;
 }
 
+interface GameSheetPage { data?: GameSheetRow[]; meta?: { filtered?: number } }
+
+export function validateScheduleSeason(title: string, expected: string): void {
+  if (!title.includes(expected)) throw new Error(`GameSheet season could not be verified as ${expected}; refusing a previous-season schedule.`);
+}
+
+export async function collectGameSheetPages(fetchPage: (offset: number) => Promise<GameSheetPage>): Promise<GameSheetRow[]> {
+  const result: GameSheetRow[] = [];
+  const seen = new Set<string>();
+  for (let offset = 0; offset < 10000;) {
+    const response = await fetchPage(offset);
+    if (!Array.isArray(response.data)) throw new Error("GameSheet returned an unexpected schedule format.");
+    const total = response.meta?.filtered;
+    if (!response.data.length) {
+      if (total != null && offset < total) throw new Error("GameSheet pagination ended before the complete schedule arrived.");
+      return result;
+    }
+    for (const game of response.data) {
+      const key = String(game.gameId);
+      if (seen.has(key)) throw new Error("GameSheet repeated a page; refusing an incomplete schedule.");
+      seen.add(key);
+    }
+    result.push(...response.data);
+    offset += response.data.length;
+    // A server can cap page size below the requested limit; short pages still continue.
+    if (total != null && offset >= total) return result;
+  }
+  throw new Error("GameSheet pagination exceeded its limit; refusing an incomplete schedule.");
+}
+
 /** Ordinary browser session; a security challenge is a source failure, never bypassed. */
 export class GameSheetCollector {
   private browser?: Browser;
@@ -65,7 +95,7 @@ export class GameSheetCollector {
   }
   async close() { await this.browser?.close(); }
 
-  async collect(season: string, division: string | undefined, now: Date): Promise<GameSheetRow[]> {
+  async collect(season: string, division: string | undefined, now: Date, expectedSeason?: string): Promise<GameSheetRow[]> {
     const page = await this.page();
     try {
       // Reuse only the public widget's own same-origin session authorization in memory.
@@ -87,6 +117,7 @@ export class GameSheetCollector {
           ? "GameSheet requires browser verification; this source could not be refreshed."
           : `GameSheet schedule did not finish loading (${title.slice(0, 120)}).`);
       });
+      if (expectedSeason) validateScheduleSeason(await page.title(), expectedSeason);
       if (!authorization) {
         // The first page can be server-rendered. Ask the normal UI for its next page
         // before using the session; do not extract tokens from hidden page state.
@@ -99,38 +130,31 @@ export class GameSheetCollector {
         const observed = await request;
         authorization = observed ? (await observed.allHeaders())["authorization"] ?? authorization : authorization;
       }
-      const result: GameSheetRow[] = [];
       const end = new Date(now.getTime() + 90 * 86400_000);
-      for (let offset = 0; offset < 10000;) {
+      return await collectGameSheetPages(async (offset) => {
         const params = new URLSearchParams({ dateStart: localDateKey(now), dateEnd: localDateKey(end), order: "asc", limit: "100", offset: String(offset) });
         if (division) params.set("division", division);
         const endpoint = `/api/unified-games/${season}?${params}`;
-        const response = await page.evaluate(async ({ path, authorization }) => {
+        return await page.evaluate(async ({ path, authorization }) => {
           const res = await fetch(path, { signal: AbortSignal.timeout(25000), headers: authorization ? { Authorization: authorization } : {} });
           if (!res.ok) throw new Error(`GameSheet schedule HTTP ${res.status}`);
           return res.json();
-        }, { path: endpoint, authorization }) as { data?: GameSheetRow[]; meta?: { filtered?: number } };
-        if (!Array.isArray(response.data)) throw new Error("GameSheet returned an unexpected schedule format.");
-        result.push(...response.data);
-        offset += response.data.length;
-        // Some servers cap page size below the requested limit; a short page is not completion.
-        if (!response.data.length || (response.meta?.filtered != null && offset >= response.meta.filtered)) return result;
-      }
-      throw new Error("GameSheet pagination exceeded its limit; refusing an incomplete schedule.");
+        }, { path: endpoint, authorization }) as GameSheetPage;
+      });
     } finally { await page.close(); }
   }
 
   async fed(year: YouthBirthYear, now: Date): Promise<RawYouthGame[]> {
     const date = localDateKey(now);
     if (date < FED_CONFIG.seasonStart || date >= FED_CONFIG.seasonEnd) throw new Error("FED season configuration needs updating.");
-    const rows = await this.collect(FED_CONFIG.season, FED_CONFIG.divisions[year], now);
+    const rows = await this.collect(FED_CONFIG.season, FED_CONFIG.divisions[year], now, "2026-2027");
     return parseGameSheetGames(rows, { season: FED_CONFIG.season, fedYear: year });
   }
   async exposure(now: Date, rosters: VerifiedYouthRoster[]): Promise<RawYouthGame[]> {
     const url = discoverExposureSchedule(await fetchText(EXPOSURE_URL), now.getUTCFullYear());
     if (!url) throw new Error(`The ${now.getUTCFullYear()} Eastern Exposure Cup game schedule has not been published.`);
     const season = new URL(url).pathname.match(/\/seasons\/(\d+)/)![1]!;
-    const rows = await this.collect(season, undefined, now);
-    return parseGameSheetGames(rows, { season, rosters });
+    const rows = await this.collect(season, undefined, now, String(now.getUTCFullYear()));
+    return parseGameSheetGames(rows, { season, rosters: rosters.filter((r) => r.seasonYear === now.getUTCFullYear()) });
   }
 }

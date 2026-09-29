@@ -89,9 +89,20 @@ describe("OpenIceFinderStack", () => {
   it("keeps the OpenAI secret and exposes the expected outputs", () => {
     const template = synthTemplate();
     template.hasResource("AWS::SecretsManager::Secret", { DeletionPolicy: "Retain" });
-    for (const key of ["AppUrl", "BucketName", "DistributionId", "RefreshFunctionName", "OpenAiApiKeySecretArn", "GitHubRangersRefreshRoleArn"]) {
+    for (const key of ["AppUrl", "BucketName", "DistributionId", "RefreshFunctionName", "OpenAiApiKeySecretArn", "GitHubRangersRefreshRoleArn", "GitHubYouthHockeyRefreshRoleArn"]) {
       assert.ok(template.findOutputs(key)[key], `missing output ${key}`);
     }
+  });
+
+  it("restricts the youth publisher to one data object and the site's invalidation", () => {
+    const template = synthTemplate().toJSON();
+    const resources = Object.values(template.Resources) as { Type: string; Properties: any }[];
+    const role = resources.find(r => r.Type === "AWS::IAM::Role" && r.Properties.RoleName === "OpenIceFinderGitHubYouthHockeyRefresh")!;
+    assert.equal(role.Properties.AssumeRolePolicyDocument.Statement[0].Condition.StringEquals["token.actions.githubusercontent.com:sub"], "repo:Lcarey@7055619/OpenIceFinder@1368862512:ref:refs/heads/main");
+    const policy = resources.find(r => r.Type === "AWS::IAM::Policy" && JSON.stringify(r.Properties.Roles).includes("GitHubYouthHockeyRefreshRole"))!;
+    const statements = policy.Properties.PolicyDocument.Statement;
+    assert.deepEqual(statements.map((s: { Action: string }) => s.Action).sort(), ["cloudfront:CreateInvalidation", "s3:PutObject"]);
+    assert.match(JSON.stringify(statements.find((s: { Action: string }) => s.Action === "s3:PutObject").Resource), /\/data\/youth-hockey\.json/);
   });
 
   it("lets GitHub Actions on main assume an OIDC role that can put rangers.json", () => {

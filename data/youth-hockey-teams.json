@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "name": "Mid-Fairfield AAA",
+    "birthYear": 2015,
+    "evidenceUrl": "https://www.easternexposurecup.com/en/page/2015_birth_year_2026.html",
+    "aliases": [
+      "Mid-Fairfield AAA 2015",
+      "2015 Mid-Fairfield AAA"
+    ],
+    "seasonYear": 2026
+  },
+  {
+    "name": "Bay State Breakers Elite",
+    "birthYear": 2015,
+    "evidenceUrl": "https://www.easternexposurecup.com/en/page/2015_birth_year_2026.html",
+    "aliases": [
+      "Bay State Breakers Elite 2015",
+      "2015 Bay State Breakers Elite"
+    ],
+    "seasonYear": 2026
+  },
+  {
+    "name": "Mid-Fairfield AAA",
+    "birthYear": 2016,
+    "evidenceUrl": "https://www.easternexposurecup.com/en/page/2016_birth_year_2026.html",
+    "aliases": [
+      "Mid-Fairfield AAA 2016",
+      "2016 Mid-Fairfield AAA"
+    ],
+    "seasonYear": 2026
+  },
+  {
+    "name": "Boston Jr. Eagles Elite",
+    "birthYear": 2016,
+    "evidenceUrl": "https://www.easternexposurecup.com/en/page/2016_birth_year_2026.html",
+    "aliases": [
+      "Boston Jr. Eagles Elite 2016",
+      "2016 Boston Jr. Eagles Elite"
+    ],
+    "seasonYear": 2026
+  }
+]
