@@ -87,6 +87,18 @@ export class GameSheetCollector {
           ? "GameSheet requires browser verification; this source could not be refreshed."
           : `GameSheet schedule did not finish loading (${title.slice(0, 120)}).`);
       });
+      if (!authorization) {
+        // The first page can be server-rendered. Ask the normal UI for its next page
+        // before using the session; do not extract tokens from hidden page state.
+        const request = page.waitForRequest((r) => {
+          const u = new URL(r.url());
+          return u.origin === "https://gamesheetstats.com" && u.pathname === `/api/unified-games/${season}`;
+        }, { timeout: 10_000 }).catch(() => undefined);
+        const scroll = page.locator('[data-testid="games-virtual-scroll"]');
+        if (await scroll.count()) await scroll.evaluate((el) => { el.scrollTop = el.scrollHeight; });
+        const observed = await request;
+        authorization = observed?.headers()["authorization"] ?? authorization;
+      }
       const result: GameSheetRow[] = [];
       const end = new Date(now.getTime() + 90 * 86400_000);
       for (let offset = 0; offset < 10000;) {
