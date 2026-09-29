@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Builds data/rinks.json: geocodes candidate rinks with Nominatim, computes
- * free-flow driving time from Arlington Center with the public OSRM server,
+ * catalog-ranking free-flow driving time from 107 Webster St with the public OSRM server,
  * keeps the 20 closest, and preserves any hand-annotated `source` config that
  * already exists in data/rinks.json.
  *
@@ -14,7 +14,7 @@ import { fileURLToPath } from "node:url";
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outFile = path.join(repoRoot, "data", "rinks.json");
 
-const ORIGIN = { name: "Arlington Center (Mass Ave & Pleasant St)", lat: 42.4154, lng: -71.1565 };
+const ORIGIN = { name: "107 Webster St, Arlington, MA", lat: 42.41674, lng: -71.14375 };
 const USER_AGENT = "OpenIceFinder/0.1 (household app; contact: lcarey)";
 
 interface Candidate {

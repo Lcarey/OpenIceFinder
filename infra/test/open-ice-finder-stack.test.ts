@@ -52,10 +52,17 @@ describe("OpenIceFinderStack", () => {
       PolicyDocument: {
         Statement: Match.arrayWith([
           Match.objectLike({ Action: Match.arrayWith(["secretsmanager:GetSecretValue"]), Effect: "Allow" }),
+          Match.objectLike({ Action: "geo-routes:CalculateRoutes", Effect: "Allow", Resource: Match.anyValue() }),
           Match.objectLike({ Action: "cloudfront:CreateInvalidation", Effect: "Allow" }),
         ]),
       },
     });
+  });
+
+  it("scopes routing permission to the AWS provider ARN, which has no account component", () => {
+    const template = synthTemplate();
+    const policies = JSON.stringify(template.findResources("AWS::IAM::Policy"));
+    assert.ok(policies.includes("::provider/default"));
   });
 
   it("schedules the refresh every 6 hours", () => {

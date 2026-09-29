@@ -1,6 +1,7 @@
-import { CATEGORY_LABELS, ICE_CATEGORIES, OPEN_ICE_CATEGORIES, isOpenIce, type IceCategory, type IceEvent, type Rink, type RinkFeed, type RinkIndex } from "@openice/shared";
+import { DRIVE_ORIGIN, driveMinutes, CATEGORY_LABELS, ICE_CATEGORIES, OPEN_ICE_CATEGORIES, isOpenIce, type IceCategory, type IceEvent, type Rink, type RinkFeed, type RinkIndex } from "@openice/shared";
 import { Car, ExternalLink, MapPin } from "lucide-react";
 import { useMemo, useState } from "react";
+import { DriveBadge } from "../components/DriveBadge";
 import { CategoryBadge } from "../components/CategoryBadge";
 import { dateKeyOf, dayLabel, formatTimeRange, groupByDay, shiftDateKey } from "../format";
 
@@ -45,16 +46,16 @@ export function selectOpenIce(feeds: RinkFeed[], filters: Filters, now: Date): O
   const categories = new Set(filters.categories);
   const rows: OpenIceRow[] = [];
   for (const feed of feeds) {
-    if (feed.rink.driveMinutes > filters.maxDrive) continue;
     if (filters.rinkIds && !filters.rinkIds.includes(feed.rink.id)) continue;
     for (const event of feed.events) {
       if (!categories.has(event.category)) continue;
+      if (filters.maxDrive < 60 && (!event.drive || driveMinutes(event.drive) > filters.maxDrive)) continue;
       if (new Date(event.end).getTime() < nowMs) continue;
       if (dateKeyOf(event.start) >= endKey) continue;
       rows.push({ ...event, rink: feed.rink });
     }
   }
-  return rows.sort((a, b) => a.start.localeCompare(b.start) || a.rink.driveMinutes - b.rink.driveMinutes);
+  return rows.sort((a, b) => a.start.localeCompare(b.start) || (a.drive?.durationSeconds ?? Infinity) - (b.drive?.durationSeconds ?? Infinity));
 }
 
 export function OpenIceView({ index, feeds }: { index: RinkIndex; feeds: RinkFeed[] | null }) {
@@ -183,7 +184,7 @@ export function OpenIceView({ index, feeds }: { index: RinkIndex; feeds: RinkFee
                         {entry.rink.name}
                       </span>
                       <span className="dim">
-                        {entry.rink.town} · {entry.rink.driveMinutes} min
+                        {entry.rink.town}{entry.nextOpenIce?.drive && ` · ${driveMinutes(entry.nextOpenIce.drive)} min for next open session`}
                       </span>
                     </label>
                   </li>
@@ -193,6 +194,8 @@ export function OpenIceView({ index, feeds }: { index: RinkIndex; feeds: RinkFee
           </div>
         )}
       </div>
+
+      <p className="drive-note dim">Drive estimates from {DRIVE_ORIGIN.label} · typical traffic for arrival at session start.</p>
 
       {!feeds && <p className="loading">Loading schedules…</p>}
 
@@ -230,9 +233,7 @@ export function OpenIceView({ index, feeds }: { index: RinkIndex; feeds: RinkFee
                     </div>
                   </div>
                   <div className="session-side">
-                    <span className="drive-pill" title={`${row.rink.driveMiles} mi from Arlington Center`}>
-                      <Car size={13} /> {row.rink.driveMinutes} min
-                    </span>
+                    <DriveBadge drive={row.drive} />
                     {(row.url || row.rink.scheduleUrl) && (
                       <a className="ext" href={row.url ?? row.rink.scheduleUrl} target="_blank" rel="noreferrer" aria-label="Open rink schedule">
                         <ExternalLink size={14} />

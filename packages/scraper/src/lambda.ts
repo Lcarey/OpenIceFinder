@@ -2,6 +2,7 @@ import { CloudFrontClient, CreateInvalidationCommand } from "@aws-sdk/client-clo
 import type { Context, ScheduledEvent } from "aws-lambda";
 import { Classifier, mergeTables } from "./classify.js";
 import { PROGRAMS, RINKS, SEED_CLASSIFICATIONS } from "./data.js";
+import { DriveTimes } from "./drive-times.js";
 import { DEFAULT_OPENAI_MODEL, openAiClientProvider } from "./openai-client.js";
 import { reuseHiddenUpcoming } from "./rangers.js";
 import { refreshAll } from "./refresh.js";
@@ -24,6 +25,7 @@ export interface RefreshSummary {
   failures: string[];
   learnedClassifications: number;
   invalidated: boolean;
+  driving: { cached: number; calculated: number; failed: number };
 }
 
 export async function handler(event: Partial<ScheduledEvent> & RefreshEvent = {}, context?: Context): Promise<RefreshSummary> {
@@ -41,7 +43,9 @@ export async function handler(event: Partial<ScheduledEvent> & RefreshEvent = {}
 
   const programs = event.rinkIds?.length ? PROGRAMS.filter((p) => event.rinkIds!.includes(p.rinkId)) : PROGRAMS;
   const previousRangers = await store.readRangers();
+  const drives = new DriveTimes(store, { log });
   const result = await refreshAll({
+    drives,
     rinks,
     programs,
     classifier,
@@ -88,6 +92,7 @@ export async function handler(event: Partial<ScheduledEvent> & RefreshEvent = {}
     ],
     learnedClassifications: classifier.added.length,
     invalidated,
+    driving: drives.stats,
   };
   log(JSON.stringify(summary));
   return summary;

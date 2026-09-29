@@ -1829,3 +1829,5 @@ body:has(.tape-shell) {
     min-width: 0;
   }
 }
+
+.drive-note { font-size: 0.8rem; line-height: 1.5; }

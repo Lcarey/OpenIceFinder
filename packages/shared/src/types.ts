@@ -98,9 +98,9 @@ export interface Rink {
   address: string;
   lat: number;
   lng: number;
-  /** Driving minutes from Arlington Center (free-flow OSRM estimate). */
+  /** Legacy catalog-ranking estimate only. Use IceEvent.drive for display and filtering. */
   driveMinutes: number;
-  /** Driving distance in miles. */
+  /** Legacy catalog-ranking distance. Use IceEvent.drive for session distance. */
   driveMiles: number;
   website?: string;
   /** Human-facing schedule page to link to. */
@@ -121,12 +121,28 @@ export interface RawEvent {
   description?: string;
 }
 
+/** A permanent estimate for arriving at a rink at a recurring local weekday/time. */
+export interface DriveEstimate {
+  provider: "amazon-location";
+  /** Sunday = 0, in America/New_York. */
+  weekday: number;
+  /** Local arrival clock, HH:mm; independent of calendar date and DST offset. */
+  arrivalTime: string;
+  durationSeconds: number;
+  distanceMeters: number;
+  calculatedAt: string;
+  /** Future arrival date used for Amazon's traffic prediction when first cached. */
+  sampleArrival: string;
+}
+
 export interface IceEvent extends RawEvent {
   id: string;
   rinkId: string;
   category: IceCategory;
   /** How the category was determined. */
   classifiedBy: "rule" | "lookup" | "model" | "default";
+  /** Traffic estimate from 107 Webster St for arrival at the session start. */
+  drive?: DriveEstimate;
 }
 
 export interface RinkFeed {

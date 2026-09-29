@@ -1,5 +1,6 @@
 import {
   dedupeAndSort,
+  compareRinkDrives,
   eventId,
   isOpenIce,
   localDateKey,
@@ -20,10 +21,12 @@ import { fetchRinkEvents, type AdapterContext } from "./adapters/index.js";
 import type { Classifier, UnknownTitle } from "./classify.js";
 import { applyFmcClassOverlay, refreshOfferings, type OfferingsRefreshContext } from "./offerings/index.js";
 import { refreshPrograms, type RefreshProgramsOptions } from "./programs/index.js";
+import { attachDriveTimes, type DriveTimes } from "./drive-times.js";
 import { refreshRangers } from "./rangers.js";
 
 export interface RefreshOptions {
   rinks: Rink[];
+  drives?: DriveTimes;
   /** Hockey programs whose team schedules annotate a rink; refreshed alongside the rinks. */
   programs?: Program[];
   classifier: Classifier;
@@ -156,6 +159,8 @@ export async function refreshAll(options: RefreshOptions): Promise<RefreshResult
     return { rink: part.rink, fetchedAt, rangeStart: rangeStart.toISOString(), rangeEnd: rangeEnd.toISOString(), events, errors: part.errors };
   });
 
+  if (options.drives) await attachDriveTimes(feeds, options.drives);
+
   const nowMs = now.getTime();
   const entries: RinkIndexEntry[] = feeds.map((feed) => {
     const open = feed.events.filter((e) => isOpenIce(e.category));
@@ -170,7 +175,7 @@ export async function refreshAll(options: RefreshOptions): Promise<RefreshResult
       errors: feed.errors,
     };
   });
-  entries.sort((a, b) => a.rink.driveMinutes - b.rink.driveMinutes || a.rink.name.localeCompare(b.rink.name));
+  entries.sort(compareRinkDrives);
 
   const index: RinkIndex = { generatedAt: fetchedAt, rinks: entries };
   if (programResult.index.length > 0) index.programs = programResult.index;

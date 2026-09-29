@@ -8,9 +8,10 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import type { ClassificationTable, RinkIndex } from "@openice/shared";
+import { compareRinkDrives, type ClassificationTable, type RinkIndex } from "@openice/shared";
 import { Classifier, mergeTables } from "./classify.js";
 import { PROGRAMS, RINKS, SEED_CLASSIFICATIONS } from "./data.js";
+import { DriveTimes } from "./drive-times.js";
 import { DEFAULT_OPENAI_MODEL, openAiClientProvider } from "./openai-client.js";
 import { reuseHiddenUpcoming } from "./rangers.js";
 import { refreshAll } from "./refresh.js";
@@ -42,7 +43,9 @@ async function main() {
   const classifier = new Classifier(table, { model, log, ...(useModel ? { openai } : {}) });
 
   const previousRangers = await store.readRangers();
+  const drives = new DriveTimes(store, { log });
   const result = await refreshAll({
+    drives,
     rinks,
     programs,
     classifier,
@@ -62,7 +65,7 @@ async function main() {
       const existing = JSON.parse(await readFile(path.join(outDir, "index.json"), "utf8")) as RinkIndex;
       const refreshed = new Set(result.index.rinks.map((r) => r.rink.id));
       result.index.rinks = [...existing.rinks.filter((r) => !refreshed.has(r.rink.id)), ...result.index.rinks].sort(
-        (a, b) => a.rink.driveMinutes - b.rink.driveMinutes || a.rink.name.localeCompare(b.rink.name),
+        compareRinkDrives,
       );
       const refreshedPrograms = new Set((result.index.programs ?? []).map((p) => p.program.id));
       const keptPrograms = (existing.programs ?? []).filter((p) => !refreshedPrograms.has(p.program.id));
@@ -73,6 +76,8 @@ async function main() {
     }
   }
   await persistResult(store, result.feeds, result.index, classifier.table, result.programFeeds, result.offeringFeeds, result.rangersFeed);
+
+  log(`driving: ${JSON.stringify(drives.stats)}`);
 
   if (updateSeed && classifier.added.length > 0) {
     const seedFile = path.join(repoRoot, "data", "classifications.seed.json");

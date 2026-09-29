@@ -1,4 +1,4 @@
-import type { RinkFeed, RinkIndex } from "@openice/shared";
+import type { DriveEstimate, RinkFeed, RinkIndex } from "@openice/shared";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { App } from "./App";
@@ -28,6 +28,8 @@ const [s1, e1] = futureIso(2);
 const [s2, e2] = futureIso(5);
 const [s3, e3] = futureIso(-3, 1);
 
+const drive: DriveEstimate = { provider: "amazon-location", weekday: 2, arrivalTime: "14:00", durationSeconds: 1050, distanceMeters: 5000, calculatedAt: "2026-09-29T10:00:00Z", sampleArrival: "2026-10-06T14:00:00-04:00" };
+
 const feed: RinkFeed = {
   rink,
   fetchedAt: new Date().toISOString(),
@@ -35,7 +37,7 @@ const feed: RinkFeed = {
   rangeEnd: "",
   errors: [],
   events: [
-    { id: "a", rinkId: rink.id, title: "Family Stick & Puck", category: "stick_puck_family", classifiedBy: "rule", start: s1, end: e1 },
+    { id: "a", rinkId: rink.id, title: "Family Stick & Puck", category: "stick_puck_family", classifiedBy: "rule", start: s1, end: e1, drive },
     { id: "b", rinkId: rink.id, title: "AHC", category: "private_rental", classifiedBy: "lookup", start: s2, end: e2 },
     { id: "c", rinkId: rink.id, title: "Mens' Stick & Puck", category: "stick_puck_adult", classifiedBy: "rule", start: s3, end: e3 },
   ],
@@ -43,7 +45,7 @@ const feed: RinkFeed = {
 
 const index: RinkIndex = {
   generatedAt: new Date().toISOString(),
-  rinks: [{ rink, fetchedAt: feed.fetchedAt, eventCount: 3, openIceCount: 2, ok: true, errors: [] }],
+  rinks: [{ rink, fetchedAt: feed.fetchedAt, eventCount: 3, openIceCount: 2, nextOpenIce: feed.events[0], ok: true, errors: [] }],
 };
 
 afterEach(() => {
@@ -61,6 +63,21 @@ describe("selectOpenIce", () => {
   });
 });
 
+describe("session drive estimates", () => {
+  it("filters by each session's traffic estimate, not the old rink-level number", () => {
+    const base = feed.events[0]!;
+    const differentTimes: RinkFeed = { ...feed, events: [
+      { ...base, id: "short", drive: { ...drive, durationSeconds: 600 } },
+      { ...base, id: "long", drive: { ...drive, durationSeconds: 1501 } },
+      { ...base, id: "unknown", drive: undefined },
+      { ...base, id: "over-hour", drive: { ...drive, durationSeconds: 4000 } },
+    ] };
+    const filters = { categories: [base.category], days: 7, maxDrive: 20, rinkIds: null };
+    expect(selectOpenIce([differentTimes], filters, new Date()).map((event) => event.id)).toEqual(["short"]);
+    expect(selectOpenIce([differentTimes], { ...filters, maxDrive: 60 }, new Date()).map((event) => event.id)).toEqual(["short", "long", "over-hour", "unknown"]);
+  });
+});
+
 describe("App", () => {
   it("renders the open ice list from /data JSON", async () => {
     vi.stubGlobal(
@@ -74,7 +91,9 @@ describe("App", () => {
     await waitFor(() => expect(screen.getByRole("list").querySelectorAll(".session")).toHaveLength(1));
     expect(screen.getByRole("list")).toHaveTextContent("Family Stick & Puck");
     expect(screen.queryByText("AHC")).not.toBeInTheDocument();
-    expect(screen.getAllByText(/3 min/).length).toBeGreaterThan(0);
+    expect(screen.getByText("18 min")).toBeInTheDocument();
+    expect(screen.queryByText("3 min")).not.toBeInTheDocument();
+    expect(screen.getByText(/Drive estimates from 107 Webster St/)).toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /rangers/i })).not.toBeInTheDocument();
     expect(screen.queryByText(/Jr\. Rangers/)).not.toBeInTheDocument();
   });

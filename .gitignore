@@ -11,3 +11,5 @@ cdk.out/
 infra/cdk-outputs.json
 data/offerings/
 data/backtest/features.csv
+
+data/drive-times/

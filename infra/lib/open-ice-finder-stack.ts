@@ -143,6 +143,10 @@ function handler(event) {
     });
     webBucket.grantReadWrite(refreshFunction, "data/*");
     openAiApiKeySecret.grantRead(refreshFunction);
+    refreshFunction.addToRolePolicy(new iam.PolicyStatement({
+      actions: ["geo-routes:CalculateRoutes"],
+      resources: [Stack.of(this).formatArn({ service: "geo-routes", account: "", resource: "provider", resourceName: "default" })],
+    }));
     refreshFunction.addToRolePolicy(
       new iam.PolicyStatement({
         actions: ["cloudfront:CreateInvalidation"],

@@ -1,7 +1,10 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { link, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { randomUUID } from "node:crypto";
 import { GetObjectCommand, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
-import type { ClassificationTable, OfferingsFeed, ProgramFeed, RangersFeed, RinkFeed, RinkIndex } from "@openice/shared";
+import type { ClassificationTable, DriveEstimate, OfferingsFeed, ProgramFeed, RangersFeed, RinkFeed, RinkIndex } from "@openice/shared";
+
+import type { DriveTimeStore } from "./drive-times.js";
 
 export interface FeedStore {
   readClassifications(): Promise<ClassificationTable | undefined>;
@@ -17,13 +20,40 @@ export interface FeedStore {
 
 const JSON_INDENT = 2;
 
-export class LocalStore implements FeedStore {
+export class LocalStore implements FeedStore, DriveTimeStore {
   constructor(private readonly dir: string) {}
 
   private async write(rel: string, value: unknown): Promise<void> {
     const file = path.join(this.dir, rel);
     await mkdir(path.dirname(file), { recursive: true });
     await writeFile(file, `${JSON.stringify(value, null, JSON_INDENT)}\n`);
+  }
+
+  async readDriveTime(key: string): Promise<DriveEstimate | undefined> {
+    try {
+      return JSON.parse(await readFile(path.join(this.dir, "drive-times", `${key}.json`), "utf8")) as DriveEstimate;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code === "ENOENT") return undefined;
+      throw error;
+    }
+  }
+
+  async writeDriveTime(key: string, estimate: DriveEstimate): Promise<DriveEstimate> {
+    const file = path.join(this.dir, "drive-times", `${key}.json`);
+    await mkdir(path.dirname(file), { recursive: true });
+    const temporary = `${file}.${randomUUID()}.tmp`;
+    try {
+      await writeFile(temporary, JSON.stringify(estimate));
+      await link(temporary, file); // Atomic insert; never replaces a saved estimate.
+      return estimate;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
+      const existing = await this.readDriveTime(key);
+      if (!existing) throw error;
+      return existing;
+    } finally {
+      await rm(temporary, { force: true });
+    }
   }
 
   async readClassifications(): Promise<ClassificationTable | undefined> {
@@ -75,7 +105,7 @@ export class LocalStore implements FeedStore {
   }
 }
 
-export class S3Store implements FeedStore {
+export class S3Store implements FeedStore, DriveTimeStore {
   readonly writtenKeys: string[] = [];
 
   constructor(
@@ -96,6 +126,34 @@ export class S3Store implements FeedStore {
       }),
     );
     this.writtenKeys.push(key);
+  }
+
+  async readDriveTime(key: string): Promise<DriveEstimate | undefined> {
+    try {
+      const res = await this.client.send(new GetObjectCommand({ Bucket: this.bucket, Key: `${this.prefix}drive-times/${key}.json` }));
+      const body = await res.Body?.transformToString();
+      if (!body) throw new Error(`Empty driving estimate: ${key}`);
+      return JSON.parse(body) as DriveEstimate;
+    } catch (error) {
+      if ((error as { name?: string }).name === "NoSuchKey") return undefined;
+      throw error;
+    }
+  }
+
+  async writeDriveTime(key: string, estimate: DriveEstimate): Promise<DriveEstimate> {
+    try {
+      await this.client.send(new PutObjectCommand({
+        Bucket: this.bucket, Key: `${this.prefix}drive-times/${key}.json`,
+        Body: JSON.stringify(estimate), ContentType: "application/json",
+        CacheControl: "public, max-age=31536000, immutable", IfNoneMatch: "*",
+      }));
+      return estimate;
+    } catch (error) {
+      if ((error as { name?: string }).name !== "PreconditionFailed") throw error;
+      const existing = await this.readDriveTime(key);
+      if (!existing) throw error;
+      return existing;
+    }
   }
 
   async readClassifications(): Promise<ClassificationTable | undefined> {

@@ -22,7 +22,8 @@
     "backtest:fetch": "npm run build:shared && node --import tsx packages/scraper/src/backtest/fetch-season.ts",
     "backtest:belief": "npm run build:shared && node --import tsx packages/scraper/src/backtest/cli.ts",
     "rinks:build": "node --import tsx scripts/build-rinks.ts",
-    "deploy": "./deploy.sh"
+    "deploy": "./deploy.sh",
+    "refresh:drives": "npm run build:shared && node --import tsx packages/scraper/src/drive-times-cli.ts"
   },
   "engines": {
     "node": ">=22"

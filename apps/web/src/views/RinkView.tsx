@@ -1,6 +1,7 @@
-import { isOpenIce, type IceEvent, type RinkFeed, type RinkIndex } from "@openice/shared";
-import { Car, ChevronLeft, ChevronRight, ExternalLink, MapPin, Users } from "lucide-react";
+import { DRIVE_ORIGIN, driveMinutes, isOpenIce, type IceEvent, type RinkFeed, type RinkIndex } from "@openice/shared";
+import { ChevronLeft, ChevronRight, ExternalLink, MapPin, Users } from "lucide-react";
 import { useMemo, useState } from "react";
+import { DriveBadge, driveDescription } from "../components/DriveBadge";
 import {
   dateFromKey,
   dateKeyOf,
@@ -55,7 +56,7 @@ export function RinkView({ index, feeds, rinkId }: { index: RinkIndex; feeds: Ri
                 {r.rink.name}
               </span>
               <span className="rink-item-meta">
-                {r.rink.town} · {r.rink.driveMinutes} min
+                {r.rink.town}{r.nextOpenIce?.drive && ` · ${driveMinutes(r.nextOpenIce.drive)} min for next open session`}
                 {r.openIceCount > 0 && <span className="open-count">{r.openIceCount} open</span>}
               </span>
             </a>
@@ -72,7 +73,7 @@ export function RinkView({ index, feeds, rinkId }: { index: RinkIndex; feeds: Ri
               <p className="rink-sub">
                 <MapPin size={14} /> {rink.address}
                 <span className="dot">·</span>
-                <Car size={14} /> {rink.driveMinutes} min ({rink.driveMiles} mi) from Arlington Center
+                From {DRIVE_ORIGIN.label} · drive time varies by session
                 {rink.operator && (
                   <>
                     <span className="dot">·</span>
@@ -80,6 +81,9 @@ export function RinkView({ index, feeds, rinkId }: { index: RinkIndex; feeds: Ri
                   </>
                 )}
               </p>
+              {entry.nextOpenIce && (
+                <p className="drive-note dim"><DriveBadge drive={entry.nextOpenIce.drive} /> for next open session · typical traffic, arriving at session start</p>
+              )}
               <p className="rink-links">
                 {rink.scheduleUrl && (
                   <a href={rink.scheduleUrl} target="_blank" rel="noreferrer">
@@ -216,9 +220,9 @@ export function WeekGrid({ events, weekStart, todayKey }: { events: IceEvent[]; 
                   key={e.id}
                   className={`week-event cat-${e.category}${isOpenIce(e.category) ? " open" : ""}`}
                   style={{ top, height }}
-                  title={`${e.title}\n${formatTimeRange(e.start, e.end)}${e.surface ? `\n${e.surface}` : ""}`}
+                  title={`${e.title}\n${formatTimeRange(e.start, e.end)}${e.surface ? `\n${e.surface}` : ""}\n${e.drive ? `${driveMinutes(e.drive)} min drive · ` : ""}${driveDescription(e.drive)}`}
                 >
-                  <span className="week-event-time">{formatTime(e.start)}</span>
+                  <span className="week-event-time">{formatTime(e.start)}{e.drive && ` · ${driveMinutes(e.drive)} min drive`}</span>
                   <span className="week-event-title">{e.title}</span>
                 </div>
               );
@@ -258,7 +262,7 @@ export function MonthGrid({ events, monthStart, todayKey, onPickDay }: { events:
             <span className="month-daynum">{Number(key.slice(8))}</span>
             <span className="month-events">
               {open.slice(0, 3).map((e) => (
-                <span key={e.id} className={`month-event cat-${e.category}`}>
+                <span key={e.id} className={`month-event cat-${e.category}`} title={`${e.drive ? `${driveMinutes(e.drive)} min drive · ` : ""}${driveDescription(e.drive)}`}>
                   {formatTime(e.start)} {e.title}
                 </span>
               ))}
