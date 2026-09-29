@@ -65,10 +65,10 @@ describe("OpenIceFinderStack", () => {
     assert.ok(policies.includes("::provider/default"));
   });
 
-  it("schedules the refresh every 6 hours", () => {
+  it("schedules the refresh every 24 hours", () => {
     const template = synthTemplate();
     template.hasResourceProperties("AWS::Events::Rule", {
-      ScheduleExpression: "rate(6 hours)",
+      ScheduleExpression: "rate(1 day)",
       State: "ENABLED",
       Targets: Match.arrayWith([Match.objectLike({ Arn: Match.anyValue() })]),
     });

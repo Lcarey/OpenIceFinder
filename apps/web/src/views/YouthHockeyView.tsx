@@ -44,7 +44,8 @@ export function YouthHockeyView() {
     {feed && <>
       <div className="youth-coverage" aria-label="Schedule coverage">{feed.sources.map((source) => {
         const age = source.fetchedAt ? now.getTime() - Date.parse(source.fetchedAt) : Infinity;
-        const status = age > YOUTH_STALE_LIMIT_MS ? "unavailable" : source.status === "ok" && age > 12 * 3600_000 ? "stale" : source.status;
+        // Allow the daily refresh two hours of scheduling/retry grace.
+        const status = age > YOUTH_STALE_LIMIT_MS ? "unavailable" : source.status === "ok" && age > 26 * 3600_000 ? "stale" : source.status;
         return <div key={source.id} className={`youth-source ${status}`}><a href={source.url} target="_blank" rel="noreferrer">{source.name}</a><span>{status === "ok" ? `Checked ${formatRelativeFetched(source.fetchedAt!, now.getTime())}` : status === "stale" ? `Stale · last verified ${formatRelativeFetched(source.fetchedAt!, now.getTime())}` : "Schedule unavailable"}</span>{source.message && <small>{source.message}</small>}{Boolean(source.excludedVenues?.length) && <small>{source.excludedVenues!.length} venue(s) need a verified location or route.</small>}</div>;
       })}</div>
       <p className="youth-count" role="status">{games.length} {games.length === 1 ? "game" : "games"} to watch</p>

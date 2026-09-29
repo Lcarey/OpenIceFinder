@@ -115,7 +115,7 @@ export function MainApp({ route }: { route: MainRoute }) {
 
       <footer className="footer">
         <span>
-          <RefreshCw size={13} /> {route.view === "youth-hockey" ? "Youth schedules checked every 6 hours" : `Schedules refreshed ${staleLabel ?? "…"} · updated every 6 hours`}
+          <RefreshCw size={13} /> {route.view === "youth-hockey" ? "Youth schedules checked every 24 hours" : `Schedules refreshed ${staleLabel ?? "…"} · updated every 24 hours`}
         </span>
         <span>Times are Eastern. Always confirm with the rink before you go.</span>
       </footer>

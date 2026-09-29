@@ -162,7 +162,7 @@ function handler(event) {
 
     new events.Rule(this, "RefreshSchedule", {
       description: "Refresh OpenIceFinder rink schedules",
-      schedule: props.refreshSchedule ?? events.Schedule.rate(Duration.hours(6)),
+      schedule: props.refreshSchedule ?? events.Schedule.rate(Duration.days(1)),
       targets: [new targets.LambdaFunction(refreshFunction, { retryAttempts: 1 })],
     });
 
