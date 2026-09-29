@@ -245,4 +245,3 @@ export async function widgetToken(post: RangersPost, log: (message: string) => v
     return "";
   }
 }
-
