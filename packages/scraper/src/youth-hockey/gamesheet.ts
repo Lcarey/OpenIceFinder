@@ -58,7 +58,7 @@ export function discoverExposureSchedule(html: string, year: number): string | u
 export class GameSheetCollector {
   private browser?: Browser;
   private async page(): Promise<Page> {
-    this.browser ??= await chromium.launch({ channel: "chromium", headless: process.env.YOUTH_BROWSER_HEADED !== "1" });
+    this.browser ??= await chromium.launch({ channel: "chromium", headless: process.env.YOUTH_BROWSER_HEADED === "0" });
     const page = await this.browser.newPage({ timezoneId: "America/New_York" });
     page.setDefaultTimeout(30_000);
     return page;
@@ -68,6 +68,15 @@ export class GameSheetCollector {
   async collect(season: string, division: string | undefined, now: Date): Promise<GameSheetRow[]> {
     const page = await this.page();
     try {
+      // Reuse only the public widget's own same-origin session authorization in memory.
+      // Never persist it, log it, or send it to a different endpoint/origin.
+      let authorization: string | undefined;
+      page.on("request", (request) => {
+        const u = new URL(request.url());
+        if (u.origin === "https://gamesheetstats.com" && u.pathname === `/api/unified-games/${season}`) {
+          authorization = request.headers()["authorization"] ?? authorization;
+        }
+      });
       const url = new URL(`https://gamesheetstats.com/seasons/${season}/games`);
       if (division) url.searchParams.set("filter[division]", division);
       await page.goto(url.toString(), { waitUntil: "domcontentloaded", timeout: 35_000 });
@@ -84,11 +93,11 @@ export class GameSheetCollector {
         const params = new URLSearchParams({ dateStart: localDateKey(now), dateEnd: localDateKey(end), order: "asc", limit: "100", offset: String(offset) });
         if (division) params.set("division", division);
         const endpoint = `/api/unified-games/${season}?${params}`;
-        const response = await page.evaluate(async (path) => {
-          const res = await fetch(path, { signal: AbortSignal.timeout(25000) });
+        const response = await page.evaluate(async ({ path, authorization }) => {
+          const res = await fetch(path, { signal: AbortSignal.timeout(25000), headers: authorization ? { Authorization: authorization } : {} });
           if (!res.ok) throw new Error(`GameSheet schedule HTTP ${res.status}`);
           return res.json();
-        }, endpoint) as { data?: GameSheetRow[]; meta?: { filtered?: number } };
+        }, { path: endpoint, authorization }) as { data?: GameSheetRow[]; meta?: { filtered?: number } };
         if (!Array.isArray(response.data)) throw new Error("GameSheet returned an unexpected schedule format.");
         result.push(...response.data);
         offset += response.data.length;
