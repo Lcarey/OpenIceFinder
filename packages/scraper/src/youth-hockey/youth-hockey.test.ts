@@ -67,6 +67,12 @@ describe("normalization and snapshots", () => {
     expect(moved.games[0]?.start).toBe("2026-10-04T16:00:00Z");
     expect((await refreshYouthHockey({ ...common, sources: [source([])] })).games).toHaveLength(0);
   });
+  it("keeps browser diagnostics out of the public source message", async () => {
+    const fail = { ...source(), collect: async () => { throw Error('locator.evaluate: Error: strict mode violation'); } };
+    const feed = await refresh([fail]);
+    expect(feed.sources[0]?.message).toBe("The schedule could not be refreshed. Check the official schedule.");
+    expect(feed.sources[0]?.status).toBe("unavailable");
+  });
   it("preserves only a failed source for 48 hours and continues healthy sources", async () => {
     const previous = await refresh([source([{ ...row, start: "2026-10-05T14:00:00Z" }])]);
     const fail = { ...source(), collect: async () => { throw Error("unavailable"); } };

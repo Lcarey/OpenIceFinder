@@ -125,7 +125,7 @@ export class GameSheetCollector {
           const u = new URL(r.url());
           return u.origin === "https://gamesheetstats.com" && u.pathname === `/api/unified-games/${season}`;
         }, { timeout: 10_000 }).catch(() => undefined);
-        const scroll = page.locator('[data-testid="games-virtual-scroll"]');
+        const scroll = page.locator('[data-testid="games-virtual-scroll"]:visible').first();
         if (await scroll.count()) await scroll.evaluate((el) => { el.scrollTop = el.scrollHeight; });
         const observed = await request;
         authorization = observed ? (await observed.allHeaders())["authorization"] ?? authorization : authorization;

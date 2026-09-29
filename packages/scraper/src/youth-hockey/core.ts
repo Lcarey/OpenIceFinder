@@ -106,7 +106,10 @@ export async function refreshYouthHockey(options: {
       const age = previous?.fetchedAt ? now.getTime() - Date.parse(previous.fetchedAt) : Infinity;
       status.status = Number.isFinite(age) && age <= YOUTH_STALE_LIMIT_MS ? "stale" : "unavailable";
       // Collector errors contain public source information only; never routing URLs or origin configuration.
-      status.message = error instanceof Error ? error.message.split("\n")[0]!.replace(/^page\.[^:]+: (?:Error: )?/, "") : "Schedule could not be loaded.";
+      const diagnostic = error instanceof Error ? error.message.split("\n")[0]! : "Schedule could not be loaded.";
+      status.message = /HTTP 403/.test(diagnostic) ? "The schedule provider blocked this refresh. Check the official schedule."
+        : /(?:page|locator)\.|strict mode violation/.test(diagnostic) ? "The schedule could not be refreshed. Check the official schedule."
+        : diagnostic;
       if (status.status === "stale") {
         const cached = (options.previous?.games ?? []).filter((g) => g.sourceId === source.id && Date.parse(g.start) >= now.getTime() && Date.parse(g.start) < rangeEnd.getTime() && now.getTime() - Date.parse(g.verifiedAt) <= YOUTH_STALE_LIMIT_MS);
         // Re-route cached schedules too: an old OSRM feed must never bypass the traffic cutoff.
