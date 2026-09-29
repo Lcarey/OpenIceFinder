@@ -8,13 +8,15 @@ import { IceUsageView } from "./views/IceUsageView";
 import { OpenIceView } from "./views/OpenIceView";
 import { RinkView } from "./views/RinkView";
 import { StinkySocksView } from "./views/StinkySocksView";
+import { YouthHockeyView } from "./views/YouthHockeyView";
 
 export type MainRoute =
   | { view: "open" }
   | { view: "rink"; rinkId: string }
   | { view: "ice"; rinkId: string }
   | { view: "stinkysocks" }
-  | { view: "clinics" };
+  | { view: "clinics" }
+  | { view: "youth-hockey" };
 
 export function MainApp({ route }: { route: MainRoute }) {
   const [index, setIndex] = useState<RinkIndex | null>(null);
@@ -87,10 +89,13 @@ export function MainApp({ route }: { route: MainRoute }) {
           <a className={route.view === "clinics" ? "nav-link active" : "nav-link"} href="#/clinics">
             <Dumbbell size={16} /> Clinics
           </a>
+          <a className={route.view === "youth-hockey" ? "nav-link active" : "nav-link"} href="#/youth-hockey">
+            <Users size={16} /> High level youth hockey
+          </a>
         </nav>
       </header>
 
-      {error && (
+      {error && route.view !== "youth-hockey" && (
         <div className="notice error" role="alert">
           <strong>Couldn&rsquo;t load rink data.</strong> {error}{" "}
           <button type="button" className="link-button" onClick={() => setReloadToken((t) => t + 1)}>
@@ -99,7 +104,8 @@ export function MainApp({ route }: { route: MainRoute }) {
         </div>
       )}
 
-      {!error && !index && <p className="loading">Loading rinks…</p>}
+      {!error && !index && route.view !== "youth-hockey" && <p className="loading">Loading rinks…</p>}
+      {route.view === "youth-hockey" && <YouthHockeyView />}
 
       {index && route.view === "open" && <OpenIceView index={index} feeds={feeds} />}
       {index && route.view === "rink" && <RinkView index={index} feeds={feeds} rinkId={route.rinkId} />}
@@ -109,7 +115,7 @@ export function MainApp({ route }: { route: MainRoute }) {
 
       <footer className="footer">
         <span>
-          <RefreshCw size={13} /> Schedules refreshed {staleLabel ?? "…"} · updated every 6 hours
+          <RefreshCw size={13} /> {route.view === "youth-hockey" ? "Youth schedules checked every 6 hours" : `Schedules refreshed ${staleLabel ?? "…"} · updated every 6 hours`}
         </span>
         <span>Times are Eastern. Always confirm with the rink before you go.</span>
       </footer>

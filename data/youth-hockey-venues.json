@@ -1,0 +1,529 @@
+[
+  {
+    "id": "ed-burns-arlington",
+    "name": "Ed Burns Arena",
+    "address": "422 Summer St, Arlington, MA 02474",
+    "town": "Arlington",
+    "lat": 42.42546,
+    "lng": -71.17313,
+    "evidenceUrl": "https://www.arlingtonma.gov/departments/recreation/ed-burns-arena",
+    "aliases": [
+      "Ed Burns Arena",
+      "Arlington",
+      "Ed Burns"
+    ]
+  },
+  {
+    "id": "belmont-sports-complex",
+    "name": "Belmont Sports Complex (Viglirolo Rink)",
+    "address": "20 Concord Ave, Belmont, MA 02478",
+    "town": "Belmont",
+    "lat": 42.39096,
+    "lng": -71.15825,
+    "evidenceUrl": "https://www.belmont-ma.gov/recreation-department",
+    "aliases": [
+      "Belmont Sports Complex (Viglirolo Rink)",
+      "Belmont High",
+      "Belmont"
+    ]
+  },
+  {
+    "id": "obrien-woburn",
+    "name": "O'Brien Memorial Rink",
+    "address": "55 Locust St, Woburn, MA 01801",
+    "town": "Woburn",
+    "lat": 42.47691,
+    "lng": -71.1748,
+    "evidenceUrl": "https://www.woburnyouthhockey.org/about/o-brien-ice-rink-information/2071",
+    "aliases": [
+      "O'Brien Memorial Rink"
+    ]
+  },
+  {
+    "id": "ice-palace-burlington",
+    "name": "Burlington Ice Palace",
+    "address": "36 Ray Ave, Burlington, MA 01803",
+    "town": "Burlington",
+    "lat": 42.48238,
+    "lng": -71.18497,
+    "evidenceUrl": "https://fmcicesports.com/rink/burlington-burlington-ice-palace/",
+    "aliases": [
+      "Burlington Ice Palace",
+      "Burlington",
+      "Burlington Ice Palace"
+    ]
+  },
+  {
+    "id": "veterans-somerville",
+    "name": "Veterans Memorial Rink",
+    "address": "570 Somerville Ave, Somerville, MA 02143",
+    "town": "Somerville",
+    "lat": 42.383,
+    "lng": -71.10843,
+    "evidenceUrl": "https://fmcicesports.com/rink/somerville-veterans-memorial-rink/",
+    "aliases": [
+      "Veterans Memorial Rink"
+    ]
+  },
+  {
+    "id": "flynn-medford",
+    "name": "Flynn Rink (LoConte Memorial)",
+    "address": "300 Elm St, Medford, MA 02155",
+    "town": "Medford",
+    "lat": 42.43841,
+    "lng": -71.09879,
+    "evidenceUrl": "http://www.flynnrink.com/",
+    "aliases": [
+      "Flynn Rink (LoConte Memorial)"
+    ]
+  },
+  {
+    "id": "hayden-lexington",
+    "name": "Hayden Recreation Centre",
+    "address": "10 Lincoln St, Lexington, MA 02421",
+    "town": "Lexington",
+    "lat": 42.44698,
+    "lng": -71.23879,
+    "evidenceUrl": "https://www.jwhayden.org/",
+    "aliases": [
+      "Hayden Recreation Centre"
+    ]
+  },
+  {
+    "id": "veterans-waltham",
+    "name": "Veterans Memorial Rink",
+    "address": "295 Totten Pond Rd, Waltham, MA 02451",
+    "town": "Waltham",
+    "lat": 42.39156,
+    "lng": -71.24271,
+    "evidenceUrl": "https://www.city.waltham.ma.us/1946/Veterans-Memorial-Skating-Rink",
+    "aliases": [
+      "Veterans Memorial Rink"
+    ]
+  },
+  {
+    "id": "stoneham-arena",
+    "name": "Stoneham Arena",
+    "address": "101 Montvale Ave, Stoneham, MA 02180",
+    "town": "Stoneham",
+    "lat": 42.48134,
+    "lng": -71.11331,
+    "evidenceUrl": "https://www.stoneham-ma.gov/",
+    "aliases": [
+      "Stoneham Arena"
+    ]
+  },
+  {
+    "id": "ryan-watertown",
+    "name": "John A. Ryan Skating Arena",
+    "address": "1 Paramount Pl, Watertown, MA 02472",
+    "town": "Watertown",
+    "lat": 42.36513,
+    "lng": -71.20912,
+    "evidenceUrl": "https://app.rectimes.com/ryanarena",
+    "aliases": [
+      "John A. Ryan Skating Arena",
+      "Ryan Rink",
+      "Watertown"
+    ]
+  },
+  {
+    "id": "daly-brighton",
+    "name": "Daly Memorial Rink",
+    "address": "1 Nonantum Rd, Brighton, MA 02135",
+    "town": "Brighton",
+    "lat": 42.35846,
+    "lng": -71.1607,
+    "evidenceUrl": "https://www.dalyrink.org/",
+    "aliases": [
+      "Daly Memorial Rink",
+      "Daly Rink",
+      "Daly",
+      "Brighton"
+    ]
+  },
+  {
+    "id": "warrior-brighton",
+    "name": "Warrior Ice Arena",
+    "address": "90 Guest St, Brighton, MA 02135",
+    "town": "Brighton",
+    "lat": 42.35748,
+    "lng": -71.14405,
+    "evidenceUrl": "https://www.warrioricearena.com/",
+    "aliases": [
+      "Warrior Ice Arena",
+      "Warrior",
+      "Warrior Ice Arena"
+    ]
+  },
+  {
+    "id": "simoni-cambridge",
+    "name": "Simoni Memorial Skating Arena",
+    "address": "155 Gore St, Cambridge, MA 02141",
+    "town": "Cambridge",
+    "lat": 42.37307,
+    "lng": -71.08452,
+    "evidenceUrl": "https://fmcicesports.com/rink/cambridge-simoni-skating-arena/",
+    "aliases": [
+      "Simoni Memorial Skating Arena"
+    ]
+  },
+  {
+    "id": "emmons-charlestown",
+    "name": "Emmons Horrigan O'Neil Memorial Rink",
+    "address": "46 Union St, Charlestown, MA 02129",
+    "town": "Charlestown",
+    "lat": 42.37361,
+    "lng": -71.06482,
+    "evidenceUrl": "https://www.mass.gov/locations/emmons-horrigan-oneil-memorial-rink",
+    "aliases": [
+      "Emmons Horrigan O'Neil Memorial Rink"
+    ]
+  },
+  {
+    "id": "steriti-boston",
+    "name": "Steriti Memorial Rink",
+    "address": "561 Commercial St, Boston, MA 02109",
+    "town": "Boston (North End)",
+    "lat": 42.3683,
+    "lng": -71.05719,
+    "evidenceUrl": "https://www.mass.gov/locations/steriti-memorial-rink",
+    "aliases": [
+      "Steriti Memorial Rink"
+    ]
+  },
+  {
+    "id": "allied-veterans-everett",
+    "name": "Allied Veterans Memorial Rink",
+    "address": "25 Elm St, Everett, MA 02149",
+    "town": "Everett",
+    "lat": 42.41206,
+    "lng": -71.04622,
+    "evidenceUrl": "https://fmcicesports.com/rink/everett-allied-veterans-memorial-rink/",
+    "aliases": [
+      "Allied Veterans Memorial Rink"
+    ]
+  },
+  {
+    "id": "cronin-revere",
+    "name": "Cronin Memorial Rink",
+    "address": "850 Revere Beach Pkwy, Revere, MA 02151",
+    "town": "Revere",
+    "lat": 42.40344,
+    "lng": -71.01434,
+    "evidenceUrl": "https://fmcicesports.com/rink/revere-cronin-skating-arena/",
+    "aliases": [
+      "Cronin Memorial Rink"
+    ]
+  },
+  {
+    "id": "reilly-brighton",
+    "name": "Reilly Memorial Rink",
+    "address": "355 Chestnut Hill Ave, Brighton, MA 02135",
+    "town": "Brighton",
+    "lat": 42.33644,
+    "lng": -71.15248,
+    "evidenceUrl": "https://www.mass.gov/locations/reilly-memorial-rink",
+    "aliases": [
+      "Reilly Memorial Rink"
+    ]
+  },
+  {
+    "id": "ristuccia-wilmington",
+    "name": "MPG Arena (formerly Ristuccia)",
+    "address": "190 Main St, Wilmington, MA 01887",
+    "town": "Wilmington",
+    "lat": 42.55822,
+    "lng": -71.17889,
+    "evidenceUrl": "https://www.wilmingtonyouthhockey.org/rinks",
+    "aliases": [
+      "MPG Arena (formerly Ristuccia)",
+      "Ristuccia",
+      "MPG Arena"
+    ]
+  },
+  {
+    "id": "burbank-reading",
+    "name": "Burbank Ice Arena",
+    "address": "51 Symonds Way, Reading, MA 01867",
+    "town": "Reading",
+    "lat": 42.5412,
+    "lng": -71.08489,
+    "evidenceUrl": "https://www.burbankicearena.com/",
+    "aliases": [
+      "Burbank Ice Arena",
+      "Burbank",
+      "Reading"
+    ]
+  },
+  {
+    "id": "edge-bedford",
+    "name": "The Edge Sports Center",
+    "address": "191 Hartwell Rd, Bedford, MA 01730",
+    "town": "Bedford",
+    "evidenceUrl": "https://www.theedgesportscenter.com/",
+    "aliases": [
+      "The Edge Sports Center",
+      "Edge - Upper",
+      "Edge - Lower",
+      "Edge Sports Center",
+      "Edge Sports Center of Bedford"
+    ],
+    "lat": 42.4781424,
+    "lng": -71.2937407,
+    "geocodedAddress": "Edge Sports Center, 191, Hartwell Road, Bedford, Middlesex County, Massachusetts, 01730, United States"
+  },
+  {
+    "id": "breakaway-tewksbury",
+    "name": "Breakaway Ice Center",
+    "address": "20 Carter St, Tewksbury, MA 01876",
+    "town": "Tewksbury",
+    "evidenceUrl": "https://www.breakawayicecenter.com/",
+    "aliases": [
+      "Breakaway Ice Center",
+      "Tewksbury 1",
+      "Tewksbury 2",
+      "Breakaway Ice Center"
+    ],
+    "lat": 42.6205935,
+    "lng": -71.1943285,
+    "geocodedAddress": "Breakaway Ice Center, 20, Carter Street, Tewksbury, Middlesex County, Massachusetts, 01876, United States"
+  },
+  {
+    "id": "hockeytown-saugus",
+    "name": "Hockeytown USA",
+    "address": "953 Broadway, Saugus, MA 01906",
+    "town": "Saugus",
+    "evidenceUrl": "https://www.hockeytownsaugus.com/",
+    "aliases": [
+      "Hockeytown USA",
+      "Hockeytown 1",
+      "Hockeytown 2",
+      "Hockeytown 3",
+      "Hockey Town USA"
+    ],
+    "lat": 42.4720844,
+    "lng": -71.025502,
+    "geocodedAddress": "Hockeytown USA, 953, Broadway, Oakland Vale, Saugus, Essex County, Massachusetts, 01906, United States"
+  },
+  {
+    "id": "valley-concord",
+    "name": "Valley Sports Arena",
+    "address": "45 Forest Ridge Rd, Concord, MA 01742",
+    "town": "Concord",
+    "evidenceUrl": "https://www.valleysportsarena.com/",
+    "aliases": [
+      "Valley Sports Arena",
+      "Valley Sports 1",
+      "Valley Sports 2"
+    ],
+    "lat": 42.4413044,
+    "lng": -71.4247623,
+    "geocodedAddress": "45, Forest Ridge Road, Concord, Middlesex County, Massachusetts, 01742, United States"
+  },
+  {
+    "id": "bsi-wellesley",
+    "name": "Boston Sports Institute",
+    "address": "900 Worcester St, Wellesley, MA 02482",
+    "town": "Wellesley",
+    "evidenceUrl": "https://www.bostonsportsinstitute.com/",
+    "aliases": [
+      "Boston Sports Institute",
+      "Boston Sports Institute East",
+      "Boston Sports Institute West"
+    ],
+    "lat": 42.3038678,
+    "lng": -71.3178517,
+    "geocodedAddress": "Boston Sports Institute, 900, Worcester Street, Wellesley Fells, Wellesley, Norfolk County, Massachusetts, 02482, United States"
+  },
+  {
+    "id": "porrazzo-east-boston",
+    "name": "Porrazzo Memorial Rink",
+    "address": "199 Coleridge St, East Boston, MA 02128",
+    "town": "East Boston",
+    "evidenceUrl": "https://fmcicesports.com/rink/east-boston-porrazzo-skating-arena/",
+    "aliases": [
+      "Porrazzo Memorial Rink",
+      "East Boston",
+      "Porrazzo Rink"
+    ],
+    "lat": 42.3822904,
+    "lng": -71.0117774,
+    "geocodedAddress": "Porrazzo Skating Rink, 199, Coleridge Street, East Boston, Boston, Suffolk County, Massachusetts, 02128, United States"
+  },
+  {
+    "id": "bentley-waltham",
+    "name": "Bentley Arena",
+    "address": "400 Beaver St, Waltham, MA 02452",
+    "town": "Waltham",
+    "evidenceUrl": "https://www.bentley.edu/arena",
+    "aliases": [
+      "Bentley Arena",
+      "Bentley Arena"
+    ],
+    "lat": 42.384787,
+    "lng": -71.2205455,
+    "geocodedAddress": "Bentley Arena, 400, Beaver Street, Waltham, Middlesex County, Massachusetts, 02452, United States"
+  },
+  {
+    "id": "malden",
+    "name": "Malden Valley Forum",
+    "address": "50 Holden St, Malden, MA 02148",
+    "town": "Malden",
+    "evidenceUrl": "https://www.maldenvalleyforum.com/",
+    "aliases": [
+      "Malden Valley Forum",
+      "Malden"
+    ],
+    "lat": 42.426728,
+    "lng": -71.0630943,
+    "geocodedAddress": "Malden Valley Forum, 50, Holden Street, Malden Centre, Malden, Middlesex County, Massachusetts, 02148, United States"
+  },
+  {
+    "id": "chelmsford",
+    "name": "Chelmsford Forum",
+    "address": "2 Brick Kiln Rd, North Billerica, MA 01862",
+    "town": "North Billerica",
+    "evidenceUrl": "https://www.chelmsfordforum.com/",
+    "aliases": [
+      "Chelmsford Forum",
+      "Chelmsford"
+    ],
+    "lat": 42.5888408,
+    "lng": -71.3078044,
+    "geocodedAddress": "Chelmsford Forum, 2, Brick Kiln Road, North Billerica, Billerica, Middlesex County, Massachusetts, 01862, United States"
+  },
+  {
+    "id": "lawrence",
+    "name": "Lawrence Valley Forum",
+    "address": "654 South Union St, Lawrence, MA 01843",
+    "town": "Lawrence",
+    "evidenceUrl": "https://www.lawrencevalleyforum.com/",
+    "aliases": [
+      "Lawrence Valley Forum",
+      "Lawrence"
+    ],
+    "lat": 42.6845599,
+    "lng": -71.1518415,
+    "geocodedAddress": "Lawrence Valley Forum, 654, South Union Street, Lawrence, Essex County, Massachusetts, 01843, United States"
+  },
+  {
+    "id": "merrimack",
+    "name": "Merrimack College",
+    "address": "315 Turnpike St, North Andover, MA 01845",
+    "town": "North Andover",
+    "evidenceUrl": "https://www.merrimack.edu/athletics/facilities/",
+    "aliases": [
+      "Merrimack College",
+      "Merrimack (Lawler Arena)",
+      "Merrimack (Gallant Arena)"
+    ],
+    "lat": 42.6679088,
+    "lng": -71.1200968,
+    "geocodedAddress": "Lawler Rink, Cullen Avenue, North Andover, Essex County, Massachusetts, 01845, United States"
+  },
+  {
+    "id": "essex",
+    "name": "Essex Sports Center",
+    "address": "15 Manning Rd, Middleton, MA 01949",
+    "town": "Middleton",
+    "evidenceUrl": "https://www.essexsports.net/",
+    "aliases": [
+      "Essex Sports Center",
+      "Essex Sports Center"
+    ],
+    "lat": 42.5961894,
+    "lng": -70.9804427,
+    "geocodedAddress": "Essex Sports Center, 15, Manning Avenue, Middleton Colony, Middleton, Essex County, Massachusetts, 01949, United States"
+  },
+  {
+    "id": "canton-sportsplex",
+    "name": "Canton Sportsplex",
+    "address": "5 Carver Circle, Canton, MA 02021",
+    "town": "Canton",
+    "evidenceUrl": "https://www.cantonsportsplex.com/",
+    "aliases": [
+      "Canton Sportsplex",
+      "Canton Sportsplex A",
+      "Canton Sportsplex B"
+    ],
+    "lat": 42.163802,
+    "lng": -71.0756677,
+    "geocodedAddress": "Canton SportsPlex, 5, Carver Circle, Canton, Norfolk County, Massachusetts, 02021, United States"
+  },
+  {
+    "id": "canton-ice-house",
+    "name": "Canton Ice House",
+    "address": "65 North St, Canton, MA 02021",
+    "town": "Canton",
+    "evidenceUrl": "https://www.cantonicehouse.com/",
+    "aliases": [
+      "Canton Ice House",
+      "Canton Ice House Blue",
+      "Canton Ice House Red"
+    ],
+    "lat": 42.1417456,
+    "lng": -71.1277629,
+    "geocodedAddress": "Canton Ice House, 65, North Street, Springdale, Canton, Norfolk County, Massachusetts, 02021, United States"
+  },
+  {
+    "id": "skate3",
+    "name": "Skate 3 Ice Arena",
+    "address": "355 Middlesex Rd, Tyngsborough, MA 01879",
+    "town": "Tyngsborough",
+    "evidenceUrl": "https://www.skate3.com/",
+    "aliases": [
+      "Skate 3 Ice Arena",
+      "Skate 3",
+      "Skate III"
+    ],
+    "lat": 42.6887292,
+    "lng": -71.4313801,
+    "geocodedAddress": "Skate 3 Ice Arena, 355, Middlesex Road, Tyngsborough, Middlesex County, Massachusetts, 01879, United States"
+  },
+  {
+    "id": "salem-nh",
+    "name": "Salem Ice Center",
+    "address": "60 Lowell Rd, Salem, NH 03079",
+    "town": "Salem, NH",
+    "evidenceUrl": "https://www.icentersalem.com/",
+    "aliases": [
+      "Salem Ice Center",
+      "Salem Ice Center - NHL",
+      "Salem Ice Center - OLY",
+      "Icenter"
+    ],
+    "lat": 42.7654295,
+    "lng": -71.2486863,
+    "geocodedAddress": "Icenter, 60, Lowell Road, Salem, Rockingham County, New Hampshire, 03079, United States"
+  },
+  {
+    "id": "nesc",
+    "name": "New England Sports Center",
+    "address": "121 Donald Lynch Blvd, Marlborough, MA 01752",
+    "town": "Marlborough",
+    "evidenceUrl": "https://www.nes.com/",
+    "aliases": [
+      "New England Sports Center",
+      "NESC1",
+      "NESC2",
+      "NESC3",
+      "NESC4",
+      "NESC5",
+      "NESC6",
+      "NESC7",
+      "NESC8",
+      "New England Sports Center 1",
+      "New England Sports Center 2",
+      "New England Sports Center 3",
+      "New England Sports Center 4",
+      "New England Sports Center 5",
+      "New England Sports Center 6",
+      "New England Sports Center 7",
+      "New England Sports Center 8"
+    ],
+    "lat": 42.3649597,
+    "lng": -71.5962767,
+    "geocodedAddress": "New England Sports Center, 121, Donald J Lynch Boulevard, Robin Hill, Marlborough, Middlesex County, Massachusetts, 01752, United States"
+  }
+]

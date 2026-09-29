@@ -186,6 +186,24 @@ function handler(event) {
       }),
     );
 
+    const youthGithubRole = new iam.Role(this, "GitHubYouthHockeyRefreshRole", {
+      roleName: "OpenIceFinderGitHubYouthHockeyRefresh",
+      description: "GitHub Actions publishes only the youth hockey feed via OIDC.",
+      assumedBy: new iam.WebIdentityPrincipal(githubOidcArn, {
+        StringEquals: {
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          "token.actions.githubusercontent.com:sub": "repo:Lcarey@7055619/OpenIceFinder@1368862512:ref:refs/heads/main",
+        },
+      }),
+      maxSessionDuration: Duration.hours(1),
+    });
+    webBucket.grantPut(youthGithubRole, "data/youth-hockey.json");
+    youthGithubRole.addToPolicy(new iam.PolicyStatement({
+      actions: ["cloudfront:CreateInvalidation"],
+      resources: [Stack.of(this).formatArn({ service: "cloudfront", region: "", resource: "distribution", resourceName: distribution.distributionId })],
+    }));
+    new CfnOutput(this, "GitHubYouthHockeyRefreshRoleArn", { value: youthGithubRole.roleArn });
+
     new CfnOutput(this, "AppUrl", { value: `https://${distribution.distributionDomainName}` });
     new CfnOutput(this, "BucketName", { value: webBucket.bucketName });
     new CfnOutput(this, "DistributionId", { value: distribution.distributionId });

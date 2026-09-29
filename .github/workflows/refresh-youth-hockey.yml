@@ -1,0 +1,71 @@
+name: Refresh youth hockey
+
+on:
+  schedule:
+    - cron: "40 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [codex/youth-hockey]
+
+concurrency:
+  group: youth-hockey-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - uses: actions/cache@v4
+        with:
+          path: .cache/youth-hockey
+          key: youth-routes-v1-${{ hashFiles('data/youth-hockey-venues.json') }}-${{ github.run_id }}
+          restore-keys: |
+            youth-routes-v1-${{ hashFiles('data/youth-hockey-venues.json') }}-
+      - name: Retrieve previous feed for source-specific stale fallback
+        run: |
+          code=$(curl -sS -o /tmp/youth-previous.json -w '%{http_code}' https://dtwj09ada0yt7.cloudfront.net/data/youth-hockey.json)
+          if [ "$code" = 200 ] && jq -e '.version == 1 and (.games | type == "array")' /tmp/youth-previous.json > /dev/null; then
+            cp /tmp/youth-previous.json data/youth-hockey.json
+          elif [ "$code" != 404 ] && [ "$code" != 403 ]; then
+            echo "Could not read previous feed; refusing to overwrite it."
+            exit 1
+          fi
+      - name: Collect public schedules
+        env:
+          YOUTH_HOCKEY_ORIGIN: ${{ secrets.YOUTH_HOCKEY_ORIGIN }}
+        run: npm run refresh:youth-hockey
+      - name: Verify FED collection before release
+        if: github.ref != 'refs/heads/main'
+        run: node --input-type=module -e 'import fs from "node:fs"; const f=JSON.parse(fs.readFileSync("data/youth-hockey.json")); if(f.sources.some(s=>s.id.startsWith("fed-")&&s.status!=="ok")) process.exit(1);'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: youth-hockey-feed
+          path: data/youth-hockey.json
+          if-no-files-found: ignore
+      - uses: aws-actions/configure-aws-credentials@v5
+        if: github.ref == 'refs/heads/main'
+        with:
+          role-to-assume: arn:aws:iam::342206308993:role/OpenIceFinderGitHubYouthHockeyRefresh
+          role-session-name: openice-youth-hockey-refresh
+          aws-region: us-east-1
+      - name: Publish youth hockey feed
+        if: github.ref == 'refs/heads/main'
+        env:
+          BUCKET: openicefinderstack-webbucket12880f5b-q4mot9fj5rou
+          DISTRIBUTION: E1W550PA7KZ48B
+        run: |
+          aws s3 cp data/youth-hockey.json "s3://$BUCKET/data/youth-hockey.json" --content-type "application/json; charset=utf-8" --cache-control "public, max-age=60"
+          aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION" --paths /data/youth-hockey.json
