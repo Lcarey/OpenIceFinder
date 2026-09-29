@@ -27,10 +27,8 @@ export function YouthHockeyView() {
   const allUnavailable = feed?.sources.every((s) => !s.fetchedAt || now.getTime() - Date.parse(s.fetchedAt) > YOUTH_STALE_LIMIT_MS);
   return <section className="view youth-view">
     <header className="offerings-intro">
-      <p className="youth-eyebrow">A game to watch together</p>
       <h2>High level youth hockey</h2>
-      <p>Watch 2015 &amp; 2016 teams play, follow their positioning, and see how the game flows. Every game is under a 30-minute estimated drive from Arlington.</p>
-      <p className="dim">FED Elite, E9 Elite rosters across divisions, and verified AAA teams. Drive estimates include typical traffic for arrival at game start.</p>
+      <p>Watch 2015 &amp; 2016 teams play, follow their positioning, and see how the game flows. Every game is under a 30-minute estimated drive from Arlington. FED Elite, E9 Elite rosters across divisions, and verified AAA teams. Drive estimates include typical traffic for arrival at game start.</p>
     </header>
     <div className="filters" aria-label="Youth hockey filters">
       <div className="filter-row">
@@ -52,8 +50,8 @@ export function YouthHockeyView() {
       <p className="youth-count" role="status">{games.length} {games.length === 1 ? "game" : "games"} to watch</p>
       {!games.length && <div className="empty"><p>{allUnavailable ? "Schedules are temporarily unavailable." : "No matching games in this window."}</p><p className="dim">{allUnavailable ? "Use the official schedule links above, or try again after the next refresh." : "Try another date or birth year. New games appear as schedules are published."}</p></div>}
       {groupByDay(games).map((group) => <section className="day-group" key={group.dateKey}><h3 className="day-heading">{dayLabel(group.dateKey, today, shiftDateKey(today, 1))}</h3><ol className="session-list">{group.events.map((g) => <li className="session youth-game" key={g.id}>
-        <div className="session-time"><time dateTime={g.start}>{formatTime(g.start)}</time><span className="kind-pill">{g.birthYear}</span><span className="youth-drive">{youthDriveLabel(g.driveSeconds)} drive</span><a className="youth-calendar" href={youthCalendarUrl(g)} target="_blank" rel="noreferrer" title="Add to Google Calendar" aria-label={`Add ${g.away.name} vs ${g.home.name} to Google Calendar`}><CalendarPlus size={18} aria-hidden="true"/></a></div>
-        <div className="session-main"><div className="session-title">{g.away.name} <span className="dim">vs</span> {g.home.name}</div><p className="youth-division">{g.league} · {g.division}</p><div className="session-meta"><MapPin size={14} aria-hidden="true"/><strong>{g.venue.name}</strong>{g.iceSheet && <span>· {g.iceSheet}</span>}<span>· {g.venue.town}</span></div><p className="youth-address">{g.venue.address}</p>{!(g.home.eligible && g.away.eligible) && <p className="youth-qualifies">Qualifying team: {g.home.eligible ? g.home.name : g.away.name}</p>}<div className="youth-links"><a href={g.sourceUrl} target="_blank" rel="noreferrer">Official schedule <ExternalLink size={12}/></a><a href={youthDirectionsUrl(g)} target="_blank" rel="noreferrer">Directions <ExternalLink size={12}/></a></div></div>
+        <div className="session-time"><time dateTime={g.start}>{formatTime(g.start)}</time><span className={`kind-pill youth-year-${g.birthYear}`}>{g.birthYear}</span><span className="youth-drive">{youthDriveLabel(g.driveSeconds)} drive</span><a className="youth-calendar" href={youthCalendarUrl(g)} target="_blank" rel="noreferrer" title="Add to Google Calendar" aria-label={`Add ${g.away.name} vs ${g.home.name} to Google Calendar`}><CalendarPlus size={18} aria-hidden="true"/></a></div>
+        <div className="session-main"><div className="session-title">{g.away.name} <span className="dim">vs</span> {g.home.name}</div><div className="session-meta"><MapPin size={14} aria-hidden="true"/><strong>{g.venue.name}</strong>{g.iceSheet && <span>· {g.iceSheet}</span>}<span>· {g.venue.town}</span></div>{!(g.home.eligible && g.away.eligible) && <p className="youth-qualifies">Qualifying team: {g.home.eligible ? g.home.name : g.away.name}</p>}<div className="youth-links"><a href={g.sourceUrl} target="_blank" rel="noreferrer">Official schedule <ExternalLink size={12}/></a><a href={youthDirectionsUrl(g)} target="_blank" rel="noreferrer">Directions <ExternalLink size={12}/></a></div></div>
       </li>)}</ol></section>)}
     </>}
   </section>;
