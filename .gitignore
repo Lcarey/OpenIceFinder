@@ -9,6 +9,8 @@ coverage/
 .DS_Store
 cdk.out/
 infra/cdk-outputs.json
+.cache/
+data/youth-hockey.json
 data/offerings/
 data/backtest/features.csv
 

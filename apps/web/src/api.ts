@@ -1,6 +1,13 @@
 import type { OfferingsCatalogId, OfferingsFeed, ProgramFeed, RangersFeed, RinkFeed, RinkIndex } from "@openice/shared";
+import type { YouthHockeyFeed } from "@openice/shared";
 
 const DATA_BASE = "/data";
+
+export async function loadYouthHockey(): Promise<YouthHockeyFeed> {
+  const feed = await getJson<YouthHockeyFeed>("/youth-hockey.json");
+  if (feed.version !== 1 || !Array.isArray(feed.games) || !Array.isArray(feed.sources)) throw new Error("The youth hockey feed is not available yet.");
+  return feed;
+}
 
 async function getJson<T>(path: string): Promise<T> {
   const res = await fetch(`${DATA_BASE}${path}`, { headers: { Accept: "application/json" }, cache: "no-cache" });

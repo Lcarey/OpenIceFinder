@@ -19,6 +19,7 @@
     "synth": "npm run synth -w @openice/infra",
     "refresh:local": "npm run build:shared && node --import tsx packages/scraper/src/cli.ts",
     "refresh:rangers": "npm run build:shared && node --import tsx packages/scraper/src/rangers-cli.ts",
+    "refresh:youth-hockey": "npm run build:shared && node --import tsx packages/scraper/src/youth-hockey-cli.ts",
     "backtest:fetch": "npm run build:shared && node --import tsx packages/scraper/src/backtest/fetch-season.ts",
     "backtest:belief": "npm run build:shared && node --import tsx packages/scraper/src/backtest/cli.ts",
     "rinks:build": "node --import tsx scripts/build-rinks.ts",

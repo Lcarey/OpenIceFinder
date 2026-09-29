@@ -1831,3 +1831,29 @@ body:has(.tape-shell) {
 }
 
 .drive-note { font-size: 0.8rem; line-height: 1.5; }
+/* Nearby games to watch */
+.youth-eyebrow { color: var(--accent, #2563eb); font-size: .76rem; font-weight: 750; text-transform: uppercase; letter-spacing: .1em; }
+.youth-select { display: flex; flex-direction: column; gap: .35rem; color: #64748b; font-size: .75rem; font-weight: 650; }
+.youth-select select { background: white; color: #24354b; border: 1px solid #d5dde7; border-radius: 8px; padding: .55rem .75rem; font: inherit; font-size: .85rem; }
+.youth-coverage { display: flex; flex-wrap: wrap; gap: .7rem; margin: 1rem 0; }
+.youth-source { display: flex; flex: 1 1 170px; flex-direction: column; gap: .2rem; border-left: 3px solid #cbd5e1; padding: .35rem .75rem; font-size: .76rem; color: #64748b; }
+.youth-source a { color: #334155; font-weight: 650; }
+.youth-source.ok { border-color: #37a287; }
+.youth-source.stale { border-color: #d99a28; }
+.youth-source small { line-height: 1.45; }
+.youth-count { color: #64748b; font-size: .85rem; }
+.youth-game { grid-template-columns: 150px minmax(0, 1fr); padding: 1.1rem; align-items: start; }
+.youth-game .session-title { line-height: 1.5; }
+.youth-game .session-time { gap: .45rem; }
+.youth-division { margin: .25rem 0 .6rem; color: #475569; font-size: .8rem; }
+.youth-address, .youth-qualifies { color: #64748b; font-size: .78rem; margin: .3rem 0; }
+.youth-links { display: flex; gap: 1rem; margin-top: .7rem; font-size: .8rem; }
+.youth-links a { display: inline-flex; gap: .25rem; align-items: center; }
+.youth-drive { font-size: .73rem; color: #64748b; white-space: nowrap; }
+.youth-calendar { display: inline-flex; align-self: flex-start; align-items: center; justify-content: center; width: 30px; height: 30px; margin-left: -6px; border-radius: 6px; color: #64748b; }
+.youth-calendar:hover { color: var(--forest); background: rgba(100, 116, 139, .08); }
+.youth-view a:focus-visible, .youth-view button:focus-visible, .youth-view select:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+@media (max-width: 760px) {
+  .youth-game { grid-template-columns: 90px minmax(0, 1fr); }
+  .youth-select { flex: 1; }
+}

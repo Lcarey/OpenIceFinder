@@ -11,6 +11,7 @@ function parseRoute(pathname: string, hash: string): Route {
   if (path === "/rangers" || /^#\/rangers\/?(\?.*)?$/.test(hash)) return { view: "rangers" };
   if (/^#\/stinkysocks/.test(hash)) return { view: "stinkysocks" };
   if (/^#\/clinics/.test(hash)) return { view: "clinics" };
+  if (/^#\/youth-hockey(?:\/?(?:\?.*)?)?$/.test(hash)) return { view: "youth-hockey" };
   const match = hash.match(/^#\/(rink|ice)\/([^/?]+)/);
   if (match) return { view: match[1] as "rink" | "ice", rinkId: decodeURIComponent(match[2]!) };
   return { view: "open" };
