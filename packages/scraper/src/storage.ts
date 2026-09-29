@@ -1,7 +1,7 @@
 import { link, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
-import { GetObjectCommand, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { GetObjectCommand, ListObjectsV2Command, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import type { ClassificationTable, DriveEstimate, OfferingsFeed, ProgramFeed, RangersFeed, RinkFeed, RinkIndex } from "@openice/shared";
 
 import type { DriveTimeStore } from "./drive-times.js";
@@ -128,14 +128,23 @@ export class S3Store implements FeedStore, DriveTimeStore {
     this.writtenKeys.push(key);
   }
 
-  async readDriveTime(key: string): Promise<DriveEstimate | undefined> {
+  async readDriveTime(keyName: string): Promise<DriveEstimate | undefined> {
     try {
-      const res = await this.client.send(new GetObjectCommand({ Bucket: this.bucket, Key: `${this.prefix}drive-times/${key}.json` }));
+      const res = await this.client.send(new GetObjectCommand({ Bucket: this.bucket, Key: `${this.prefix}drive-times/${keyName}.json` }));
       const body = await res.Body?.transformToString();
-      if (!body) throw new Error(`Empty driving estimate: ${key}`);
+      if (!body) throw new Error(`Empty driving estimate: ${keyName}`);
       return JSON.parse(body) as DriveEstimate;
     } catch (error) {
       if ((error as { name?: string }).name === "NoSuchKey") return undefined;
+      if ((error as { name?: string }).name === "AccessDenied") {
+        // Object-scoped readers receive 403 for missing keys. A prefix-scoped list
+        // distinguishes cache misses from a genuine inability to read an existing key.
+        const key = `${this.prefix}drive-times/${keyName}.json`;
+        try {
+          const listed = await this.client.send(new ListObjectsV2Command({ Bucket: this.bucket, Prefix: key, MaxKeys: 1 }));
+          if (!listed.Contents?.some((item) => item.Key === key)) return undefined;
+        } catch { /* Preserve the original access error. */ }
+      }
       throw error;
     }
   }

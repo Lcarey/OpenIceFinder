@@ -1,5 +1,9 @@
 import { CalculateRoutesCommand, GeoRoutesClient, type CalculateRoutesCommandInput } from "@aws-sdk/client-geo-routes";
-import { DRIVE_ORIGIN, RINK_TIME_ZONE, localDateKey, localToIso, type DriveEstimate, type Rink, type RinkFeed } from "@openice/shared";
+import { RINK_TIME_ZONE, localDateKey, localToIso, type DriveEstimate, type Rink, type RinkFeed } from "@openice/shared";
+
+import { DRIVE_ORIGIN } from "./drive-origin.js";
+
+export type DriveDestination = Pick<Rink, "id" | "lat" | "lng">;
 
 export interface DriveTimeStore {
   readDriveTime(key: string): Promise<DriveEstimate | undefined>;
@@ -19,7 +23,7 @@ export function driveSlot(start: string): Slot {
   return { weekday: WEEKDAYS.indexOf(value("weekday")), arrivalTime: `${value("hour")}:${value("minute")}` };
 }
 
-export function driveCacheKey(rink: Rink, start: string): string {
+export function driveCacheKey(rink: DriveDestination, start: string): string {
   const slot = driveSlot(start);
   // Version covers provider, car/fastest routing, arrival semantics, timezone, and prediction policy.
   // Origin/destination coordinates prevent reuse if a location is corrected. No date or event title.
@@ -35,7 +39,7 @@ export function predictionArrival(start: string, now: Date): string {
   return localToIso({ year: date.getUTCFullYear(), month: date.getUTCMonth() + 1, day: date.getUTCDate(), hour, minute });
 }
 
-export function routeRequest(rink: Rink, start: string, now: Date): CalculateRoutesCommandInput {
+export function routeRequest(rink: DriveDestination, start: string, now: Date): CalculateRoutesCommandInput {
   return {
     Origin: [...DRIVE_ORIGIN.position],
     Destination: [rink.lng, rink.lat],
@@ -76,7 +80,7 @@ export class DriveTimes {
     this.log = options.log ?? (() => {});
   }
 
-  get(rink: Rink, start: string): Promise<DriveEstimate | undefined> {
+  get(rink: DriveDestination, start: string): Promise<DriveEstimate | undefined> {
     const key = driveCacheKey(rink, start);
     let promise = this.pending.get(key);
     if (!promise) {
@@ -91,7 +95,7 @@ export class DriveTimes {
     return promise;
   }
 
-  private async lookup(key: string, rink: Rink, start: string): Promise<DriveEstimate> {
+  private async lookup(key: string, rink: DriveDestination, start: string): Promise<DriveEstimate> {
     const cached = await this.store.readDriveTime(key);
     if (cached) {
       this.stats.cached++;

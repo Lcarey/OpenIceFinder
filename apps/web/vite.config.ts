@@ -35,6 +35,7 @@ function localDataPlugin(): Plugin {
     const url = (req.url ?? "").split("?")[0] ?? "";
     if (!url.startsWith("/data/")) return next();
     const rel = url.slice("/data/".length).replace(/\.\./g, "");
+    if (rel.startsWith("drive-times/")) { res.statusCode = 403; res.end("forbidden"); return; }
     const file = path.join(dataDir, rel);
     if (!existsSync(file) || !statSync(file).isFile()) {
       res.statusCode = 404;

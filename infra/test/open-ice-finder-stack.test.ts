@@ -81,7 +81,7 @@ describe("OpenIceFinderStack", () => {
         DefaultRootObject: "index.html",
         CacheBehaviors: Match.arrayWith([
           Match.objectLike({ PathPattern: "/assets/*" }),
-          Match.objectLike({ PathPattern: "/data/*" }),
+          Match.objectLike({ PathPattern: "/data/*", FunctionAssociations: Match.arrayWith([Match.objectLike({ EventType: "viewer-request" })]) }),
         ]),
       }),
     });
@@ -89,7 +89,7 @@ describe("OpenIceFinderStack", () => {
       CachePolicyConfig: Match.objectLike({ DefaultTTL: 60, MaxTTL: 600 }),
     });
     template.hasResourceProperties("AWS::CloudFront::Function", {
-      FunctionCode: Match.stringLikeRegexp("/rangers.html"),
+      FunctionCode: Match.stringLikeRegexp("/data/drive-times/"),
     });
   });
 
@@ -101,14 +101,18 @@ describe("OpenIceFinderStack", () => {
     }
   });
 
-  it("restricts the youth publisher to one data object and the site's invalidation", () => {
+  it("restricts the youth publisher to its feed, drive cache, routing and site invalidation", () => {
     const template = synthTemplate().toJSON();
     const resources = Object.values(template.Resources) as { Type: string; Properties: any }[];
     const role = resources.find(r => r.Type === "AWS::IAM::Role" && r.Properties.RoleName === "OpenIceFinderGitHubYouthHockeyRefresh")!;
     assert.equal(role.Properties.AssumeRolePolicyDocument.Statement[0].Condition.StringEquals["token.actions.githubusercontent.com:sub"], "repo:Lcarey@7055619/OpenIceFinder@1368862512:ref:refs/heads/main");
     const policy = resources.find(r => r.Type === "AWS::IAM::Policy" && JSON.stringify(r.Properties.Roles).includes("GitHubYouthHockeyRefreshRole"))!;
     const statements = policy.Properties.PolicyDocument.Statement;
-    assert.deepEqual(statements.map((s: { Action: string }) => s.Action).sort(), ["cloudfront:CreateInvalidation", "s3:PutObject"]);
+    assert.deepEqual(statements.flatMap((s: { Action: string | string[] }) => s.Action).sort(), ["cloudfront:CreateInvalidation", "geo-routes:CalculateRoutes", "s3:GetObject", "s3:ListBucket", "s3:PutObject", "s3:PutObject"]);
+    const cache = statements.find((s: { Action: string | string[] }) => Array.isArray(s.Action) && s.Action.includes("s3:GetObject"));
+    assert.match(JSON.stringify(cache.Resource), /\/data\/drive-times\/\*/);
+    const list = statements.find((s: { Action: string }) => s.Action === "s3:ListBucket");
+    assert.equal(list.Condition.StringLike["s3:prefix"], "data/drive-times/*");
     assert.match(JSON.stringify(statements.find((s: { Action: string }) => s.Action === "s3:PutObject").Resource), /\/data\/youth-hockey\.json/);
   });
 

@@ -86,12 +86,23 @@ describe("recurring drive cache", () => {
     const send = vi.fn().mockRejectedValueOnce(Object.assign(new Error(), { name: "PreconditionFailed" }))
       .mockResolvedValueOnce({ Body: { transformToString: async () => JSON.stringify(sample) } })
       .mockRejectedValueOnce(Object.assign(new Error(), { name: "AccessDenied" }))
+      .mockRejectedValueOnce(Object.assign(new Error(), { name: "AccessDenied" }))
       .mockRejectedValueOnce(Object.assign(new Error(), { name: "NoSuchKey" }));
     const store = new S3Store("bucket", "data/", { send } as unknown as S3Client);
     expect(await store.writeDriveTime("key", { ...sample, durationSeconds: 999 })).toEqual(sample);
     expect(send.mock.calls[0]![0].input).toMatchObject({ Key: "data/drive-times/key.json", IfNoneMatch: "*" });
     await expect(store.readDriveTime("key")).rejects.toMatchObject({ name: "AccessDenied" });
     expect(await store.readDriveTime("missing")).toBeUndefined();
+  });
+
+  it("recognizes missing S3 entries with only prefix-scoped listing permission", async () => {
+    const denied = () => Object.assign(new Error(), { name: "AccessDenied" });
+    const send = vi.fn().mockRejectedValueOnce(denied()).mockResolvedValueOnce({ Contents: [] })
+      .mockRejectedValueOnce(denied()).mockResolvedValueOnce({ Contents: [{ Key: "data/drive-times/existing.json" }] });
+    const store = new S3Store("bucket", "data/", { send } as unknown as S3Client);
+    expect(await store.readDriveTime("missing")).toBeUndefined();
+    expect(send.mock.calls[1]![0].input).toEqual({ Bucket: "bucket", Prefix: "data/drive-times/missing.json", MaxKeys: 1 });
+    await expect(store.readDriveTime("existing")).rejects.toMatchObject({ name: "AccessDenied" });
   });
 
   it("attaches one shared estimate to differently named weekly events and the index's next session", async () => {

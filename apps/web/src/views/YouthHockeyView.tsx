@@ -30,7 +30,7 @@ export function YouthHockeyView() {
       <p className="youth-eyebrow">A game to watch together</p>
       <h2>High level youth hockey</h2>
       <p>Watch 2015 &amp; 2016 teams play, follow their positioning, and see how the game flows. Every game is under a 30-minute estimated drive from Arlington.</p>
-      <p className="dim">FED Elite, E9 Elite rosters across divisions, and verified AAA teams. Drive estimates exclude traffic.</p>
+      <p className="dim">FED Elite, E9 Elite rosters across divisions, and verified AAA teams. Drive estimates include typical traffic for arrival at game start.</p>
     </header>
     <div className="filters" aria-label="Youth hockey filters">
       <div className="filter-row">

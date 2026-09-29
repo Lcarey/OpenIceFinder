@@ -1,4 +1,6 @@
-import { describe, expect, it } from "vitest";
+import type { DriveEstimate } from "@openice/shared";
+import { DriveTimes } from "../drive-times.js";
+import { describe, expect, it, vi } from "vitest";
 import { refreshYouthHockey, resolveVenue, resolveIceSheet, type LocatedVenue, type RawYouthGame, type YouthSource } from "./core.js";
 import { elite9Team, parseElite9Games } from "./elite9.js";
 import { validateScheduleSeason, collectGameSheetPages, discoverExposureSchedule, FED_CONFIG, GameSheetCollector, parseGameSheetGames, type GameSheetRow } from "./gamesheet.js";
@@ -6,7 +8,8 @@ const now = new Date("2026-10-01T12:00:00Z");
 const venue: LocatedVenue = { id: "edge", name: "The Edge Sports Center", address: "191 Hartwell Rd, Bedford, MA 01730", town: "Bedford", lat: 42.48, lng: -71.28, aliases: ["Edge", "Edge-Upper"], evidenceUrl: "https://example.org" };
 const row: RawYouthGame = { sourceGameId: "1", birthYear: 2016, division: "2016 White", home: { id: "h", name: "Wizards 16 - Elite", eligible: true, division: "2016 Blue" }, away: { id: "a", name: "Opponent 16 - AAA", eligible: false, division: "2016 White" }, start: "2026-10-03T14:00:00Z", location: "Edge-Upper", sourceUrl: "https://example.org/schedule" };
 const source = (rows = [row]): YouthSource => ({ id: "e9", name: "E9", league: "Elite 9", url: row.sourceUrl, collect: async () => rows });
-const refresh = (sources = [source()], seconds = 1799.99) => refreshYouthHockey({ now, sources, venues: [venue], drive: async () => ({ seconds, meters: 10000 }) });
+const estimate = (seconds = 900): DriveEstimate => ({ provider: "amazon-location", durationSeconds: seconds, distanceMeters: 10000, weekday: 6, arrivalTime: "10:00", calculatedAt: now.toISOString(), sampleArrival: "2026-10-10T10:00:00-04:00" });
+const refresh = (sources = [source()], seconds = 1799.99) => refreshYouthHockey({ now, sources, venues: [venue], drive: async () => estimate(seconds) });
 
 describe("normalization and snapshots", () => {
   it("resolves aliases and canonical sheets without guessing unknown venues", () => {
@@ -23,6 +26,33 @@ describe("normalization and snapshots", () => {
     expect((await refreshYouthHockey({ now, sources: [source()], venues: [venue], drive: async () => undefined })).games).toHaveLength(0);
     expect(JSON.stringify(await refresh())).not.toMatch(/"lat"|"lng"|Webster/);
   });
+  it("shares the recurring drive cache and applies the cutoff separately for each game start", async () => {
+    const cache = new Map<string, DriveEstimate>();
+    const store = { readDriveTime: async (key: string) => cache.get(key), writeDriveTime: async (key: string, value: DriveEstimate) => { cache.set(key, value); return value; } };
+    const calculate = vi.fn(async (request) => ({ durationSeconds: request.ArrivalTime.includes("T10:00") ? 1799.99 : 1800, distanceMeters: 10000 }));
+    const drives = new DriveTimes(store, { now, calculate });
+    // An open-ice lookup is reused by a youth game at the same rink and weekly arrival time.
+    await drives.get(venue, row.start);
+    const recurring = { ...row, sourceGameId: "repeat", start: "2026-10-10T14:00:00Z" };
+    const later = { ...row, sourceGameId: "later", start: "2026-10-03T18:00:00Z" };
+    const feed = await refreshYouthHockey({ now, sources: [source([row, recurring, later])], venues: [venue], drive: (v, start) => drives.get(v, start) });
+    expect(feed.games.map(g => g.sourceGameId)).toEqual(["1", "repeat"]);
+    expect(feed.games[0]?.drive?.provider).toBe("amazon-location");
+    expect(calculate).toHaveBeenCalledTimes(2);
+    expect(calculate.mock.calls[1]?.[0].ArrivalTime).toContain("T14:00");
+    const next = new DriveTimes(store, { now, calculate });
+    await next.get(venue, recurring.start);
+    expect(next.stats).toEqual({ cached: 1, calculated: 0, failed: 0 });
+  });
+  it("re-routes stale legacy schedules instead of retaining an obsolete under-30-minute estimate", async () => {
+    const previous = await refresh(undefined, 900);
+    delete previous.games[0]!.drive;
+    const fail = { ...source(), collect: async () => { throw Error("unavailable"); } };
+    const feed = await refreshYouthHockey({ now, previous, sources: [fail], venues: [venue], drive: async () => estimate(1800) });
+    expect(feed.sources[0]?.status).toBe("stale");
+    expect(feed.games).toHaveLength(0);
+    expect(feed.sources[0]?.fetchedAt).toBe(previous.sources[0]?.fetchedAt);
+  });
   it("deduplicates home/away and source copies but preserves doubleheaders", async () => {
     const copy = { ...row, sourceGameId: "2", home: row.away, away: row.home, location: "The Edge Sports Center Upper" };
     const later = { ...row, sourceGameId: "3", start: "2026-10-03T18:00:00Z" };
@@ -31,7 +61,7 @@ describe("normalization and snapshots", () => {
   });
   it("replaces a successful snapshot after rescheduling and cancellation", async () => {
     const previous = await refresh();
-    const common = { now, previous, venues: [venue], drive: async () => ({ seconds: 900, meters: 10000 }) };
+    const common = { now, previous, venues: [venue], drive: async () => estimate() };
     const moved = await refreshYouthHockey({ ...common, sources: [source([{ ...row, start: "2026-10-04T16:00:00Z" }])] });
     expect(moved.games).toHaveLength(1);
     expect(moved.games[0]?.start).toBe("2026-10-04T16:00:00Z");
@@ -40,7 +70,7 @@ describe("normalization and snapshots", () => {
   it("preserves only a failed source for 48 hours and continues healthy sources", async () => {
     const previous = await refresh([source([{ ...row, start: "2026-10-05T14:00:00Z" }])]);
     const fail = { ...source(), collect: async () => { throw Error("unavailable"); } };
-    const common = { previous, venues: [venue], drive: async () => ({ seconds: 900, meters: 10000 }), sources: [fail, { ...source([{ ...row, start: "2026-10-06T14:00:00Z" }]), id: "healthy" }] };
+    const common = { previous, venues: [venue], drive: async () => estimate(), sources: [fail, { ...source([{ ...row, start: "2026-10-06T14:00:00Z" }]), id: "healthy" }] };
     const stale = await refreshYouthHockey({ ...common, now: new Date(now.getTime() + 48 * 3600000) });
     expect(stale.sources.map(s => s.status)).toEqual(["stale", "ok"]);
     expect(stale.games).toHaveLength(2);

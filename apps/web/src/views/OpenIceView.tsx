@@ -1,4 +1,4 @@
-import { DRIVE_ORIGIN, driveMinutes, CATEGORY_LABELS, ICE_CATEGORIES, OPEN_ICE_CATEGORIES, isOpenIce, type IceCategory, type IceEvent, type Rink, type RinkFeed, type RinkIndex } from "@openice/shared";
+import { driveMinutes, CATEGORY_LABELS, ICE_CATEGORIES, OPEN_ICE_CATEGORIES, isOpenIce, type IceCategory, type IceEvent, type Rink, type RinkFeed, type RinkIndex } from "@openice/shared";
 import { Car, ExternalLink, MapPin } from "lucide-react";
 import { useMemo, useState } from "react";
 import { DriveBadge } from "../components/DriveBadge";
@@ -195,7 +195,7 @@ export function OpenIceView({ index, feeds }: { index: RinkIndex; feeds: RinkFee
         )}
       </div>
 
-      <p className="drive-note dim">Drive estimates from {DRIVE_ORIGIN.label} · typical traffic for arrival at session start.</p>
+      <p className="drive-note dim">Drive estimates from Arlington · typical traffic for arrival at session start.</p>
 
       {!feeds && <p className="loading">Loading schedules…</p>}
 

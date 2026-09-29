@@ -93,7 +93,7 @@ describe("App", () => {
     expect(screen.queryByText("AHC")).not.toBeInTheDocument();
     expect(screen.getByText("18 min")).toBeInTheDocument();
     expect(screen.queryByText("3 min")).not.toBeInTheDocument();
-    expect(screen.getByText(/Drive estimates from 107 Webster St/)).toBeInTheDocument();
+    expect(screen.getByText(/Drive estimates from Arlington/)).toBeInTheDocument();
     expect(screen.queryByRole("link", { name: /rangers/i })).not.toBeInTheDocument();
     expect(screen.queryByText(/Jr\. Rangers/)).not.toBeInTheDocument();
   });

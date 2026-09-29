@@ -1,4 +1,4 @@
-import { DRIVE_ORIGIN, driveMinutes, isOpenIce, type IceEvent, type RinkFeed, type RinkIndex } from "@openice/shared";
+import { driveMinutes, isOpenIce, type IceEvent, type RinkFeed, type RinkIndex } from "@openice/shared";
 import { ChevronLeft, ChevronRight, ExternalLink, MapPin, Users } from "lucide-react";
 import { useMemo, useState } from "react";
 import { DriveBadge, driveDescription } from "../components/DriveBadge";
@@ -73,7 +73,7 @@ export function RinkView({ index, feeds, rinkId }: { index: RinkIndex; feeds: Ri
               <p className="rink-sub">
                 <MapPin size={14} /> {rink.address}
                 <span className="dot">·</span>
-                From {DRIVE_ORIGIN.label} · drive time varies by session
+                From Arlington · drive time varies by session
                 {rink.operator && (
                   <>
                     <span className="dot">·</span>

@@ -1,3 +1,4 @@
+import type { DriveEstimate } from "./types.js";
 import { localDateKey, RINK_TIME_ZONE } from "./time.js";
 
 export type YouthBirthYear = 2015 | 2016;
@@ -29,6 +30,8 @@ export interface YouthGame {
   end?: string;
   venue: YouthVenue;
   iceSheet: string;
+  /** Cached typical-traffic prediction for the game’s local weekday and start time. */
+  drive?: DriveEstimate;
   driveSeconds: number;
   driveMeters: number;
   sourceUrl: string;
@@ -99,7 +102,7 @@ export function youthCalendarUrl(game: YouthGame): string {
   const compact = (d: Date) => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
   const details = [
     `${game.league} · ${game.division} · ${game.birthYear} birth year`,
-    `Estimated drive from Arlington: ${youthDriveLabel(game.driveSeconds)} (without traffic).`,
+    `Estimated drive from Arlington: ${youthDriveLabel(game.driveSeconds)} (Amazon Location, typical traffic for arrival at game start).`,
     ...(!knownEnd ? ["Duration is estimated at 90 minutes; the source does not publish an end time."] : []),
     `Official schedule: ${game.sourceUrl}`,
     `Directions: ${youthDirectionsUrl(game)}`,

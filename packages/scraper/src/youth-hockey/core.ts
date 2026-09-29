@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { YOUTH_STALE_LIMIT_MS, type YouthGame, type YouthHockeyFeed, type YouthLeague, type YouthSourceStatus, type YouthTeam, type YouthBirthYear, type YouthVenue } from "@openice/shared";
+import { YOUTH_STALE_LIMIT_MS, type DriveEstimate, type YouthGame, type YouthHockeyFeed, type YouthLeague, type YouthSourceStatus, type YouthTeam, type YouthBirthYear, type YouthVenue } from "@openice/shared";
 
 export interface RawYouthGame {
   sourceGameId?: string;
@@ -20,7 +20,6 @@ export interface YouthSource {
   collect: () => Promise<RawYouthGame[]>;
 }
 export interface LocatedVenue extends YouthVenue { lat: number; lng: number; aliases: string[]; evidenceUrl: string }
-export interface YouthDrive { seconds: number; meters: number }
 
 export function normalizeLocation(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -61,7 +60,7 @@ export function deduplicateGames(games: YouthGame[]): YouthGame[] {
 export async function refreshYouthHockey(options: {
   sources: YouthSource[];
   venues: LocatedVenue[];
-  drive: (v: LocatedVenue) => Promise<YouthDrive | undefined>;
+  drive: (v: LocatedVenue, start: string) => Promise<DriveEstimate | undefined>;
   previous?: YouthHockeyFeed;
   now?: Date;
   log?: (message: string) => void;
@@ -82,16 +81,16 @@ export async function refreshYouthHockey(options: {
         if (!Number.isFinite(ms) || ms < now.getTime() || ms >= rangeEnd.getTime() || ![2015, 2016].includes(row.birthYear) || !(row.home.eligible || row.away.eligible)) continue;
         const venue = resolveVenue(row.location, options.venues);
         if (!venue || !Number.isFinite(venue.lat) || !Number.isFinite(venue.lng)) { excluded.add(row.location); continue; }
-        const drive = await options.drive(venue);
-        if (!drive || !Number.isFinite(drive.seconds) || drive.seconds < 0) { excluded.add(row.location); continue; }
-        if (drive.seconds >= 1800) continue;
+        const drive = await options.drive(venue, row.start);
+        if (!drive || !Number.isFinite(drive.durationSeconds) || drive.durationSeconds <= 0) { excluded.add(row.location); continue; }
+        if (drive.durationSeconds >= 1800) continue;
         const game: YouthGame = {
           id: "", sourceId: source.id, sourceGameId: row.sourceGameId, league: source.league,
           birthYear: row.birthYear, division: row.division, home: row.home, away: row.away, start: row.start,
           ...(row.end && Date.parse(row.end) > ms ? { end: row.end } : {}),
           venue: { id: venue.id, name: venue.name, address: venue.address, town: venue.town },
           iceSheet: resolveIceSheet(row.location),
-          driveSeconds: drive.seconds, driveMeters: drive.meters, sourceUrl: row.sourceUrl, verifiedAt: generatedAt,
+          drive, driveSeconds: drive.durationSeconds, driveMeters: drive.distanceMeters, sourceUrl: row.sourceUrl, verifiedAt: generatedAt,
         };
         game.id = `${source.id}:${row.sourceGameId ?? createHash("sha256").update(gameKey(game)).digest("hex").slice(0, 20)}`;
         sourceGames.push(game);
@@ -110,8 +109,15 @@ export async function refreshYouthHockey(options: {
       status.message = error instanceof Error ? error.message.split("\n")[0]!.replace(/^page\.[^:]+: (?:Error: )?/, "") : "Schedule could not be loaded.";
       if (status.status === "stale") {
         const cached = (options.previous?.games ?? []).filter((g) => g.sourceId === source.id && Date.parse(g.start) >= now.getTime() && Date.parse(g.start) < rangeEnd.getTime() && now.getTime() - Date.parse(g.verifiedAt) <= YOUTH_STALE_LIMIT_MS);
-        games.push(...cached);
-        status.gameCount = cached.length;
+        // Re-route cached schedules too: an old OSRM feed must never bypass the traffic cutoff.
+        for (const game of cached) {
+          const venue = options.venues.find((v) => v.id === game.venue.id);
+          if (!venue) continue;
+          const drive = await options.drive(venue, game.start);
+          if (!drive || !Number.isFinite(drive.durationSeconds) || drive.durationSeconds <= 0 || drive.durationSeconds >= 1800) continue;
+          games.push({ ...game, drive, driveSeconds: drive.durationSeconds, driveMeters: drive.distanceMeters });
+          status.gameCount++;
+        }
       }
       options.log?.(`${source.id}: ${status.status} — ${status.message}`);
     }

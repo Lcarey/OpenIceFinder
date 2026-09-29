@@ -47,6 +47,9 @@ function handler(event) {
   var request = event.request;
   if (request.method === "GET" || request.method === "HEAD") {
     var uri = request.uri;
+    if (uri.indexOf("/data/drive-times/") === 0) {
+      return { statusCode: 403, statusDescription: "Forbidden" };
+    }
     if (uri === "/rangers" || uri === "/rangers/") {
       request.uri = "/rangers.html";
       return request;
@@ -113,6 +116,7 @@ function handler(event) {
           origin: staticOrigin,
           viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
           cachePolicy: dataCachePolicy,
+          functionAssociations: [{ function: spaRewrite, eventType: cloudfront.FunctionEventType.VIEWER_REQUEST }],
           responseHeadersPolicy: cloudfront.ResponseHeadersPolicy.SECURITY_HEADERS,
           compress: true,
         },
@@ -204,6 +208,19 @@ function handler(event) {
     youthGithubRole.addToPolicy(new iam.PolicyStatement({
       actions: ["s3:PutObject"],
       resources: [webBucket.arnForObjects("data/youth-hockey.json")],
+    }));
+    youthGithubRole.addToPolicy(new iam.PolicyStatement({
+      actions: ["s3:GetObject", "s3:PutObject"],
+      resources: [webBucket.arnForObjects("data/drive-times/*")],
+    }));
+    youthGithubRole.addToPolicy(new iam.PolicyStatement({
+      actions: ["s3:ListBucket"],
+      resources: [webBucket.bucketArn],
+      conditions: { StringLike: { "s3:prefix": "data/drive-times/*" } },
+    }));
+    youthGithubRole.addToPolicy(new iam.PolicyStatement({
+      actions: ["geo-routes:CalculateRoutes"],
+      resources: [Stack.of(this).formatArn({ service: "geo-routes", account: "", resource: "provider", resourceName: "default" })],
     }));
     youthGithubRole.addToPolicy(new iam.PolicyStatement({
       actions: ["cloudfront:CreateInvalidation"],

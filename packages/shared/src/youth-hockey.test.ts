@@ -17,6 +17,8 @@ describe("youth calendar", () => {
     expect(p.get("details")).toContain(game.sourceUrl);
     expect(p.get("details")).toContain("do not automatically update");
     expect(p.get("details")).toContain("Schedule last verified:");
+    expect(p.get("details")).toContain("Amazon Location, typical traffic for arrival at game start");
+    expect(p.get("details")).not.toContain("without traffic");
     expect(url.href).not.toMatch(/Webster|origin=/);
     expect(new URL(youthDirectionsUrl(game)).searchParams.has("origin")).toBe(false);
   });
