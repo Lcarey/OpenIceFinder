@@ -72,7 +72,12 @@ export class GameSheetCollector {
       if (division) url.searchParams.set("filter[division]", division);
       await page.goto(url.toString(), { waitUntil: "domcontentloaded", timeout: 35_000 });
       // These schedules use a virtualized role=table; only reading visible rows loses games.
-      await page.locator('[role="table"], table').first().waitFor({ state: "attached", timeout: 35_000 }).catch(() => { throw new Error("GameSheet browser could not load the public schedule (possibly a security challenge)."); });
+      await page.locator('[role="table"], table').first().waitFor({ state: "attached", timeout: 35_000 }).catch(async () => {
+        const title = await page.title();
+        throw new Error(/just a moment|verification|challenge/i.test(title)
+          ? "GameSheet requires browser verification; this source could not be refreshed."
+          : `GameSheet schedule did not finish loading (${title.slice(0, 120)}).`);
+      });
       const result: GameSheetRow[] = [];
       const end = new Date(now.getTime() + 90 * 86400_000);
       for (let offset = 0; offset < 10000;) {

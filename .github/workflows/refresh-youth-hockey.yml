@@ -45,7 +45,8 @@ jobs:
       - name: Collect public schedules
         env:
           YOUTH_HOCKEY_ORIGIN: ${{ secrets.YOUTH_HOCKEY_ORIGIN }}
-        run: npm run refresh:youth-hockey
+          YOUTH_BROWSER_HEADED: "1"
+        run: xvfb-run -a npm run refresh:youth-hockey
       - name: Verify FED collection before release
         if: github.ref != 'refs/heads/main'
         run: node --input-type=module -e 'import fs from "node:fs"; const f=JSON.parse(fs.readFileSync("data/youth-hockey.json")); if(f.sources.some(s=>s.id.startsWith("fed-")&&s.status!=="ok")) process.exit(1);'
