@@ -71,10 +71,10 @@ export class GameSheetCollector {
       // Reuse only the public widget's own same-origin session authorization in memory.
       // Never persist it, log it, or send it to a different endpoint/origin.
       let authorization: string | undefined;
-      page.on("request", (request) => {
+      page.on("request", async (request) => {
         const u = new URL(request.url());
         if (u.origin === "https://gamesheetstats.com" && u.pathname === `/api/unified-games/${season}`) {
-          authorization = request.headers()["authorization"] ?? authorization;
+          authorization = (await request.allHeaders())["authorization"] ?? authorization;
         }
       });
       const url = new URL(`https://gamesheetstats.com/seasons/${season}/games`);
@@ -97,7 +97,7 @@ export class GameSheetCollector {
         const scroll = page.locator('[data-testid="games-virtual-scroll"]');
         if (await scroll.count()) await scroll.evaluate((el) => { el.scrollTop = el.scrollHeight; });
         const observed = await request;
-        authorization = observed?.headers()["authorization"] ?? authorization;
+        authorization = observed ? (await observed.allHeaders())["authorization"] ?? authorization : authorization;
       }
       const result: GameSheetRow[] = [];
       const end = new Date(now.getTime() + 90 * 86400_000);
