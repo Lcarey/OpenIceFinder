@@ -51,7 +51,16 @@ export function YouthHockeyView() {
       <p className="youth-count" role="status">{games.length} {games.length === 1 ? "game" : "games"} to watch</p>
       {!games.length && <div className="empty"><p>{allUnavailable ? "Schedules are temporarily unavailable." : "No matching games in this window."}</p><p className="dim">{allUnavailable ? "Use the official schedule links above, or try again after the next refresh." : "Try another date or birth year. New games appear as schedules are published."}</p></div>}
       {groupByDay(games).map((group) => <section className="day-group" key={group.dateKey}><h3 className="day-heading">{dayLabel(group.dateKey, today, shiftDateKey(today, 1))}</h3><ol className="session-list">{group.events.map((g) => <li className="session youth-game" key={g.id}>
-        <div className="session-time"><time dateTime={g.start}>{formatTime(g.start)}</time><span className={`kind-pill youth-year-${g.birthYear}`}>{g.birthYear}</span><span className="youth-drive">{youthDriveLabel(g.driveSeconds)} drive</span><a className="youth-calendar" href={youthCalendarUrl(g)} target="_blank" rel="noreferrer" title="Add to Google Calendar" aria-label={`Add ${g.away.name} vs ${g.home.name} to Google Calendar`}><CalendarPlus size={18} aria-hidden="true"/></a></div>
+        <div className="session-time">
+          <time dateTime={g.start}>{formatTime(g.start)}</time>
+          <div className="youth-badges">
+            <span className={`kind-pill youth-year-${g.birthYear}`}>{g.birthYear}</span>
+            {g.league === "FED Elite" && <span className="kind-pill youth-league-fed" title="FED Elite">FED</span>}
+            {g.league === "Elite 9" && <span className="kind-pill youth-league-e9" title="Elite 9">E9</span>}
+          </div>
+          <span className="youth-drive">{youthDriveLabel(g.driveSeconds)} drive</span>
+          <a className="youth-calendar" href={youthCalendarUrl(g)} target="_blank" rel="noreferrer" title="Add to Google Calendar" aria-label={`Add ${g.away.name} vs ${g.home.name} to Google Calendar`}><CalendarPlus size={18} aria-hidden="true"/></a>
+        </div>
         <div className="session-main"><div className="session-title">{g.away.name} <span className="dim">vs</span> {g.home.name}</div><div className="session-meta"><MapPin size={14} aria-hidden="true"/><strong>{g.venue.name}</strong>{g.iceSheet && <span>· {g.iceSheet}</span>}<span>· {g.venue.town}</span></div>{!(g.home.eligible && g.away.eligible) && <p className="youth-qualifies">Qualifying team: {g.home.eligible ? g.home.name : g.away.name}</p>}<div className="youth-links"><a href={g.sourceUrl} target="_blank" rel="noreferrer">Official schedule <ExternalLink size={12}/></a><a href={youthDirectionsUrl(g)} target="_blank" rel="noreferrer">Directions <ExternalLink size={12}/></a></div></div>
       </li>)}</ol></section>)}
     </>}

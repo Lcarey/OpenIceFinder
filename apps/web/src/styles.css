@@ -1834,7 +1834,10 @@ body:has(.tape-shell) {
 /* Nearby games to watch */
 .youth-view { gap: 12px; }
 .youth-view .offerings-intro p { max-width: none; line-height: 1.45; }
+.youth-badges { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
 .youth-year-2015 { color: #245981; background: #e4effb; }
+.youth-league-fed { color: #943d3d; background: #fbe4e4; }
+.youth-league-e9 { color: #69449a; background: #eee5fa; }
 .youth-select { display: flex; flex-direction: column; gap: .35rem; color: #64748b; font-size: .75rem; font-weight: 650; }
 .youth-select select { background: white; color: #24354b; border: 1px solid #d5dde7; border-radius: 8px; padding: .55rem .75rem; font: inherit; font-size: .85rem; }
 .youth-coverage { display: flex; flex-wrap: wrap; gap: .7rem; margin: .25rem 0; }
