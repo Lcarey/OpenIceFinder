@@ -10,6 +10,8 @@ export function MhrBadge({ entry }: { entry?: MhrEntry }) {
 export function MhrNotice({ sources }: { sources?: MhrSource[] }) {
   if (!sources?.length) return <p className="mhr-note dim">MYHockey ratings are temporarily unavailable.</p>;
   const fetched = sources.map((s) => s.fetchedAt).filter((t): t is string => Boolean(t)).sort()[0];
-  const stale = sources.some((s) => s.error || !s.fetchedAt || Date.now() - Date.parse(s.fetchedAt) > 26 * 3600_000);
-  return <p className="mhr-note dim">MYHockey {fetched ? `checked ${formatRelativeFetched(fetched)}` : "unavailable"}{stale && fetched ? " · using saved ratings" : ""}. USA age-group rank when published, followed by rating. Teams need at least five recorded games to qualify; “Not rated yet” means MHR has not published a rating.</p>;
+  // Weekly refresh, with one day of grace for scheduler delays. Explicit source
+  // failures still show the saved-ratings warning immediately.
+  const stale = sources.some((s) => s.error || !s.fetchedAt || Date.now() - Date.parse(s.fetchedAt) > 8 * 24 * 3600_000);
+  return <p className="mhr-note dim">MYHockey {fetched ? `checked ${formatRelativeFetched(fetched)}` : "unavailable"}{stale && fetched ? " · using saved ratings" : ""}. Checks for updates on Wednesday afternoons. USA age-group rank when published, followed by rating. Teams need at least five recorded games to qualify; “Not rated yet” means MHR has not published a rating.</p>;
 }
