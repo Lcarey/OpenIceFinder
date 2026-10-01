@@ -12,8 +12,11 @@ async function main() {
   try { previous = JSON.parse(await readFile(out, "utf8")); } catch (e) { if ((e as NodeJS.ErrnoException).code !== "ENOENT") throw e; }
   const browser = await chromium.launch({ channel: process.env.MHR_BROWSER_CHANNEL ?? "chromium", headless: process.env.MHR_BROWSER_HEADED !== "1" });
   try {
+    // Keep the ordinary browsing session across age lists. browser.newPage()
+    // would create an isolated context and discard the site's session each time.
+    const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
     const snapshot = await refreshMhrSnapshot({ previous, log: console.log, fetchTable: async (url) => {
-      const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+      const page = await context.newPage();
       try {
         await page.goto(url, { waitUntil: "domcontentloaded", timeout: 45_000 });
         // Read the ordinary public table; challenges are failures, never bypassed.
