@@ -90,6 +90,8 @@ Known source limitation (2026-09-29): both FED divisions collect successfully on
 
 ### StinkySocks driving filter
 
+Each listing displays its cached drive estimate next to registration. Estimates just below the cutoff display `<30 min` rather than rounding up to `30 min`. Women-specific games and clinics are excluded from this page; mixed/coed listings remain eligible.
+
 The StinkySocks page shows only listings with an Amazon Location estimate **strictly below 30 minutes** from **107 Webster St, Arlington, MA**, using typical traffic for arrival at the session start. Listings without a verified estimate are hidden. The daily refresh enriches the StinkySocks feed using the same permanent weekday/time/rink drive cache as open ice. Additional rink coordinates live in `data/stinkysocks-venues.json`; LoConte and Flynn, and Everett and Somerville Veterans rinks, are distinct destinations. To backfill existing listings without scraping or replacing the schedule, run `npm run refresh:drives -- --bucket <bucket> --distribution <id> --stinkysocks-only`.
 
 ### MYHockey ratings and browser caching

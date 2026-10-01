@@ -141,6 +141,9 @@ describe("App", () => {
       { ...offerings.offerings[0]!, id: "ss-limit", title: "Exactly thirty minutes", drive: { ...drive, durationSeconds: 1800 } },
       { ...offerings.offerings[0]!, id: "ss-far", title: "Distant game", drive: { ...drive, durationSeconds: 2400 } },
       { ...offerings.offerings[0]!, id: "ss-unknown", title: "Unknown drive", drive: undefined },
+      { ...offerings.offerings[0]!, id: "ss-women", title: "Women's Intermediate game" },
+      { ...offerings.offerings[0]!, id: "ss-women-clinic", title: "Women’s Mixed Lower skills clinic", kind: "clinic" },
+      { ...offerings.offerings[0]!, id: "ss-ladies", title: "Ladies skills clinic", kind: "skills" },
     );
     vi.stubGlobal(
       "fetch",
@@ -156,6 +159,10 @@ describe("App", () => {
     expect(screen.queryByText("Exactly thirty minutes")).not.toBeInTheDocument();
     expect(screen.queryByText("Distant game")).not.toBeInTheDocument();
     expect(screen.queryByText("Unknown drive")).not.toBeInTheDocument();
+    expect(screen.queryByText("Women's Intermediate game")).not.toBeInTheDocument();
+    expect(screen.queryByText("Women’s Mixed Lower skills clinic")).not.toBeInTheDocument();
+    expect(screen.queryByText("Ladies skills clinic")).not.toBeInTheDocument();
+    expect(screen.getByText("<30 min")).toBeInTheDocument();
     expect(screen.getByText(/107 Webster St/)).toBeInTheDocument();
   });
 

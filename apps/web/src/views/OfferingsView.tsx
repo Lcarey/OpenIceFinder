@@ -2,6 +2,7 @@ import type { BookableOffering, OfferingKind, OfferingsFeed, RinkIndex } from "@
 import { ExternalLink } from "lucide-react";
 import { useMemo, useState } from "react";
 import { dateKeyOf, dayLabel, formatTimeRange, groupByDay, shiftDateKey } from "../format";
+import { DriveBadge } from "../components/DriveBadge";
 
 const DAY_OPTIONS = [7, 14, 35] as const;
 
@@ -43,6 +44,7 @@ export function OfferingsView({
   index,
   locationFilters,
   kindFilters,
+  maxDriveMinutes,
 }: {
   title: string;
   intro: string;
@@ -50,6 +52,7 @@ export function OfferingsView({
   index: RinkIndex;
   locationFilters?: Array<{ id: string; label: string }>;
   kindFilters?: Array<{ id: OfferingKind; label: string }>;
+  maxDriveMinutes?: number;
 }) {
   const [days, setDays] = useState<(typeof DAY_OPTIONS)[number]>(14);
   const [rinkId, setRinkId] = useState<string | null>(null);
@@ -170,6 +173,7 @@ export function OfferingsView({
                     </div>
                   </div>
                   <div className="session-side">
+                    {row.drive && <DriveBadge drive={row.drive} maxMinutes={maxDriveMinutes} />}
                     <a className={`register-link status-${status}`} href={row.registerUrl} target="_blank" rel="noreferrer">
                       {registerLabel(row.status)}
                       <ExternalLink size={14} />
