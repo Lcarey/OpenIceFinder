@@ -53,9 +53,9 @@ async function route(request) {
   const cache = await caches.open(SHELL);
   if (request.mode === "navigate") {
     const shell = /^\/rangersa?\/?$/.test(url.pathname) ? "/rangers.html" : "/index.html";
-    return (await cache.match(shell)) ?? fetch(request);
+    return (await cache.match(shell, { ignoreVary: true })) ?? fetch(request);
   }
-  return (await cache.match(request)) ?? (await caches.match(request)) ?? fetch(request);
+  return (await cache.match(request, { ignoreVary: true })) ?? (await caches.match(request, { ignoreVary: true })) ?? fetch(request);
 }
 
 self.addEventListener("fetch", (event) => {
