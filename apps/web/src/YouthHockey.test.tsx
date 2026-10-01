@@ -20,7 +20,9 @@ describe("youth hockey page", () => {
     ] };
     vi.stubGlobal("fetch", vi.fn(async (url: string) => new Response(JSON.stringify(url.endsWith("/mhr.json") ? mhr : data))));
     render(<YouthHockeyView />);
-    expect(await screen.findByRole("link", { name: /MYHockey.*Railers.*88.9/ })).toHaveAttribute("href", mhr.teams[1]!.url);
+    const rating = await screen.findByRole("link", { name: /MYHockey.*Railers.*89/ });
+    expect(rating).toHaveAttribute("href", mhr.teams[1]!.url);
+    expect(rating).toHaveTextContent(/^89$/);
     expect(screen.getByRole("link", { name: /MYHockey.*Rangers.*Not rated yet/ })).toHaveAttribute("href", mhr.teams[0]!.url);
     expect(screen.queryByText(/77.04/)).not.toBeInTheDocument();
   });
