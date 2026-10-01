@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { clinicsFromStinkysocks, clinicsFromWarrior } from "./clinics.js";
-import { parseStinkysocksPage } from "./stinkysocks.js";
+import { mapStinkysocksRink, parseStinkysocksPage } from "./stinkysocks.js";
 
 const fixturesDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "fixtures");
 
@@ -12,7 +12,7 @@ describe("stinkysocks", () => {
     const offerings = parseStinkysocksPage(readFileSync(path.join(fixturesDir, "stinkysocks-nch.html"), "utf8"));
     expect(offerings.map((o) => [o.title, o.rinkId, o.status, o.kind])).toEqual([
       ["SUN 9/13/26 - Cambridge - 8:40 PM - Mixed Lower (Levels 2-4)", "simoni-cambridge", "open", "adult_pickup"],
-      ["THU 9/17/26 - Medford - 9:10 PM - Mixed Mid (Levels 3-5)", "flynn-medford", "open", "adult_pickup"],
+      ["THU 9/17/26 - Medford - 9:10 PM - Mixed Mid (Levels 3-5)", "loconte-medford", "open", "adult_pickup"],
       ["SAT 9/19/26 - Somerville - 4:00 PM - Skills Clinic", "veterans-somerville", "waitlist", "skills"],
     ]);
     expect(offerings[0]!.start).toBe("2026-09-13T20:40:00-04:00");
@@ -20,6 +20,15 @@ describe("stinkysocks", () => {
     expect(offerings[1]!.registerUrl).toContain("ADD=NCH-202609172110MED");
     expect(offerings[2]!.registerUrl).toContain("waitlist");
     expect(clinicsFromStinkysocks(offerings)).toHaveLength(1);
+  });
+  it("distinguishes similarly named rinks and maps nearby venues outside the open-ice catalog", () => {
+    expect(mapStinkysocksRink("Everett - Allied Veterans Memorial Rink")).toBe("allied-veterans-everett");
+    expect(mapStinkysocksRink("Somerville - Veterans Memorial Rink")).toBe("veterans-somerville");
+    expect(mapStinkysocksRink("Medford - LoConte Memorial Rink")).toBe("loconte-medford");
+    expect(mapStinkysocksRink("Medford - Flynn Rink")).toBe("flynn-medford");
+    expect(mapStinkysocksRink("North End - Steriti Rink")).toBe("steriti-boston");
+    expect(mapStinkysocksRink("Andover - Phillips Academy Ice Rinks")).toBe("phillips-andover");
+    expect(mapStinkysocksRink("Unspecified Veterans Rink")).toBeUndefined();
   });
 });
 

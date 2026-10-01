@@ -22,6 +22,7 @@ import type { Classifier, UnknownTitle } from "./classify.js";
 import { applyFmcClassOverlay, refreshOfferings, type OfferingsRefreshContext } from "./offerings/index.js";
 import { refreshPrograms, type RefreshProgramsOptions } from "./programs/index.js";
 import { attachDriveTimes, type DriveTimes } from "./drive-times.js";
+import { attachStinkysocksDrives } from "./offerings/drives.js";
 import { refreshRangers } from "./rangers.js";
 
 export interface RefreshOptions {
@@ -159,7 +160,11 @@ export async function refreshAll(options: RefreshOptions): Promise<RefreshResult
     return { rink: part.rink, fetchedAt, rangeStart: rangeStart.toISOString(), rangeEnd: rangeEnd.toISOString(), events, errors: part.errors };
   });
 
-  if (options.drives) await attachDriveTimes(feeds, options.drives);
+  if (options.drives) {
+    await attachDriveTimes(feeds, options.drives);
+    const stinkysocks = offeringResult.feeds.find((feed) => feed.id === "stinkysocks");
+    if (stinkysocks) await attachStinkysocksDrives(stinkysocks, options.rinks, options.drives);
+  }
 
   const nowMs = now.getTime();
   const entries: RinkIndexEntry[] = feeds.map((feed) => {

@@ -1,4 +1,4 @@
-import type { DriveEstimate, RinkFeed, RinkIndex } from "@openice/shared";
+import type { DriveEstimate, OfferingsFeed, RinkFeed, RinkIndex } from "@openice/shared";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { App } from "./App";
@@ -113,9 +113,9 @@ describe("App", () => {
     expect(screen.getByText("Official schedule")).toBeInTheDocument();
   });
 
-  it("renders the StinkySocks page from a hash route", async () => {
+  it("shows only StinkySocks listings strictly under 30 minutes, excluding unknown drives", async () => {
     window.location.hash = "#/stinkysocks";
-    const offerings = {
+    const offerings: OfferingsFeed = {
       id: "stinkysocks" as const,
       fetchedAt: new Date().toISOString(),
       rangeStart: "",
@@ -133,9 +133,15 @@ describe("App", () => {
           location: "Medford - LoConte Memorial Rink",
           registerUrl: "https://secure.stinkysocks.net/register/medford",
           status: "open" as const,
+          drive: { ...drive, durationSeconds: 1799 },
         },
       ],
     };
+    offerings.offerings.push(
+      { ...offerings.offerings[0]!, id: "ss-limit", title: "Exactly thirty minutes", drive: { ...drive, durationSeconds: 1800 } },
+      { ...offerings.offerings[0]!, id: "ss-far", title: "Distant game", drive: { ...drive, durationSeconds: 2400 } },
+      { ...offerings.offerings[0]!, id: "ss-unknown", title: "Unknown drive", drive: undefined },
+    );
     vi.stubGlobal(
       "fetch",
       vi.fn(async (url: string) => {
@@ -147,6 +153,10 @@ describe("App", () => {
     await waitFor(() => expect(screen.getByRole("heading", { level: 2, name: "StinkySocks pickup" })).toBeInTheDocument());
     expect(screen.getByRole("link", { name: /Register/i })).toHaveAttribute("href", "https://secure.stinkysocks.net/register/medford");
     expect(screen.getByText(/Medford - Mixed Mid/)).toBeInTheDocument();
+    expect(screen.queryByText("Exactly thirty minutes")).not.toBeInTheDocument();
+    expect(screen.queryByText("Distant game")).not.toBeInTheDocument();
+    expect(screen.queryByText("Unknown drive")).not.toBeInTheDocument();
+    expect(screen.getByText(/107 Webster St/)).toBeInTheDocument();
   });
 
   it("shows an error with retry when the index fails", async () => {

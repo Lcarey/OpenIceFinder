@@ -1,0 +1,74 @@
+[
+  {
+    "id": "phillips-andover",
+    "name": "Phillips Academy Ice Rinks",
+    "address": "254 S Main St, Andover, MA 01810",
+    "lng": -71.12946,
+    "lat": 42.64203,
+    "coordinateSource": "Amazon Location Places (Storage), 2026-10-01"
+  },
+  {
+    "id": "amelia-park-westfield",
+    "name": "Amelia Park (Amelia Park Arena)",
+    "address": "Amelia Park, 21 S Broad St, Westfield, MA 01085-4409, United States",
+    "lng": -72.7489,
+    "lat": 42.11265,
+    "coordinateSource": "Amazon Location Places (Storage), 2026-10-01"
+  },
+  {
+    "id": "navin-marlborough",
+    "name": "Navin Arena",
+    "address": "Navin Arena, 451 Bolton St, Marlborough, MA 01752-3950, United States",
+    "lng": -71.55187,
+    "lat": 42.36176,
+    "coordinateSource": "Amazon Location Places (Storage), 2026-10-01"
+  },
+  {
+    "id": "chase-natick",
+    "name": "William L. Chase Arena",
+    "address": "William L. Chase Arena, 35 Windsor Ave, Natick, MA 01760-4283, United States",
+    "lng": -71.36521,
+    "lat": 42.2717,
+    "coordinateSource": "Amazon Location Places (Storage), 2026-10-01"
+  },
+  {
+    "id": "asiaf-brockton",
+    "name": "Asiaf Arena",
+    "address": "Asiaf Arena, 702 Belmont St, Brockton, MA 02301-5602, United States",
+    "lng": -71.046,
+    "lat": 42.07014,
+    "coordinateSource": "Amazon Location Places (Storage), 2026-10-01"
+  },
+  {
+    "id": "connery-lynn",
+    "name": "Connery Skating Rink",
+    "address": "Connery Skating Rink, 190 Shepard St, Lynn, MA 01902-4560, United States",
+    "lng": -70.95289,
+    "lat": 42.45737,
+    "coordinateSource": "Amazon Location Places (Storage), 2026-10-01"
+  },
+  {
+    "id": "buffone-worcester",
+    "name": "Buffone Arena",
+    "address": "Buffone Arena, 284 Lake Ave, Worcester, MA 01604-1208, United States",
+    "lng": -71.7548,
+    "lat": 42.262,
+    "coordinateSource": "Amazon Location Places (Storage), 2026-10-01"
+  },
+  {
+    "id": "roche-west-roxbury",
+    "name": "Jim Roche Community Ice Arena",
+    "address": "Jim Roche Community Ice Arena, 1275 VFW Pkwy, West Roxbury, MA 02132-4909, United States",
+    "lng": -71.17305,
+    "lat": 42.27612,
+    "coordinateSource": "Amazon Location Places (Storage), 2026-10-01"
+  },
+  {
+    "id": "loconte-medford",
+    "name": "LoConte Memorial Rink",
+    "address": "97 Locust St, Medford, MA 02155",
+    "lng": -71.09461,
+    "lat": 42.40746,
+    "coordinateSource": "Amazon Location Places (Storage), 2026-10-01"
+  }
+]

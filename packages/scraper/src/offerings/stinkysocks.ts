@@ -7,13 +7,24 @@ export const STINKYSOCKS_LISTING = "https://secure.stinkysocks.net/NCH/";
 const MAX_PAGES = 12;
 
 const LOCATION_TO_RINK: Array<{ match: RegExp; rinkId: string }> = [
-  { match: /medford|loconte|flynn/i, rinkId: "flynn-medford" },
-  { match: /somerville|veterans/i, rinkId: "veterans-somerville" },
+  { match: /flynn/i, rinkId: "flynn-medford" },
+  { match: /medford|loconte/i, rinkId: "loconte-medford" },
+  { match: /everett|allied veterans/i, rinkId: "allied-veterans-everett" },
+  { match: /somerville/i, rinkId: "veterans-somerville" },
   { match: /cambridge|simoni/i, rinkId: "simoni-cambridge" },
   { match: /revere|cronin/i, rinkId: "cronin-revere" },
   { match: /belmont/i, rinkId: "belmont-sports-complex" },
   { match: /burlington/i, rinkId: "ice-palace-burlington" },
-  { match: /warrior|brighton/i, rinkId: "warrior-brighton" },
+  { match: /warrior/i, rinkId: "warrior-brighton" },
+  { match: /steriti|north end/i, rinkId: "steriti-boston" },
+  { match: /phillips/i, rinkId: "phillips-andover" },
+  { match: /amelia park/i, rinkId: "amelia-park-westfield" },
+  { match: /navin/i, rinkId: "navin-marlborough" },
+  { match: /chase/i, rinkId: "chase-natick" },
+  { match: /asiaf/i, rinkId: "asiaf-brockton" },
+  { match: /connery/i, rinkId: "connery-lynn" },
+  { match: /buffone/i, rinkId: "buffone-worcester" },
+  { match: /roche/i, rinkId: "roche-west-roxbury" },
 ];
 
 export function mapStinkysocksRink(location: string): string | undefined {

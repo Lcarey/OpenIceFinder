@@ -117,10 +117,19 @@ describe("recurring drive cache", () => {
         { title: "Family Stick & Puck", start: "2026-10-06T14:00:00-04:00", end: "2026-10-06T15:00:00-04:00" },
         { title: "Closed", start, end: "2026-09-30T00:00:00-04:00", allDay: true },
       ],
+      fetchOfferings: async () => ({ fmcClasses: [], feeds: [{
+        id: "stinkysocks", fetchedAt: now.toISOString(), rangeStart: start, rangeEnd: winter, errors: [], offerings: [
+          { id: "pickup", provider: "stinkysocks", kind: "adult_pickup", title: "Pickup", location: "Medford - Flynn Rink", start, end: "2026-09-29T15:00:00-04:00", registerUrl: "https://example.org" },
+          { id: "unknown", provider: "stinkysocks", kind: "adult_pickup", title: "Unknown", location: "Unverified Rink", rinkId: rink.id, start, end: "2026-09-29T15:00:00-04:00", registerUrl: "https://example.org" },
+        ],
+      }] }),
     });
     expect(result.feeds[0]!.events.filter((event) => !event.allDay).map((event) => event.drive)).toEqual([sample, sample]);
     expect(result.feeds[0]!.events.find((event) => event.allDay)?.drive).toBeUndefined();
     expect(result.index.rinks[0]!.nextOpenIce?.drive).toEqual(sample);
+    expect(result.offeringFeeds[0]!.offerings[0]!.drive).toEqual(sample);
+    expect(result.offeringFeeds[0]!.offerings[1]!.drive).toBeUndefined();
+    expect(result.offeringFeeds[0]!.offerings[1]!.rinkId).toBeUndefined();
     expect(calculate).toHaveBeenCalledTimes(1);
   });
 });

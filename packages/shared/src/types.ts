@@ -203,6 +203,8 @@ export interface BookableOffering {
   status?: OfferingStatus;
   audience?: OfferingAudience;
   notes?: string;
+  /** Typical traffic from 107 Webster St, arriving at the offering's start time. */
+  drive?: DriveEstimate;
 }
 
 export interface OfferingsFeed {
