@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -15,7 +16,7 @@ function rangersHtmlPlugin(): Plugin {
     const q = raw.indexOf("?");
     const path = q >= 0 ? raw.slice(0, q) : raw;
     const qs = q >= 0 ? raw.slice(q) : "";
-    if (path === "/rangers" || path === "/rangers/") req.url = `/rangers.html${qs}`;
+    if (path === "/rangers" || path === "/rangers/" || path === "/rangersa" || path === "/rangersa/") req.url = `/rangers.html${qs}`;
     next();
   };
   return {
@@ -57,8 +58,32 @@ function localDataPlugin(): Plugin {
   };
 }
 
+/** Precache every app page/chunk; schedule JSON is saved only when visited. */
+function offlinePlugin(): Plugin {
+  return {
+    name: "openice-offline",
+    apply: "build",
+    generateBundle(_options, bundle) {
+      const files = Object.keys(bundle).filter((file) => /\.(?:js|css|html)$/.test(file));
+      const version = createHash("sha256").update(files.map((file) => {
+        const item = bundle[file]!;
+        return item.type === "chunk" ? item.code : String(item.source);
+      }).join("\n")).update(readFileSync(path.join(webDir, "service-worker.js")))
+        .update(readFileSync(path.join(webDir, "index.html")))
+        .update(readFileSync(path.join(webDir, "rangers.html")))
+        .update(readFileSync(path.join(webDir, "public/rangers-logo.png")))
+        .update(readFileSync(path.join(webDir, "public/favicon.svg")))
+        .digest("hex").slice(0, 16);
+      // Vite emits HTML after this hook, so include both entry pages explicitly.
+      const assets = [...new Set([...files.map((file) => `/${file}`), "/index.html", "/rangers.html", "/favicon.svg", "/rangers-logo.png"])];
+      const source = `const VERSION = ${JSON.stringify(version)};\nconst ASSETS = ${JSON.stringify(assets)};\n${readFileSync(path.join(webDir, "service-worker.js"), "utf8")}`;
+      this.emitFile({ type: "asset", fileName: "sw.js", source });
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [react(), rangersHtmlPlugin(), localDataPlugin()],
+  plugins: [react(), rangersHtmlPlugin(), localDataPlugin(), offlinePlugin()],
   server: { port: 5174, strictPort: true },
   preview: { port: 4174, strictPort: true },
   build: {

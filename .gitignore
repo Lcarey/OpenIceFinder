@@ -15,3 +15,5 @@ data/offerings/
 data/backtest/features.csv
 
 data/drive-times/
+
+data/mhr.json

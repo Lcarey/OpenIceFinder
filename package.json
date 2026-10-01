@@ -24,7 +24,8 @@
     "backtest:belief": "npm run build:shared && node --import tsx packages/scraper/src/backtest/cli.ts",
     "rinks:build": "node --import tsx scripts/build-rinks.ts",
     "deploy": "./deploy.sh",
-    "refresh:drives": "npm run build:shared && node --import tsx packages/scraper/src/drive-times-cli.ts"
+    "refresh:drives": "npm run build:shared && node --import tsx packages/scraper/src/drive-times-cli.ts",
+    "refresh:mhr": "npm run build:shared && node --import tsx packages/scraper/src/mhr-cli.ts"
   },
   "engines": {
     "node": ">=22"

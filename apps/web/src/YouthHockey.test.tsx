@@ -9,6 +9,21 @@ const fixture = (): YouthHockeyFeed => {
 };
 afterEach(() => { window.location.hash = ""; vi.unstubAllGlobals(); });
 describe("youth hockey page", () => {
+  it("shows cached MHR ratings beside the correct birth-year teams, preserving unrated Rangers", async () => {
+    const data = fixture();
+    data.games[0]!.home.name = "Boston Jr. Rangers 16 - Elite";
+    data.games[0]!.away.name = "Junior Railers 16 - Elite";
+    const mhr = { version: 1, season: 2026, sources: [{ birthYear: 2016, fetchedAt: new Date().toISOString() }], teams: [
+      { id: 1116, name: "Boston Junior Rangers 10U AAA", birthYear: 2016, url: "https://myhockeyrankings.com/team-info/1116/2026" },
+      { id: 1321, name: "Worcester Jr Railers (Elite) 10U AAA", birthYear: 2016, rating: 88.9, url: "https://myhockeyrankings.com/team-info/1321/2026" },
+      { id: 99, name: "Worcester Jr Railers (Elite) 11U AAA", birthYear: 2015, rating: 77.04, rank: 174, url: "https://myhockeyrankings.com/team-info/99/2026" },
+    ] };
+    vi.stubGlobal("fetch", vi.fn(async (url: string) => new Response(JSON.stringify(url.endsWith("/mhr.json") ? mhr : data))));
+    render(<YouthHockeyView />);
+    expect(await screen.findByRole("link", { name: /MYHockey.*Railers.*88.9/ })).toHaveAttribute("href", mhr.teams[1]!.url);
+    expect(screen.getByRole("link", { name: /MYHockey.*Rangers.*Not rated yet/ })).toHaveAttribute("href", mhr.teams[0]!.url);
+    expect(screen.queryByText(/77.04/)).not.toBeInTheDocument();
+  });
   it("loads independently when the rink index fails; nav follows Clinics", async () => {
     window.location.hash = "#/youth-hockey";
     const data = fixture();
@@ -16,7 +31,7 @@ describe("youth hockey page", () => {
     render(<App />);
     await screen.findByText("Qualifying team: Rangers Elite");
     const links = screen.getByRole("navigation", { name: "Views" }).querySelectorAll("a");
-    expect([...links].slice(-2).map(a => a.textContent?.trim())).toEqual(["Clinics", "High level youth hockey"]);
+    expect([...links].slice(-3).map(a => a.textContent?.trim())).toEqual(["Clinics", "High level youth hockey", "Rangers"]);
     const calendar = screen.getByRole("link", { name: /Add Opponent vs Rangers Elite/ });
     expect(calendar).toHaveAttribute("target", "_blank");
     expect(calendar.getAttribute("href")).toContain("calendar.google.com");
@@ -39,7 +54,7 @@ describe("youth hockey page", () => {
     await screen.findByRole("alert");
     fireEvent.click(screen.getByRole("button", { name: /Retry/ }));
     await screen.findByRole("link", { name: /Add Opponent/ });
-    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(fetchMock).toHaveBeenCalledTimes(3);
   });
   it("distinguishes stale data from unavailable coverage and expires stale games", async () => {
     const data = fixture();

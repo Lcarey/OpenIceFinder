@@ -17,7 +17,7 @@ import {
 import type { BtGame } from "./backtest/games.js";
 import { identities, type TeamIdentity } from "./backtest/priors.js";
 import { BELIEF_MODEL, fitBeliefModel, type MatchupPrediction } from "./belief-model.js";
-import { attachMhrToFeed, fetchMhrRanks } from "./mhr.js";
+import { attachMhrToFeed } from "./mhr.js";
 
 const RANGERS_NAME = /jr\.?\s*rangers/i;
 const BIRTH_YEAR_IN_NAME = /\b16\b/;
@@ -686,8 +686,8 @@ export async function refreshRangers(options: RefreshRangersOptions = {}): Promi
     knownUpcoming: remembered,
     leagueRows: leagueGames,
   });
-  const ranks = await fetchMhrRanks({ standings: feed.standings, fetchHtml: options.fetchMhrHtml, log });
-  const withMhr = attachMhrToFeed(feed, ranks);
+  // MHR is refreshed once by the scheduled GitHub job and shared by both pages.
+  const withMhr = attachMhrToFeed(feed);
   log(`rangers: ${withMhr.team.name} ${formatRecord(withMhr.team.record)} · ${withMhr.upcoming.length} upcoming`);
   return withMhr;
 }

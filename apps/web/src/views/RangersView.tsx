@@ -1,3 +1,4 @@
+import { MhrBadge, MhrNotice } from "../components/MhrBadge";
 import type { RangersBelief, RangersBeliefLevel, RangersFeed, RangersPlayedGame, RangersScoutCard, RangersStandingRow } from "@openice/shared";
 import { formatMhrRank, matchRangersMhrTeam, rangersMhrUrl } from "@openice/shared";
 import { CalendarDays, Check, ChevronDown, ExternalLink, Home, Link2, MapPin, Shield } from "lucide-react";
@@ -174,6 +175,7 @@ function ScoutSheet({ card, index, id }: { card: RangersScoutCard; index: number
           {opponent.logo ? <img src={opponent.logo} alt="" width={44} height={44} /> : <Shield size={28} />}
           <div>
             <h3>{opponent.name}</h3>
+            <MhrBadge entry={opponent.mhr} />
             <p>
               {recordLine(opponent.record)}
               {opponent.rank ? ` · ${opponent.rank}${ordinal(opponent.rank)} in ${opponent.division}` : ""} · {game.isHome ? "Home" : "Road"}
@@ -240,6 +242,7 @@ function mhrFor(row: RangersStandingRow): { url?: string; label: string; rank?: 
 }
 
 function MhrValue({ row }: { row: RangersStandingRow }) {
+  if (row.mhr) return <MhrBadge entry={row.mhr} />;
   const { url, label, rank } = mhrFor(row);
   const aria = rank && rank > 0 ? `MyHockeyRankings rank ${rank}` : "MyHockeyRankings (rank not released)";
   if (!url) return label;
@@ -312,7 +315,7 @@ function Standings({ rows }: { rows: RangersStandingRow[] }) {
                 <th>#</th>
                 <th>Team</th>
                 <th>
-                  <abbr title="MyHockeyRankings USA 10U ranking">MHR</abbr>
+                  <abbr title="MyHockeyRankings USA 10U rating">MHR</abbr>
                 </th>
                 <th>GP</th>
                 <th>W–L–T</th>
@@ -447,6 +450,8 @@ export function RangersView() {
 
       {feed && us && (
         <>
+          <p className="tape-team-rating">Rangers: <MhrBadge entry={us.mhr} /></p>
+          <MhrNotice sources={feed.mhrSources} />
           {last && (
             <p className="tape-last">
               Last: {last.result} {last.ourScore}–{last.theirScore} {last.isHome ? "vs" : "@"} {last.opponentName} ({formatDay(dateFromKey(last.date))})

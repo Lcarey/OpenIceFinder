@@ -1,3 +1,4 @@
+import { enrichRangersMhr, enrichYouthMhr, MHR_SEASON, type MhrSnapshot } from "@openice/shared";
 import type { OfferingsCatalogId, OfferingsFeed, ProgramFeed, RangersFeed, RinkFeed, RinkIndex } from "@openice/shared";
 import type { YouthHockeyFeed } from "@openice/shared";
 
@@ -6,12 +7,24 @@ const DATA_BASE = "/data";
 export async function loadYouthHockey(): Promise<YouthHockeyFeed> {
   const feed = await getJson<YouthHockeyFeed>("/youth-hockey.json");
   if (feed.version !== 1 || !Array.isArray(feed.games) || !Array.isArray(feed.sources)) throw new Error("The youth hockey feed is not available yet.");
-  return feed;
+  const mhr = await loadMhr();
+  return mhr ? enrichYouthMhr(feed, mhr) : feed;
 }
 
 async function getJson<T>(path: string): Promise<T> {
   const res = await fetch(`${DATA_BASE}${path}`, { headers: { Accept: "application/json" }, cache: "no-cache" });
   if (!res.ok) throw new Error(`Could not load ${path} (${res.status})`);
+  // The first visit can fetch data before the service worker takes control.
+  // Save those responses too, so a just-visited page is available offline.
+  if (typeof caches !== "undefined" && !navigator.serviceWorker?.controller && res.headers.get("Content-Type")?.includes("application/json")) {
+    const copy = res.clone();
+    void (async () => {
+      const headers = new Headers(copy.headers);
+      headers.set("X-OpenIce-Cached-At", String(Date.now()));
+      const cache = await caches.open("openice-data-v1");
+      await cache.put(`${DATA_BASE}${path}`, new Response(await copy.blob(), { headers }));
+    })().catch(() => {});
+  }
   return (await res.json()) as T;
 }
 
@@ -58,8 +71,18 @@ export async function loadOfferings(id: OfferingsCatalogId): Promise<OfferingsFe
   }
 }
 
-export function loadRangers(): Promise<RangersFeed> {
-  return getJson<RangersFeed>("/rangers.json");
+async function loadMhr(): Promise<MhrSnapshot | undefined> {
+  try {
+    const snapshot = await getJson<MhrSnapshot>("/mhr.json");
+    if (snapshot.version === 1 && snapshot.season === MHR_SEASON && Array.isArray(snapshot.teams) && Array.isArray(snapshot.sources)) return snapshot;
+  } catch { /* Schedules remain usable if ratings are temporarily unavailable. */ }
+  return undefined;
+}
+
+export async function loadRangers(): Promise<RangersFeed> {
+  const feed = await getJson<RangersFeed>("/rangers.json");
+  const mhr = await loadMhr();
+  return mhr ? enrichRangersMhr(feed, mhr) : feed;
 }
 
 /** Load every rink feed listed in the index; failures become empty feeds with an error. */

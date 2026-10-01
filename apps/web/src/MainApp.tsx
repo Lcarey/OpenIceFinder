@@ -1,5 +1,5 @@
 import type { OfferingsFeed, ProgramFeed, RinkFeed, RinkIndex } from "@openice/shared";
-import { CalendarDays, Dumbbell, RefreshCw, Shirt, Snowflake, Users } from "lucide-react";
+import { CalendarDays, Dumbbell, RefreshCw, Shield, Shirt, Snowflake, Users } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { loadAllFeeds, loadAllProgramFeeds, loadIndex, loadOfferings } from "./api";
 import { formatRelativeFetched } from "./format";
@@ -35,10 +35,10 @@ export function MainApp({ route }: { route: MainRoute }) {
         if (cancelled) return;
         setIndex(idx);
         const [all, programs, socks, skills] = await Promise.all([
-          loadAllFeeds(idx),
-          loadAllProgramFeeds(idx),
-          loadOfferings("stinkysocks"),
-          loadOfferings("clinics"),
+          ["open", "rink", "ice"].includes(route.view) ? loadAllFeeds(idx) : Promise.resolve([]),
+          route.view === "ice" ? loadAllProgramFeeds(idx) : Promise.resolve([]),
+          route.view === "stinkysocks" ? loadOfferings("stinkysocks") : Promise.resolve(null),
+          route.view === "clinics" ? loadOfferings("clinics") : Promise.resolve(null),
         ]);
         if (cancelled) return;
         setFeeds(all);
@@ -52,7 +52,7 @@ export function MainApp({ route }: { route: MainRoute }) {
     return () => {
       cancelled = true;
     };
-  }, [reloadToken]);
+  }, [reloadToken, route.view]);
 
   const usageRinkId = route.view === "ice" ? route.rinkId : index?.programs?.[0]?.program.rinkId;
   const usageRink = usageRinkId ? index?.rinks.find((r) => r.rink.id === usageRinkId)?.rink : undefined;
@@ -92,6 +92,7 @@ export function MainApp({ route }: { route: MainRoute }) {
           <a className={route.view === "youth-hockey" ? "nav-link active" : "nav-link"} href="#/youth-hockey">
             <Users size={16} /> High level youth hockey
           </a>
+          <a className="nav-link" href="/rangers"><Shield size={16} /> Rangers</a>
         </nav>
       </header>
 

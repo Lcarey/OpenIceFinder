@@ -50,7 +50,7 @@ function handler(event) {
     if (uri.indexOf("/data/drive-times/") === 0) {
       return { statusCode: 403, statusDescription: "Forbidden" };
     }
-    if (uri === "/rangers" || uri === "/rangers/") {
+    if (uri === "/rangers" || uri === "/rangers/" || uri === "/rangersa" || uri === "/rangersa/") {
       request.uri = "/rangers.html";
       return request;
     }
@@ -185,6 +185,7 @@ function handler(event) {
       maxSessionDuration: Duration.hours(1),
     });
     webBucket.grantPut(rangersGithubRole, "data/rangers.json");
+    webBucket.grantPut(rangersGithubRole, "data/mhr.json");
     rangersGithubRole.addToPolicy(
       new iam.PolicyStatement({
         actions: ["cloudfront:CreateInvalidation"],

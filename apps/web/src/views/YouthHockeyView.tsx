@@ -1,3 +1,4 @@
+import { MhrBadge, MhrNotice } from "../components/MhrBadge";
 import { selectYouthGames, youthCalendarUrl, youthDirectionsUrl, youthDriveLabel, YOUTH_LEAGUES, YOUTH_STALE_LIMIT_MS, type YouthBirthYear, type YouthHockeyFeed, type YouthLeague, type YouthWindow } from "@openice/shared";
 import { CalendarPlus, ExternalLink, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -48,6 +49,7 @@ export function YouthHockeyView() {
         const status = age > YOUTH_STALE_LIMIT_MS ? "unavailable" : source.status === "ok" && age > 26 * 3600_000 ? "stale" : source.status;
         return <div key={source.id} className={`youth-source ${status}`}><a href={source.url} target="_blank" rel="noreferrer">{source.name}</a><span>{status === "ok" ? `Checked ${formatRelativeFetched(source.fetchedAt!, now.getTime())}` : status === "stale" ? `Stale · last verified ${formatRelativeFetched(source.fetchedAt!, now.getTime())}` : "Schedule unavailable"}</span>{source.message && <small>{source.message}</small>}{Boolean(source.excludedVenues?.length) && <small>{source.excludedVenues!.length} venue(s) need a verified location or route.</small>}</div>;
       })}</div>
+      <MhrNotice sources={feed.mhrSources} />
       <p className="youth-count" role="status">{games.length} {games.length === 1 ? "game" : "games"} to watch</p>
       {!games.length && <div className="empty"><p>{allUnavailable ? "Schedules are temporarily unavailable." : "No matching games in this window."}</p><p className="dim">{allUnavailable ? "Use the official schedule links above, or try again after the next refresh." : "Try another date or birth year. New games appear as schedules are published."}</p></div>}
       {groupByDay(games).map((group) => <section className="day-group" key={group.dateKey}><h3 className="day-heading">{dayLabel(group.dateKey, today, shiftDateKey(today, 1))}</h3><ol className="session-list">{group.events.map((g) => <li className="session youth-game" key={g.id}>
@@ -61,7 +63,7 @@ export function YouthHockeyView() {
           <span className="youth-drive">{youthDriveLabel(g.driveSeconds)} drive</span>
           <a className="youth-calendar" href={youthCalendarUrl(g)} target="_blank" rel="noreferrer" title="Add to Google Calendar" aria-label={`Add ${g.away.name} vs ${g.home.name} to Google Calendar`}><CalendarPlus size={18} aria-hidden="true"/></a>
         </div>
-        <div className="session-main"><div className="session-title">{g.away.name} <span className="dim">vs</span> {g.home.name}</div><div className="session-meta"><MapPin size={14} aria-hidden="true"/><strong>{g.venue.name}</strong>{g.iceSheet && <span>· {g.iceSheet}</span>}<span>· {g.venue.town}</span></div>{!(g.home.eligible && g.away.eligible) && <p className="youth-qualifies">Qualifying team: {g.home.eligible ? g.home.name : g.away.name}</p>}<div className="youth-links"><a href={g.sourceUrl} target="_blank" rel="noreferrer">Official schedule <ExternalLink size={12}/></a><a href={youthDirectionsUrl(g)} target="_blank" rel="noreferrer">Directions <ExternalLink size={12}/></a></div></div>
+        <div className="session-main"><div className="session-title">{g.away.name} <MhrBadge entry={g.away.mhr} /> <span className="dim">vs</span> {g.home.name} <MhrBadge entry={g.home.mhr} /></div><div className="session-meta"><MapPin size={14} aria-hidden="true"/><strong>{g.venue.name}</strong>{g.iceSheet && <span>· {g.iceSheet}</span>}<span>· {g.venue.town}</span></div>{!(g.home.eligible && g.away.eligible) && <p className="youth-qualifies">Qualifying team: {g.home.eligible ? g.home.name : g.away.name}</p>}<div className="youth-links"><a href={g.sourceUrl} target="_blank" rel="noreferrer">Official schedule <ExternalLink size={12}/></a><a href={youthDirectionsUrl(g)} target="_blank" rel="noreferrer">Directions <ExternalLink size={12}/></a></div></div>
       </li>)}</ol></section>)}
     </>}
   </section>;

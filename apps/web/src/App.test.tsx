@@ -94,7 +94,7 @@ describe("App", () => {
     expect(screen.getByText("18 min")).toBeInTheDocument();
     expect(screen.queryByText("3 min")).not.toBeInTheDocument();
     expect(screen.getByText(/Drive estimates from Arlington/)).toBeInTheDocument();
-    expect(screen.queryByRole("link", { name: /rangers/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /rangers/i })).toHaveAttribute("href", "/rangers");
     expect(screen.queryByText(/Jr\. Rangers/)).not.toBeInTheDocument();
   });
 
@@ -155,7 +155,7 @@ describe("App", () => {
     await waitFor(() => expect(screen.getByRole("alert")).toHaveTextContent("Couldn’t load rink data."));
   });
 
-  it("renders the hidden rangers tape from /rangers without a main-nav link", async () => {
+  it("renders the Rangers forecast from /rangers", async () => {
     window.history.replaceState({}, "", "/rangers");
     window.location.hash = "#winter-club";
     const writeText = vi.fn().mockResolvedValue(undefined);

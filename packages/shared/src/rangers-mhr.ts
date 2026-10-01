@@ -10,10 +10,12 @@ export interface RangersMhrTeam {
 export const RANGERS_MHR_TEAMS: readonly RangersMhrTeam[] = [
   { id: 1116, club: /rangers/i },
   { id: 32702, club: /winter\s*club/i },
+  { id: 27874, club: /avalanche.*(?:elite|e)\s*2/i },
   { id: 1336, club: /avalanche/i },
   { id: 1471, club: /bruins/i },
   { id: 6474, club: /icemen/i },
-  { id: 23032, club: /railers/i },
+  { id: 23032, club: /railers.*(?:select|s)\s*1/i },
+  { id: 1321, club: /railers/i },
 ];
 
 export function rangersMhrUrl(id: number, year = RANGERS_MHR_YEAR): string {

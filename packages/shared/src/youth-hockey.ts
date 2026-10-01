@@ -1,9 +1,11 @@
+import type { MhrEntry, MhrSource } from "./mhr.js";
 import type { DriveEstimate } from "./types.js";
 import { localDateKey, RINK_TIME_ZONE } from "./time.js";
 
 export type YouthBirthYear = 2015 | 2016;
 export type YouthLeague = "FED Elite" | "Elite 9" | "AAA tournaments";
 export interface YouthTeam {
+  mhr?: MhrEntry;
   id: string;
   name: string;
   eligible: boolean;
@@ -49,6 +51,7 @@ export interface YouthSourceStatus {
   excludedVenues?: string[];
 }
 export interface YouthHockeyFeed {
+  mhrSources?: MhrSource[];
   version: 1;
   generatedAt: string;
   rangeStart: string;

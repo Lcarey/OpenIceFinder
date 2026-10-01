@@ -5,7 +5,7 @@ describe("matchRangersMhrTeam", () => {
   it("maps 2016 White Elite 9 names onto 10U MHR pages", () => {
     expect(matchRangersMhrTeam("Jr. Rangers 16 - Elite")?.id).toBe(1116);
     expect(matchRangersMhrTeam("Winter Club 16 - Elite")?.id).toBe(32702);
-    expect(matchRangersMhrTeam("Avalanche 16 - Elite 2")?.id).toBe(1336);
+    expect(matchRangersMhrTeam("Avalanche 16 - Elite 2")?.id).toBe(27874);
     expect(matchRangersMhrTeam("Jr. Bruins 16 - Elite")?.id).toBe(1471);
     expect(matchRangersMhrTeam("Icemen 16 - Elite")?.id).toBe(6474);
     expect(matchRangersMhrTeam("Railers 16 - S 1")?.id).toBe(23032);

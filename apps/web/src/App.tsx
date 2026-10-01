@@ -8,7 +8,7 @@ type Route = MainRoute | { view: "rangers" };
 
 function parseRoute(pathname: string, hash: string): Route {
   const path = pathname.replace(/\/+$/, "") || "/";
-  if (path === "/rangers" || /^#\/rangers\/?(\?.*)?$/.test(hash)) return { view: "rangers" };
+  if (path === "/rangers" || path === "/rangersa" || /^#\/rangers\/?(\?.*)?$/.test(hash)) return { view: "rangers" };
   if (/^#\/stinkysocks/.test(hash)) return { view: "stinkysocks" };
   if (/^#\/clinics/.test(hash)) return { view: "clinics" };
   if (/^#\/youth-hockey(?:\/?(?:\?.*)?)?$/.test(hash)) return { view: "youth-hockey" };

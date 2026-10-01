@@ -1,3 +1,4 @@
+import type { MhrEntry, MhrSource } from "./mhr.js";
 import type { IceCategory } from "./categories.js";
 
 /** How a rink publishes its schedule. Each variant maps to one scraper adapter. */
@@ -315,6 +316,7 @@ export type RangersResult = "W" | "L" | "T";
 export type RangersBeliefLevel = "steal" | "toss_up" | "uphill" | "long_shot";
 
 export interface RangersStandingRow {
+  mhr?: MhrEntry;
   teamId: string;
   name: string;
   shortName: string;
@@ -382,8 +384,9 @@ export interface RangersScoutCard {
   belief: RangersBelief;
 }
 
-/** Hidden /rangers page feed: 2016 Boston Jr. Rangers scouting tape from Elite 9. */
+/** /rangers page feed: 2016 Boston Jr. Rangers scouting tape from Elite 9. */
 export interface RangersFeed {
+  mhrSources?: MhrSource[];
   fetchedAt: string;
   sourceUrl: string;
   scheduleUrl: string;

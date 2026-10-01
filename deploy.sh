@@ -94,7 +94,6 @@ if [[ -d "$WEB_DIST/assets" ]]; then
   aws s3 sync "$WEB_DIST/assets/" "s3://$BUCKET_NAME/assets/" \
     --region "$REGION" \
     --cache-control "public, max-age=31536000, immutable" \
-    --delete \
     --only-show-errors
 fi
 
@@ -111,7 +110,7 @@ aws s3 sync "$WEB_DIST/" "s3://$BUCKET_NAME/" \
 echo "Invalidating the SPA entry point..."
 aws cloudfront create-invalidation \
   --distribution-id "$DISTRIBUTION_ID" \
-  --paths "/" "/index.html" "/rangers" "/rangers.html" \
+  --paths "/" "/index.html" "/rangers" "/rangers.html" "/rangersa" "/sw.js" \
   --query "Invalidation.Id" \
   --output text >/dev/null
 
