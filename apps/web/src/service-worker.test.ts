@@ -61,4 +61,12 @@ describe("phone data cache", () => {
     expect(await (await w.route({ url: "https://test.example/", mode: "navigate" } as Request)).text()).toBe("Main shell");
     expect(w.fetch).not.toHaveBeenCalled();
   });
+  it("continues serving cached content-hashed chunks requested by an older tab", async () => {
+    const w = worker(), url = "https://test.example/assets/previous-version.js";
+    w.saved.set(url, new Response("previous version"));
+    const respondWith = vi.fn();
+    w.events.fetch!({ request: new Request(url), respondWith });
+    expect(await (await respondWith.mock.calls[0]![0]).text()).toBe("previous version");
+    expect(w.fetch).not.toHaveBeenCalled();
+  });
 });

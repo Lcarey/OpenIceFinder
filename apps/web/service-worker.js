@@ -61,7 +61,7 @@ async function route(request) {
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
   if (event.request.method !== "GET" || url.origin !== self.location.origin || url.pathname.startsWith("/data/drive-times/")) return;
-  if (event.request.mode === "navigate" || ASSETS.includes(url.pathname) || (url.pathname.startsWith("/data/") && url.pathname.endsWith(".json"))) {
+  if (event.request.mode === "navigate" || url.pathname.startsWith("/assets/") || ASSETS.includes(url.pathname) || (url.pathname.startsWith("/data/") && url.pathname.endsWith(".json"))) {
     event.respondWith(route(event.request));
   }
 });
