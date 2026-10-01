@@ -15,16 +15,31 @@ async function main() {
     // Keep the ordinary browsing session across age lists. browser.newPage()
     // would create an isolated context and discard the site's session each time.
     const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+    const page = await context.newPage();
+    page.setDefaultTimeout(35_000);
     const snapshot = await refreshMhrSnapshot({ previous, log: console.log, fetchTable: async (url) => {
-      const page = await context.newPage();
-      try {
+      const category = new URL(url).searchParams.get("v")!;
+      const choice = page.locator(`#rank-alt-select option[value$="&v=${category}"]`);
+      if (await choice.count()) {
+        // Follow the site's own age selector and Alphabetic link, retaining its
+        // ordinary same-origin navigation/session rather than opening a new tab.
+        const value = await choice.getAttribute("value");
+        await Promise.all([
+          page.waitForURL((u) => u.searchParams.get("v") === category),
+          page.locator("#rank-alt-select").selectOption(value!),
+        ]);
+        await Promise.all([
+          page.waitForURL((u) => u.searchParams.get("view") === "alphabetic"),
+          page.getByRole("link", { name: "Alphabetic", exact: true }).click(),
+        ]);
+      } else {
         await page.goto(url, { waitUntil: "domcontentloaded", timeout: 45_000 });
-        // Read the ordinary public table; challenges are failures, never bypassed.
-        await page.locator('table.rankings a[href*="team_info"], table.rankings a[href*="team-info"]').first().waitFor({ state: "attached", timeout: 35_000 }).catch(async () => {
-          throw new Error(`MHR listing did not load (${await page.title()}).`);
-        });
-        return await page.locator("table.rankings").evaluate((table) => table.outerHTML);
-      } finally { await page.close(); }
+      }
+      // Read the ordinary public table; challenges are failures, never bypassed.
+      await page.locator('table.rankings a[href*="team_info"], table.rankings a[href*="team-info"]').first().waitFor({ state: "attached", timeout: 35_000 }).catch(async () => {
+        throw new Error(`MHR listing did not load (${await page.title()}).`);
+      });
+      return await page.locator("table.rankings").evaluate((table) => table.outerHTML);
     } });
     await mkdir(path.dirname(out), { recursive: true });
     await writeFile(out, `${JSON.stringify(snapshot)}\n`);
