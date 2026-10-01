@@ -43,7 +43,7 @@ jobs:
 
   rankings:
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: macos-15
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
@@ -52,7 +52,7 @@ jobs:
           node-version: "22"
           cache: npm
       - run: npm ci
-      - run: npx playwright install --with-deps chrome
+      - run: npx playwright install chrome
       - name: Retrieve previous MYHockey snapshot
         run: |
           code=$(curl -sS -o /tmp/mhr-previous.json -w '%{http_code}' https://dtwj09ada0yt7.cloudfront.net/data/mhr.json)
@@ -68,7 +68,7 @@ jobs:
         env:
           MHR_BROWSER_HEADED: "1"
           MHR_BROWSER_CHANNEL: chrome
-        run: xvfb-run -a npm run refresh:mhr
+        run: npm run refresh:mhr
       - uses: aws-actions/configure-aws-credentials@v5
         with:
           role-to-assume: arn:aws:iam::342206308993:role/OpenIceFinderGitHubRangersRefresh
